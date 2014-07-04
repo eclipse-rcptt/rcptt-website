@@ -71,7 +71,7 @@
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/contexts/">Contexts</a>
 	  	  <ul class="nav">
-	    	    <li  class="active" >
+	    	    <li >
 	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/workspace/">Workspace</a>
 	    </li>
 	    	    <li >
@@ -80,7 +80,7 @@
 	    	    <li >
 	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/launch/">Launch</a>
 	    </li>
-	    	    <li >
+	    	    <li  class="active" >
 	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/preferences/">Preferences</a>
 	    </li>
 	    	    <li >
@@ -98,30 +98,34 @@
     </div>
   </div>
   <div class="col-sm-9">
-    <h1>Workspace Contexts</h1>
-    <p></p>
+    <h1>Preferences Contexts</h1>
+    <h3> Introduction</h3>
 
-<p>Workspace contexts are used to control the state of an application workspace.</p>
+<p>Preferences contexts allow to ensure that correct Application-Under-Test preferences are applied before test execution. 
+This can be particularly useful when preferences which control the behavior of pop-up dialogs are being set in your AUT. 
+The well-known example, while not completely relevant to test execution, is the Confirm Exit dialog, which has the "Always exit without prompt" checkbox.</p>
+
+<p>The Preferences Context editor displays tree of all available preferences and allows modifying/removing some of their values.</p>
 
 <p><p>Move a mouse over highlighted areas on a screenshot below to get a documentation regarding UI elements</p>
 </p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-workspace-context-editor.png"></img>
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-preferences-context-editor.png"></img>
         
 <div class="ann" style="top:93px;left:118px;">
-  <div class="ann-border" style="width:100px;height:19px;"></div>
+  <div class="ann-border" style="width:120px;height:19px;"></div>
   <div class="ann-overlay" style="left:0px;;">
       Context name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with underscore character.
   
   </div>
 </div>
-
+  
         
 <div class="ann" style="top:119px;left:118px;">
   <div class="ann-border" style="width:100px;height:19px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>
+      All you need to know about tags
   
   </div>
 </div>
@@ -130,16 +134,16 @@
 <div class="ann" style="top:118px;left:584px;">
   <div class="ann-border" style="width:22px;height:22px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Use this button to open tag selection dialog with list of tags from another test resources.
+      Use this button to open tag selection dialog with list of tags from another test resources
   
   </div>
 </div>
-
+  
         
 <div class="ann" style="top:92px;left:616px;">
   <div class="ann-border" style="width:75px;height:22px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Make a snapshot of all projects inside AUT workspace and copy them into this context. Previous contents of this workspace context is overridden with new projects.
+      Make a snapshot of AUT preferences and copy them into this context
   
   </div>
 </div>
@@ -148,124 +152,98 @@
 <div class="ann" style="top:118px;left:616px;">
   <div class="ann-border" style="width:75px;height:22px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Copies given projects into AUT workspace. If   <span class="uiElement">Clear workspace</span>
- option is on, removes existing projects from AUT at first.
+      Applies preferences to AUT.   If  option is on, clears existing AUT preferences first
   
   </div>
 </div>
-
-        
+  
+         
 <div class="ann" style="top:152px;left:69px;">
   <div class="ann-border" style="width:95px;height:20px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Arbitrary plain text associated with a context.
-  
-  </div>
-</div>
-
-        
-<div class="ann" style="top:154px;left:665px;">
-  <div class="ann-border" style="width:19px;height:19px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Click this button to erase current description contents
+      Arbitrary plain text associated with a context
   
   </div>
 </div>
 
         
 <div class="ann" style="top:200px;left:75px;">
-  <div class="ann-border" style="width:110px;height:21px;"></div>
+  <div class="ann-border" style="width:115px;height:21px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Turned on by default. Whether existing projects should be removed before applying new ones.
+      Click this button to clear current AUT preferences first
   
   </div>
 </div>
   
         
-<div class="ann" style="top:248px;left:75px;">
-  <div class="ann-border" style="width:610px;height:19px;"></div>
+<div class="ann" style="top:227px;left:541px;">
+  <div class="ann-border" style="width:144px;height:22px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      When   <span class="uiElement">Clear workspace</span>
- is on, this option allows to specify a list of projects, which should be kept intact in AUT workspace.
+      Pretty much the same as Eclipse's standard Project/FileSystem import wizards, but imported resources go directly inside Preferences context, not inside RCPTT workspace.
   
   </div>
 </div>
-
+  
         
-<div class="ann" style="top:295px;left:75px;">
-  <div class="ann-border" style="width:112px;height:36px;"></div>
+<div class="ann" style="top:256px;left:541px;">
+  <div class="ann-border" style="width:144px;height:22px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Projects in current context
+      You can manually add a preference into a context with this button
   
   </div>
 </div>
-
+  
         
-<div class="ann" style="top:295px;left:519px;">
-  <div class="ann-border" style="width:166px;height:22px;"></div>
+<div class="ann" style="top:285px;left:541px;">
+  <div class="ann-border" style="width:144px;height:22px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Create new general project without any nature
+      Removes selected preference(s) from a context
   
   </div>
 </div>
-
+  
         
-<div class="ann" style="top:320px;left:519px;">
-  <div class="ann-border" style="width:166px;height:22px;"></div>
+<div class="ann" style="top:227px;left:75px;">
+  <div class="ann-border" style="width:460px;height:230px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Create new empty folder in currently selected project/folder
+      List of preferences which should be applied. You can change the value of any preference.
   
   </div>
 </div>
-
-        
-<div class="ann" style="top:345px;left:519px;">
-  <div class="ann-border" style="width:166px;height:47px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Pretty much the same as Eclipse's standard Project/Filesystem import wizards, but imported resources go directly inside Workspace context, not inside RCPTT workspace.
   
+  </div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Preferences context example</h3>
+  </div>
+  <div class="panel-body">
+    In the <a href="http://uml-lab.com">UML Lab</a> product when a user saves the UML diagram for the first time, the dialog popup appears which asks whether to turn automatic code generation on or off. 
+    Based on user input, it modifies its internal property <i>com.yattasolutions.codegen.GenerateCodeOnSave</i> and also sets <i>com.yattasolutions.umllab.dontshow.generateCodeOnSave</i> to <b>true</b>.
+    <br><br>
+    Thus, if a test case is recorded for the first time, clicking on any option on the dialog popup is recorded as well, but later this dialog does not appear and, as a result, execution fails since it cannot find the specified dialog. 
+    There are two ways to ensure that test always passes in this case:
+    <br><br>
+<ul>
+<li>Create preferences context with <i>dontshow.generateCodeOnSave</i> set to <b>false</b></li>
+<li>Create preferences context with <i>dontshow.generateCodeOnSave</i> set to <b>true</b> and remove script lines responsible for this dialog in the Test Editor</li>
+<ul>  
   </div>
 </div>
 
-        
-<div class="ann" style="top:395px;left:519px;">
-  <div class="ann-border" style="width:166px;height:72px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Instead of embedding contents inside workspace context, put links on resources from RCPTT workspace. This is particularly useful when resources for AUT need to be modified often, or used somewhere else.
-  
+<div class="panel panel-warning">
+<div class="panel-heading">
+    <h3 class="panel-title">Important</h3>
+  </div>
+  <div class="panel-body">
+    While it is currently not tracked by Q7, the Preferences context may depend on AUT workspace content since the context may contain project-specific preferences. 
+    Therefore, it may also depend on a <a href="/documentation/contexts/workspace">workspace context</a>, if there is one assigned to the test case. 
+    In some cases, applying the Preference context fails if referred projects do not exist in the workspace.
+     In order to prevent this, you should either manually remove corresponding project preference nodes or use this context coupled with the workspace context. 
+     In latter case, please ensure that your preference context runs after the workspace context (i.e. the preference context 
+     is placed below the workspace context in the Contexts section of the Test Editor).
   </div>
 </div>
-
-        
-<div class="ann" style="top:470px;left:519px;">
-  <div class="ann-border" style="width:166px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Removes selected resource(s) from workspace context
-  
-  </div>
-</div>
-
-        
-<div class="ann" style="top:495px;left:519px;">
-  <div class="ann-border" style="width:166px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Opens a file in a text editor. This may be useful for examining file contents, but at the moment file cannot be modified and saved
-  
-  </div>
-</div>
-</div>
-
-<h3>Introduction</h3>
-
-<p>Workspace Contexts are responsible for preparing the initial workspace content for your test case. 
-The Workspace Context contains projects and files you need to place on your workspace before running your test. It also has an option to clear the workspace before applying your Context. That is, if the Clear workspace option is turned on, the Workspace context just replaces the entire workspace contents. 
-Otherwise it verifies that all of its items are present in the workspace and have the same properties. If not, it creates missing items or replaces modified items correspondingly.</p>
-
-<p>The Workspace Context editor allows either to manually construct/modify the content of your Context or capture the workspace state from the AUT.</p>
-
-<p>With the <span class="uiElement"><img src="https://www.eclipse.org/rcptt/img/ui-capture.gif"></img> Capture</span> button in the upper-right corner above the Context name field you can capture the current state of the AUT workspace. With a single click all the project with all their files and subfolders will be added to your Context.</p>
-
-<p>Otherwise, you can manually add/import Projects and Files using the corresponding buttons.</p>
   </div>
 </div>
       </div>

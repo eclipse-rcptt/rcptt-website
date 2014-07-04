@@ -89,7 +89,7 @@
 	    	    <li >
 	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/folder/">Folder</a>
 	    </li>
-	    	    <li >
+	    	    <li  class="active" >
 	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/default/">Default</a>
 	    </li>
 	    	  </ul>
@@ -98,8 +98,53 @@
     </div>
   </div>
   <div class="col-sm-9">
-    <h1>Debugging Test Cases</h1>
-    <p>Debugging works</p>
+    <h1>Default Contexts</h1>
+    <p></p>
+
+<p>It's good practice to make test case to be focused on testing functionality itself and all operations for preparing 
+application  should be moved out from test case to some place. In case of RCPTT the contexts is the right place for these 
+purposes. RCPTT contexts are applied to application before test case execution. In eclipse there are several groups of 
+standard mutable configurations/states: preferences, workspace, workbench.</p>
+
+<p>In the process of using RCPTT to create test projects, we came to the conclusion that some contexts should be executed 
+before each test cases. For example, when testing JDT before each test should be cleared Workspace and Working Set, 
+and terminated all active launches. Initially for these purpose Group Context is used, this context should be added t
+o each test case in RCPTT project. But this practice was uncomfortable, because at the addition of a new test case, it 
+was necessary not to forget to add the Default Group Context. So we introduced the concept of the 
+Default Contexts list.</p>
+
+<p>At the creation new RCPTT Project the   <span class="uiElement"> <img src="https://www.eclipse.org/rcptt/img/project-settings-icon.png"></img> Project Settings</span>
+ file is created automatically.</p>
+
+<p>Description of project can be given in "Description" section of the 
+  <span class="uiElement"> <img src="https://www.eclipse.org/rcptt/img/project-settings-icon.png"></img> Project Settings</span>
+. 
+Default Contexts can be set in "Default Contexts" section. Contexts to default contexts
+ list can be added from this RCPTT project and also from related RCPTT projects.</p>
+
+<div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-default-context-editor.png"></img>
+  </div>
+
+<p>These default contexts are displayed in test cases. Sequence contexts defined in the Default Contexts 
+   list can not be changed in the test case and custom contexts can be added to test case only after 
+   default contexts.   <span class="uiElement"> <img src="https://www.eclipse.org/rcptt/img/project-settings-icon.png"></img> Project Settings</span>
+ can be opened 
+   from test case by clicking on   <span class="uiElement"> <img src="https://www.eclipse.org/rcptt/img/ui-configure-project-default-contexts.png"></img> </span>
+
+   link.</p>
+
+<div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-default-context-editor-2.png"></img>
+  </div>
+
+<p>At the replaying test case the default contexts are displayed in   <span class="uiElement"> <img src="https://www.eclipse.org/rcptt/img/ui-execution-view.png"></img> Execution View</span>
+. 
+  Custom contexts are executed after default contexts execution.</p>
+
+<div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-default-context-editor-3.png"></img>
+  </div>
   </div>
 </div>
       </div>

@@ -77,6 +77,21 @@
 	    	    <li  class="active" >
 	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/workbench/">Workbench</a>
 	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/launch/">Launch</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/preferences/">Preferences</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/group/">Group</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/folder/">Folder</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/default/">Default</a>
+	    </li>
 	    	  </ul>
 	  	</li>
 	      </ul>
@@ -126,7 +141,7 @@
 <div class="ann" style="top:92px;left:616px;">
   <div class="ann-border" style="width:75px;height:22px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Make a snapshot of all projects inside AUT workspace and copy them into this context. Previous contents of this workspace context is overriden with new projects.
+      Make a snapshot of all current AUT perspective, opened views and editors and copy them into this context. 
   
   </div>
 </div>
@@ -135,8 +150,8 @@
 <div class="ann" style="top:118px;left:616px;">
   <div class="ann-border" style="width:75px;height:22px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Copies given projects into AUT workspace. If   <span class="uiElement">Clear workspace</span>
- option is on, removes existing projects from AUT at first.
+      Opens given perspective, views and editors. If   <span class="uiElement">Reset perspective</span>
+ option is on, resets perspective to its default.
   
   </div>
 </div>
@@ -241,7 +256,29 @@
 </div>
 </div>
 
-<p>Some text after workspace screenshot</p>
+<h3>Introduction</h3>
+
+<p>The <span class="uiElement"><img src="https://www.eclipse.org/rcptt/img/ui-capture.gif"></img> Capture</span> button in the upper-right corner lets you automatically capture the current workbench state of your AUT. However, your can customize your workbench context using the settings listed below:</p>
+
+<ul>
+<li><b>Perspective id</b> - the perspective to be open in AUT before running the test. Use the Browse button to view the user-friendly list of all perspectives available in AUT</li>
+<li><b>Reset perspective</b> - when this option is checked, the AUT perspective will be reset to its own defaults</li>
+<li><b>Close all modal dialogs</b> - when this option is checked, the workbench context will close any modal dialogs opened in AUT. That is, if your test stops and leaves the New Project wizard opened, the workbench context of your current test will close it</li>
+<li><b>Views</b> - the list of all views to be opened before running the test</li>
+<li><b>Editors</b> - the list of all editors to be opened before running the test. You can add entries to this list manually (i.e. typing in the file path, such as /my_project/my_file) or browse for existing files in workspace contexts.</li>
+<li><b>Close open editors</b> - optionally allows to close all other editors not listed in open editors list</li>
+<li><b>Clear clipboard</b> - optionally allows to clear clipboard contents</li>
+</ul>
+
+<div class="panel panel-warning">
+<div class="panel-heading">
+    <h3 class="panel-title">Important</h3>
+  </div>
+  <div class="panel-body">
+    While it is not currently tracked by Q7, the Workbench context actually can depend on certain Workspace contexts. For example, you specify to open an editor for <i>/my_project/my_file</i>. In case there is no such file in the AUT workspace, applying this Workbench context will fail your test. When you are using <a href = "/documentation/contexts/workspace">workspace contexts</a> and workbench contexts simultaneously (which is actually the recommended way), make sure that the workspace context goes before the workbench context.
+Alternatively, unnecessary editors can be manually removed from the list of editors. 
+  </div>
+</div>
   </div>
 </div>
       </div>
