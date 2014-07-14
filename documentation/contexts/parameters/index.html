@@ -65,7 +65,7 @@
       <ul class="nav">
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/getstarted/">Get Started</a>
 	  	</li>
-		<li class="active" ><a href="https://www.eclipse.org/rcptt/documentation/testeditor/">Test Case Editor</a>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/testeditor/">Test Case Editor</a>
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/controlpanel">Control Panel</a>
 	  	</li>
@@ -83,7 +83,7 @@
 	    	    <li >
 	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/preferences/">Preferences</a>
 	    </li>
-	    	    <li >
+	    	    <li  class="active" >
 	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/parameters/">Parameters</a>
 	    </li>
 	    	    <li >
@@ -120,21 +120,20 @@
     </div>
   </div>
   <div class="col-sm-9">
-    <h1>Test Case Editor</h1>
+    <h1>Parameters Contexts</h1>
     <p></p>
-
-<p>Test case editor is a main editor for creating, running and executing test cases.</p>
 
 <p><p>Move a mouse over highlighted areas on a screenshot below to get a documentation regarding UI elements</p>
 </p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-test-editor.png"></img>
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-parameters-context-editor.png"></img>
+  
         
 <div class="ann" style="top:93px;left:118px;">
   <div class="ann-border" style="width:100px;height:19px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Test case name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with underscore character.
+      Context name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with underscore character.
   
   </div>
 </div>
@@ -147,9 +146,9 @@
   
   </div>
 </div>
-
+  
         
-<div class="ann" style="top:118px;left:590px;">
+<div class="ann" style="top:118px;left:583px;">
   <div class="ann-border" style="width:22px;height:22px;"></div>
   <div class="ann-overlay" style="left:0px;;">
       Use this button to open tag selection dialog with list of tags from another test resources.
@@ -158,135 +157,75 @@
 </div>
 
         
-<div class="ann" style="top:92px;left:622px;">
-  <div class="ann-border" style="width:69px;height:22px;"></div>
+<div class="ann" style="top:92px;left:615px;">
+  <div class="ann-border" style="width:75px;height:22px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Record test case. Before recording starts, all contexts added to this test case are applied. If test case script is not empty, existing script is replayed first and newly recorded actions are being appended at the end of a script.
+      Disabled for Parameters Context
   
   </div>
 </div>
 
         
-<div class="ann" style="top:118px;left:622px;">
-  <div class="ann-border" style="width:69px;height:22px;"></div>
+<div class="ann" style="top:210px;left:610px;">
+  <div class="ann-border" style="width:74px;height:22px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Replay test case. Result is displayed in   <span class="uiElement"> <img src="https://www.eclipse.org/rcptt/img/ui-execution-view.png"></img> Execution</span>
- view.
+      Add new parameter in a Parameters Context
   
   </div>
 </div>
-
+  
         
-<div class="ann" style="top:152px;left:69px;">
-  <div class="ann-border" style="width:95px;height:20px;"></div>
+<div class="ann" style="top:239px;left:610px;">
+  <div class="ann-border" style="width:74px;height:22px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Arbitrary plain text associated with a test case, for example steps this test performs. It might be convenient to outline test case plan in description and follow it during recording (use   <span class="uiElement"> <img src="https://www.eclipse.org/rcptt/img/ui-description.gif"></img> Description</span>
- tab of <a href="https://www.eclipse.org/rcptt/documentation/controlpanel">Control Panel</a>).
+      Remove parameter(s) from a Context
   
   </div>
 </div>
-
+  
         
-<div class="ann" style="top:154px;left:665px;">
-  <div class="ann-border" style="width:19px;height:19px;"></div>
+<div class="ann" style="top:210px;left:75px;">
+  <div class="ann-border" style="width:529px;height:110px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-      Click this button to erase current description contents
+      A list of parameters with their values
   
   </div>
 </div>
-
-        
-<div class="ann" style="top:247px;left:73px;">
-  <div class="ann-border" style="width:300px;height:19px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Put a link on bugtracker or shared test plan
   
   </div>
-</div>
 
-        
-<div class="ann" style="top:298px;left:75px;">
-  <div class="ann-border" style="width:610px;height:60px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      <p>Context area lists current <a href="https://www.eclipse.org/rcptt/documentation/contexts/">contexts</a>. Drag contexts to change their order, drop contexts from Test Explorer to add. When test case is executed, contexts are applied in order they listed.</p>
+<h3>Introduction</h3>
 
-  <p>Sometimes context order is important &ndash; for instance, if workbench context opens a file in editor, usually <a href="https://www.eclipse.org/rcptt/documentation/contexts/workspace">workspace</a> context which ensures this file exists should go before <a href="https://www.eclipse.org/rcptt/documentation/contexts/workbench">workbench</a> context.</p>
-  
+<p>One of the most asked features for RCPTT is to execute a same test with different parameters. 
+  I'm going to demonstrate how it is possible to achieve the same effect using Parameters Context. 
+  As an example, let's test error messages in JDT New Class Wizard. We start with a Java project with a single class:</p>
+
+<div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-parameters-context-tree-2.png"></img>
   </div>
-</div>
 
-        
-<div class="ann" style="top:273px;left:598px;">
-  <div class="ann-border" style="width:20px;height:20px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Opens context selection dialog
-  
-  </div>
-</div>
+<p>At first, let's record an initial script which launches new class wizard, sets package and class name and asserts an error message:</p>
 
-        
-<div class="ann" style="top:273px;left:620px;">
-  <div class="ann-border" style="width:21px;height:20px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Removes selected context(s)
-  
+<div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-parameters-context-3.png"></img>
   </div>
-</div>
 
-        
-<div class="ann" style="top:273px;left:642px;">
-  <div class="ann-border" style="width:20px;height:20px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Moves selected context up
-  
-  </div>
-</div>
+<p>Now, what we really want is to type various values into 
+  Package and Name fields and make sure that error message changes accordingly. 
+  As a next step, let's parameterize a script using Parameters Context:</p>
 
-        
-<div class="ann" style="top:273px;left:664px;">
-  <div class="ann-border" style="width:20px;height:20px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Moves selected context down
-  
+<div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-parameters-context-4.png"></img>
   </div>
-</div>
 
-        
-<div class="ann" style="top:364px;left:490px;">
-  <div class="ann-border" style="width:195px;height:17px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Open project settings editor
-  
-  </div>
-</div>
+<p>Next, let's place a Parameters Context into a Test Case and use <b>$paramName</b> in a script:</p>
 
-        
-<div class="ann" style="top:385px;left:69px;">
-  <div class="ann-border" style="width:64px;height:20px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Test case script section. Script contents can be recorded or written manually from scratch. Hover a command with a mouse to get its documentation. Use <kbd>Ctrl+Space</kbd> for completion.
-  
+<div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-parameters-context-5.png"></img>
   </div>
-</div>
 
-        
-<div class="ann" style="top:387px;left:665px;">
-  <div class="ann-border" style="width:19px;height:19px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Click this button to erase current script contents
-  
-  </div>
-</div>
-
-        
-<div class="ann" style="top:487px;left:69px;">
-  <div class="ann-border" style="width:102px;height:20px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Configure test case verifications.
-  
-  </div>
-</div>
-</div>
+<p>Please learn more about more efficient way of script parametrization by 
+ using <a href = "/documentation/contexts/super"> Super Context</a></p>
   </div>
 </div>
       </div>
