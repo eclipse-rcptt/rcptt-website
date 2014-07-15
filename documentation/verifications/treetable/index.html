@@ -122,6 +122,130 @@
   <div class="col-sm-9">
     <h1>Tree/Table Verifications</h1>
     <p></p>
+
+<p><p>Move a mouse over highlighted areas on a screenshot below to get a documentation regarding UI elements</p>
+</p>
+
+<div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-tree-verification.png"></img>
+  
+        
+<div class="ann" style="top:93px;left:118px;">
+  <div class="ann-border" style="width:100px;height:19px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Verification name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with 
+  underscore character.
+  
+  </div>
+</div>
+
+        
+<div class="ann" style="top:119px;left:118px;">
+  <div class="ann-border" style="width:100px;height:19px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:92px;left:616px;">
+  <div class="ann-border" style="width:75px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Make a snapshot of AUT widget defined in   <span class="uiElement">Widget</span>
+ field and copy it into verification. 
+  
+  </div>
+</div>
+
+        
+<div class="ann" style="top:118px;left:616px;">
+  <div class="ann-border" style="width:75px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Verifies whether AUT tree/table defined in   <span class="uiElement">Widget</span>
+ matches the tree/table from a verification.
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:202px;left:126px;">
+  <div class="ann-border" style="width:511px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      AUT tree/table widget for verification. You can set the value manually or using   <span class="uiElement">Pick...</span>
+ button.
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:239px;left:155px;">
+  <div class="ann-border" style="width:155px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Styles option for verification. Can be All/Ignore Styles/Ignore Styled Text. 
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:239px;left:317px;">
+  <div class="ann-border" style="width:165px;height:23px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+     Turned on by default. If this option is off - verification fails if there are uncaptured children in AUT tree. 
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:239px;left:486px;">
+  <div class="ann-border" style="width:110px;height:23px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+     Turned on by default. If this option is off - verification ignores icons. 
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:284px;left:75px;">
+  <div class="ann-border" style="width:610px;height:94px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Captured tree/table. 
+  
+  </div>
+</div>
+  
+  </div>
+
+<h3>Introduction</h3>
+
+<p>Tree/Table verification is the most convenient way to assert the whole tree/table state at the end of the test case. 
+  Comparing to assertions, where you select a separate tree/table items to verify their properties, tree/table verification makes 
+  it more simple.</p>
+
+<h3>Verify styles options</h3>
+
+<p>There are three options for styles verification: All, Ignore Styles, Ignore Styled text:</p>
+
+<ul>
+  <li><b>All.</b> Tree is verified as it is:
+  
+  <div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-tree-verification-all.png"></img>
+  </li>
+  
+  <li><b>Ignore Styles.</b> Styled text is verified as a plain text:
+  
+  <div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-tree-verification-ignore-styles.png"></img>
+  </li>
+  
+  <li><b>Ignore Styled Text.</b> If there is a styled text - it will be ignored:
+  
+  <div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-tree-verification-ignore-styled-text.png"></img>
+  </li>
+  
+  </ul>
   </div>
 </div>
       </div>

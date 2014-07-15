@@ -120,8 +120,81 @@
     </div>
   </div>
   <div class="col-sm-9">
-    <h1>Time Verifications</h1>
+    <h1>Execution Time Verifications</h1>
     <p></p>
+
+<p><p>Move a mouse over highlighted areas on a screenshot below to get a documentation regarding UI elements</p>
+</p>
+
+<div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-time-verification-editor.png"></img>
+  
+        
+<div class="ann" style="top:93px;left:118px;">
+  <div class="ann-border" style="width:100px;height:19px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Verification name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with 
+  underscore character.
+  
+  </div>
+</div>
+
+        
+<div class="ann" style="top:119px;left:118px;">
+  <div class="ann-border" style="width:100px;height:19px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:92px;left:616px;">
+  <div class="ann-border" style="width:75px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Disabled for time verification 
+  
+  </div>
+</div>
+
+        
+<div class="ann" style="top:118px;left:616px;">
+  <div class="ann-border" style="width:75px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Disabled for time verification
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:228px;left:100px;">
+  <div class="ann-border" style="width:220px;height:27px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Verification checks that a test case is executed no longer than specified amount of time
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:265px;left:75px;">
+  <div class="ann-border" style="width:307px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Disabled by default. If this option is on, verification checks the test execution time including a time of contexts execution
+  
+  </div>
+</div>
+  </div>
+
+<p>Execution time verification can be used for performance testing. Being added to a test case verification makes sure that test case execution taked no longer then a specified
+  amount of time.</p>
+
+<div class="panel panel-info">
+  <div class="panel-heading">Important</div>
+  <div class="panel-body">
+    Please note that there is a launch timeout for a test case execution in RCP TT Preferences (300 sec by default). 
+    If your test case needs to be executed more then this time - you need to change timeout value. 
+  </div>
+  </div>
   </div>
 </div>
       </div>
