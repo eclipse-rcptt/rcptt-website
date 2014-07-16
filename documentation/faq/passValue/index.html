@@ -104,7 +104,7 @@
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/verifications/">Verifications</a>
 	  	  <ul class="nav">
-	    	    <li  class="active" >
+	    	    <li >
 	      <a href="https://www.eclipse.org/rcptt/documentation/verifications/text/">Text</a>
 	    </li>
 	    	    <li >
@@ -122,7 +122,7 @@
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/">FAQ</a>
 	  	  <ul class="nav">
-	    	    <li >
+	    	    <li  class="active" >
 	      <a href="https://www.eclipse.org/rcptt/documentation/faq/passValue/">How to pass a value to a test during its execution?</a>
 	    </li>
 	    	  </ul>
@@ -131,122 +131,55 @@
     </div>
   </div>
   <div class="col-sm-9">
-    <h1>Text Verifications</h1>
+    <h1>How to pass a value to a test during its execution.</h1>
     <p></p>
 
-<p><p>Move a mouse over highlighted areas on a screenshot below to get a documentation regarding UI elements</p>
-</p>
+<p>In case when it is required to pass some values to a test in command line, it is possible to do it like this:</p>
 
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-text-verification-editor-1.png"></img>
-  
-        
-<div class="ann" style="top:93px;left:118px;">
-  <div class="ann-border" style="width:100px;height:19px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Verification name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with 
-  underscore character.
-  
+<ol>
+<li>In AUT VM arguments pass desired parameters as Java properties, i.e. add arguments like this:<br> -DpropertyName=propertyValue</li>
+<li>Use ECL command   <a href="http://download.xored.com/q7/docs/ecl-api/latest#substitute-variables">substitute-variables</a>
+ (which uses <b>org.eclipse.core.variables</b> plugin) to get a property value like this:</li>
+</ol>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    log [subsitute-variables "${system_property:propertyName}"] //writes prop val to AUT workspace log
   </div>
 </div>
 
-        
-<div class="ann" style="top:119px;left:118px;">
-  <div class="ann-border" style="width:100px;height:19px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>
-  
+<p>With supports for <a href="https://www.eclipse.org/rcptt/documentation/procedures/">variables and user-defined procedures</a>, this becomes even more convenient:</p>
+
+<ol>
+<li>Create ECL context which consist of only one command, declaring global variables:<br><br>
+<div class="panel panel-default">
+  <div class="panel-body">
+    global [val prop1 [subsitute-variables "${system_property:prop1}"]]<br>
+       [val prop2 [subsitute-variables "${system_property:prop2}"]]<br>
+       [val prop3 [subsitute-variables "${system_property:prop3}"]]<br>
+  </div>
+</div></li>
+
+<li>Add this ECL context to project's default contexts in Project Settings<br></li>
+<br>
+<li>Access anywhere in ECL these properties using $-syntax:<br><br>
+<div class="panel panel-default">
+  <div class="panel-body">
+    concat $prop1 $prop2 $prop3 | show-alert
   </div>
 </div>
-  
-        
-<div class="ann" style="top:92px;left:616px;">
-  <div class="ann-border" style="width:75px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Make a snapshot of a text from AUT widget defined in   <span class="uiElement">Widget</span>
- field and copy it into this verification. 
-  
-  </div>
+</li>
+
+</ol>
+
+<div class="panel panel-info">
+<div class="panel-heading">
+Important
 </div>
-
-        
-<div class="ann" style="top:118px;left:616px;">
-  <div class="ann-border" style="width:75px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Verifies whether a text in a text   <span class="uiElement">Widget</span>
- equals the text from a verification. If   <span class="uiElement">Ignore text styling and colors</span>
- option is off,
-  verifies text style as well.  
-  
-  </div>
-</div>
-  
-        
-<div class="ann" style="top:202px;left:126px;">
-  <div class="ann-border" style="width:511px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      AUT text widget from which a text is taken for verification. You can set the value manually or using   <span class="uiElement">Pick...</span>
- button.
-  
-  </div>
-</div>
-  
-        
-<div class="ann" style="top:202px;left:643px;">
-  <div class="ann-border" style="width:42px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Use this button to select AUT text widget for verification.
-  
-  </div>
-</div>
-  
-        
-<div class="ann" style="top:261px;left:75px;">
-  <div class="ann-border" style="width:595px;height:159px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Verified text. If   <span class="uiElement">Ignore text styling and colors</span>
- option is on you can edit text value. 
-  
-  </div>
-</div>
-  
-  
- </div>
-
-<h3>How it works</h3>
-
-<p>Let's say you need to check the result of creating <i>public static void main</i> method stubs while adding a new Java Class.</p>
-
-<p>So you go through the following steps:</p>
-
-<ul>
-<li>Create a new test case, add required <a href = "/documentation/contexts">contexts</a> and start recording. 
-Create new Java class and check "create public static void main stubs" option. Stop recording - your actions are recorded as ECL script:</li>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-text-verification-1.png"></img></div>
-  
-<li>In a test case editor go to <b>Verification</b> tab and press <span class="uiElement"><img src="https://www.eclipse.org/rcptt/img/ui-add.gif"></img> Add</span> button.
-Click <span class="uiElement"><img src="https://www.eclipse.org/rcptt/img/ui-capture.gif"></img>Capture</span> button and select <b>Widget text</b> verification type. 
-Set verification name and press Finish. Now, while you are in a Capture mode, select Java Class editor. Your verification will be added into a test:</li>
-
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-text-verification-2.png"></img></div>
-
-<li>If you open verification you can see that it contains the styled text to verify and the widget to take the text from. Verification checks both: widget 
-content and text styles. If you want to verify a plain text only, then you should select   <span class="uiElement">Ignore text styling and colors</span>
- option.</li>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-text-verification-3.png"></img></div>
-  
-<li>Now, when you run your test case, it's verification result will be shown in a Execution View:</li>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-text-verification-4.png"></img></div>
-
-</ul>
+<div class="panel-body">
+    Please let us know if your AUT does not include <b>org.eclipse.core.variables</b> plugin and hence command 'substitute-variables'
+command fails. In this case we'll provide a custom ECL command to get Java property value.
+  </div></div>
   </div>
 </div>
       </div>

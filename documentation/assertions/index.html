@@ -69,7 +69,7 @@
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/controlpanel">Control Panel</a>
 	  	</li>
-		<li ><a href="https://www.eclipse.org/rcptt/documentation/assertions/">Assertions</a>
+		<li class="active" ><a href="https://www.eclipse.org/rcptt/documentation/assertions/">Assertions</a>
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/contexts/">Contexts</a>
 	  	  <ul class="nav">
@@ -104,7 +104,7 @@
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/verifications/">Verifications</a>
 	  	  <ul class="nav">
-	    	    <li  class="active" >
+	    	    <li >
 	      <a href="https://www.eclipse.org/rcptt/documentation/verifications/text/">Text</a>
 	    </li>
 	    	    <li >
@@ -131,122 +131,76 @@
     </div>
   </div>
   <div class="col-sm-9">
-    <h1>Text Verifications</h1>
-    <p></p>
+    <h1>Assertions</h1>
+    <h3>Introduction</h3>
 
-<p><p>Move a mouse over highlighted areas on a screenshot below to get a documentation regarding UI elements</p>
-</p>
+<p>RCPTT supports two recording modes: the Recording mode and the Assertion mode. 
+You can select any of them by clicking on the corresponding button of the 
+the <a href="https://www.eclipse.org/rcptt/documentation/controlpanel/">Control Panel</a> toolbar. 
+You can also use hotkeys to switch between them, which is useful for some cases when a mouse click affects the 
+current state of any AUT elements. The hotkey hint is shown in the bottom 
+of the <a href="https://www.eclipse.org/rcptt/documentation/controlpanel/">Control Panel</a> window.</p>
 
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-text-verification-editor-1.png"></img>
-  
-        
-<div class="ann" style="top:93px;left:118px;">
-  <div class="ann-border" style="width:100px;height:19px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Verification name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with 
-  underscore character.
-  
-  </div>
-</div>
-
-        
-<div class="ann" style="top:119px;left:118px;">
-  <div class="ann-border" style="width:100px;height:19px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>
-  
-  </div>
-</div>
-  
-        
-<div class="ann" style="top:92px;left:616px;">
-  <div class="ann-border" style="width:75px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Make a snapshot of a text from AUT widget defined in   <span class="uiElement">Widget</span>
- field and copy it into this verification. 
-  
-  </div>
-</div>
-
-        
-<div class="ann" style="top:118px;left:616px;">
-  <div class="ann-border" style="width:75px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Verifies whether a text in a text   <span class="uiElement">Widget</span>
- equals the text from a verification. If   <span class="uiElement">Ignore text styling and colors</span>
- option is off,
-  verifies text style as well.  
-  
-  </div>
-</div>
-  
-        
-<div class="ann" style="top:202px;left:126px;">
-  <div class="ann-border" style="width:511px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      AUT text widget from which a text is taken for verification. You can set the value manually or using   <span class="uiElement">Pick...</span>
- button.
-  
-  </div>
-</div>
-  
-        
-<div class="ann" style="top:202px;left:643px;">
-  <div class="ann-border" style="width:42px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Use this button to select AUT text widget for verification.
-  
-  </div>
-</div>
-  
-        
-<div class="ann" style="top:261px;left:75px;">
-  <div class="ann-border" style="width:595px;height:159px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Verified text. If   <span class="uiElement">Ignore text styling and colors</span>
- option is on you can edit text value. 
-  
-  </div>
-</div>
-  
-  
- </div>
+<p>In assertion mode you can verify any property of any widget (tree, button, text, canvas, etc.).</p>
 
 <h3>How it works</h3>
 
-<p>Let's say you need to check the result of creating <i>public static void main</i> method stubs while adding a new Java Class.</p>
-
-<p>So you go through the following steps:</p>
-
-<ul>
-<li>Create a new test case, add required <a href = "/documentation/contexts">contexts</a> and start recording. 
-Create new Java class and check "create public static void main stubs" option. Stop recording - your actions are recorded as ECL script:</li>
+<p>During a test recording switch to assertion mode:</p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-text-verification-1.png"></img></div>
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-1.png"></img>
   
-<li>In a test case editor go to <b>Verification</b> tab and press <span class="uiElement"><img src="https://www.eclipse.org/rcptt/img/ui-add.gif"></img> Add</span> button.
-Click <span class="uiElement"><img src="https://www.eclipse.org/rcptt/img/ui-capture.gif"></img>Capture</span> button and select <b>Widget text</b> verification type. 
-Set verification name and press Finish. Now, while you are in a Capture mode, select Java Class editor. Your verification will be added into a test:</li>
-
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-text-verification-2.png"></img></div>
-
-<li>If you open verification you can see that it contains the styled text to verify and the widget to take the text from. Verification checks both: widget 
-content and text styles. If you want to verify a plain text only, then you should select   <span class="uiElement">Ignore text styling and colors</span>
- option.</li>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-text-verification-3.png"></img></div>
+        
+<div class="ann" style="top:62px;left:210px;">
+  <div class="ann-border" style="width:22px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+     Use button to switch to assertion mode
   
-<li>Now, when you run your test case, it's verification result will be shown in a Execution View:</li>
+  </div>
+</div>
+
+        
+<div class="ann" style="top:250px;left:55px;">
+  <div class="ann-border" style="width:300px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      You can also use hotkeys to switch to assertion mode
+  
+  </div>
+</div>
+  </div>
+
+<p>Select any AUT widget you want to assert (you will see red frames). 
+  Let's say we need to assert that Finish button is disabled in New Java Class Dialog:</p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-text-verification-4.png"></img></div>
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-2.png"></img>
+  </div>
 
-</ul>
+<p>Once you select a button the assertion window appears containing widget properties with their values.
+  Select the required one and press <span class="uiElement"><img src="https://www.eclipse.org/rcptt/img/ui-add.gif"></img> Add</span> button:</p>
+
+<div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-3.png"></img>
+  </div>
+
+<p>The assertion code is added to your test script immidiately:</p>
+
+<div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-4.png"></img>
+  </div>
+
+<h3>Negative case. How to assert the absence of the elements?</h3>
+
+<p>Sometimes we need to verify the absence of some UI element, like when we've deleted an item from a tree we 
+  need to verify that there is no such an item anymore.</p>
+
+<p>We can do it with the help of <b>verify-error</b> command.
+  Let's say we need to verify that there is no <b>New/Java Project</b> menu when we are in a Plug-in Development Perspective.
+  So we add a negative assertion manually:</p>
+
+<div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-5.png"></img>
+  </div>
   </div>
 </div>
       </div>

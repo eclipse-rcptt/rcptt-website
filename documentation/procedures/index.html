@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<head>
+  <title>RCP Testing Tool (RCPTT)</title>
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/components/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/css/main.css">
+  <link rel="icon" type="image/png" href="https://www.eclipse.org/rcptt/img/favicon.png">
+  <script src="https://www.eclipse.org/rcptt/components/jquery/jquery.js"></script>
+  <script src="https://www.eclipse.org/rcptt/components/bootstrap/js/bootstrap.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-39589807-5', 'eclipse.org');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body>
+  <div id="before-footer">
+    <header>
+      <nav class="navbar navbar-default navbar-static-top" role="navigation">
+	<div class="container">
+	  
+	  <div class="navbar-header">
+	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+	    </button>
+	    <a class="navbar-brand" href="https://www.eclipse.org/rcptt/">RCPTT</a>
+	  </div>
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    <ul class="nav navbar-nav">
+
+	      <li >
+		<a href="https://www.eclipse.org/rcptt/">Home</a>
+	      </li>
+	      <li >
+		<a href="https://www.eclipse.org/rcptt/download/">Download</a>
+	      </li>
+
+	      <li >
+		<a href="https://www.eclipse.org/rcptt/documentation/getstarted/">Documentation</a>
+	      </li>
+	      <li >
+		<a href="https://www.eclipse.org/rcptt/sources/">Sources</a>
+	      </li>
+	      <li >
+		<a href="https://www.eclipse.org/rcptt/support/">Support</a>
+	      </li>
+	      <li>
+		<a href="http://eclipse.org">Eclipse.org</a>
+	      </li>
+	    </ul>
+	  </div>
+      </nav>
+    </header>
+    <section class="content">
+      <div class="container">
+	<div class="row">
+  <div class="col-sm-3">
+    <div class="rcptt-sidebar">
+      <ul class="nav">
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/getstarted/">Get Started</a>
+	  	</li>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/testeditor/">Test Case Editor</a>
+	  	</li>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/controlpanel">Control Panel</a>
+	  	</li>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/assertions/">Assertions</a>
+	  	</li>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/contexts/">Contexts</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/workspace/">Workspace</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/workbench/">Workbench</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/launch/">Launch</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/preferences/">Preferences</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/parameters/">Parameters</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/group/">Group</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/folder/">Folder</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/default/">Default</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/contexts/super/">Super</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/verifications/">Verifications</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/verifications/text/">Text</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/verifications/treetable/">Table/Tree</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/verifications/errorlog/">Error Log</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/verifications/time/">Time</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li class="active" ><a href="https://www.eclipse.org/rcptt/documentation/procedures/">Procedures and Variables</a>
+	  	</li>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/">FAQ</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/faq/passValue/">How to pass a value to a test during its execution?</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+	      </ul>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <h1>Procedures and Variables</h1>
+    <p></p>
+
+<h3>Introduction</h3>
+
+<p>While automated recording in RCPTT works well, a lot of advanced users prefer to write ECL scripts manually, 
+as it allows to create more flexible and maintainable test cases. So we have significantly 
+improved the expressive power of ECL by introducing user-defined variables (via let blocks) and user-defined procedures
+(via proc commands). Before going into details, here's a simple example - suppose we are testing Java editor and would 
+like to hover a ruler on a currently selected line. Here's how it can be done without using variables in a plain old ECL:
+<br></p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-procedures-1.png"></img>
+  </div>
+  </div>
+</div>
+
+<p><br>
+  This is not so much easy to write, and, what is more impotant, not so easy to understand. 
+  Now take a look how the same actions can be expressed using variables:</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-procedures-2.png"></img>
+  </div>
+  </div>
+</div>
+
+<p>And if we need to do this operation multiple times in different scripts, we can rewrite it to a procedure:</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-procedures-3.png"></img>
+  </div>
+  </div>
+</div>
+
+<h3>Let</h3>
+
+<p>Variables are immutable and once set, their value cannot be changed, so probably it it more correct to name them as 'named values', 
+but we are going to use a term 'variable' as it more familiar and recognizable. 'let' command allows to declare an arbitrary number 
+of variables and then execute a script referring these variables. Variables are visible only in a script, passed to a 'let' command. Here's a
+ simple example of a 'let' block, which declares a variable 'foo' and shows a message box with its value:</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-procedures-4.png"></img>
+  </div>
+  </div>
+</div>
+
+<p>We can put as many 'val' declarations as required, and specify a result of another command as a value.
+ So, in a script below we store a result of 'get-window' invocation in a variable 'window':</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-procedures-5.png"></img>
+  </div>
+  </div>
+</div>
+
+<p>Also, it is possible to take a value of a variable from an input pipe by specifying '-input' 
+argument after variable name. In this case, the value of a variable will be taken from an input pipe of a 'let' command:</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-procedures-6.png"></img>
+  </div>
+  </div>
+</div>
+
+<p>This might be particularly useful in a combination with 'foreach' command:</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-procedures-7.png"></img>
+  </div>
+  </div>
+</div>
+
+<p>Let blocks also can be nested:</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-procedures-8.png"></img>
+  </div>
+  </div>
+</div>
+
+<h3>Proc</h3>
+
+<p>Similar to TCL language, a command 'proc' can be used to declare a user-defined procedure. 
+It takes a procedure name, parameters and body as arguments. Once 'proc' command is executed, a new command 
+with a procedure name becomes available and can be executed as any built-in ECL command. Because of current ECL syntax restriction, 
+if a procedure name contains a '-' character, its value should be enclosed into double quotes during declaration. 
+However, to invoke a procedure, double quotes are not required (and even prohibited). Here's an example of a procedure without arguments:</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-procedures-9.png"></img>
+  </div>
+  </div>
+</div>
+
+<p>Procedure can declare an arbitrary number of arguments:</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-procedures-10.png"></img>
+  </div>
+  </div>
+</div>
+
+<p>Procedures can define 'input' arguments and default values for arguments:</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-procedures-11.png"></img>
+  </div>
+  </div>
+</div>
+
+<h3>ECL and RCPTT</h3>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-procedures-12.png"></img>
+  </div>
+  </div>
+</div>
+
+<p>All changes described above are available in core ECL and available when ECL is used without RCPTT, 
+however, when it comes to RCPTT, it becomes even more powerful:</p>
+
+<ul>
+<li>Procedures can be declared in ECL contexts, and in this case they will be available to all test cases, referring to declaring context</li>
+<li>Values declared in Parameter contexts can be accessed in the same way as variables, using $-syntax</li>
+<li>ECL and parameter contexts can be added to <a href="https://www.eclipse.org/rcptt/documentation/contexts/default/">default contexts</a>, and therefore, automatically become available in all test cases in given project</li>
+<li>Test case and ECL editors support completion, navigation and documentation for procedures, variables in 'let' blocks and parameter names from <a href="https://www.eclipse.org/rcptt/documentation/contexts/parameters/">parameters contexts</a></li>
+
+</ul>
+
+<p>A sample project, illustrating the expressive power of procedures is available on GitHub - https://github.com/xored/q7.examples.procs. 
+You can run a test case from this project on your machine by executing the following commands in shell:</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    $ git clone https://github.com/xored/q7.examples.procs.git<br>
+$ cd q7.examples.procs<br>
+$ mvn clean package<br>
+  </div>
+</div>
+  </div>
+</div>
+      </div>
+
+    </section>
+    <div class="push"></div>
+    </div>
+    <footer class="container">
+      <ul>
+	<li><a href="http://www.eclipse.org/">Eclipse</a></li>
+	<li><a href="http://www.eclipse.org/legal/privacy.php">Privacy Policy</a></li>
+	<li><a href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</a></li>
+	<li><a href="http://www.eclipse.org/legal/copyright.php">Copyright Agent</a></li>
+	<li><a href="http://www.eclipse.org/legal/">Legal</a></li>
+	<li><a href="http://www.eclipse.org/org/foundation/contact.php">Contact Us</a></li>
+      </ul>
+      <a href="http://www.eclipse.org/">
+	<img src="https://www.eclipse.org/rcptt/img/small-eclipse-logo.png" alt="Eclipse logo"></a>
+    </footer>
+    <script src="https://www.eclipse.org/rcptt/js/main.js"></script>
+</body>
