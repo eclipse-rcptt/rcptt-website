@@ -1,112 +1,39 @@
-.rcptt-sidebar {
-    padding: .25em;
-    border-radius: 1em;
-    border: 1px solid #ddd;
-    background-color: #f0f0f0;
-    
+/*
+Text indent for beautiful paragraphs
+*/
+p{
+    text-indent: 1.5em;
+}
+p.block{
+    max-width: 420px; 
+    float: left;
+    margin-right: 50px;
 }
 
-.rcptt-sidebar > .nav > li a {
-    padding-top: .25em;
-    padding-bottom: .5em;
-}
-ul.nav ul.nav li a {
-    padding-left: 2em;
-}
+#novaContent li{
+    list-style: none;
 
-section.content .rcptt-sidebar li.active > a {
-    border-radius: .75em;
-    color: #fff;
-    background-color: #aaa;
 }
-
-footer {
-    border-radius: 3px;
-    border: 1px solid #ddd;
-    background-color: #f0f0f0;
-}
-
-footer ul {
-    padding-top: 1em;
+#novaContent li:before{
+    content: "\00BB";
+    color: #f7941e;
+    margin-left: -16px;
+    margin-right: 10px;
+    display: block;
     float: left;
 }
-footer ul li {
-    display: inline;
-    padding-right: 15px;
+/*
+Table with downloads content on /downloads page
+*/
+table.downloads{
+    border: none;
+    width: 100%;
+    margin-bottom: 20px;
 }
-
-footer img {
-    float: right;
-    padding-right: 2em;
-    padding-top: 1em;
+table.downloads td{
+   padding: 20px;
+   vertical-align: top;
 }
-html, body {
-    height: 100%;
+table.downloads tr.icons{
+    border-bottom: 1px solid #eee;
 }
-#before-footer {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -4em; /* the bottom margin is the negative value of the footer's height */
-}
-
-footer, .push {
-    height: 4em; /* .push must be the same height as .footer */
-}
-
-span.uiElement {
-    background-color: #f3f3f3;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    padding: 2px 4px;
-    font-size: 90%;
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
-    white-space: nowrap;
-}
-
-kbd {
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    padding: 2px 4px;
-    font-size: 90%;
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
-    color: #000;
-    background-color: #fff;
-}
-
-span.uiElement > img {
-    padding-bottom: 4px;
-}
-
-div.screenshot {
-    position: relative;
-}
-
-div.screenshot div.ann {
-    position: absolute;
-    max-width:500px;
-}
-
-div.ann-border {
-    border: 1px solid #f77;
-}
-
-div.ann-border+div.ann-overlay {
-    display:none;
-    background-color: #ffffda;
-    padding: 5px; 5px; 5px; 5px;
-    border: 1px solid #000;
-    border-radius: 2px;
-    position:relative;
-    z-index: 100500;
-}
-
-div.ann-overlay p {
-    margin-bottom: 0px;
-}
-
-div.ann-overlay p + p{
-    margin-top: 10px;
-}
-
-
