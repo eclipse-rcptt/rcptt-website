@@ -69,7 +69,7 @@
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/controlpanel">Control Panel</a>
 	  	</li>
-		<li class="active" ><a href="https://www.eclipse.org/rcptt/documentation/assertions/">Assertions</a>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/assertions/">Assertions</a>
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/ecl/">Eclipse Command Language</a>
 	  	</li>
@@ -142,7 +142,7 @@
 	    	    <li >
 	      <a href="https://www.eclipse.org/rcptt/documentation/faq/verifyControlSize/">How to verify changing control sizes?</a>
 	    </li>
-	    	    <li >
+	    	    <li  class="active" >
 	      <a href="https://www.eclipse.org/rcptt/documentation/faq/suiteOrder/">Is it possible to order tests in a Test Suite?</a>
 	    </li>
 	    	  </ul>
@@ -151,79 +151,54 @@
     </div>
   </div>
   <div class="col-sm-9">
-    <h1>Assertions</h1>
+    <h1>Is it possible to order tests in a Test Suite?</h1>
     <p></p>
 
-<h3>Introduction</h3>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <i>Is it possible to change the test case order inside a test suite? Currently it is organized in an alphabetical order...</i>
+  </div>
+</div>
 
-<p>RCPTT supports two recording modes: the Recording mode and the Assertion mode. 
-You can select any of them by clicking on the corresponding button of the 
-the <a href="https://www.eclipse.org/rcptt/documentation/controlpanel/">Control Panel</a> toolbar. 
-You can also use hotkeys to switch between them, which is useful for some cases when a mouse click affects the 
-current state of any AUT elements. The hotkey hint is shown in the bottom 
-of the <a href="https://www.eclipse.org/rcptt/documentation/controlpanel/">Control Panel</a> window.</p>
+<p>One of core RCPTT principles is test independence (from each other), so you should not rely on test execution order. 
+Test cases independency is one of core principles of testing, and we believe RCPTT plays extremely well to implement 
+this principle with <a href="https://www.eclipse.org/rcptt/documentation/contexts/">Contexts</a>.</p>
 
-<p>In assertion mode you can verify any property of any widget (tree, button, text, canvas, etc.).</p>
+<p>However, there is a possibility to change test case order (disabled by defaut).</p>
 
-<h3>How it works</h3>
+<p>To do this, please open rcptt.ini file and add <b><i>-Dorg.eclipse.rcptt.legacy.testSuite.manualOrdering=true</i></b> line after -vmargs.</p>
 
-<p>During a test recording switch to assertion mode:</p>
+<p>Once RCPTT is started you can see Move Up/Move Down buttons in Test Suite editor:</p>
+
+<p><p>Move a mouse over highlighted areas on a screenshot below to get a documentation regarding UI elements</p>
+</p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-1.png"></img>
-  
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-test-suite-editor.png"></img>
         
-<div class="ann" style="top:62px;left:210px;">
-  <div class="ann-border" style="width:22px;height:22px;"></div>
+<div class="ann" style="top:405px;left:519px;">
+  <div class="ann-border" style="width:153px;height:80px;"></div>
   <div class="ann-overlay" style="left:0px;;">
-     Use button to switch to assertion mode
+      Change order of test cases in a Test Suite (make the Test Suite orderable). 
   
   </div>
 </div>
 
-        
-<div class="ann" style="top:250px;left:55px;">
-  <div class="ann-border" style="width:300px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      You can also use hotkeys to switch to assertion mode
-  
+</div>
+
+<div class="panel panel-warning">
+<div class="panel-heading">
+    <h3 class="panel-title">Important</h3>
+  </div>
+  <div class="panel-body">
+  <ul>
+<li>Internally test suites store an option flag - ordered/unordered. By default all test suites are unordered</li>
+<li>If test suite is ordered OR there's an option in ini-file - test suite editor shows up/down buttons to change test case order.</li>
+<li>Changing test order automatically converts unordered test suite to ordered.</li>
+</ul>
+Therefore, this ini-file option is just a 'hidden' way to convert unordered test suites to ordered. Once a test suite is saved as ordered, any user who opens it should see buttons for changing test order in a test suite disregarding of whether they have this option or not.
   </div>
 </div>
-  </div>
-
-<p>Select any AUT widget you want to assert (you will see red frames). 
-  Let's say we need to assert that Finish button is disabled in New Java Class Dialog:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-2.png"></img>
-  </div>
-
-<p>Once you select a button the assertion window appears containing widget properties with their values.
-  Select the required one and press <span class="uiElement"><img src="https://www.eclipse.org/rcptt/img/ui-add.gif"></img> Add</span> button:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-3.png"></img>
-  </div>
-
-<p>The assertion code is added to your test script immidiately:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-4.png"></img>
-  </div>
-
-<h3>Negative case. How to assert the absence of the elements?</h3>
-
-<p>Sometimes we need to verify the absence of some UI element, like when we've deleted an item from a tree we 
-  need to verify that there is no such an item anymore.</p>
-
-<p>We can do it with the help of   <a href="http://download.xored.com/q7/docs/ecl-api/latest#verify-error">verify-error</a>
- command.
-  Let's say we need to verify that there is no <b>New/Java Project</b> menu when we are in a Plug-in Development Perspective.
-  So we add a negative assertion manually:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-5.png"></img>
-  </div>
   </div>
 </div>
       </div>

@@ -69,7 +69,7 @@
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/controlpanel">Control Panel</a>
 	  	</li>
-		<li class="active" ><a href="https://www.eclipse.org/rcptt/documentation/assertions/">Assertions</a>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/assertions/">Assertions</a>
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/ecl/">Eclipse Command Language</a>
 	  	</li>
@@ -151,79 +151,40 @@
     </div>
   </div>
   <div class="col-sm-9">
-    <h1>Assertions</h1>
+    <h1>How to extract an SWT widget from ECL command?</h1>
     <p></p>
 
-<h3>Introduction</h3>
-
-<p>RCPTT supports two recording modes: the Recording mode and the Assertion mode. 
-You can select any of them by clicking on the corresponding button of the 
-the <a href="https://www.eclipse.org/rcptt/documentation/controlpanel/">Control Panel</a> toolbar. 
-You can also use hotkeys to switch between them, which is useful for some cases when a mouse click affects the 
-current state of any AUT elements. The hotkey hint is shown in the bottom 
-of the <a href="https://www.eclipse.org/rcptt/documentation/controlpanel/">Control Panel</a> window.</p>
-
-<p>In assertion mode you can verify any property of any widget (tree, button, text, canvas, etc.).</p>
-
-<h3>How it works</h3>
-
-<p>During a test recording switch to assertion mode:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-1.png"></img>
-  
-        
-<div class="ann" style="top:62px;left:210px;">
-  <div class="ann-border" style="width:22px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-     Use button to switch to assertion mode
-  
+<div class="panel panel-default">
+  <div class="panel-body">
+   <i> I am trying to make a custom ECL command to extract a data from table in order to make my custom assertions on that data. 
+    I want to use the result of: get-table | ...<br>
+But when I read an object from process.getInput().read(), I get an object of the class ControlHandlerImpl and I don't know how to handle this further. 
+ Do you have some examples using the input pipe?</i>
   </div>
 </div>
 
-        
-<div class="ann" style="top:250px;left:55px;">
-  <div class="ann-border" style="width:300px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      You can also use hotkeys to switch to assertion mode
-  
+<p>When RCPTT passes controls around (like in 'get-view "..." | get-tree), it does not operate on widgets, instead, a special descriptor EMF objects used. 
+There is a special command get-object, which allows to extract an actual widget object and pass it to other command.<br>
+Therefore, while writing custom command, it is better to declare an input parameter in EMF model as EJavaObject and then use it like this:<br> <br></p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    get-view "Package Explorer" | get-tree | get-object | my-custom-tree-command
   </div>
 </div>
-  </div>
 
-<p>Select any AUT widget you want to assert (you will see red frames). 
-  Let's say we need to assert that Finish button is disabled in New Java Class Dialog:</p>
+<p>A good starting point to look at might be an   <a href="http://download.xored.com/q7/docs/ecl-api/latest#invoke">invoke</a>
+ command, which takes a Java object from input and invokes methods via reflection.</p>
 
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-2.png"></img>
-  </div>
-
-<p>Once you select a button the assertion window appears containing widget properties with their values.
-  Select the required one and press <span class="uiElement"><img src="https://www.eclipse.org/rcptt/img/ui-add.gif"></img> Add</span> button:</p>
+<p>It's model is described like this:</p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-3.png"></img>
+  <img src="https://www.eclipse.org/rcptt/img/screenshot-invoke-model.png"></img>
   </div>
 
-<p>The assertion code is added to your test script immidiately:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-4.png"></img>
-  </div>
-
-<h3>Negative case. How to assert the absence of the elements?</h3>
-
-<p>Sometimes we need to verify the absence of some UI element, like when we've deleted an item from a tree we 
-  need to verify that there is no such an item anymore.</p>
-
-<p>We can do it with the help of   <a href="http://download.xored.com/q7/docs/ecl-api/latest#verify-error">verify-error</a>
- command.
-  Let's say we need to verify that there is no <b>New/Java Project</b> menu when we are in a Plug-in Development Perspective.
-  So we add a negative assertion manually:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-5.png"></img>
-  </div>
+<p><br>
+  An implementation of   <a href="http://download.xored.com/q7/docs/ecl-api/latest#invoke">invoke</a>
+ command can be found at Github ECL repo - InvokeService.java.</p>
   </div>
 </div>
       </div>

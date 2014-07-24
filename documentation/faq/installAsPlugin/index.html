@@ -69,7 +69,7 @@
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/controlpanel">Control Panel</a>
 	  	</li>
-		<li class="active" ><a href="https://www.eclipse.org/rcptt/documentation/assertions/">Assertions</a>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/assertions/">Assertions</a>
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/ecl/">Eclipse Command Language</a>
 	  	</li>
@@ -130,7 +130,7 @@
 	    	    <li >
 	      <a href="https://www.eclipse.org/rcptt/documentation/faq/passValue/">How to pass a value to a test during its execution?</a>
 	    </li>
-	    	    <li >
+	    	    <li  class="active" >
 	      <a href="https://www.eclipse.org/rcptt/documentation/faq/installAsPlugin/">Can RCPTT be installed as an Eclipse plugin?</a>
 	    </li>
 	    	    <li >
@@ -151,79 +151,26 @@
     </div>
   </div>
   <div class="col-sm-9">
-    <h1>Assertions</h1>
+    <h1>Can RCPTT be installed as Eclipse plugin?</h1>
     <p></p>
 
-<h3>Introduction</h3>
+<p>RCPTT consists of two parts - RCPTT IDE, which is used for launching AUTs, developing and running test cases, 
+and RCPTT Runtime (hidden), which is automatically put inside AUT in order to provide recording/replaying of user actions.</p>
 
-<p>RCPTT supports two recording modes: the Recording mode and the Assertion mode. 
-You can select any of them by clicking on the corresponding button of the 
-the <a href="https://www.eclipse.org/rcptt/documentation/controlpanel/">Control Panel</a> toolbar. 
-You can also use hotkeys to switch between them, which is useful for some cases when a mouse click affects the 
-current state of any AUT elements. The hotkey hint is shown in the bottom 
-of the <a href="https://www.eclipse.org/rcptt/documentation/controlpanel/">Control Panel</a> window.</p>
+<p>RCPTT IDE can be installed as an Eclipse plug-in (from marketplace or update site), but only into Eclipse 3.7 Indigo, as it uses some internal APIs. 
+Installing RCPTT IDE into Eclipse allows you to launch your AUT from sources.</p>
 
-<p>In assertion mode you can verify any property of any widget (tree, button, text, canvas, etc.).</p>
+<p>RCPTT Runtime supports all Eclipse versions from 3.5 to 4.4</p>
 
-<h3>How it works</h3>
+<p>If you want to use RCPTT to connect to AUT from sources, then you should be able to do it like this:</p>
 
-<p>During a test recording switch to assertion mode:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-1.png"></img>
-  
-        
-<div class="ann" style="top:62px;left:210px;">
-  <div class="ann-border" style="width:22px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-     Use button to switch to assertion mode
-  
-  </div>
-</div>
-
-        
-<div class="ann" style="top:250px;left:55px;">
-  <div class="ann-border" style="width:300px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      You can also use hotkeys to switch to assertion mode
-  
-  </div>
-</div>
-  </div>
-
-<p>Select any AUT widget you want to assert (you will see red frames). 
-  Let's say we need to assert that Finish button is disabled in New Java Class Dialog:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-2.png"></img>
-  </div>
-
-<p>Once you select a button the assertion window appears containing widget properties with their values.
-  Select the required one and press <span class="uiElement"><img src="https://www.eclipse.org/rcptt/img/ui-add.gif"></img> Add</span> button:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-3.png"></img>
-  </div>
-
-<p>The assertion code is added to your test script immidiately:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-4.png"></img>
-  </div>
-
-<h3>Negative case. How to assert the absence of the elements?</h3>
-
-<p>Sometimes we need to verify the absence of some UI element, like when we've deleted an item from a tree we 
-  need to verify that there is no such an item anymore.</p>
-
-<p>We can do it with the help of   <a href="http://download.xored.com/q7/docs/ecl-api/latest#verify-error">verify-error</a>
- command.
-  Let's say we need to verify that there is no <b>New/Java Project</b> menu when we are in a Plug-in Development Perspective.
-  So we add a negative assertion manually:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-5.png"></img>
-  </div>
+<ol>
+<li>Install RCPTT into Eclipse 3.7</li>
+<li>Set target platform to Eclipse 4.3</li>
+<li>Checkout your sources and create Eclipse Application launch configuration as you would normally do.</li>
+<li>In Run->Run configurations dialog find an 'Eclipse Application under Test' launch configuration type, create a new one and on launch configuration property page select your existing Eclipse Application launch configuration.
+If you switch to RCPTT perspective then, you should be able to see your AUT in Applications view and launch it.</li>
+</ol>
   </div>
 </div>
       </div>

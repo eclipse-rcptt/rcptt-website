@@ -69,7 +69,7 @@
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/controlpanel">Control Panel</a>
 	  	</li>
-		<li class="active" ><a href="https://www.eclipse.org/rcptt/documentation/assertions/">Assertions</a>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/assertions/">Assertions</a>
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/ecl/">Eclipse Command Language</a>
 	  	</li>
@@ -125,7 +125,7 @@
 	  	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/procedures/">Procedures and Variables</a>
 	  	</li>
-		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/">FAQ</a>
+		<li class="active" ><a href="https://www.eclipse.org/rcptt/documentation/faq/">FAQ</a>
 	  	  <ul class="nav">
 	    	    <li >
 	      <a href="https://www.eclipse.org/rcptt/documentation/faq/passValue/">How to pass a value to a test during its execution?</a>
@@ -151,79 +151,8 @@
     </div>
   </div>
   <div class="col-sm-9">
-    <h1>Assertions</h1>
-    <p></p>
-
-<h3>Introduction</h3>
-
-<p>RCPTT supports two recording modes: the Recording mode and the Assertion mode. 
-You can select any of them by clicking on the corresponding button of the 
-the <a href="https://www.eclipse.org/rcptt/documentation/controlpanel/">Control Panel</a> toolbar. 
-You can also use hotkeys to switch between them, which is useful for some cases when a mouse click affects the 
-current state of any AUT elements. The hotkey hint is shown in the bottom 
-of the <a href="https://www.eclipse.org/rcptt/documentation/controlpanel/">Control Panel</a> window.</p>
-
-<p>In assertion mode you can verify any property of any widget (tree, button, text, canvas, etc.).</p>
-
-<h3>How it works</h3>
-
-<p>During a test recording switch to assertion mode:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-1.png"></img>
-  
-        
-<div class="ann" style="top:62px;left:210px;">
-  <div class="ann-border" style="width:22px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-     Use button to switch to assertion mode
-  
-  </div>
-</div>
-
-        
-<div class="ann" style="top:250px;left:55px;">
-  <div class="ann-border" style="width:300px;height:22px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      You can also use hotkeys to switch to assertion mode
-  
-  </div>
-</div>
-  </div>
-
-<p>Select any AUT widget you want to assert (you will see red frames). 
-  Let's say we need to assert that Finish button is disabled in New Java Class Dialog:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-2.png"></img>
-  </div>
-
-<p>Once you select a button the assertion window appears containing widget properties with their values.
-  Select the required one and press <span class="uiElement"><img src="https://www.eclipse.org/rcptt/img/ui-add.gif"></img> Add</span> button:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-3.png"></img>
-  </div>
-
-<p>The assertion code is added to your test script immidiately:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-4.png"></img>
-  </div>
-
-<h3>Negative case. How to assert the absence of the elements?</h3>
-
-<p>Sometimes we need to verify the absence of some UI element, like when we've deleted an item from a tree we 
-  need to verify that there is no such an item anymore.</p>
-
-<p>We can do it with the help of   <a href="http://download.xored.com/q7/docs/ecl-api/latest#verify-error">verify-error</a>
- command.
-  Let's say we need to verify that there is no <b>New/Java Project</b> menu when we are in a Plug-in Development Perspective.
-  So we add a negative assertion manually:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/img/screenshot-assertion-5.png"></img>
-  </div>
+    <h1>FAQ</h1>
+    <p>Frequently Asked Questions</p>
   </div>
 </div>
       </div>
