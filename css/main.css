@@ -14,20 +14,40 @@ ul.nav ul.nav li a {
     padding-left: 2em;
 }
 
+<<<<<<< HEAD
 section.content .rcptt-sidebar li.active > a {
     border-radius: .75em;
     color: #fff;
     background-color: #aaa;
 }
+=======
+.content-wrapper{
+    float: left; 
+    width: 900px;
+    min-height: 400px;
+}
+
+.content-wrapper li{
+    list-style: none;
+>>>>>>> next
 
 footer {
     border-radius: 3px;
     border: 1px solid #ddd;
     background-color: #f0f0f0;
 }
+<<<<<<< HEAD
 
 footer ul {
     padding-top: 1em;
+=======
+.content-wrapper li:before{
+    content: "\00BB";
+    color: #f7941e;
+    margin-left: -16px;
+    margin-right: 10px;
+    display: block;
+>>>>>>> next
     float: left;
 }
 footer ul li {
