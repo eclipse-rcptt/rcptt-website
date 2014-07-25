@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+  <title>RCP Testing Tool (RCPTT)</title>
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/components/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/css/main.css">
+  <link rel="icon" type="image/png" href="https://www.eclipse.org/rcptt/img/favicon.png">
+  <script src="https://www.eclipse.org/rcptt/components/jquery/jquery.js"></script>
+  <script src="https://www.eclipse.org/rcptt/components/bootstrap/js/bootstrap.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-39589807-5', 'eclipse.org');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body>
+  <div id="before-footer">
+    <header>
+      <nav class="navbar navbar-default navbar-static-top" role="navigation">
+	<div class="container">
+	  
+	  <div class="navbar-header">
+	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+	    </button>
+	    <a class="navbar-brand" href="https://www.eclipse.org/rcptt/">RCPTT</a>
+	  </div>
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    <ul class="nav navbar-nav">
+
+	      <li  class="active" >
+		<a href="https://www.eclipse.org/rcptt/">Home</a>
+	      </li>
+	      <li >
+		<a href="https://www.eclipse.org/rcptt/download/">Download</a>
+	      </li>
+
+	      <li >
+		<a href="https://www.eclipse.org/rcptt/documentation/getstarted/">Documentation</a>
+	      </li>
+	      <li >
+		<a href="https://www.eclipse.org/rcptt/sources/">Sources</a>
+	      </li>
+	      <li >
+		<a href="https://www.eclipse.org/rcptt/support/">Support</a>
+	      </li>
+	      <li>
+		<a href="http://eclipse.org">Eclipse.org</a>
+	      </li>
+	    </ul>
+	  </div>
+      </nav>
+    </header>
+    <section class="content">
+      <div class="container">
+		<h1>RCP Testing Tool</h1>
+
+<p>RCP Testing Tool is a project for GUI testing automation of Eclispe-based applications. RCPTT is fully aware about Eclipse Platform's internals, hiding this complexity from end users and allowing QA engineers to create highly reliable UI tests at great pace.</p>
+
+<h3>Key features</h3>
+
+<ul>
+<li><strong>Test case creation productivity</strong> &ndash; ability to record user actions at the same level of efficiency as manual script creation, ability to capture initial/final application state into reusable models for further state restoring/verification.</li>
+<li><strong>First class support of Eclipse technologies</strong> &ndash; testing tool should be aware about key concepts of Eclipse Platform, including but not limited to Workspace, Workbench, Preferences, Debug API, as well as understand the underlying UI structure, like parts of Eclipse Workbench (views, editors, toolbars) and structure of GEF/GMF/Graphiti diagrams.</li>
+<li><strong>Intelligent runtime</strong> &ndash; automatic wait of UI-triggered background asynchronous operations (including jobs, display async/timer execs, decorations, databindings, text reconcilers, text hovers, and so on)</li>
+<li><strong>Reliable results</strong> &ndash; elemination of false negatives and false positives by isolation of test cases from each other, independence on screen size/operating system, etc.</li>
+<li><strong>Maintainability</strong> &ndash; test case artifacts should be easily modifyable to reflect UI changes and be version control system friendly</li>
+<li><strong>Extensibility</strong> &ndash; provide APIs for extending tool in order to support custom widgets, contexts, reports and async primitives.</li>
+</ul>
+
+<p>The minimal required configuration of applications under test is as simple as browsing for a folder for binary AUTs or choosing a PDE launch configuration for AUTs from sources. A typical workflow to create a test case which should work in most cases looks like this: capture an application state, record test actions, add assertions. More complex activities including test parameterization, extracting common pieces of functionality into reusable actions, writing test cases manually before UI, and test case debugging are also available. Developers can extend the tool's functionality to add record/replay support of custom widgets and capture/apply support of custom aspects of an application state.</p>
+
+<h1 class="text-center"><a href="https://www.eclipse.org/rcptt/documentation/getstarted"/>Get started</a></h1>
+	      </div>
+
+    </section>
+    <div class="push"></div>
+    </div>
+    <footer class="container">
+      <ul>
+	<li><a href="http://www.eclipse.org/">Eclipse</a></li>
+	<li><a href="http://www.eclipse.org/legal/privacy.php">Privacy Policy</a></li>
+	<li><a href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</a></li>
+	<li><a href="http://www.eclipse.org/legal/copyright.php">Copyright Agent</a></li>
+	<li><a href="http://www.eclipse.org/legal/">Legal</a></li>
+	<li><a href="http://www.eclipse.org/org/foundation/contact.php">Contact Us</a></li>
+      </ul>
+      <a href="http://www.eclipse.org/">
+	<img src="https://www.eclipse.org/rcptt/img/small-eclipse-logo.png" alt="Eclipse logo"></a>
+    </footer>
+    <script src="https://www.eclipse.org/rcptt/js/main.js"></script>
+</body>
