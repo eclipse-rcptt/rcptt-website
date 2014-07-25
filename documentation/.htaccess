@@ -1,7 +1,0 @@
-RewriteEngine On
-
-# Old doc links
-RewriteRule ^(getstarted|assertions|contexts|controlpanel|debugging|procedures|testeditor|verifications|ecl)(/(.+)?)? userguide/$1$2
-
-# New links -- add _generated segment
-RewriteRule ^(userguide|faq|js|css|components|img)(/(.+)?)? _generated/$1$2
