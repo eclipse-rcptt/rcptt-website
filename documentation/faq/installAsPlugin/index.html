@@ -57,7 +57,7 @@
       <ul class="nav">
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/passValue/">How to pass a value to a test during its execution?</a>
 	</li>
-		<li class="active" ><a href="https://www.eclipse.org/rcptt/documentation/faq/installAsPlugin/">Can RCPTT be installed as an Eclipse plugin?</a>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/installAsPlugin/">Can RCPTT be installed as an Eclipse plugin?</a>
 	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/resizeWindow/">How to resize a window?</a>
 	</li>
@@ -91,6 +91,49 @@ Installing RCPTT IDE into Eclipse allows you to launch your AUT from sources.</p
 <li>In Run->Run configurations dialog find an 'Eclipse Application under Test' launch configuration type, create a new one and on launch configuration property page select your existing Eclipse Application launch configuration.
 If you switch to RCPTT perspective then, you should be able to see your AUT in Applications view and launch it.</li>
 </ol>
+
+<div class="panel panel-warning">
+<div class="panel-heading">
+    <h3 class="panel-title">Juno/Luna/Kepler IDE integration planned at some time ?</h3>
+  </div>
+  <div class="panel-body">
+    We plan to support current Eclipse release, and probably will start with Luna or Kepler. You can design tests and run them for all versions of Eclipse with RCPTT. 
+    No restrictions on this.
+  </div>
+</div>
+
+<div class="panel panel-warning">
+<div class="panel-heading">
+    <h3 class="panel-title">If AUT from sources launching fails with error message: No org.eclipse.equinox.weaving.hook plugin</h3>
+  </div>
+  <div class="panel-body">
+    Solutions:<br><br>
+
+<ol>
+<li>If you open your target platforms in preferences, you can see a copy of your configured target, created with RCPTT. 
+Remove it and launch configuration with RCPTT again (target platform should be recreated).
+</li>
+<li>
+Copy four plugins from <br><br>
+
+<ul>
+
+<li>rcptt/plugins/org.eclipse.rcptt.updates.aspectj.e3x (from Eclipse 3.4 to 3.7) </li>
+<li>rcptt/plugins/org.eclipse.rcptt.updates.aspectj.e38x (from Eclipse 3.8 to 4.4) </li>
+<li>rcptt/plugins/org.eclipse.rcptt.updates.aspectj.e3x (from Eclipse 4.4 and higher) </li><br>
+</ul>
+right into eclipse/plugins folder(or whatever where Equinox plugins are located):<br><br>
+
+<ul>
+<li>org.eclipse.equinox.weaving.aspectj_qualifier.jar</li>
+<li>org.eclipse.equinox.weaving.hook_qualifier.jar</li>
+<li>org.aspectj.runtime_qualifier.jar</li>
+<li>org.aspectj.weaver_qualifier.jar</li> </ul>
+</li>
+</ol>
+
+  </div>
+</div>
   </div>
 </div>
       </div>

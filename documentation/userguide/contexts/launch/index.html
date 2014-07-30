@@ -344,20 +344,20 @@ during a debug process.</p>
 <p>To get this you need to create your Java class file, set a breakpoint, run this class in a debug
 mode, switch to debug perspective with variables view and (finally!) make a verification.</p>
 
-<p>But in fact all actions before a verification - is AUT state and not the test itself.  Using Q7 Contexts
+<p>But in fact all actions before a verification - is AUT state and not the test itself.  Using RCPTT Contexts
 you may make your test elegant and easy-maintaining.</p>
 
 <p>So you need the following contexts:</p>
 
 <ol>
-<li><a href = "http://www.eclipse.org/rcptt/documentation/userguide/contexts/workspace">Workspace context</a> - to put Java Project on AUT workspace:
+<li><a href = "https://www.eclipse.org/rcptt/documentation/userguide/contexts/workspace">Workspace context</a> - to put Java Project on AUT workspace:
   
   <p>Move a mouse over highlighted areas on a screenshot below to get a documentation regarding UI elements</p>
 <div class="screenshot">
 <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-workspace-context-for-launch-context-example.png"></img>
  </div> 
 </li>
-<li><a href = "http://www.eclipse.org/rcptt/documentation/userguide/contexts/workbench">Workbench context</a> - to switch to Debug Perspective:
+<li><a href = "https://www.eclipse.org/rcptt/documentation/userguide/contexts/workbench">Workbench context</a> - to switch to Debug Perspective:
 
 <div class="screenshot">
 <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-workbench-context-for-launch-context-example.png"></img>
@@ -379,7 +379,7 @@ Place these contexts into your test case and record your test which shrinks to a
 
 </ol>
 
-<p>You may note <i>Stop all launches</i> context marked as a <a href = "http://www.eclipse.org/rcptt/documentation/userguide/contexts/default">Default context</a>.
+<p>You may note <i>Stop all launches</i> context marked as a <a href = "https://www.eclipse.org/rcptt/documentation/userguide/contexts/default">Default context</a>.
 It terminates all active launches before a workspace context will try to delete all files.
 This hint helps us to avoid the situation when some files could be locked. It's a good practice
 to use this context as a Default Context for AUT with launches.</p>
