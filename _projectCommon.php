@@ -27,6 +27,7 @@
 	$Nav->addCustomNav("Downloads", "/rcptt/download", "_self", 1);
 	$Nav->addCustomNav("Documentation", "/rcptt/documentation", "_self", 1);
 	$Nav->addCustomNav("Support", "/rcptt/support", "_self", 1);
+	$Nav->addCustomNav("Forum", "https://www.eclipse.org/forums/index.php/f/281/", "_blank", 1);
 	$Nav->addCustomNav("Sources", "/rcptt/sources", "_self", 1);
 
 	# Define keywords, author and title here, or in each PHP page specifically
@@ -42,6 +43,7 @@
 	$Menu->addMenuItem("Downloads", "/rcptt/download", "_self");
 	$Menu->addMenuItem("Documentation", "/rcptt/documentation", "_self");
 	$Menu->addMenuItem("Support", "/rcptt/support", "_self");
+	$Menu->addMenuItem("Forum", "https://www.eclipse.org/forums/index.php/f/281/", "_blank");
 	$Menu->addMenuItem("Sources", "/rcptt/sources", "_self");
 
 	
