@@ -91,7 +91,7 @@ $nightlyHome=$downloadsHome . "/nightly";
 $latestNightlyUnqualified = getLastChild($nightlyHome);
 $latestNightlyHome = $nightlyHome . "/" . $latestNightlyUnqualified;
 $latestNightlyQualifier = getLastMatchingChild($latestNightlyHome, "/\\d+/");
-echo($latestNightlyHome . "/" . $latestNightlyQualifier);
+
 
 $html = "<div class='content-wrapper'>";
 $html .= "<h2>RCP Testing Tool IDE Downloads</h2>";
