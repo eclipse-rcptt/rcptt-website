@@ -50,7 +50,7 @@ function generateDownloadBlock($title, $baseUri) {
     $html .= "      <td>";
     $html .= "        <ul>";
     $html .= "          <li><a href='" . $linux32 . "'>Linux 32-bit</a></li>";
-    $html .= "          <li><a href='" . $linux32 . "'>Linux 64-bit</a></li>";
+    $html .= "          <li><a href='" . $linux64 . "'>Linux 64-bit</a></li>";
     $html .= "        </ul>";
     $html .= "      </td>";
     $html .= "      <td>";
