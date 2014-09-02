@@ -22,5 +22,5 @@ $downloadsHome=$App->getDownloadBasePath() . "/rcptt";
 $path=$downloadsHome . $_GET["path"];
 
 print_r(scandir($path));
-print_r(getLastMatchingChild($path, "/\\d+/"))
+print_r(getLastMatchingChild($path, "/\\d+/"));
 ?>
