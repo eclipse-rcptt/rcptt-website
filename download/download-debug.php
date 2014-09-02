@@ -8,6 +8,7 @@ function getLastMatchingChild($dir, $pattern) {
     $handle = opendir($dir);
     $result = "";
     while (($file = readdir($handle)) !== false) {
+        print_r($file);
         if(preg_match($pattern, $file) == 1) {
             $result = $file;
         }
