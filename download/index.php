@@ -15,14 +15,13 @@ function getLastChild($dir) {
 }
 
 function getLastMatchingChild($dir, $pattern) {
-    $handle = opendir($dir);
+    $children = scandir($dir);
     $result = "";
-    while (($file = readdir($handle)) !== false) {
-        if(preg_match($pattern, $file) == 1) {
-            $result = $file;
+    foreach ($children as &$child) {
+        if(preg_match($pattern, $child) == 1) {
+            $result = $child;
         }
     }
-    closedir($handle);
     return $result;
 }
 

@@ -5,17 +5,16 @@ function getLastChild($dir) {
 }
 
 function getLastMatchingChild($dir, $pattern) {
-    $handle = opendir($dir);
+    $children = scandir($dir);
     $result = "";
-    while (($file = readdir($handle)) !== false) {
-        print_r($file);
-        if(preg_match($pattern, $file) == 1) {
-            $result = $file;
+    foreach ($children as &$child) {
+        if(preg_match($pattern, $child) == 1) {
+            $result = $child;
         }
     }
-    closedir($handle);
     return $result;
 }
+
 require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/app.class.php");
 $App 	= new App();
 $downloadsHome=$App->getDownloadBasePath() . "/rcptt";
