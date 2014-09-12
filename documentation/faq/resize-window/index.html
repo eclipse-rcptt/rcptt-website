@@ -55,58 +55,83 @@
   <div class="col-sm-3">
     <div class="rcptt-sidebar">
       <ul class="nav">
-		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/passValue/">How to pass a value to a test during its execution?</a>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/pass-value/">How to pass a value to a test during its execution?</a>
 	</li>
-		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/installAsPlugin/">Can RCPTT be installed as an Eclipse plugin?</a>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/install-as-plugin/">Can RCPTT be installed as an Eclipse plugin?</a>
 	</li>
-		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/resizeWindow/">How to resize a window?</a>
+		<li class="active" ><a href="https://www.eclipse.org/rcptt/documentation/faq/resize-window/">How to resize a window?</a>
 	</li>
-		<li class="active" ><a href="https://www.eclipse.org/rcptt/documentation/faq/extractWidget/">How to extract an SWT widget from ECL command?</a>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/extract-widget/">How to extract an SWT widget from ECL command?</a>
 	</li>
-		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/verifyControlSize/">How to verify changing control sizes?</a>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/verify-control-size/">How to verify changing control sizes?</a>
 	</li>
-		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/suiteOrder/">Is it possible to order tests in a Test Suite?</a>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/suite-order/">Is it possible to order tests in a Test Suite?</a>
 	</li>
-		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/runtimeFeatures/">What does each runtime feature stand for?</a>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/runtime-features/">What does each runtime feature stand for?</a>
 	</li>
 	      </ul>
     </div>
   </div>
   <div class="col-sm-9">
-    <h1>How to extract an SWT widget from ECL command?</h1>
+    <h1>How to resize a window.</h1>
     <p></p>
 
-<div class="panel panel-default">
-  <div class="panel-body">
-   <i> I am trying to make a custom ECL command to extract a data from table in order to make my custom assertions on that data. 
-    I want to use the result of: get-table | ...<br>
-But when I read an object from process.getInput().read(), I get an object of the class ControlHandlerImpl and I don't know how to handle this further. 
- Do you have some examples using the input pipe?</i>
-  </div>
-</div>
+<p>Sometimes you may want a window to be a certain size.</p>
 
-<p>When RCPTT passes controls around (like in 'get-view "..." | get-tree), it does not operate on widgets, instead, a special descriptor EMF objects used. 
-There is a special command get-object, which allows to extract an actual widget object and pass it to other command.<br>
-Therefore, while writing custom command, it is better to declare an input parameter in EMF model as EJavaObject and then use it like this:<br> <br></p>
+<ol>
+<li>To <b>maximize</b> a window you may use   <a href="http://download.xored.com/q7/docs/ecl-api/latest#maximize">maximize</a>
+ ECL command:</li><br>
+<ul>
+<li>to maximize main Eclipse window:<br><br>
 
 <div class="panel panel-default">
   <div class="panel-body">
-    get-view "Package Explorer" | get-tree | get-object | my-custom-tree-command
+    get-eclipse-window | maximize
+  </div>
+</div>
+</li>
+
+<li>to maximize any window:<br><br>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    get-window "WindowTitle" | maximize
   </div>
 </div>
 
-<p>A good starting point to look at might be an   <a href="http://download.xored.com/q7/docs/ecl-api/latest#invoke">invoke</a>
- command, which takes a Java object from input and invokes methods via reflection.</p>
 
-<p>It's model is described like this:</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-invoke-model.png"></img>
+or
+<br><br>
+<div class="panel panel-default">
+  <div class="panel-body">
+    get-eclipse-window | get-object | invoke setMaximized true
+  </div>
 </div>
 
-<p>
-  An implementation of   <a href="http://download.xored.com/q7/docs/ecl-api/latest#invoke">invoke</a>
- command can be found at RCPTT repo.</p>
+</li>
+</ul>
+
+<li>To <b>minimize</b> a window:<br> <br>
+ <div class="panel panel-default">
+  <div class="panel-body">
+    get-eclipse-window | get-object | invoke setMinimized true
+  </div>
+</div>
+Note: sometimes you need to set Maximized to 'false' before minimizing.
+ <div class="panel panel-default">
+  <div class="panel-body">
+    get-eclipse-window | get-object | invoke setMaximized false<br>
+get-eclipse-window | get-object | invoke setMinimized true
+  </div>
+</div></li>
+<li>To <b>resize</b> a window:<br> <br>
+<div class="panel panel-default">
+  <div class="panel-body">
+    get-eclipse-window | get-object | invoke setSize 700 700
+  </div>
+</div>
+
+</ol>
   </div>
 </div>
       </div>
