@@ -6,6 +6,8 @@
   <link rel="icon" type="image/png" href="https://www.eclipse.org/rcptt/documentation/img/favicon.png">
   <script src="https://www.eclipse.org/rcptt/documentation/js/jquery.min.js"></script>
   <script src="https://www.eclipse.org/rcptt/documentation/js/bootstrap.min.js"></script>
+  <script src="https://www.eclipse.org/rcptt/documentation/js/prism.js"></script>
+  <script src="https://www.eclipse.org/rcptt/documentation/js/ecl.js"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -127,7 +129,9 @@
   </div>
   <div class="col-sm-9">
     <h1>Getting Started</h1>
-    <p>To get an impression what it looks like to work with RCPTT, you'll need the following:</p>
+    <p></p>
+
+<p>To get an impression what it looks like to work with RCPTT, you'll need the following:</p>
 
 <ul>
 <li>RCP Testing Tool IDE (<a href="https://eclipse.org/rcptt/download">download it here</a>).</li>
@@ -189,38 +193,42 @@
 
 <p>Before we go to <a href="https://www.eclipse.org/rcptt/documentation/userguide/contexts/">Contexts</a>, let's take a look at recorded script:</p>
 
-<pre><code>get-menu "File/New/Java Project" | click
+<p></p>
+<pre><code class="language-ecl">&#x200b;get-menu "File/New/Java Project" | click
 with [get-window "New Java Project"] {
     get-editbox -after [get-label "Project name:"] | set-text sample
     get-button Finish | click
 }
-get-view "Package Explorer" | get-tree | get-item "sample/src" | get-property childCount | equals 0 | verify-true
+get-view "Package Explorer" | get-tree | get-item "sample/src" | get-property childCount | equals 0 | verify-true</code></pre>
 </code></pre>
 
 <p>It's probably is understandable intuitively, but here's a brief description how does it work. A scripting language we use, <a href="https://www.eclipse.org/rcptt/documentation/userguide/ecl/">ECL</a> (which stands for Eclipse Command Language), is inspired by TCL and Powershell, and it consists of commands, connected by pipes.</p>
 
-<p>A command takes some input, arguments and optionally writes something to an output. A pipe (<code>|</code>) can be used to redirect an output of the left command to the input of the right command. So, a line <code>get-menu "File/New/Java Project" | click</code> works like this:</p>
+<p>A command takes some input, arguments and optionally writes something to an output. A pipe (<code class="language-ecl">&#x200b;|</code>) can be used to redirect an output of the left command to the input of the right command. So, a line <code class="language-ecl">&#x200b;get-menu &quot;File/New/Java Project&quot; | click</code> works like this:</p>
 
 <ol>
-<li><code>get-menu</code> command accepts a menu path (with segments separated by slashes) as an argument. Since there is no input (i.e. it is a first command in a pipeline), it assumes that given menu path addresses an application's main menu. So it makes sure that such menu path exists, and writes a reference to this menu item into its output.</li>
-<li><code>click</code> command takes a control reference from its input and sends events to emulate user's click</li>
+<li><code class="language-ecl">&#x200b;get-menu</code> command accepts a menu path (with segments separated by slashes) as an argument. Since there is no input (i.e. it is a first command in a pipeline), it assumes that given menu path addresses an application's main menu. So it makes sure that such menu path exists, and writes a reference to this menu item into its output.</li>
+<li><code class="language-ecl">&#x200b;click</code> command takes a control reference from its input and sends events to emulate user's click</li>
 </ol>
 
-<p>Next, get on a next line of a script, <code>with</code> command. Here we can see two important things:</p>
+<p>Next, get on a next line of a script, <code class="language-ecl">&#x200b;with</code> command. Here we can see two important things:</p>
 
 <ol>
-<li>An <em>output</em> of a command can be passed as an argument to another command by using square braces (i.e. <code>[some-command]</code>).</li>
-<li>A <em>command</em> itself can be passed as an argument to another command by using curly braces (i.e. <code>{ some-command }</code>).</li>
+<li>An <em>output</em> of a command can be passed as an argument to another command by using square braces (i.e. <code class="language-ecl">&#x200b;[some-command]</code>).</li>
+<li>A <em>command</em> itself can be passed as an argument to another command by using curly braces (i.e. <code class="language-ecl">&#x200b;{ some-command }</code>).</li>
 </ol>
 
-<p>So, the <code>with</code> command works like this:
-1. Takes an <em>object</em> as a first argument
-2. Takes a <em>script</em> (just a sequence of pipelines) as a second argument
-3. Executes a <em>script</em> by prepending an <em>object</em> to an output of each command.</p>
+<p>So, the <code class="language-ecl">&#x200b;with</code> command works like this:</p>
+
+<ol>
+<li>Takes an <em>object</em> as a first argument</li>
+<li>Takes a <em>script</em> (just a sequence of pipelines) as a second argument</li>
+<li>Executes a <em>script</em> by prepending an <em>object</em> to an output of each command.</li>
+</ol>
 
 <p>In our test case above, a reference to a window is passed as an input to all commands in with-block, so that we don't need to explicitly tell each command that it should use a window as an input.</p>
 
-<p>Another use of square braces in a script above, is identifying an editbox (<code>get-editbox -after [get-label "Project name:"]</code>). When we locate a textual input, we cannot rely on its text contents, so we are identifying it by its relative location to a label, hence we pass a label control (output of <code>get-label</code> command) as an argument to <code>get-editbox</code>. Also this line illustrates that commands may have named arguments, here <code>-after</code> is an argument name, while <code>[get-label&#8230;]</code> is argument value.</p>
+<p>Another use of square braces in a script above, is identifying an editbox (<code class="language-ecl">&#x200b;get-editbox -after [get-label &quot;Project name:&quot;]</code></code>). When we locate a textual input, we cannot rely on its text contents, so we are identifying it by its relative location to a label, hence we pass a label control (output of <code class="language-ecl">&#x200b;get-label</code> command) as an argument to <code class="language-ecl">&#x200b;get-editbox</code>. Also this line illustrates that commands may have named arguments, here <code class="language-ecl">&#x200b;-after</code> is an argument name, while <code class="language-ecl">&#x200b;[get-label ...]</code> is argument value.</p>
 
 <p>The last line, which has been recorded when we clicked <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-add.gif"></img> Add</span> button in an <span class="uiElement">Assertion Window</span>, should be pretty understandable now -- it takes a property from an object and verifies that its value is what we expect.</p>
 

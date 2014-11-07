@@ -6,6 +6,8 @@
   <link rel="icon" type="image/png" href="https://www.eclipse.org/rcptt/documentation/img/favicon.png">
   <script src="https://www.eclipse.org/rcptt/documentation/js/jquery.min.js"></script>
   <script src="https://www.eclipse.org/rcptt/documentation/js/bootstrap.min.js"></script>
+  <script src="https://www.eclipse.org/rcptt/documentation/js/prism.js"></script>
+  <script src="https://www.eclipse.org/rcptt/documentation/js/ecl.js"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -129,7 +131,42 @@
     <h1>New Command Guide</h1>
     <p></p>
 
-<p>In this guide we show how to create custom ECL commands. As an example we create two ECL commands for Eclipse Views. 
+<p>In this guide we show different ways of extending an existing ECL commands functionality, such as:</p>
+
+<ul>
+<li>Retrieve an existing method of Java Object with <b>get-object | invoke</b> commands</li>
+<li>Create static methods and use it with <b>invoke-static</b> command</li>
+<li>Create your own custom ECL command</li>
+</ul>
+
+<h2>Use <i>invoke</i> command to call an existing method of Java object.</h2>
+
+<p>Let's say we need to resize a window with given width and height.  There is now such a command in ECL script, 
+but we know that there is a corresponding <b><i>setSize(int width, int height)</i></b> method for Window Object.</p>
+
+<p>So using <a href="http://download.xored.com/q7/docs/ecl-api/latest#get-object"><b><i>get-object</i></b></a> and <a href="http://download.xored.com/q7/docs/ecl-api/latest#invoke"><b><i>invoke</i></b></a> ECL commands we can call this method:</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+<div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-invoke-1.png"></img>
+</div>
+</div>
+</div>
+
+<p>You can define <a href ="https://www.eclipse.org/rcptt/documentation/userguide/procedures">ECL procedure</a>, to make it more convenient:</p>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+<div class="screenshot">
+  <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-invoke-2.png"></img>
+</div>
+</div>
+</div>
+
+<h2>Create your own custom ECL command</h2>
+
+<p>We are going to show how to create custom ECL commands. As an example we create two ECL commands for Eclipse Views. 
 First one will show us all registered views in our Eclipse. And the second one will open specified view by ID.</p>
 
 <h3>Import RCPTT sources plugins</h3>
@@ -310,6 +347,13 @@ This allows us to get id of the view we need to open. Next we use Eclipse Platfo
 
 <p><br>
 By the way, you can use <b>show-views</b> command to find id of a view you want to open.</p>
+
+<div class="panel panel-danger">
+  <div class="panel-heading">Important!</div>
+  <div class="panel-body">
+    Please note that to make your new custom command work you need to include a plugin with your custom command into your AUT configuration. 
+  </div>
+  </div>
   </div>
 </div>
       </div>

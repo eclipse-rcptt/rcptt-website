@@ -78,3 +78,49 @@ div.ann-overlay p {
 div.ann-overlay p + p{
     margin-top: 10px;
 }
+
+
+pre.language-ecl {
+  background-color: #f5f5f5;
+  border: #ddd;border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  margin: 0px 0px;
+}
+code.language-ecl {
+  font-family: "Monaco", monospace;
+  background-color: #f5f5f5;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: normal;
+  margin: 0px 0px;
+  border: #ddd;border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  color: #000;
+
+}
+pre code.language-ecl {
+    border: none;
+}
+.token.comment {
+  color: #272;
+}
+.token.string {
+  color: #3933ff;
+}
+.token.operator {
+  color: #000;
+}
+.token.command {
+  color: #931a68;
+}
+.token.attr {
+  color: #555;
+}
