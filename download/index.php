@@ -25,7 +25,7 @@ function getLastMatchingChild($dir, $pattern) {
     return $result;
 }
 
-function generateDownloadBlock($title, $baseUri) {
+function generateDownloadBlock($title, $baseUri, $repoUri) {
     $html = "<h3>" . $title . "</h3>";
     $win32 = str_replace("[classifier]", "win32.win32.x86", $baseUri);
     $win64 = str_replace("[classifier]", "win32.win32.x86_64", $baseUri);
@@ -38,6 +38,7 @@ function generateDownloadBlock($title, $baseUri) {
     $html .= "      <td><img src='/rcptt/img/ico-win.png' /></td>";
     $html .= "      <td><img src='/rcptt/img/ico-linux.png' /></td>";
     $html .= "      <td><img src='/rcptt/img/ico-mac.png' /></td>";
+    $html .= "      <td><img src='/rcptt/img/ico-eclipse.png' /></td>";    
     $html .= "    </tr>";
     $html .= "    <tr>";
     $html .= "      <td>";
@@ -55,6 +56,11 @@ function generateDownloadBlock($title, $baseUri) {
     $html .= "      <td>";
     $html .= "        <ul>";
     $html .= "          <li><a href='" . $macosx64 . "'>Mac OS X 64-bit</a></li>";
+    $html .= "        </ul>";
+    $html .= "      </td>";
+    $html .= "      <td>";
+    $html .= "        <ul>";
+    $html .= "          <li><a href='" . $repoUri . "'>Update Site (Indigo)</a></li>";
     $html .= "        </ul>";
     $html .= "      </td>";
     $html .= "    </tr>";
@@ -95,9 +101,9 @@ $latestNightlyQualifier = getLastMatchingChild($latestNightlyHome, "/\\d+/");
 $html = "<div class='content-wrapper'>";
 $html .= "<h2>RCP Testing Tool IDE Downloads</h2>";
 
-$html .= generateDownloadBlock($latestRelease . " Release", "http://www.eclipse.org/downloads/download.php?file=/rcptt/release/" . $latestRelease . "/ide/rcptt.ide-" . $latestRelease ."-[classifier].zip");
+$html .= generateDownloadBlock($latestRelease . " Release", "http://www.eclipse.org/downloads/download.php?file=/rcptt/release/" . $latestRelease . "/ide/rcptt.ide-" . $latestRelease ."-[classifier].zip", "http://download.eclipse.org/rcptt/release/" . $latestRelease . "/repository");
 
-$html .= generateDownloadBlock($latestNightlyUnqualified . "." . $latestNightlyQualifier . " Nightly", "http://download.eclipse.org/rcptt/nightly/" . $latestNightlyUnqualified . "/" . $latestNightlyQualifier . "/ide/rcptt.ide-" . $latestNightlyUnqualified . "-N" . $latestNightlyQualifier . "-[classifier].zip");
+$html .= generateDownloadBlock($latestNightlyUnqualified . "." . $latestNightlyQualifier . " Nightly", "http://download.eclipse.org/rcptt/nightly/" . $latestNightlyUnqualified . "/" . $latestNightlyQualifier . "/ide/rcptt.ide-" . $latestNightlyUnqualified . "-N" . $latestNightlyQualifier . "-[classifier].zip", "http://download.eclipse.org/rcptt/nightly/" . $latestNightlyUnqualified . "/" . $latestNightlyQualifier . "/repository");
 $html .= "</div>";
 # www.eclipse.org/downloads/download.php?file=/rcptt/release/1.5.1/ide/rcptt.ide-1.5.1-macosx.cocoa.x86_64.zip
 
