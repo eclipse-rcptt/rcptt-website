@@ -24,6 +24,7 @@
 	# If you want to override the eclipse.org navigation, uncomment below.
 	$Nav->setLinkList(array());
 	$Nav->addCustomNav("Home", "/rcptt/", "_self", 1);
+	$Nav->addCustomNav("Blog", "/rcptt/blog", "_self", 1);
 	$Nav->addCustomNav("Downloads", "/rcptt/download", "_self", 1);
 	$Nav->addCustomNav("Documentation", "/rcptt/documentation", "_self", 1);
 	$Nav->addCustomNav("Support", "/rcptt/support", "_self", 1);
