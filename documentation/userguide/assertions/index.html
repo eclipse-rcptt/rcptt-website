@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <head>
   <title>RCPTT Documentation Center</title>
-  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/documentation/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/documentation/css/main.css">
-  <link rel="icon" type="image/png" href="https://www.eclipse.org/rcptt/documentation/img/favicon.png">
-  <script src="https://www.eclipse.org/rcptt/documentation/js/jquery.min.js"></script>
-  <script src="https://www.eclipse.org/rcptt/documentation/js/bootstrap.min.js"></script>
-  <script src="https://www.eclipse.org/rcptt/documentation/js/prism.js"></script>
-  <script src="https://www.eclipse.org/rcptt/documentation/js/ecl.js"></script>
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/main.css">
+  <link rel="icon" href="https://www.eclipse.org/rcptt/shared/img/favicon.ico">
+  <script src="https://www.eclipse.org/rcptt/shared/js/jquery.min.js"></script>
+  <script src="https://www.eclipse.org/rcptt/shared/js/bootstrap.min.js"></script>
+  <script src="https://www.eclipse.org/rcptt/shared/js/prism.js"></script>
+  <script src="https://www.eclipse.org/rcptt/shared/js/ecl.js"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -147,7 +147,7 @@ of the <a href="https://www.eclipse.org/rcptt/documentation/userguide/controlpan
 <p>During a test recording switch to assertion mode:</p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-assertion-1.png"></img>
+  <img src="https://www.eclipse.org/rcptt/shared/img/screenshot-assertion-1.png"></img>
   
         
 <div class="ann" style="top:62px;left:210px;">
@@ -172,20 +172,20 @@ of the <a href="https://www.eclipse.org/rcptt/documentation/userguide/controlpan
   Let's say we need to assert that Finish button is disabled in New Java Class Dialog:</p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-assertion-2.png"></img>
+  <img src="https://www.eclipse.org/rcptt/shared/img/screenshot-assertion-2.png"></img>
   </div>
 
 <p>Once you select a button the assertion window appears containing widget properties with their values.
-  Select the required one and press <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-add.gif"></img> Add</span> button:</p>
+  Select the required one and press <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-add.gif"></img> Add</span> button:</p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-assertion-3.png"></img>
+  <img src="https://www.eclipse.org/rcptt/shared/img/screenshot-assertion-3.png"></img>
   </div>
 
 <p>The assertion code is added to your test script immidiately:</p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-assertion-4.png"></img>
+  <img src="https://www.eclipse.org/rcptt/shared/img/screenshot-assertion-4.png"></img>
   </div>
 
 <h3>Negative case. How to assert the absence of the elements?</h3>
@@ -193,18 +193,17 @@ of the <a href="https://www.eclipse.org/rcptt/documentation/userguide/controlpan
 <p>Sometimes we need to verify the absence of some UI element, like when we've deleted an item from a tree we 
   need to verify that there is no such an item anymore.</p>
 
-<p>We can do it with the help of   <a href="http://download.xored.com/q7/docs/ecl-api/latest#verify-error">verify-error</a>
- command.
+<p>We can do it with the help of <a href="http://download.xored.com/q7/docs/ecl-api/latest#verify-error">verify-error</a> command.
   Let's say we need to verify that there is no <b>New/Java Project</b> menu when we are in a Plug-in Development Perspective.
   So we add a negative assertion manually:</p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-assertion-5.png"></img>
+  <img src="https://www.eclipse.org/rcptt/shared/img/screenshot-assertion-5.png"></img>
   </div>
   </div>
 </div>
       </div>
 
     </section>
-    <script src="https://www.eclipse.org/rcptt/documentation/js/main.js"></script>
+    <script src="https://www.eclipse.org/rcptt/shared/js/main.js"></script>
 </body>

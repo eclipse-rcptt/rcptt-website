@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <head>
   <title>RCPTT Documentation Center</title>
-  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/documentation/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/documentation/css/main.css">
-  <link rel="icon" type="image/png" href="https://www.eclipse.org/rcptt/documentation/img/favicon.png">
-  <script src="https://www.eclipse.org/rcptt/documentation/js/jquery.min.js"></script>
-  <script src="https://www.eclipse.org/rcptt/documentation/js/bootstrap.min.js"></script>
-  <script src="https://www.eclipse.org/rcptt/documentation/js/prism.js"></script>
-  <script src="https://www.eclipse.org/rcptt/documentation/js/ecl.js"></script>
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/main.css">
+  <link rel="icon" href="https://www.eclipse.org/rcptt/shared/img/favicon.ico">
+  <script src="https://www.eclipse.org/rcptt/shared/js/jquery.min.js"></script>
+  <script src="https://www.eclipse.org/rcptt/shared/js/bootstrap.min.js"></script>
+  <script src="https://www.eclipse.org/rcptt/shared/js/prism.js"></script>
+  <script src="https://www.eclipse.org/rcptt/shared/js/ecl.js"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -146,7 +146,7 @@
 
 <h3>Add an application-under-test</h3>
 
-<p>To be able to record and replay tests in an application, RCPTT IDE should launch application by itself. To add an application-under-test, go to <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-applications.gif"></img> Applications</span> view and click <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-new-aut.gif"></img> New&#8230;</span> button on View toolbar (alternatively, you may right-click anywhere inside a view and choose <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-new-aut.gif"></img> New&#8230;</span> in a context menu).</p>
+<p>To be able to record and replay tests in an application, RCPTT IDE should launch application by itself. To add an application-under-test, go to <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-applications.gif"></img> Applications</span> view and click <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-new-aut.gif"></img> New&#8230;</span> button on View toolbar (alternatively, you may right-click anywhere inside a view and choose <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-new-aut.gif"></img> New&#8230;</span> in a context menu).</p>
 
 <p>In a dialog open, browse for an application-under-test (AUT) location on a disk. Once RCPTT IDE analyzes an AUT, it will automatically set its name to AUT's product id, however you may change it to whatever you like.</p>
 
@@ -156,9 +156,9 @@
 
 <p>RCPTT stores test cases just as usual files on a file system, so that they can be easily stored in version control system, copied, merged between branches, etc. So in order to create a test case, it is required to create an RCPTT Project first.</p>
 
-<p>Go to <span class="uiElement">File &#8594; New &#8594; <img src="https://www.eclipse.org/rcptt/documentation/img/ui-rcptt-project.png"></img> RCP Testing Tool Project&#8230;</span>, type any name, for example <strong>First Project</strong>, and click <span class="uiElement">Finish</span>.</p>
+<p>Go to <span class="uiElement">File &#8594; New &#8594; <img src="https://www.eclipse.org/rcptt/shared/img/ui-rcptt-project.png"></img> RCP Testing Tool Project&#8230;</span>, type any name, for example <strong>First Project</strong>, and click <span class="uiElement">Finish</span>.</p>
 
-<p>Once a project is created, right-click it in <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-workspace.gif"></img> Test Explorer</span> and select <span class="uiElement">New &#8594; <img src="https://www.eclipse.org/rcptt/documentation/img/ui-test.gif"></img> Test Case</span>. Again, type any name, like <strong>First Test</strong>, and click <span class="uiElement">Finish</span>.</p>
+<p>Once a project is created, right-click it in <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-workspace.gif"></img> Test Explorer</span> and select <span class="uiElement">New &#8594; <img src="https://www.eclipse.org/rcptt/shared/img/ui-test.gif"></img> Test Case</span>. Again, type any name, like <strong>First Test</strong>, and click <span class="uiElement">Finish</span>.</p>
 
 <h3>Record a test case</h3>
 
@@ -168,7 +168,7 @@
 
 <p>To make it easier for others to understand what a test case does, we can put a description of test case intention and performed actions into <span class="uiElement">Description</span> section of a test case. Also we can change its name in an editor to <strong>New Java Project</strong> (note that once you save a test case, the name in <span class="uiElement">Test Explorer</span> updates accordingly).</p>
 
-<p>To start test case recording, simply click a <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-record.gif"></img> Record</span> button in test case editor. Once RCPTT goes to recording mode, the main RCPTT window minimizes itself and shows a <a href="#">Control Panel</a>, so it is more convenient to interact with an application-under-test.</p>
+<p>To start test case recording, simply click a <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-record.gif"></img> Record</span> button in test case editor. Once RCPTT goes to recording mode, the main RCPTT window minimizes itself and shows a <a href="#">Control Panel</a>, so it is more convenient to interact with an application-under-test.</p>
 
 <p>So, once recording started, simply do the following actions:</p>
 
@@ -181,13 +181,13 @@
 
 <p>Note that <span class="uiElement">Control Panel</span> contents is getting updated with recorded actions, but it doesn't include a tree item expansion action, as it assumes that this action is not really important enough.</p>
 
-<p>Once we recorded actions, we also need to assert the state of the UI to make sure that the result of our actions is what we expect. To do this, we need to switch to <em>Assertion Mode</em> on Control Panel toolbar (). Once in Assertion mode, you can click on any UI element on a screen and get an <span class="uiElement">Assertion Window</span> with element's properties. At this point, we are interested in <strong>src/</strong> folder, so click on it, check an <strong>itemCount</strong> in Assertion Window, and click <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-add.gif"></img> Add</span> button.</p>
+<p>Once we recorded actions, we also need to assert the state of the UI to make sure that the result of our actions is what we expect. To do this, we need to switch to <em>Assertion Mode</em> on Control Panel toolbar (). Once in Assertion mode, you can click on any UI element on a screen and get an <span class="uiElement">Assertion Window</span> with element's properties. At this point, we are interested in <strong>src/</strong> folder, so click on it, check an <strong>itemCount</strong> in Assertion Window, and click <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-add.gif"></img> Add</span> button.</p>
 
-<p>Once we are done, go to Control Panel toolbar, <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-stop.gif"></img> Stop</span>, <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-save.gif"></img> Save</span> and <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-home.gif"></img> Return to RCPTT</span>.</p>
+<p>Once we are done, go to Control Panel toolbar, <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-stop.gif"></img> Stop</span>, <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-save.gif"></img> Save</span> and <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-home.gif"></img> Return to RCPTT</span>.</p>
 
 <p>Now, let's replay the resulting test, but before make sure to manually remove project <kbd>sample</kbd> from AUT's workspace and file system &ndash; we'll cover how to eleminate this manual step in a few minutes.</p>
 
-<p>To replay a test case, simply click a <span class="uiElement">Replay <img src="https://www.eclipse.org/rcptt/documentation/img/ui-replay.gif"></img></span> button in a test case editor. An <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-execution-view.png"></img> Execution</span> view will display test result.</p>
+<p>To replay a test case, simply click a <span class="uiElement">Replay <img src="https://www.eclipse.org/rcptt/shared/img/ui-replay.gif"></img></span> button in a test case editor. An <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-execution-view.png"></img> Execution</span> view will display test result.</p>
 
 <h3>ECL Script Intro</h3>
 
@@ -230,7 +230,7 @@ get-view "Package Explorer" | get-tree | get-item "sample/src" | get-property ch
 
 <p>Another use of square braces in a script above, is identifying an editbox (<code class="language-ecl">&#x200b;get-editbox -after [get-label &quot;Project name:&quot;]</code></code>). When we locate a textual input, we cannot rely on its text contents, so we are identifying it by its relative location to a label, hence we pass a label control (output of <code class="language-ecl">&#x200b;get-label</code> command) as an argument to <code class="language-ecl">&#x200b;get-editbox</code>. Also this line illustrates that commands may have named arguments, here <code class="language-ecl">&#x200b;-after</code> is an argument name, while <code class="language-ecl">&#x200b;[get-label ...]</code> is argument value.</p>
 
-<p>The last line, which has been recorded when we clicked <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-add.gif"></img> Add</span> button in an <span class="uiElement">Assertion Window</span>, should be pretty understandable now -- it takes a property from an object and verifies that its value is what we expect.</p>
+<p>The last line, which has been recorded when we clicked <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-add.gif"></img> Add</span> button in an <span class="uiElement">Assertion Window</span>, should be pretty understandable now -- it takes a property from an object and verifies that its value is what we expect.</p>
 
 <h3>Contexts</h3>
 
@@ -249,8 +249,8 @@ get-view "Package Explorer" | get-tree | get-item "sample/src" | get-property ch
 
 <ol>
 <li>Right-click RCPTT project in <span class="uiElement">Test Explorer</span>.</li>
-<li>Select <span class="uiElement">New &#8594; <img src="https://www.eclipse.org/rcptt/documentation/img/ui-context.gif"></img>Context </span>. </li>
-<li>In a <span class="uiElement">New Context Wizard</span>, type <kbd>Empty Workspace</kbd> as a context name and select <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-workspace.gif"></img> Workspace</span>.</li>
+<li>Select <span class="uiElement">New &#8594; <img src="https://www.eclipse.org/rcptt/shared/img/ui-context.gif"></img>Context </span>. </li>
+<li>In a <span class="uiElement">New Context Wizard</span>, type <kbd>Empty Workspace</kbd> as a context name and select <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-workspace.gif"></img> Workspace</span>.</li>
 <li>Click <span class="uiElement">Finish</span>.</li>
 </ol>
 
@@ -259,19 +259,19 @@ get-view "Package Explorer" | get-tree | get-item "sample/src" | get-property ch
 <p>There are two ways to do that with a test case editor:</p>
 
 <ul>
-<li>Use <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-add.gif"></img> Add&#8230;</span> button on a <span class="uiElement">Contexts</span> section toolbar and select required context from context selection dialog.</li>
+<li>Use <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-add.gif"></img> Add&#8230;</span> button on a <span class="uiElement">Contexts</span> section toolbar and select required context from context selection dialog.</li>
 <li>Expand <span class="uiElement">Contexts</span> section, drag a context from <span class="uiElement">Test Explorer</span> and drop a context inside.</li>
 </ul>
 
-<p>It is not necessary to run a test case to see a context in action &ndash; use <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-replay.gif"></img> Apply</span> button in context editor to see how a context affects an application state. In our case, we can see that applying an empty workspace context indeed removes all projects from application workspace.</p>
+<p>It is not necessary to run a test case to see a context in action &ndash; use <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-replay.gif"></img> Apply</span> button in context editor to see how a context affects an application state. In our case, we can see that applying an empty workspace context indeed removes all projects from application workspace.</p>
 
 <h3>Workbench Context</h3>
 
 <p>Workbench context is used to describe a state of an application Workbench &ndash; which perspective is currently active and which views and editors are open. For our test case we need to specify that Java perpspective is open. To create a workbench context describing this, do the following:</p>
 
 <ol>
-<li>As with workspace context, create a new context named <kbd>Java Perspective</kbd> of <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-workbench.gif"></img> Workbench</span> type.</li>
-<li>In workbench context editor, use <span class="uiElement"><img src="https://www.eclipse.org/rcptt/documentation/img/ui-capture.gif"></img> Capture</span> button to make a snapshot of a current application state. Assuming that Java perspective is open, the contents of a workbench text editor should be populated with a Java perspective and open views.</li>
+<li>As with workspace context, create a new context named <kbd>Java Perspective</kbd> of <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-workbench.gif"></img> Workbench</span> type.</li>
+<li>In workbench context editor, use <span class="uiElement"><img src="https://www.eclipse.org/rcptt/shared/img/ui-capture.gif"></img> Capture</span> button to make a snapshot of a current application state. Assuming that Java perspective is open, the contents of a workbench text editor should be populated with a Java perspective and open views.</li>
 </ol>
 
 <p>Now, once a test case refers to two contexts, we don't need to do any manual steps to make test case passing &ndash; it can be successfully replayed several times in a row.</p>
@@ -291,5 +291,5 @@ get-view "Package Explorer" | get-tree | get-item "sample/src" | get-property ch
       </div>
 
     </section>
-    <script src="https://www.eclipse.org/rcptt/documentation/js/main.js"></script>
+    <script src="https://www.eclipse.org/rcptt/shared/js/main.js"></script>
 </body>

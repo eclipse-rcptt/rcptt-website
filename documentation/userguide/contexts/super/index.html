@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <head>
   <title>RCPTT Documentation Center</title>
-  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/documentation/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/documentation/css/main.css">
-  <link rel="icon" type="image/png" href="https://www.eclipse.org/rcptt/documentation/img/favicon.png">
-  <script src="https://www.eclipse.org/rcptt/documentation/js/jquery.min.js"></script>
-  <script src="https://www.eclipse.org/rcptt/documentation/js/bootstrap.min.js"></script>
-  <script src="https://www.eclipse.org/rcptt/documentation/js/prism.js"></script>
-  <script src="https://www.eclipse.org/rcptt/documentation/js/ecl.js"></script>
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/main.css">
+  <link rel="icon" href="https://www.eclipse.org/rcptt/shared/img/favicon.ico">
+  <script src="https://www.eclipse.org/rcptt/shared/js/jquery.min.js"></script>
+  <script src="https://www.eclipse.org/rcptt/shared/js/bootstrap.min.js"></script>
+  <script src="https://www.eclipse.org/rcptt/shared/js/prism.js"></script>
+  <script src="https://www.eclipse.org/rcptt/shared/js/ecl.js"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -170,7 +170,7 @@ of the same type, which can be refered in test cases just as usual contexts, but
 <p>We start with a creation of a usual test case which verifies that Problems view contains no errors.</p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-super-context-1.png"></img>
+  <img src="https://www.eclipse.org/rcptt/shared/img/screenshot-super-context-1.png"></img>
 </div>
 
 <p>Next, we create three more workspace contexts:</p>
@@ -186,14 +186,14 @@ of the same type, which can be refered in test cases just as usual contexts, but
 our four workspace contexts into it:</p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-super-context-editor-2.png"></img>
+  <img src="https://www.eclipse.org/rcptt/shared/img/screenshot-super-context-editor-2.png"></img>
 </div>
 
 <p>Now we can get back to originally created test case and replace Emtpy Workspace context with Workspaces supercontext.
  If we execute this test case, an Execution view shows it has been executed four times, each time with different workspace context:</p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-super-context-3.png"></img>
+  <img src="https://www.eclipse.org/rcptt/shared/img/screenshot-super-context-3.png"></img>
 </div>
 
 <h3>Second example - validating New Java Project dialog</h3>
@@ -203,20 +203,20 @@ our four workspace contexts into it:</p>
 <p>We record a filling values in New Java project and validating an error message:</p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-super-context-script-example.png"></img>
+  <img src="https://www.eclipse.org/rcptt/shared/img/screenshot-super-context-script-example.png"></img>
 </div>
 
 <p><br>
 Now we need to parameterize it - at first we create Parameters context "Valid Input" with parameters we are going to change:</p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-super-context-4.png"></img>
+  <img src="https://www.eclipse.org/rcptt/shared/img/screenshot-super-context-4.png"></img>
 </div>
 
 <p>At second we replace string values in script with <b>$paramName</b> and adding parameters context to a test case:</p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-super-context-5.png"></img>
+  <img src="https://www.eclipse.org/rcptt/shared/img/screenshot-super-context-5.png"></img>
 </div>
 
 <p>And the rest is straightforward - create parameters context for each set of input values, put them into parameters supercontext and put this supercontext into testcase.</p>
@@ -225,7 +225,7 @@ Now we need to parameterize it - at first we create Parameters context "Valid In
 <br></p>
 
 <div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/documentation/img/screenshot-super-context-6.png"></img>
+  <img src="https://www.eclipse.org/rcptt/shared/img/screenshot-super-context-6.png"></img>
 </div>
 
 <h3>More about supercontexts</h3>
@@ -272,5 +272,5 @@ unlikely to be changed, it might be much more easier and faster to create few se
       </div>
 
     </section>
-    <script src="https://www.eclipse.org/rcptt/documentation/js/main.js"></script>
+    <script src="https://www.eclipse.org/rcptt/shared/js/main.js"></script>
 </body>
