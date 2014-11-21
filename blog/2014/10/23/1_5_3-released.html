@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <head>
   <title>RCPTT Blog</title>
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/main.css">
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/prism.css">
   <link rel="icon" href="https://www.eclipse.org/rcptt/shared/img/favicon.ico">
   <script src="https://www.eclipse.org/rcptt/shared/js/jquery.min.js"></script>
   <script src="https://www.eclipse.org/rcptt/shared/js/bootstrap.min.js"></script>
@@ -72,7 +74,7 @@
 <p>Then recorded script would look like this:</p>
 
 <p></p>
-<pre><code class="language-ecl">&#x200b;with [get-window Preferences] {
+<pre data-line="5"><code class="language-ecl">&#x200b;with [get-window Preferences] {
     with [get-window "Edit Proxy Entry"] {
         get-editbox -after [get-label "User:"] | set-text ooo
         get-editbox -after [get-label "Password:"] 

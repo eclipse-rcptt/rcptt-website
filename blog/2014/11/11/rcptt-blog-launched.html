@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <head>
   <title>RCPTT Blog</title>
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/main.css">
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/prism.css">
   <link rel="icon" href="https://www.eclipse.org/rcptt/shared/img/favicon.ico">
   <script src="https://www.eclipse.org/rcptt/shared/js/jquery.min.js"></script>
   <script src="https://www.eclipse.org/rcptt/shared/js/bootstrap.min.js"></script>
@@ -66,7 +68,7 @@
 <p>Oh, and by the way, if you haven't noticed yet, now we've got a nice syntax colorer for ECL snippets (thanks to an awesome <a href="http://prismjs.com">prism.js</a> library):</p>
 
 <p></p>
-<pre><code class="language-ecl">&#x200b;proc "find-tab-folder" [val activePage] {
+<pre ><code class="language-ecl">&#x200b;proc "find-tab-folder" [val activePage] {
   loop [val index [int 0]] {
     let [val folder [get-tab-folder -index $index]] {
       let [val folderActivePage [$folder | get-property activePage -raw]] {
@@ -94,7 +96,8 @@ find-tab-folder "Task List" | get-object | save-screenshot "/tmp/tmp/tsk.png"
                 
                     <nav class="article">
                 <ul>
-                                                              <li>Previous: <a class="previous" href="https://www.eclipse.org/rcptt/blog/2014/10/23/1_5_3-released.html" title="RCPTT 1.5.3 Released"><span class="title">RCPTT 1.5.3 Released</span></a></li>
+                                          <li>Next: <a class="next" href="https://www.eclipse.org/rcptt/blog/2014/11/21/screenshots-with-rcptt.html" title="Screenshots for documentation"><span class="title">Screenshots for documentation</span></a></li>
+                                                                <li>Previous: <a class="previous" href="https://www.eclipse.org/rcptt/blog/2014/10/23/1_5_3-released.html" title="RCPTT 1.5.3 Released"><span class="title">RCPTT 1.5.3 Released</span></a></li>
                                     </ul>
             </nav>
           

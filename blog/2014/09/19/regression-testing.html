@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <head>
   <title>RCPTT Blog</title>
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/main.css">
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/prism.css">
   <link rel="icon" href="https://www.eclipse.org/rcptt/shared/img/favicon.ico">
   <script src="https://www.eclipse.org/rcptt/shared/js/jquery.min.js"></script>
   <script src="https://www.eclipse.org/rcptt/shared/js/bootstrap.min.js"></script>
@@ -170,7 +172,7 @@
 <p>You can replay this test case right from the editor. It will be executed successfully, however that's not what you really want &ndash; right now test case verifies wrong behavior, caused by a bug in an application. The test case should pass only after the bug will be fixed. Before describing a way to make this test case failing, let's quickly go through recorded script:</p>
 
 <p></p>
-<pre><code class="language-ecl">&#x200b;with [get-view "Package Explorer" | get-tree] {
+<pre ><code class="language-ecl">&#x200b;with [get-view "Package Explorer" | get-tree] {
     select "project/folder1" "project/folder2"
     get-menu "Compare With/Each Other" | click
 }
@@ -202,7 +204,7 @@ get-editor "Compare ('project/folder1/file.txt' - 'project/folder2/file.txt')" |
 <p>Next line, <code class="language-ecl">&#x200b;get-window Compare | get-label ...</code>, was recorded from an assertion mode. The general pattern here looks like this:</p>
 
 <p></p>
-<pre><code class="language-ecl">&#x200b;get some UI object | get-property 'propertyName'
+<pre ><code class="language-ecl">&#x200b;get some UI object | get-property 'propertyName'
     | equals/&#x200b;not-equals 'expectedValue'
     | verify-true/&#x200b;verify-false
 </code></pre>
@@ -217,7 +219,7 @@ In this particular case, we added an assertion for a property, which is used to 
 <p>Now let's make our test case to fail correctly. At first, we don't need a last line (<code class="language-ecl">&#x200b;get-editor ... | close</code>), because in case of correct behaviour, there should be no such editor. Instead we want to ensure that there is a window with correct label, so let's replace a last line of this script with this:</p>
 
 <p></p>
-<pre><code class="language-ecl">&#x200b;get-window Compare | get-label "There are no differences between the selected inputs."
+<pre ><code class="language-ecl">&#x200b;get-window Compare | get-label "There are no differences between the selected inputs."
 </code></pre>
 
 <p>Now, if you execute the resulting test case, it will fail as expected:</p>
@@ -267,7 +269,7 @@ In this particular case, we added an assertion for a property, which is used to 
  dialog, select launch configuration and press required buttons. The resulting script will look like this:</p>
 
 <p></p>
-<pre><code class="language-ecl">&#x200b;get-menu "Run/Run Configurations..." | click
+<pre ><code class="language-ecl">&#x200b;get-menu "Run/Run Configurations..." | click
 with [get-window "Run Configurations"] {
   get-tree | select "OSGi Framework/org.eclipse.ui osgi launch"
   get-button "Add Required Bundles" | click
@@ -283,7 +285,7 @@ with [get-window "Run Configurations"] {
 <p>To assert that validation completed successfully, change the last line to this:</p>
 
 <p></p>
-<pre><code class="language-ecl">&#x200b;get-window Validation | get-label "No problems were detected."
+<pre ><code class="language-ecl">&#x200b;get-window Validation | get-label "No problems were detected."
 </code></pre>
 
 <p>Once a test case is replayed again, it correctly fails with a message <kbd>The Label "No problems were detected." could not be found</kbd>. To make sure that the test is correct, run the same test without any modifications on Kepler to see that it passes:</p>
@@ -324,7 +326,7 @@ with [get-window "Run Configurations"] {
 <p>The recorded script is below:</p>
 
 <p></p>
-<pre><code class="language-ecl">&#x200b;get-menu "File/Import..." | click
+<pre ><code class="language-ecl">&#x200b;get-menu "File/Import..." | click
 with [get-window Import] {
     get-tree | select "General/Existing Projects into Workspace"
     get-button "Next &gt;" | click
@@ -344,7 +346,7 @@ You may notice that there's an interesting command recorded &#x2013; <a href="ht
 <p>However, in order to make a test case fully portable across machines and operating systes, we need to slightly modify this script in order to replace an absolute path with a value, relative to a home folder. This can be achieved by using two ECL commands &#x2013; <a href="http://download.xored.com/q7/docs/ecl-api/latest#get-java-propery">get-java-propery</a> and <a href="http://download.xored.com/q7/docs/ecl-api/latest#format">format</a>:</p>
 
 <p></p>
-<pre><code class="language-ecl">&#x200b;set-dialog-result Folder [format "%s/projectsToImport" [get-java-property "user.home"]]
+<pre ><code class="language-ecl">&#x200b;set-dialog-result Folder [format "%s/projectsToImport" [get-java-property "user.home"]]
 </code></pre>
 
 <h4>Asserting results</h4>
@@ -352,7 +354,7 @@ You may notice that there's an interesting command recorded &#x2013; <a href="ht
 <p>Next, we also need to modify the last part of a script, which asserts the results &#x2013; instead of asserting that there are no children, actually we want to assert the correct behavior, i.e. there is one child, <kbd>goodProject</kbd>. This can be done like this:</p>
 
 <p></p>
-<pre><code class="language-ecl">&#x200b;with [get-window Import | get-tree] {
+<pre ><code class="language-ecl">&#x200b;with [get-window Import | get-tree] {
     select "goodProject.*"
     get-property itemCount | equals 1 | verify-true
 }

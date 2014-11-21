@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <head>
   <title>RCPTT Documentation Center</title>
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/main.css">
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/prism.css">
   <link rel="icon" href="https://www.eclipse.org/rcptt/shared/img/favicon.ico">
   <script src="https://www.eclipse.org/rcptt/shared/js/jquery.min.js"></script>
   <script src="https://www.eclipse.org/rcptt/shared/js/bootstrap.min.js"></script>
@@ -194,12 +196,13 @@
 <p>Before we go to <a href="https://www.eclipse.org/rcptt/documentation/userguide/contexts/">Contexts</a>, let's take a look at recorded script:</p>
 
 <p></p>
-<pre><code class="language-ecl">&#x200b;get-menu "File/New/Java Project" | click
+<pre ><code class="language-ecl">&#x200b;get-menu "File/New/Java Project" | click
 with [get-window "New Java Project"] {
     get-editbox -after [get-label "Project name:"] | set-text sample
     get-button Finish | click
 }
-get-view "Package Explorer" | get-tree | get-item "sample/src" | get-property childCount | equals 0 | verify-true</code></pre>
+get-view "Package Explorer" | get-tree | get-item "sample/src"
+    | get-property childCount | equals 0 | verify-true
 </code></pre>
 
 <p>It's probably is understandable intuitively, but here's a brief description how does it work. A scripting language we use, <a href="https://www.eclipse.org/rcptt/documentation/userguide/ecl/">ECL</a> (which stands for Eclipse Command Language), is inspired by TCL and Powershell, and it consists of commands, connected by pipes.</p>
