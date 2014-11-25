@@ -25,9 +25,11 @@
 	$pageTitle 		= "RCP Testing Tool (RCPTT)";
 	
 	
-	// 	# Paste your HTML content between the EOHTML markers!
-	$html = file_get_contents('main_page_content.html');
+	$middle = file_get_contents('main_page_content.html');
 
+	$right = file_get_contents('right_content.html');
+
+	$html = $middle . $right;
 	# Generate the web page
 	$App->generatePage($theme, $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);
 

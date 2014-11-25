@@ -107,17 +107,7 @@ $html .= generateDownloadBlock($latestNightlyUnqualified . "." . $latestNightlyQ
 $html .= "</div>";
 # www.eclipse.org/downloads/download.php?file=/rcptt/release/1.5.1/ide/rcptt.ide-1.5.1-macosx.cocoa.x86_64.zip
 
-$html .= "<div id='rightcolumn'>";
-$html .= "  <div class='sideitem'>";
-$html .= "    <h6>Incubation</h6>";
-$html .= "    <div align='center'>";
-$html .= "      <a href='/projects/what-is-incubation.php'>";
-$html .= "	<img align='center' src='/images/egg-incubation.png' border='0' alt='Incubation' />";
-$html .= "    </a>";
-$html .= "    </div>";
-$html .= "  </div>";
-$html .= "</div>";
-
+$html .= file_get_contents('../right_content.html');
 
 # 	
 # Generate the web page
