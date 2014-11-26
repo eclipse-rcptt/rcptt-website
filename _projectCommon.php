@@ -23,13 +23,14 @@
 	
 	# If you want to override the eclipse.org navigation, uncomment below.
 	$Nav->setLinkList(array());
-	$Nav->addCustomNav("Home", "/rcptt/", "_self", 1);
-	$Nav->addCustomNav("Blog", "/rcptt/blog", "_self", 1);
-	$Nav->addCustomNav("Downloads", "/rcptt/download", "_self", 1);
-	$Nav->addCustomNav("Documentation", "/rcptt/documentation", "_self", 1);
-	$Nav->addCustomNav("Support", "/rcptt/support", "_self", 1);
-	$Nav->addCustomNav("Forum", "https://www.eclipse.org/forums/index.php/f/281/", "_blank", 1);
-	$Nav->addCustomNav("Sources", "/rcptt/sources", "_self", 1);
+    $Nav->addNavSeparator("Home", "/rcptt");
+	$Nav->addCustomNav("About", "/rcptt/about.php", "_blank", 2);
+	$Nav->addCustomNav("Blog", "/rcptt/blog", "_self", 2);
+	$Nav->addCustomNav("Downloads", "/rcptt/download", "_self", 2);
+	$Nav->addCustomNav("Documentation", "/rcptt/documentation", "_self", 2);
+	$Nav->addCustomNav("Support", "/rcptt/support", "_self", 2);
+	$Nav->addCustomNav("Forum", "https://www.eclipse.org/forums/index.php/f/281/", "_blank", 2);
+	$Nav->addCustomNav("Sources", "/rcptt/sources", "_self", 2);
 
 	# Define keywords, author and title here, or in each PHP page specifically
 	$pageKeywords	= "RCPTT, GUI, functional, automated testing";
