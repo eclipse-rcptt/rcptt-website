@@ -102,7 +102,7 @@ $latestNightlyQualifier = getLastMatchingChild($latestNightlyHome, "/\\d+/");
 $html = "<div id='midcolumn'>";
 $html .= "<h2>RCP Testing Tool IDE Downloads</h2>";
 
-$html .= generateDownloadBlock($latestRelease . " Release", "http://www.eclipse.org/downloads/download.php?file=/rcptt/release/" . $latestRelease . "/ide/rcptt.ide-" . $latestRelease ."-[classifier].zip", "http://download.eclipse.org/rcptt/release/" . $latestRelease . "/repository");
+$html .= generateDownloadBlock($latestRelease . " Release", "http://www.eclipse.org/downloads/download.php?file=/rcptt/release/" . $latestRelease . "/ide/rcptt.ide-incubation-" . $latestRelease ."-[classifier].zip", "http://download.eclipse.org/rcptt/release/" . $latestRelease . "/repository");
 
 $html .= generateDownloadBlock($latestNightlyUnqualified . "." . $latestNightlyQualifier . " Nightly", "http://download.eclipse.org/rcptt/nightly/" . $latestNightlyUnqualified . "/" . $latestNightlyQualifier . "/ide/rcptt.ide-incubation-" . $latestNightlyUnqualified . "-N" . $latestNightlyQualifier . "-[classifier].zip", "http://download.eclipse.org/rcptt/nightly/" . $latestNightlyUnqualified . "/" . $latestNightlyQualifier . "/repository");
 $html .= "</div>";
