@@ -88,7 +88,7 @@
   <li>In AUT VM arguments pass desired parameters as Java properties, i.e. add arguments like this:
     <pre>-DpropertyName=propertyValue</pre>
   </li>
-  <li>Use ECL command <a href="http://download.xored.com/q7/docs/ecl-api/latest#substitute-variables">substitute-variables</a> (which uses <b>org.eclipse.core.variables</b> plugin) to get a property value like this:</li>
+  <li>Use ECL command <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#substitute-variables">substitute-variables</a> (which uses <b>org.eclipse.core.variables</b> plugin) to get a property value like this:</li>
   <pre>//writes prop val to AUT workspace log
 log [subsitute-variables "${system_property:propertyName}"]</pre>
 </ol>
@@ -114,7 +114,7 @@ Important
 </div>
 
 <div class="panel-body">
-When AUT does not include <b>org.eclipse.core.variables</b> plugin and hence command 'substitute-variables' fails, it is possible to use <a href="http://download.xored.com/q7/docs/ecl-api/latest#get-java-property">get-java-property</a> to get JVM system property value.
+When AUT does not include <b>org.eclipse.core.variables</b> plugin and hence command 'substitute-variables' fails, it is possible to use <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#get-java-property">get-java-property</a> to get JVM system property value.
   </div></div>
   </div>
 </div>

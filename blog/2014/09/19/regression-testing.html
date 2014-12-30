@@ -342,9 +342,9 @@ get-window Import | get-tree | get-property itemCount | equals 0 | verify-true
 </code></pre>
 
 <p><br/>
-You may notice that there's an interesting command recorded &#x2013; <a href="http://download.xored.com/q7/docs/ecl-api/latest#set-dialog-result">set-dialog-result</a>. That's how RCPTT handles native dialogs: during recording, it remembers a value, selected by user in a native dialog, and stores it as a <code class="language-ecl">&#x200b;set-dialog-result</code> command. During test case execution RCPTT runtime automatically returns stored value to application code instead of opening a native dialog.</p>
+You may notice that there's an interesting command recorded &#x2013; <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#set-dialog-result">set-dialog-result</a>. That's how RCPTT handles native dialogs: during recording, it remembers a value, selected by user in a native dialog, and stores it as a <code class="language-ecl">&#x200b;set-dialog-result</code> command. During test case execution RCPTT runtime automatically returns stored value to application code instead of opening a native dialog.</p>
 
-<p>However, in order to make a test case fully portable across machines and operating systes, we need to slightly modify this script in order to replace an absolute path with a value, relative to a home folder. This can be achieved by using two ECL commands &#x2013; <a href="http://download.xored.com/q7/docs/ecl-api/latest#get-java-propery">get-java-propery</a> and <a href="http://download.xored.com/q7/docs/ecl-api/latest#format">format</a>:</p>
+<p>However, in order to make a test case fully portable across machines and operating systes, we need to slightly modify this script in order to replace an absolute path with a value, relative to a home folder. This can be achieved by using two ECL commands &#x2013; <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#get-java-propery">get-java-propery</a> and <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#format">format</a>:</p>
 
 <p></p>
 <pre ><code class="language-ecl">&#x200b;set-dialog-result Folder [format "%s/projectsToImport" [get-java-property "user.home"]]

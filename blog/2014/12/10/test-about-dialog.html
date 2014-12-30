@@ -122,7 +122,7 @@ with [get-window "About RCP Testing Tool"] {
 
 
 <br/>
-<p>In <code class="language-ecl">&#x200b;validate-plugin</code> procedure, we can grab interesting values from UI into variables using <a href="http://download.xored.com/q7/docs/ecl-api/latest#let">let</a> command:</p>
+<p>In <code class="language-ecl">&#x200b;validate-plugin</code> procedure, we can grab interesting values from UI into variables using <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#let">let</a> command:</p>
 <pre ><code class="language-ecl">&#x200b;proc "validate-plugin" [val item -input] {
 	let [val pluginId [$item | get-property "values['Plug-in Id']" -raw]]
 		[val pluginName [$item | get-property "values['Plug-in Name']" -raw]]

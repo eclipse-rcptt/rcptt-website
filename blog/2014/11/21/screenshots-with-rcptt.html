@@ -70,7 +70,7 @@
 </p>
 
 <p>
-  And the answer is &ndash; yes, indeed! Actually, I never thought about this use-case before, but we have a <a href="http://download.xored.com/q7/docs/ecl-api/latest#save-screenshot">save-screenshot</a> command, which can save a screenshot of a control into a file. So, here's how to save screenshots for new plugin project wizard:
+  And the answer is &ndash; yes, indeed! Actually, I never thought about this use-case before, but we have a <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#save-screenshot">save-screenshot</a> command, which can save a screenshot of a control into a file. So, here's how to save screenshots for new plugin project wizard:
 </p>  
 
 
@@ -149,7 +149,7 @@ get-view Outline | get-tree | get-object | save-screenshot ...
   </div>
 </div>
 <br/>
-<p>By using <a href="http://download.xored.com/q7/docs/ecl-api/latest#invoke">invoke</a> command to call SWT's <code>Control.getParent()</code> method, it is possible to get a screenshot of a part of a toolbar, or the whole toolbar:</p>
+<p>By using <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#invoke">invoke</a> command to call SWT's <code>Control.getParent()</code> method, it is possible to get a screenshot of a part of a toolbar, or the whole toolbar:</p>
 <pre ><code class="language-ecl">&#x200b;
 get-button "Save All.*" | get-object | invoke getParent | save-screenshot ...
 
