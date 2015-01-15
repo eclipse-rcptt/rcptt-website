@@ -1,0 +1,45 @@
+/*
+Text indent for beautiful paragraphs
+*/
+p{
+    text-indent: 1.5em;
+}
+p.block{
+    max-width: 420px; 
+    float: left;
+    margin-right: 50px;
+}
+
+.content-wrapper{
+    float: left; 
+    width: 900px;
+    min-height: 400px;
+}
+
+.content-wrapper li{
+    list-style: none;
+
+}
+.content-wrapper li:before{
+    content: "\00BB";
+    color: #f7941e;
+    margin-left: -16px;
+    margin-right: 10px;
+    display: block;
+    float: left;
+}
+/*
+Table with downloads content on /downloads page
+*/
+table.downloads{
+    border: none;
+    width: 100%;
+    margin-bottom: 20px;
+}
+table.downloads td{
+   padding: 20px;
+   vertical-align: top;
+}
+table.downloads tr.icons{
+    border-bottom: 1px solid #eee;
+}

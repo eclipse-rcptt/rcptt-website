@@ -1,0 +1,43 @@
+---
+layout: blog-base
+generator: pagination
+pagination:
+    max_per_page: 5
+use:
+    - posts
+nav_name: latest
+---
+
+{% for post in page.pagination.items %}
+  <article>
+    <header>
+      <h2>
+	<a href="{{site.url}}{{post.url}}"> {{post.title}}</a>
+	{% if post.author %}<small>{{post.date | date("M, d, Y")}} by {{post.author}}</small>{% endif %}
+      </h2>
+    </header>
+    <div>
+      {% set break_array = post.blocks.content|split('<!-- break -->', 2) %}
+
+      {# Output the first element of the array in raw mode #}
+      {{ break_array[0]|raw }}
+
+      {# Detect if there is more to the post. If the post 
+         was only one array element with no breakpoints, 
+         it would all have shown up. This Read More link should 
+         only show up if there is overflow to the post. #}
+      {% if break_array|length > 1 %}
+	<p><a href="{{ site.url }}{{ post.url }}">
+            Read more of this post &raquo;
+	</a></p>
+      {% endif %}
+    </div>
+  </article>
+{% endfor %}
+
+{% if page.pagination.previous_page or page.pagination.next_page %}
+  <nav>
+    {% if page.pagination.previous_page %}<a href="{{site.url}}{{page.pagination.previous_page.url}}">Newer Posts</a>{% endif %}<br />
+    {% if page.pagination.next_page %}<a href="{{site.url}}{{page.pagination.next_page.url}}">Older Posts</a>{% endif %}<br />    
+  </nav>
+{% endif %}

@@ -1,0 +1,8 @@
+/app/cache/*
+/output_*/
+
+/.sculpin/
+composer.phar
+*~
+
+.DS_Store

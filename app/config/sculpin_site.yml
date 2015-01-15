@@ -1,0 +1,100 @@
+guide:
+  - name: Get Started
+    url: userguide/getstarted/
+    slug: getstarted
+  - name: Test Case Editor
+    url: userguide/testeditor/
+    slug: testeditor
+  - name: Control Panel
+    url: userguide/controlpanel
+    slug: controlpanel
+  - name: Assertions
+    url: userguide/assertions/
+    slug: assertions
+  - name: Eclipse Command Language
+    url: userguide/ecl/
+    slug: ecl
+    children:
+      - name: New ECL Command Guide
+        url: userguide/ecl/new-command-guide/
+        slug: ecl/new-command-guide
+  - name: Contexts
+    url: userguide/contexts/
+    slug: contexts
+    children:
+      - name: Workspace
+        url: userguide/contexts/workspace/
+        slug: contexts/workspace
+      - name: Workbench
+        url: userguide/contexts/workbench/
+        slug: contexts/workbench
+      - name: Launch
+        url: userguide/contexts/launch/
+        slug: contexts/launch   
+      - name: Preferences
+        url: userguide/contexts/preferences/
+        slug: contexts/preferences  
+      - name: Parameters
+        url: userguide/contexts/parameters/
+        slug: contexts/parameters 
+      - name: Group
+        url: userguide/contexts/group/
+        slug: contexts/group   
+      - name: Folder
+        url: userguide/contexts/folder/
+        slug: contexts/folder     
+      - name: Default
+        url: userguide/contexts/default/
+        slug: contexts/default  
+      - name: Super
+        url: userguide/contexts/super/
+        slug: contexts/super 
+      - name: ECL Script
+        url: userguide/contexts/ecl/
+        slug: contexts/ecl
+  - name: Verifications
+    url: userguide/verifications/
+    slug: verifications
+    children:
+      - name: Text
+        url: userguide/verifications/text/
+        slug: verifications/text
+      - name: Table/Tree
+        url: userguide/verifications/treetable/
+        slug: verifications/treetable
+      - name: Error Log
+        url: userguide/verifications/errorlog/
+        slug: verifications/errorlog
+      - name: Time
+        url: userguide/verifications/time/
+        slug: verifications/time
+  - name: Procedures and Variables
+    url: userguide/procedures/
+    slug: procedures
+faq:
+  - name: How to pass a value to a test during its execution?
+    url: faq/pass-value/
+    slug: pass-value
+  - name: Can RCPTT be installed as an Eclipse plugin?
+    url: faq/install-as-plugin/
+    slug: install-as-plugin
+  - name: How to resize a window?
+    url: faq/resize-window/
+    slug: resize-window
+  - name: How to extract an SWT widget from ECL command?
+    url: faq/extract-widget/
+    slug: extract-widget
+  - name: How to verify changing control sizes?
+    url: faq/verify-control-size/
+    slug: verify-control-size
+  - name: Is it possible to order tests in a Test Suite?
+    url: faq/suite-order/
+    slug: suite-order
+  - name: What does each runtime feature stand for?
+    url: faq/runtime-features/
+    slug: runtime-features
+  - name: What is the difference between Assert and Verify commands or how to get raw property values?
+    url: faq/get-property-raw/
+    slug: get-property-raw
+author: "RCP Testing Tool Team"
+email: "rcptt-dev@eclipse.org"

@@ -1,0 +1,16 @@
+{% macro uiElement(text, image) %}
+  {{foo}}<span class="uiElement">{% if image is not null %} <img src="{{image}}"></img> {% endif %}{{text}}</span>
+{% endmacro %}
+
+{% macro eclCommand(cmd) %}
+<a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#{{cmd}}">{{cmd}}</a>{% endmacro %}
+
+{% macro ecl(content, highlight) %}
+<pre {% if highlight is not null %}data-line="{{highlight}}"{% endif %}><code class="language-ecl">&#x200b;{{content}}</code></pre>
+{% endmacro %}
+
+{% macro eclInline(content) %}
+<code class="language-ecl">&#x200b;{{content}}</code>{% endmacro %}
+
+{% macro bugzilla(num) %}
+<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id={{num}}">#{{num}}</a>{% endmacro %}

@@ -1,0 +1,6 @@
+sculpin_content_types:
+    docs:
+        path: documentation
+        permalink: pretty
+    posts:
+        permalink: blog/:year/:month/:day/:filename.html

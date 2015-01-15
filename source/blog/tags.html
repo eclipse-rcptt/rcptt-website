@@ -1,0 +1,14 @@
+---
+layout: blog-base
+title: Tags
+nav_name: tags
+use:
+    - posts_tags
+---
+<h2>Tags</h2>
+
+<div>
+{% for tag,posts in data.posts_tags %}
+<a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>
+{% endfor %}
+</div>

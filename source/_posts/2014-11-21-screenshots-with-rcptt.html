@@ -1,0 +1,181 @@
+---
+title: Screenshots for documentation
+author: Ivan Inozemtsev
+categories: [howtos]
+forum: https://www.eclipse.org/forums/index.php/t/864982/
+---
+
+{% import "macros" as m %}
+
+<p>
+  This year on EclipseCon Europe Jeremie Bresson pointed me to a <a href="http://model-driven-blogging.blogspot.ru/2009/03/shuangxi-effect-ui-testing-and.html">nice Cédric Brun's article</a> on how to use SWTBot to generate screenshots for documentation, and asked whether something like this is possible with RCPTT.
+</p>
+
+<p>
+  And the answer is &ndash; yes, indeed! Actually, I never thought about this use-case before, but we have a {{m.eclCommand("save-screenshot")}} command, which can save a screenshot of a control into a file. So, here's how to save screenshots for new plugin project wizard:
+</p>  
+
+{% set snippet %}
+get-view "Package Explorer" | get-tree | get-menu "New/Plug-in Project" | click
+
+with [get-window "New Plug-in Project"] {
+  get-editbox -after [get-label "Project name:"] | set-text "org.sample.view"
+  get-object | save-screenshot "/tmp/tmp/demo/first-page.png"
+  get-button "Next >" | click
+
+  get-group Properties | get-editbox -after [get-label "Name:"]
+    | set-text "Sample View Plugin"
+  get-object | save-screenshot "/tmp/tmp/demo/second-page.png"
+  get-button "Next >" | click
+
+  get-table | select "Plug-in with a view"
+  get-object | save-screenshot "/tmp/tmp/demo/third-page.png"
+  get-button "Next >" | click
+}
+
+with [get-window "New plug-in project with a sample view"] {
+  get-button "Tree viewer" | click
+  get-object | save-screenshot "/tmp/tmp/demo/fourth-page.png"    
+  get-button Finish | click
+}
+{% endset %}
+
+{{m.ecl(snippet, "5,10,14,20")}}
+
+<p>
+  This is just a recorded test case with manual insertion of {{m.eclInline('get-object | save-screenshot "/path/to/screenshot.png"')}} snippets in interesting parts. Here {{m.eclInline("get-object")}} takes an SWT object from RCPTT selector command (since we are in {{m.eclInline("with")}} block, we are taking an SWT object from a window here), and {{m.eclInline("save-screenshot")}} takes bounds of given control and saves a screenshot to given path. Here are the images, saved as an execution result of the script above:
+</p>
+<!-- break -->
+
+<br/>
+<div class="row">
+  <div class="col-md-3">
+    <a href="{{site.url}}/shared/img/blog/shots/1-page.png"><img width="200" src="{{site.url}}/shared/img/blog/shots/1-page.png" /></a>
+  </div>
+  <div class="col-md-3">
+    <a href="{{site.url}}/shared/img/blog/shots/2-page.png"><img width="200" src="{{site.url}}/shared/img/blog/shots/2-page.png" /></a>
+  </div>
+  <div class="col-md-3">
+    <a href="{{site.url}}/shared/img/blog/shots/3-page.png"><img width="200" src="{{site.url}}/shared/img/blog/shots/3-page.png" /></a>
+  </div>
+  <div class="col-md-3">
+    <a href="{{site.url}}/shared/img/blog/shots/4-page.png"><img width="200" src="{{site.url}}/shared/img/blog/shots/4-page.png" /></a>
+  </div>
+</div>
+
+
+<br/>
+<p>Note that RCPTT automatically brings an application-under-test in front before taking a screenshot, to make sure that everything is visible.</p>
+
+<h3>Individual controls</h3>
+<p>But what if I want to take a screenshot of a tree, or toolbar, or editor? That's also possible, we just need to use another input for {{m.eclInline("get-object | save-screenshot")}}:</p>
+
+{% set snippet %}
+get-button "New.*" | get-object | save-screenshot ...
+get-editor "SampleView.java" | get-text-viewer | get-object | save-screenshot ...
+get-view Outline | get-tree | get-object | save-screenshot ...
+{% endset %}
+
+{{m.ecl(snippet)}}
+
+
+<div class="row">
+  <div class="col-md-4">
+    <a href="{{site.url}}/shared/img/blog/shots/toolbarButton.png"><img src="{{site.url}}/shared/img/blog/shots/toolbarButton.png" /></a>
+  </div>
+
+  <div class="col-md-4">
+    <a href="{{site.url}}/shared/img/blog/shots/editor.png"><img width="300" src="{{site.url}}/shared/img/blog/shots/editor.png" /></a>
+  </div>
+  
+  <div class="col-md-4">
+    <a href="{{site.url}}/shared/img/blog/shots/tree.png"><img width="200" src="{{site.url}}/shared/img/blog/shots/tree.png" /></a>
+  </div>
+</div>
+<br/>
+<p>By using {{m.eclCommand("invoke")}} command to call SWT's <code>Control.getParent()</code> method, it is possible to get a screenshot of a part of a toolbar, or the whole toolbar:</p>
+{% set snippet %}
+
+get-button "Save All.*" | get-object | invoke getParent | save-screenshot ...
+
+get-button "Save All.*" | get-object
+   | invoke getParent
+   | invoke getParent
+   | invoke getParent
+   | save-screenshot ...
+{% endset %}
+{{m.ecl(snippet)}}
+
+<div class="row">
+  <div class="col-md-6">
+    <a href="{{site.url}}/shared/img/blog/shots/toolbar.png"><img style="max-width:100%" src="{{site.url}}/shared/img/blog/shots/toolbar.png" /></a>
+  </div>
+
+  <div class="col-md-6">
+    <a href="{{site.url}}/shared/img/blog/shots/toolbarAll.png"><img style="max-width:100%" src="{{site.url}}/shared/img/blog/shots/toolbarAll.png" /></a>
+  </div>
+</div>
+
+<h3>View and editor parts</h3>
+<p>Screenshots of a Java Editor and a tree in Outline view above don't look very realistic -- they don't include a name of View/Editor. In order to include it, ideally we should take bounds of a tab folder, associated with view or editor stack. RCPTT does not have built-in commands to find a tab folder by view/editor (as there is no practical need for that). However, it is possible to write a handy procedure to iterate through all tab folders in an application and find the one with an active tab we need:</p>
+
+{% set snippet %}
+proc "find-tab-folder" [val activePage] {
+  loop [val index [int 0]] {
+    let [val folder [get-tab-folder -index $index]] {
+      let [val folderActivePage [$folder | get-property activePage -raw]] {
+        if [$folderActivePage | eq $activePage] {
+          $folder //returning result
+        } -else { recur [$index | plus 1] }
+      }
+    }
+  }
+}
+
+find-tab-folder "SampleView.java" | get-object | save-screenshot &#8230;
+find-tab-folder "Outline" | get-object | save-screenshot &#8230;
+{% endset %}
+
+{{m.ecl(snippet)}}
+
+<br/>
+<p>And here's a result:</p>
+<div class="row">
+  <div class="col-md-6">
+    <a href="{{site.url}}/shared/img/blog/shots/editorPart.png"><img src="{{site.url}}/shared/img/blog/shots/editorPart.png"/></a>
+  </div>
+  <div class="col-md-6">
+    <a href="{{site.url}}/shared/img/blog/shots/treePart.png"><img src="{{site.url}}/shared/img/blog/shots/treePart.png"/></a>
+  </div>
+</div>
+
+<h3>Reproducible screenshot sizes</h3>
+
+<p>For a real-life usage, it's highly important to ensure that screenshot sizes are always the same. For dialogs, this can be done like this:</p>
+{% set snippet %}
+// calling Shell.setSize(x, y) via reflection:
+get-window "New Plug-in Project" | get-object | invoke setSize 400 600 
+{% endset %}
+{{m.ecl(snippet)}}
+
+<p>For the size of view and edit parts thigs are trickier &ndash; there's no way to affect it directly, but at least it is possible to get reproducible sizes by setting the size of main workbench window and then resetting a perspective:</p>
+
+{% set snippet %}
+get-eclipse-window | get-object | invoke setSize 900 600
+get-menu "Window/Reset Perspective..." | click
+{% endset %}
+
+{{m.ecl(snippet)}}
+
+That way, it is possible to automatically generate screenshots of the for different versions of an application on different operating systems.
+
+<h3>What's next?</h3>
+
+To try this at home, follow these steps:
+<ul>
+  <li><a href="{{site.url}}/shared/img/blog/shots/screenshots.zip">download</a> a sample project</li>
+  <li>Import it as an existing project into RCPTT IDE (until 1.5.4 is out, because of issue {{m.bugzilla(450277)}} it is better to use nightly build from <a href="http://eclipse.org/rcptt/download">download page</a>)</li>
+  <li>Use any Eclipse package which includes PDE tools as an AUT</li>
+  <li>Launch tests from attached project</li>
+  <li>Go to your home folder and examine Documents/rcptt-screenshots folder
+</ul>    

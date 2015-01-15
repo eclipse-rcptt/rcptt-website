@@ -1,0 +1,130 @@
+---
+title: Testing About Dialog
+author: Ivan Inozemtsev
+categories: [howtos, ecl]
+forum: https://www.eclipse.org/forums/index.php/t/887754/
+---
+
+{% import "macros" as m %}
+
+<p>In this post, I'm going to tell how to test an About dialog to ensure that all plug-ins are properly branded -- i.e. have correct provider name, plug-in name, etc.. While this information is rarely affects end users directly, it's still important to have it up-to-date, and it is really tedious to do such checks manually. Plus, it is a good demonstration of what RCPTT and ECL can do :).</p>
+
+<p>Currently, some entries in RCPTT About dialog are not well-formed:</p>
+<p><img src="{{site.url}}/shared/img/blog/about/about.png" /></p>
+
+<p>So, let's create a test case for RCPTT, which ensures that all RCPTT plug-ins (i.e. plug-ins whose ID starts with <kbd>org.eclipse.rcptt</kbd>) are packaged correctly, i.e. that all its plug-ins meet the following requirements:</p>
+<ul>
+  <li>Provider name is <kbd>Eclipse RCP Testing Tool Project</kbd></li>
+  <li>Plug-in name is not empty and ends with <kbd>(Incubation)</kbd></li>
+  <li>All plug-ins have a {{m.uiElement("Legal Info")}} button enabled</li>
+</ul>
+
+<!-- break -->
+<p>To begin with, I'm recording a new test case, open {{m.uiElement("About")}} dialog, switching to {{m.uiElement("Plug-ins")}} tab and selecting a random plug-in. The recorded script looks like this:</p>
+
+{% set snippet %}
+get-about-menu | click
+with [get-window "About RCP Testing Tool"] {
+	get-button "Installation Details" | click
+	with [get-window "RCP Testing Tool Installation Details"] {
+		get-tab-folder | get-tab-item "Plug-ins" | click
+		get-table | select [get-item "Eclipse.org" -column Provider -index 15]
+	}
+}
+{% endset %}
+{{m.ecl(snippet)}}
+
+<p>That is just a starting point, and I'm going to modify it manually. The basic idea is obvious &ndash; iterate over all items in a table, and if an item corresponds to RCPTT plug-in, perform required checks. When some check does not match, we'll just write a message in Error Log, so that we can use <a href="{{site.url}}/userguide/verifications/errorlog/">Error Log</a> verification to make test passing or failing.</p>
+
+<p>As a first step, I'm modifying recording script with invocation of a <a href="{{site.url}}/documentation/userguide/procedures/">procedure</a> for verification, so that later I can focus on this procedure only:</p>
+{% set snippet %}
+proc "validate-plugins" [val table -input] {
+		
+}
+
+get-about-menu | click
+with [get-window "About RCP Testing Tool"] {
+	get-button "Installation Details" | click
+	with [get-window "RCP Testing Tool Installation Details"] {
+		get-tab-folder | get-tab-item "Plug-ins" | click
+		get-table | validate-plugins
+	}
+}
+{% endset %}
+{{m.ecl(snippet, "1, 10")}}
+
+<p>At first, we iterate through all items and calling additional procedure for rows, corresponding to RCPTT plug-ins:</p>
+{% set snippet %}
+$table | get-items | foreach [val item] {
+  if [$item | get-property "values['Plug-in Id']" -raw | matches "org\\.eclipse\\.rcptt.*"] {
+    $item | validate-plugin
+  }
+}
+{% endset %}
+{{m.ecl(snippet)}}
+
+<br/>
+<p>In {{m.eclInline("validate-plugin")}} procedure, we can grab interesting values from UI into variables using {{m.eclCommand("let")}} command:</p>
+{% set snippet %}
+proc "validate-plugin" [val item -input] {
+	let [val pluginId [$item | get-property "values['Plug-in Id']" -raw]]
+		[val pluginName [$item | get-property "values['Plug-in Name']" -raw]]
+		[val providerName [$item | get-property "values['Provider']" -raw]] {
+{% endset %}
+{{m.ecl(snippet)}}
+
+<p>Then, inside a let-block we can put some validation on these values:</p>
+{% set snippet %}
+		if [$providerName | not-eq "Eclipse RCP Testing Tool Project"] {
+			format "%s: wrong provider name (%s)" $pluginId $providerName | log -severity error
+		}
+		
+		if [not [$pluginName | invoke endsWith "(Incubation)"]] {
+			format "%s: wrong plugin name (%s)" $pluginId $pluginName | log -severity error
+		}
+{% endset %}
+{{m.ecl(snippet)}}
+<p>For a last check, {{m.uiElement("Legal info")}} button enablement, we need to select an item first:</p>
+{% set snippet %}
+		$item | select-item
+		let [val legalPresent 
+				[get-window ".*Installation Details" 
+					| get-button "Legal Info"
+					| get-property enablement -raw
+					| bool]] {
+		   
+		   if [not $legalPresent] {
+		   		format "%s: no about.html included" $pluginId | log -severity error
+		   }
+		}
+{% endset %}
+{{m.ecl(snippet)}}
+
+<p>Once this test case is executed, the Error Log contains a bunch of branding errors:</p>
+
+<p><img src="{{site.url}}/shared/img/blog/about/log.png" /></p>
+
+<p>As the last step, to make test case failing if there are any errors logged, we add <a href="{{site.url}}/userguide/verifications/errorlog/">Error Log</a> verification, which denies all errors, so when test case is executed, it fails with a message like this:</p>
+<pre>
+Error log verification 'no errors' failed:
+Log entry
+Status ERROR: org.eclipse.rcptt.ecl.platform code=0 org.eclipse.rcptt.launching.multiaut.ui: wrong provider name (providerName) null
+is denied by predicate
+ERROR
+Log entry
+Status ERROR: org.eclipse.rcptt.ecl.platform code=0 org.eclipse.rcptt.launching.multiaut.ui: wrong plugin name (pluginName) null
+is denied by predicate
+ERROR
+...
+</pre>
+<h3>Bonus &ndash; check that plug-in is signed</h3>
+<p>As RCPTT can detect paths where images has been loaded, we can also assert that a plug-in is correctly signed, by checking <kbd>image.path</kbd> property of a table item:</p>
+{% set snippet %}
+if [$item | get-property "image.path" -raw 
+          | eq "org.eclipse.ui/icons/full/obj16/signed_no_tbl.gif"] {
+  format "%s is not signed" $pluginId | log -severity error
+}
+
+{% endset %}
+{{m.ecl(snippet)}}
+
