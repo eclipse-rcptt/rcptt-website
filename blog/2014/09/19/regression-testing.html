@@ -173,7 +173,8 @@
 <p>You can replay this test case right from the editor. It will be executed successfully, however that's not what you really want &ndash; right now test case verifies wrong behavior, caused by a bug in an application. The test case should pass only after the bug will be fixed. Before describing a way to make this test case failing, let's quickly go through recorded script:</p>
 
 <p></p>
-<pre ><code class="language-ecl">&#x200b;with [get-view "Package Explorer" | get-tree] {
+
+<p><pre ><code class="language-ecl">&#x200b;with [get-view "Package Explorer" | get-tree] {
     select "project/folder1" "project/folder2"
     get-menu "Compare With/Each Other" | click
 }
@@ -186,6 +187,7 @@ with [get-view "Package Explorer" | get-tree] {
 }
 get-editor "Compare ('project/folder1/file.txt' - 'project/folder2/file.txt')" | close 
 </code></pre>
+</p>
 
 <p>The scripting language (ECL) is inspired by TCL and Powershell &ndash; it consists of commands with arguments, connected by pipes and an output of the left command can be passed as an input to the right command. Square brackets (<code class="language-ecl">&#x200b;[]</code>) are used to pass an output of a command as an argument to another command. Curly brackets (<code class="language-ecl">&#x200b;{}</code>) are used to pass a script as an argument. It allows command to execute this script in some context.</p>
 
@@ -205,12 +207,13 @@ get-editor "Compare ('project/folder1/file.txt' - 'project/folder2/file.txt')" |
 <p>Next line, <code class="language-ecl">&#x200b;get-window Compare | get-label ...</code>, was recorded from an assertion mode. The general pattern here looks like this:</p>
 
 <p></p>
-<pre ><code class="language-ecl">&#x200b;get some UI object | get-property 'propertyName'
+
+<p><pre ><code class="language-ecl">&#x200b;get some UI object | get-property 'propertyName'
     | equals/&#x200b;not-equals 'expectedValue'
     | verify-true/&#x200b;verify-false
 </code></pre>
 
-<p><br/>
+<br/>
 In this particular case, we added an assertion for a property, which is used to control location, so in fact there is some repetition here, that does not affect anything, but we could just use <code class="language-ecl">&#x200b;get-window Compare | get-label &quot;There are...&quot;</code> as well &ndash; in case when there's no label with this text, the test would fail any way.</p>
 
 <p>Another important thing to notice about this script is that it does not contain any waiting logic &ndash; it waits for background operations automatically (calculation of comparison results in this case).</p>
@@ -219,9 +222,9 @@ In this particular case, we added an assertion for a property, which is used to 
 
 <p>Now let's make our test case to fail correctly. At first, we don't need a last line (<code class="language-ecl">&#x200b;get-editor ... | close</code>), because in case of correct behaviour, there should be no such editor. Instead we want to ensure that there is a window with correct label, so let's replace a last line of this script with this:</p>
 
-<p></p>
-<pre ><code class="language-ecl">&#x200b;get-window Compare | get-label "There are no differences between the selected inputs."
+<p><pre ><code class="language-ecl">&#x200b;get-window Compare | get-label "There are no differences between the selected inputs."
 </code></pre>
+</p>
 
 <p>Now, if you execute the resulting test case, it will fail as expected:</p>
 
@@ -269,8 +272,7 @@ In this particular case, we added an assertion for a property, which is used to 
 <p>As usual, create a test case, add launch and workbench contexts to it, and record test actions &ndash; open   <span class="uiElement">Launch configurations</span>
  dialog, select launch configuration and press required buttons. The resulting script will look like this:</p>
 
-<p></p>
-<pre ><code class="language-ecl">&#x200b;get-menu "Run/Run Configurations..." | click
+<p><pre ><code class="language-ecl">&#x200b;get-menu "Run/Run Configurations..." | click
 with [get-window "Run Configurations"] {
   get-tree | select "OSGi Framework/org.eclipse.ui osgi launch"
   get-button "Add Required Bundles" | click
@@ -278,6 +280,7 @@ with [get-window "Run Configurations"] {
   get-window Validation | get-button OK | click
 }
 </code></pre>
+</p>
 
 <p>We can replay it and obviously the test case will pass, as it does not contain any assertions yet.</p>
 
@@ -286,8 +289,10 @@ with [get-window "Run Configurations"] {
 <p>To assert that validation completed successfully, change the last line to this:</p>
 
 <p></p>
-<pre ><code class="language-ecl">&#x200b;get-window Validation | get-label "No problems were detected."
+
+<p><pre ><code class="language-ecl">&#x200b;get-window Validation | get-label "No problems were detected."
 </code></pre>
+</p>
 
 <p>Once a test case is replayed again, it correctly fails with a message <kbd>The Label "No problems were detected." could not be found</kbd>. To make sure that the test is correct, run the same test without any modifications on Kepler to see that it passes:</p>
 
@@ -327,7 +332,8 @@ with [get-window "Run Configurations"] {
 <p>The recorded script is below:</p>
 
 <p></p>
-<pre ><code class="language-ecl">&#x200b;get-menu "File/Import..." | click
+
+<p><pre ><code class="language-ecl">&#x200b;get-menu "File/Import..." | click
 with [get-window Import] {
     get-tree | select "General/Existing Projects into Workspace"
     get-button "Next &gt;" | click
@@ -340,26 +346,27 @@ with [get-window Import] {
 }
 get-window Import | get-tree | get-property itemCount | equals 0 | verify-true
 </code></pre>
+</p>
 
 <p><br/>
 You may notice that there's an interesting command recorded &#x2013; <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#set-dialog-result">set-dialog-result</a>. That's how RCPTT handles native dialogs: during recording, it remembers a value, selected by user in a native dialog, and stores it as a <code class="language-ecl">&#x200b;set-dialog-result</code> command. During test case execution RCPTT runtime automatically returns stored value to application code instead of opening a native dialog.</p>
 
 <p>However, in order to make a test case fully portable across machines and operating systes, we need to slightly modify this script in order to replace an absolute path with a value, relative to a home folder. This can be achieved by using two ECL commands &#x2013; <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#get-java-propery">get-java-propery</a> and <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#format">format</a>:</p>
 
-<p></p>
-<pre ><code class="language-ecl">&#x200b;set-dialog-result Folder [format "%s/projectsToImport" [get-java-property "user.home"]]
+<p><pre ><code class="language-ecl">&#x200b;set-dialog-result Folder [format "%s/projectsToImport" [get-java-property "user.home"]]
 </code></pre>
+</p>
 
 <h4>Asserting results</h4>
 
 <p>Next, we also need to modify the last part of a script, which asserts the results &#x2013; instead of asserting that there are no children, actually we want to assert the correct behavior, i.e. there is one child, <kbd>goodProject</kbd>. This can be done like this:</p>
 
-<p></p>
-<pre ><code class="language-ecl">&#x200b;with [get-window Import | get-tree] {
+<p><pre ><code class="language-ecl">&#x200b;with [get-window Import | get-tree] {
     select "goodProject.*"
     get-property itemCount | equals 1 | verify-true
 }
 </code></pre>
+</p>
 
 <p>Pay attention to this line &ndash; <code class="language-ecl">&#x200b;select &quot;goodProject.*&quot;</code>. Here we use a regular expression instead of full text of a tree item (full text also includes an absolute path on a file system). It is possible to use <code class="language-ecl">&#x200b;format</code> command again to construct a full text here, but in this case it is faster to simply strip an end text by <code class="language-ecl">.&#42;</code>.</p>
 
