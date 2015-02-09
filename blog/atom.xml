@@ -3,9 +3,7 @@
     <title><![CDATA[RCP Testing Tool Blog]]></title>
     <link href="https://www.eclipse.org/rcptt/atom.xml" rel="self"/>
     <link href="https://www.eclipse.org/rcptt/"/>
-    <updated>
-Warning: current() expects parameter 1 to be array, boolean given in phar://H:/rcptt/git/rcptt-site/sculpin.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 721
-2015-02-09T12:14:54+00:00</updated>
+    <updated>2015-02-09T12:25:51+00:00</updated>
     <id>https://www.eclipse.org/rcptt/blog</id>
             <author>
             <name><![CDATA[RCP Testing Tool Team]]></name>            <email><![CDATA[rcptt-dev@eclipse.org]]></email>        </author>
