@@ -70,7 +70,7 @@ We need to create two EMF classes to show registered plugins with ECL:
   <img src="{{site.url}}/shared/img/screenshot-new-command-guide-4.png"></img>
 </div>
 
-If you're not experienced EMF user you can find detailed instruction on the <a href="{{site.url}}/userguide/ecl/define-emf-model/">Define EMF model for ShowViews command</a> page.
+If you're not experienced EMF user you can find detailed instruction on the <a href="{{site.url}}/documentation/userguide/ecl/define-emf-model/">Define EMF model for ShowViews command</a> page.
 
 <h3>Implement ShowViews command</h3>
 
