@@ -96,8 +96,9 @@ $latestRelease=getLastChild($releasesHome);
 
 
 $nightlyHome = $downloadsHome . "/nightly";
-# $latestNightlyUnqualified = getLastChild($nightlyHome);
-$latestNightlyUnqualified = "1.5.5";
+#Ignoring Mars's 2.0.0
+#Selecting 1.x.x
+$latestNightlyUnqualified = getLastMatchingChild($nightlyHome, "/1\\.[d\\.]+/");
 $latestNightlyHome = $nightlyHome . "/" . $latestNightlyUnqualified;
 $latestNightlyQualifier = getLastMatchingChild($latestNightlyHome, "/\\d+/");
 
