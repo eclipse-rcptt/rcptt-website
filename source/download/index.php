@@ -98,9 +98,9 @@ $latestRelease=getLastChild($releasesHome);
 $nightlyHome = $downloadsHome . "/nightly";
 #Ignoring Mars's 2.0.0
 #Selecting 1.x.x
-$latestNightlyUnqualified = getLastMatchingChild($nightlyHome, "/1\\.[d\\.]+/");
+$latestNightlyUnqualified = getLastMatchingChild($nightlyHome, '/1\.[\d\.]+/');
 $latestNightlyHome = $nightlyHome . "/" . $latestNightlyUnqualified;
-$latestNightlyQualifier = getLastMatchingChild($latestNightlyHome, "/\\d+/");
+$latestNightlyQualifier = getLastMatchingChild($latestNightlyHome, '/\d+/');
 
 
 $html = "<div id='midcolumn'>";
