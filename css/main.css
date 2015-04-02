@@ -43,3 +43,11 @@ table.downloads td{
 table.downloads tr.icons{
     border-bottom: 1px solid #eee;
 }
+
+div.beforeTable + table td, div.beforeTable + table th {
+    border: 1px solid black;
+}
+
+div.beforeTable + table th {
+    text-align: center;
+}
