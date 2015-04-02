@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<head>
+  <title>RCPTT Documentation Center</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/main.css">
+  <link rel="stylesheet" href="https://www.eclipse.org/rcptt/shared/css/prism.css">
+  <link rel="icon" href="https://www.eclipse.org/rcptt/shared/img/favicon.ico">
+  <script src="https://www.eclipse.org/rcptt/shared/js/jquery.min.js"></script>
+  <script src="https://www.eclipse.org/rcptt/shared/js/bootstrap.min.js"></script>
+  <script src="https://www.eclipse.org/rcptt/shared/js/prism.js"></script>
+  <script src="https://www.eclipse.org/rcptt/shared/js/ecl.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-39589807-5', 'eclipse.org');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body>
+  <div id="before-footer">
+    <header>
+      <nav class="navbar navbar-default navbar-static-top" role="navigation">
+	<div class="container">
+	  
+	  <div class="navbar-header">
+	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+	    </button>
+	    <span class="navbar-brand">RCPTT Documentation Center</span>
+	  </div>
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    <ul class="nav navbar-nav">
+	      <li  class="active" >
+		<a href="https://www.eclipse.org/rcptt/documentation/userguide/getstarted">User Guide</a>
+	      </li>
+	      <li >
+		<a href="https://www.eclipse.org/rcptt/documentation/faq/">FAQ</a>
+	      </li>
+	      <li>
+		<a href="http://eclipse.org/rcptt">Back to RCPTT Main Site</a>
+	      </li>
+	      <li>
+		<a href="http://eclipse.org">Eclipse.org</a>
+	      </li>
+	    </ul>
+	  </div>
+      </nav>
+    </header>
+    <section class="content">
+      <div class="container">
+	<div class="row">
+  <div class="col-sm-3">
+    <div class="rcptt-sidebar">
+      <ul class="nav">
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/userguide/getstarted/">Get Started</a>
+	  	</li>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/userguide/testeditor/">Test Case Editor</a>
+	  	</li>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/userguide/controlpanel">Control Panel</a>
+	  	</li>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/userguide/assertions/">Assertions</a>
+	  	</li>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/userguide/ecl/">Eclipse Command Language</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/ecl/new-command-guide/">New ECL Command Guide</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/userguide/contexts/">Contexts</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/contexts/workspace/">Workspace</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/contexts/workbench/">Workbench</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/contexts/launch/">Launch</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/contexts/preferences/">Preferences</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/contexts/parameters/">Parameters</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/contexts/group/">Group</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/contexts/folder/">Folder</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/contexts/default/">Default</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/contexts/super/">Super</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/contexts/ecl/">ECL Script</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/userguide/verifications/">Verifications</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/verifications/text/">Text</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/verifications/treetable/">Table/Tree</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/verifications/errorlog/">Error Log</a>
+	    </li>
+	    	    <li >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/verifications/time/">Time</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/userguide/procedures/">Procedures and Variables</a>
+	  	</li>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/userguide/runner/">Test Runner</a>
+	  	  <ul class="nav">
+	    	    <li  class="active" >
+	      <a href="https://www.eclipse.org/rcptt/documentation/userguide/runner/arguments/">Arguments</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/userguide/maven/">Maven plugin</a>
+	  	</li>
+	      </ul>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <h1>Test Runner</h1>
+    <p></p>
+
+<p>RCPTT Test Runner is command-line tool for launching <a href="http://eclipse.org/rcptt">RCPTT</a> tests.
+It takes various options like path to RCPTT projects, application-under-test and other parameters, runs all tests and produces reports in HTML and JUnit XML formats.</p>
+
+<h3>Quick start</h3>
+
+<p>Download and modify sample scripts below (parameters that need to be set/changed are explained in scipt commends):</p>
+
+<ul>
+<li><a href="https://www.eclipse.org/rcptt/documentation/userguide/runner/build.xml">build.xml</a> &ndash; sample Ant script</li>
+<li><a href="https://www.eclipse.org/rcptt/documentation/userguide/runner/runner.sh">runner.sh</a> &ndash; sample Shell script for Linux/Mac OS X</li>
+<li><a href="https://www.eclipse.org/rcptt/documentation/userguide/runner/runner.cmd">runner.cmd</a> &ndash; sample CMD script for Windows</li>
+</ul>
+
+<h3>Argument reference</h3>
+
+<p>The base command line for RCPTT runner looks like this (backslashes indicate line breaks instead, on Windows, ^ is used instead):</p>
+
+<pre>
+java &lt;RCPTT Runner VM arguments&gt;
+  -jar /path/to/runner/plugins/org.eclipse.equinox.launcher_1.2.0.v20110502.jar \
+  -application org.eclipse.rcptt.runner.headless \
+  -data /path/to/runner/workspace \
+  &lt;the rest of arguments in form of -argName argValue&gt;
+  </pre>
+
+<h3>Basic command-line options</h3>
+
+<p>The table below summarizes information about arguments, arguments are more or less sorted by decreasing importance</p>
+
+<div class="beforeTable">
+</div>
+
+<table>
+<thead>
+<tr>
+  <th>Arg name</th>
+  <th>Description</th>
+  <th>Sample value</th>
+  <th>Required?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>aut</td>
+  <td>Path to application under test</td>
+  <td>"C:\Downloads\eclipse"</td>
+  <td>Yes</td>
+</tr>
+<tr>
+  <td>import</td>
+  <td>Semicolon-separated list of project folders with RCPTT tests or resources to link. RCPTT Runner will perform a recursive search of RCPTT projects in each of given folders.</td>
+  <td>"C:\work\rcpttProject1;C:\work\rcpttProject2", "C:\singleRcpttProject"</td>
+  <td>Yes</td>
+</tr>
+<tr>
+  <td>autWsPrefix</td>
+  <td>Path prefix for application-under-test's workspace. The workspace prefix given will be suffixed with incrementing restart index to make sure no data is lost in case of application-under-test restart, hang or crash.  See also reuseExistingWorkspace.</td>
+  <td>"C:\work\aut-workspace-"</td>
+  <td>Yes</td>
+</tr>
+<tr>
+  <td>junitReport</td>
+  <td>File path to save JUnit report with test exec results</td>
+  <td>"C:\work\results.xml"</td>
+  <td>No</td>
+</tr>
+<tr>
+  <td>htmlReport</td>
+  <td>File path to save HTML report with test exec results</td>
+  <td>"C:\work\results.html"</td>
+  <td>No</td>
+</tr>
+<tr>
+  <td>autConsolePrefix</td>
+  <td>File prefix for application-under-test process output. It will be appended with incrementing restart index for the same reason as -autWsPrefix arg.</td>
+  <td>C:\work\aut-console-output-</td>
+  <td>No</td>
+</tr>
+<tr>
+  <td>testOptions</td>
+  <td>Semicolon-separated list of RCPTT Runtime options (see description below)</td>
+  <td>"testExecTimeout=600"</td>
+  <td>No</td>
+</tr>
+<tr>
+  <td>autArgs</td>
+  <td>List of arguments for application-under-test separated by semicolon.</td>
+  <td>-showsplash;org.eclipse.platform</td>
+  <td>No</td>
+</tr>
+<tr>
+  <td>autVMArgs</td>
+  <td>List of arguments for application-under-test's JVM separated by semicolon.</td>
+  <td>-Xmx1024m;-XX:MaxPermSize=512m</td>
+  <td></td>
+</tr>
+<tr>
+  <td>suites</td>
+  <td>List of Test suite names separated by semicolon. If this argument is set, RCPTT runner executes only test cases from given suites (otherwise it executes all tests from given projects).</td>
+  <td>WindowsOnlyTests</td>
+  <td>No</td>
+</tr>
+<tr>
+  <td>skipTags</td>
+  <td>Semicolon-separated list of tags. Test cases containing any of listed tags are not be executed. The default value is 'skipExecution'.</td>
+  <td>skipExecution</td>
+  <td>No</td>
+</tr>
+<tr>
+  <td>autVM</td>
+  <td>Java VM to use with application-under-test. By default it is set to the same Java VM which is used for RCPTT Runner launching</td>
+  <td>"C:\Program Files\Java\jre&#95;1.6.0_25"</td>
+  <td>No</td>
+</tr>
+<tr>
+  <td>timeout</td>
+  <td>Overall execution timeout in seconds, default value is 18000 (5 hours)</td>
+  <td>3600</td>
+  <td>No</td>
+</tr>
+<tr>
+  <td>connectTimeout</td>
+  <td>application-under-test connection timeout in seconds, default value is 300 (5 mins).</td>
+  <td>600</td>
+  <td></td>
+</tr>
+<tr>
+  <td>report</td>
+  <td>Generate report with custom reporting renderer. "id;path" format should be used to specify report renderer id and path to export.</td>
+  <td>"custom.report.id;C:\results\custom.report"</td>
+  <td>No</td>
+</tr>
+<tr>
+  <td>noSecurityOverride</td>
+  <td>If provided, -eclipse.keyring parameter will not be specified. Also -testOptions could contain "overrideSecurityStorage=false" for same effect.</td>
+  <td>This argument does not have value</td>
+  <td>No</td>
+</tr>
+<tr>
+  <td>memoryUsage</td>
+  <td>If specified, print AUT memory usage in Runner stdout</td>
+  <td>This argument does not have value</td>
+  <td>No</td>
+</tr>
+<tr>
+  <td>tests</td>
+  <td>Semicolon-separated list of test name glob patterns (* - any chars, ? - exactly one char). If this argument is set, RCPTT runner executes listed test cases only.  This argument also works with combination with <code>suites</code> argument, i.e. at first Runner collects all tests from provided suites and then filters it by test names</td>
+  <td>-tests myTest.test or -test myTest*</td>
+  <td>No</td>
+</tr>
+<tr>
+  <td>reuseExistingWorkspace</td>
+  <td>If present, autWsPrefix is treated as full path to the existing workspace. This workspace is never recreated and always reused.</td>
+  <td>This argument does not have value</td>
+  <td>No</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Injection options</h3>
+
+<p>Injection mechanism allows to install some extra features into application-under-test before test execution. This might be useful in two cases:</p>
+
+<ul>
+<li>The product being tested is distributed as an update site, so there's no default all-in-one RCP application. In this case Eclipse SDK (or other eclipse package) can be used as application-under-test and plugins being tested will be installed into it.</li>
+<li>Application-under-test requires some extra plugins for testing, and these plugins are undesirable in a final product</li>
+</ul>
+
+<p>Injection mechanism currently does not resolve dependencies automatically, i.e. it just puts specified plugins/features into an application, but does not make sure that all prerequisites are installed.</p>
+
+<h4>Injecting from Update Site</h4>
+
+<p>In command line it is specified as argument with name injection.site where value is update site URL optionally followed by list of features separated by semicolon. If list of features is omitted, then all features from given site will be installed</p>
+
+<pre>
+-injection:site <update-site>(;feature-id1.feature.group;feature-id2.feature.group;plugin-id1;plugin-id2)
+</pre>
+
+<p>It is possible to specify this argument several times to inject features from more than one update site.</p>
+
+<h4>Injecting from a directory</h4>
+
+<p>This way is similar to dropping some plugins into eclipse/plugins folder:</p>
+
+<pre>
+-injection:dir <path-to-dir-with-plugins>
+</pre>
+
+<p>It is possible to specify this argument several times to inject plugins from more than one directory</p>
+
+<h3>RCPTT Runtime options</h3>
+
+<p>This table summarizes RCPTT runtime options which are rarely need to be modified and can be specified in <code>testOptions</code> argument. In RCPTT IDE these options can be set by going to Preferences -> RCP Testing Tool -> Advanced Options.</p>
+
+<div class="beforeTable"></div>
+
+<table>
+<thead>
+<tr>
+  <th>Option Name</th>
+  <th>Default value</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>passedTestDetails</td>
+  <td>false</td>
+  <td>When true, include output of 'take-screenshot' and 'trace' ECL commands into a report</td>
+</tr>
+<tr>
+  <td>testExecTimeout</td>
+  <td>300</td>
+  <td>Timeout for a single test execution in seconds</td>
+</tr>
+<tr>
+  <td>contextRunnableTimeout</td>
+  <td>180000</td>
+  <td>Context applying timeout in milliseconds</td>
+</tr>
+<tr>
+  <td>contextsWaitforjobsTimeout</td>
+  <td>30000</td>
+  <td>If there are any jobs started after context applying, wait for their completion during this time (in milliseconds).</td>
+</tr>
+<tr>
+  <td>jobDebugjobTimeout</td>
+  <td>300000</td>
+  <td>Timeout in milliseconds for jobs scheduled from eclipse Debug plugin.</td>
+</tr>
+<tr>
+  <td>jobNulifyRescheduleMaxValue</td>
+  <td>50</td>
+  <td>If job reschedules itself more than times specified by this parameter, RCPTT stops setting delay to 0 (see jobScheduleDelayedMaxtime parameter).</td>
+</tr>
+<tr>
+  <td>jobSleepingStepTime</td>
+  <td>200</td>
+  <td>When job is in sleeping mode (see jobTreatAsSleeingTimeout option), execute commands with given delay (in milliseconds) between commands.</td>
+</tr>
+<tr>
+  <td>jobSleepingStepTimeout</td>
+  <td>120000</td>
+  <td>Wait timeout in milliseconds for stepping jobs (see jobTreatAsSleepingTimeout and jobSleepingStepTime)</td>
+</tr>
+<tr>
+  <td>jobTreatAsSleepingTimeout</td>
+  <td>10000</td>
+  <td>If job executes more than this time (in milliseconds) and sleeps (i.e. executing Thread.sleep() or Object.wait()), then RCPTT considers that this job is waiting for some user actions and continues to the next command.</td>
+</tr>
+<tr>
+  <td>timerExecsWaitNullify</td>
+  <td>100</td>
+  <td>If Display.timerExec is scheduled for the delay less than this value (in milliseconds), set delay to 0.</td>
+</tr>
+<tr>
+  <td>autStartupTimeout</td>
+  <td>300</td>
+  <td>How many seconds Runner should wait for application startup.</td>
+</tr>
+<tr>
+  <td>jobHangTimeout</td>
+  <td>30000</td>
+  <td>Job hang skip timeout in milliseconds. If job is running longer than this time, RCPTT Runtime considers that it is hung and moves to the next command.</td>
+</tr>
+<tr>
+  <td>jobSchelduleDelayedMaxtime</td>
+  <td>600</td>
+  <td>Max job scheduled delay to be waited for in milliseconds. If job is scheduled with delay less than this value, RCPTT sets delay to 0 and waits for job completion (also see jobNullifyRescheduleMaxValue). Otherwise RCPTT Runtime does not wait for job completion if it is scheduled with a delay greater than this value.</td>
+</tr>
+<tr>
+  <td>launchingKillAutOnConnectError</td>
+  <td>false</td>
+  <td>Kill AUT on connect error. Whether Runner should kill application-under-test if it cannot connect to it.</td>
+</tr>
+<tr>
+  <td>eclExecutionDelay</td>
+  <td>0</td>
+  <td>Wait for a given milliseconds between each ECL command. This can be useful when things go wrong at some point and it is hard to determine when by looking at execution. Setting this value to, say, 500, allows to inspect RCPTT actions in more details.</td>
+</tr>
+<tr>
+  <td>workspaceClearForceGc</td>
+  <td>true</td>
+  <td>Forces garbage collection on workspace cleanup.</td>
+</tr>
+<tr>
+  <td>diagramPartLocatorFeatureIdentityNames</td>
+  <td>id,title</td>
+  <td>Use following EMF features for part identity</td>
+</tr>
+<tr>
+  <td>diagramPartLocatorIdentity</td>
+  <td>ClassName</td>
+  <td>Non EMF object identity method</td>
+</tr>
+<tr>
+  <td>diagramPartLocatorNameFeatureSupport</td>
+  <td>true</td>
+  <td>EMF object identity by 'name feature' support</td>
+</tr>
+<tr>
+  <td>diagramPartLocatorTextSupport</td>
+  <td>true</td>
+  <td>Use text content for part identity</td>
+</tr>
+</tbody>
+</table>
+  </div>
+</div>
+      </div>
+
+    </section>
+    <script src="https://www.eclipse.org/rcptt/shared/js/main.js"></script>
+</body>
