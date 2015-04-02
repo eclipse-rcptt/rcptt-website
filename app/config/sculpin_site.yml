@@ -71,6 +71,16 @@ guide:
   - name: Procedures and Variables
     url: userguide/procedures/
     slug: procedures
+  - name: Test Runner
+    url: userguide/runner/
+    slug: runner
+    children:
+     - name: Arguments
+       url: userguide/runner/arguments/
+       slug: runner/arguments
+  - name: Maven plugin
+    url: userguide/maven/
+    slug: maven
 faq:
   - name: How to pass a value to a test during its execution?
     url: faq/pass-value/

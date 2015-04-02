@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Change groupId, artifactId and version -->
+  <artifactId>rcpttTests</artifactId>
+  <groupId>projectName</groupId>
+  <version>1.0.0-SNAPSHOT</version>
+  
+  <packaging>rcpttTest</packaging>
+
+  <!-- Change properies below to your values -->
+  <properties>
+    <autPath>${project.basedir}/../../path/to/aut</autPath>
+  </properties>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.xored.ci4rcptt</groupId>
+        <artifactId>ci4rcptt-maven-plugin</artifactId>
+        <version>1.5.5</version>
+        <extensions>true</extensions>
+        <configuration>
+          <aut>
+            <explicit>${autPath}</explicit>
+          </aut>
+          <runner>
+            <version>1.5.5</version>
+          </runner>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>xored-releases</id>
+      <name>Xored Maven repository</name>
+      <url>http://maven.xored.com/nexus/content/repositories/ci4rcptt-releases/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+</project>
