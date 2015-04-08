@@ -14,15 +14,15 @@ In case when it is required to pass some values to a test in command line, it is
   </li>
   <li>Use ECL command {{m.eclCommand("substitute-variables")}} (which uses <b>org.eclipse.core.variables</b> plugin) to get a property value like this:</li>
   <pre>//writes prop val to AUT workspace log
-log [subsitute-variables "${system_property:propertyName}"]</pre>
+log [substitute-variables "${system_property:propertyName}"]</pre>
 </ol>
 
 With aid of <a href="{{site.url}}/documentation/userguide/procedures/"> variables and user-defined procedures</a>, this becomes even more convenient:
 <ol>
   <li>Create ECL context which consist of only one command, declaring global variables:
-<pre>global [val prop1 [subsitute-variables "${system_property:prop1}"]]
-       [val prop2 [subsitute-variables "${system_property:prop2}"]]
-  [val prop3 [subsitute-variables "${system_property:prop3}"]]</pre>
+<pre>global [val prop1 [substitute-variables "${system_property:prop1}"]]
+       [val prop2 [substitute-variables "${system_property:prop2}"]]
+  [val prop3 [substitute-variables "${system_property:prop3}"]]</pre>
   </li>
 
   <li>Add this ECL context to project's default contexts in Project Settings<br></li>
