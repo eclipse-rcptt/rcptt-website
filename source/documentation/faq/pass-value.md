@@ -12,7 +12,7 @@ In case when it is required to pass some values to a test in command line, it is
   <li>In AUT VM arguments pass desired parameters as Java properties, i.e. add arguments like this:
     <pre>-DpropertyName=propertyValue </pre>
   </li>
-  <li>Use  ECL command {{m.eclCommand("substitute-variables")}} (which uses <b>org.eclipse.core.variables</b> plugin) to get a property value like this:</li>
+  <li>Use ECL command {{m.eclCommand("substitute-variables")}} (which uses <b>org.eclipse.core.variables</b> plugin) to get a property value like this:</li>
   <pre>//writes prop val to AUT workspace log
 log [substitute-variables "${system_property:propertyName}"]</pre>
 </ol>
