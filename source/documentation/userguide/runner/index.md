@@ -5,6 +5,27 @@ layout: doc
 nav_name: userguide
 ---
 
-RCPTT is good enough to run tests occasionally, to keep quality of product milestones. To get more interactive results, to keep up with high development speed and agile techniques, project may require to run functional tests more than once a week. Once your test count reaches hundreds, whole run may take an hour or two and this may become time consuming and bothersome. This can be solved by continuous integration &mdash; automated run of integration tests on every commit or on a regular basis.
+{% import "macros" as m %}
 
-Runner is designed to cover this need and provides completely automated and unattended way of running testsuites on every build. Once you configure a build system to use it, you have no need to start and observe whole test suite manually anymore.
+- RCP Test Runner ([download it here](https://eclipse.org/rcptt/download)).
+- [RCP Test Runner Arguments]({{site.url}}/documentation/userguide/runner/arguments/).
+- [RCPTT Maven Plugin]({{site.url}}/documentation/userguide/maven).
+
+RCPTT Test Runner tests Eclipse-based applications by executing RCPTT tests unattended, on a regular basis. It provides a command line interface and a Maven plugin and establishes seamless integration of your GUI tests with your favourite toolchain.
+
+Runner is required to manage test bases greater than a dozen of tests for projects that care for development speed.
+
+- Completely automated testing
+- Command line interface
+- Maven plugin
+- Works with Jenkins, Hudson, Bamboo, etc.
+- Human readable HTML report
+- JUnit or custom reports
+- Professional support (RCPTT support is included!)
+- Every commit can be verified by functional tests before reaching development branch
+- Handles application hangups, logs errors, stores every test step and its result
+
+
+
+
+
