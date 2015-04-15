@@ -7,7 +7,7 @@ nav_name: userguide
 
 {% import "macros" as m %}
 
-([Download it here](https://eclipse.org/rcptt/download)).
+[Download it here](https://eclipse.org/rcptt/download).
 
 - [RCP Test Runner Arguments]({{site.url}}/documentation/userguide/runner/arguments/).
 - [RCPTT Maven Plugin]({{site.url}}/documentation/userguide/maven).
