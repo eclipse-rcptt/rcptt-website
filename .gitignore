@@ -1,3 +1,6 @@
 *~
 .DS_Store
 output_prod
+./sculpin
+.project
+sculpin

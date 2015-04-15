@@ -86,20 +86,20 @@
 
 <ol>
   <li>In AUT VM arguments pass desired parameters as Java properties, i.e. add arguments like this:
-    <pre>-DpropertyName=propertyValue</pre>
+    <pre>-DpropertyName=propertyValue </pre>
   </li>
   <li>Use ECL command <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#substitute-variables">substitute-variables</a> (which uses <b>org.eclipse.core.variables</b> plugin) to get a property value like this:</li>
   <pre>//writes prop val to AUT workspace log
-log [subsitute-variables "${system_property:propertyName}"]</pre>
+log [substitute-variables "${system_property:propertyName}"]</pre>
 </ol>
 
 <p>With aid of <a href="https://www.eclipse.org/rcptt/documentation/userguide/procedures/"> variables and user-defined procedures</a>, this becomes even more convenient:</p>
 
 <ol>
   <li>Create ECL context which consist of only one command, declaring global variables:
-<pre>global [val prop1 [subsitute-variables "${system_property:prop1}"]]
-       [val prop2 [subsitute-variables "${system_property:prop2}"]]
-  [val prop3 [subsitute-variables "${system_property:prop3}"]]</pre>
+<pre>global [val prop1 [substitute-variables "${system_property:prop1}"]]
+       [val prop2 [substitute-variables "${system_property:prop2}"]]
+  [val prop3 [substitute-variables "${system_property:prop3}"]]</pre>
   </li>
 
   <li>Add this ECL context to project's default contexts in Project Settings<br></li>

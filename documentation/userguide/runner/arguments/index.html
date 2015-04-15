@@ -145,7 +145,7 @@
 <p>RCPTT Test Runner is command-line tool for launching <a href="http://eclipse.org/rcptt">RCPTT</a> tests.
 It takes various options like path to RCPTT projects, application-under-test and other parameters, runs all tests and produces reports in HTML and JUnit XML formats.</p>
 
-<h3>Quick start</h3>
+<h3 id="quick-start">Quick start</h3>
 
 <p>Download and modify sample scripts below (parameters that need to be set/changed are explained in scipt commends):</p>
 
@@ -155,7 +155,7 @@ It takes various options like path to RCPTT projects, application-under-test and
 <li><a href="https://www.eclipse.org/rcptt/documentation/userguide/runner/runner.cmd">runner.cmd</a> &ndash; sample CMD script for Windows</li>
 </ul>
 
-<h3>Argument reference</h3>
+<h3 id="argument-reference">Argument reference</h3>
 
 <p>The base command line for RCPTT runner looks like this (backslashes indicate line breaks instead, on Windows, ^ is used instead):</p>
 
@@ -167,7 +167,7 @@ java &lt;RCPTT Runner VM arguments&gt;
   &lt;the rest of arguments in form of -argName argValue&gt;
   </pre>
 
-<h3>Basic command-line options</h3>
+<h3 id="basic-command-line-options">Basic command-line options</h3>
 
 <p>The table below summarizes information about arguments, arguments are more or less sorted by decreasing importance</p>
 
@@ -301,7 +301,7 @@ java &lt;RCPTT Runner VM arguments&gt;
 </tbody>
 </table>
 
-<h3>Injection options</h3>
+<h3 id="injection-options">Injection options</h3>
 
 <p>Injection mechanism allows to install some extra features into application-under-test before test execution. This might be useful in two cases:</p>
 
@@ -312,7 +312,7 @@ java &lt;RCPTT Runner VM arguments&gt;
 
 <p>Injection mechanism currently does not resolve dependencies automatically, i.e. it just puts specified plugins/features into an application, but does not make sure that all prerequisites are installed.</p>
 
-<h4>Injecting from Update Site</h4>
+<h4 id="injecting-from-update-site">Injecting from Update Site</h4>
 
 <p>In command line it is specified as argument with name injection.site where value is update site URL optionally followed by list of features separated by semicolon. If list of features is omitted, then all features from given site will be installed</p>
 
@@ -322,7 +322,7 @@ java &lt;RCPTT Runner VM arguments&gt;
 
 <p>It is possible to specify this argument several times to inject features from more than one update site.</p>
 
-<h4>Injecting from a directory</h4>
+<h4 id="injecting-from-a-directory">Injecting from a directory</h4>
 
 <p>This way is similar to dropping some plugins into eclipse/plugins folder:</p>
 
@@ -332,7 +332,7 @@ java &lt;RCPTT Runner VM arguments&gt;
 
 <p>It is possible to specify this argument several times to inject plugins from more than one directory</p>
 
-<h3>RCPTT Runtime options</h3>
+<h3 id="rcptt-runtime-options">RCPTT Runtime options</h3>
 
 <p>This table summarizes RCPTT runtime options which are rarely need to be modified and can be specified in <code>testOptions</code> argument. In RCPTT IDE these options can be set by going to Preferences -> RCP Testing Tool -> Advanced Options.</p>
 
