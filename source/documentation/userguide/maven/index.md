@@ -30,11 +30,11 @@ Below is a basic POM template which can be used as starting point of automating 
     &lt;pluginRepository&gt;
       &lt;id&gt;xored&lt;/id&gt;
       &lt;name&gt;Xored Maven repository&lt;/name&gt;
-      &lt;url&gt;http://maven.xored.com/nexus/content/repositories/ci4rcptt-releases/&lt;/url&gt;
+      &lt;url&gt;http://maven.xored.com/nexus/content/repositories/ci4rcptt-snapshots/&lt;/url&gt;
     &lt;/pluginRepository&gt;
   &lt;/pluginRepositories&gt; 
   &lt;properties&gt;
-    &lt;ci4rcptt-maven-version&gt;1.5.4&lt;/ci4rcptt-maven-version&gt;
+    &lt;ci4rcptt-maven-version&gt;1.5.6-SNAPSHOT&lt;/ci4rcptt-maven-version&gt;
   &lt;/properties&gt; 
 
   &lt;build&gt;
@@ -45,6 +45,9 @@ Below is a basic POM template which can be used as starting point of automating 
         &lt;version&gt;${ci4rcptt-maven-version}&lt;/version&gt;
         &lt;extensions&gt;true&lt;/extensions&gt;
         &lt;configuration&gt;
+        	&lt;runner&gt;
+        		&lt;explicit&gt;/Users/olgayurchuk/Downloads/rcptt.runner-incubation-1.5.6-N201504122315.zip&lt;/explicit&gt;
+        	&lt;/runner&gt;
           &lt;!-- The main configuration section goes here --&gt; 
         &lt;/configuration&gt;
       &lt;/plugin&gt;
