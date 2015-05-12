@@ -28,25 +28,30 @@ Below is a basic POM template which can be used as starting point of automating 
 
   &lt;pluginRepositories&gt;
     &lt;pluginRepository&gt;
-      &lt;id&gt;xored&lt;/id&gt;
+      &lt;id&gt;rcptt-releases&lt;/id&gt;
+      &lt;name&gt;RCPTT Maven repository&lt;/name&gt;
+      &lt;url&gt;http://maven.xored.com/nexus/content/repositories/rcptt-releases/&lt;/url&gt;
+    &lt;/pluginRepository&gt;
+    &lt;pluginRepository&gt;
+      &lt;id&gt;rcptt-snapshots&lt;/id&gt;
       &lt;name&gt;Xored Maven repository&lt;/name&gt;
-      &lt;url&gt;http://maven.xored.com/nexus/content/repositories/ci4rcptt-snapshots/&lt;/url&gt;
+      &lt;url&gt;https://repo.eclipse.org/content/repositories/rcptt-snapshots/&lt;/url&gt;
     &lt;/pluginRepository&gt;
   &lt;/pluginRepositories&gt; 
   &lt;properties&gt;
-    &lt;ci4rcptt-maven-version&gt;1.5.6-SNAPSHOT&lt;/ci4rcptt-maven-version&gt;
+    &lt;ci4rcptt-maven-version&gt;2.0.0-SNAPSHOT&lt;/ci4rcptt-maven-version&gt;
   &lt;/properties&gt; 
 
   &lt;build&gt;
     &lt;plugins&gt;
       &lt;plugin&gt;
-        &lt;groupId&gt;com.xored.ci4rcptt&lt;/groupId&gt;
-        &lt;artifactId&gt;ci4rcptt-maven-plugin&lt;/artifactId&gt;
-        &lt;version&gt;${ci4rcptt-maven-version}&lt;/version&gt;
+        &lt;groupId&gt;org.eclipse.rcptt&lt;/groupId&gt;
+        &lt;artifactId&gt;rcptt-maven-plugin&lt;/artifactId&gt;
+        &lt;version&gt;${rcptt-maven-version}&lt;/version&gt;
         &lt;extensions&gt;true&lt;/extensions&gt;
         &lt;configuration&gt;
         	&lt;runner&gt;
-        		&lt;explicit&gt;/Users/olgayurchuk/Downloads/rcptt.runner-incubation-1.5.6-N201504122315.zip&lt;/explicit&gt;
+        		&lt;version&gt;1.5.6-SNAPSHOT&lt;/version&gt;
         	&lt;/runner&gt;
           &lt;!-- The main configuration section goes here --&gt; 
         &lt;/configuration&gt;
@@ -70,7 +75,7 @@ Use <code>runner/version</code> to specify version of RCPTT Runner to use.
 <pre>
 <code>&lt;runner&gt;
   &lt;!-- version of RCPTT Runner --&gt;
-  &lt;version&gt;1.5.4&lt;/version&gt;
+  &lt;version&gt;1.5.6-SNAPSHOT&lt;/version&gt;
 &lt;/runner&gt;
 </code></pre>
 
@@ -125,7 +130,7 @@ In case of Maven artifact resolution, artifact classifier is automatically set t
 &lt;/aut&gt;
 </code></pre>
 
-In this case ci4rcptt-maven-plugin plugin determines the classifier of the current platform, assumes that packaging type is zip, and resolves the artifact using Aether, by taking the latest version. However, version, classifier and extension can be explicitly specified:
+In this case rcptt-maven-plugin plugin determines the classifier of the current platform, assumes that packaging type is zip, and resolves the artifact using Aether, by taking the latest version. However, version, classifier and extension can be explicitly specified:
 
 <pre>
 <code>&lt;aut&gt;
@@ -241,7 +246,7 @@ By default RCPTT Maven plugin launches all tests in given projects (and extra pr
 
 ###Simple project
 
-This is a trivial example which uses most of defaults provided by ci4rcptt-maven-plugin.
+This is a trivial example which uses most of defaults provided by rcptt-maven-plugin.
 
 <pre>
 <code>&lt;project&gt;
@@ -254,9 +259,9 @@ This is a trivial example which uses most of defaults provided by ci4rcptt-maven
   &lt;build&gt;
     &lt;plugins&gt;
       &lt;plugin&gt;
-        &lt;groupid&gt;com.xored.ci4rcptt&lt;/groupid&gt;
-        &lt;artifactid&gt;ci4rcptt-maven-plugin&lt;/artifactid&gt;
-        &lt;version&gt;1.5.4&lt;/version&gt;
+        &lt;groupid&gt;org.eclipse.rcptt&lt;/groupid&gt;
+        &lt;artifactid&gt;rcptt-maven-plugin&lt;/artifactid&gt;
+        &lt;version&gt;2.0.0-SNAPSHOT&lt;/version&gt;
         &lt;extensions&gt;true&lt;/extensions&gt;
         &lt;configuration&gt;
           &lt;aut&gt;
@@ -270,10 +275,15 @@ This is a trivial example which uses most of defaults provided by ci4rcptt-maven
  
   &lt;pluginrepositories&gt; 
     &lt;pluginrepository&gt;
-      &lt;id&gt;xored&lt;/id&gt;
+      &lt;id&gt;rcptt-snapshots&lt;/id&gt;
       &lt;name&gt;Xored Maven repository&lt;/name&gt;
-      &lt;url&gt;http://maven.xored.com/nexus/content/repositories/ci4rcptt-releases/&lt;/url&gt;
+      &lt;url&gt;https://repo.eclipse.org/content/repositories/rcptt-snapshots/&lt;/url&gt;
     &lt;/pluginrepository&gt; 
+     &lt;pluginrepository&gt;
+      &lt;id&gt;rcptt-releases&lt;/id&gt;
+      &lt;name&gt;RCPTT Maven repository&lt;/name&gt;
+      &lt;url&gt;https://repo.eclipse.org/content/repositories/rcptt-snapshots/&lt;/url&gt;
+    &lt;/pluginrepository&gt;
   &lt;/pluginrepositories&gt;
 &lt;/project&gt;</code></pre>
 
