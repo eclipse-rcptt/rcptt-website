@@ -39,7 +39,7 @@ Below is a basic POM template which can be used as starting point of automating 
     &lt;/pluginRepository&gt;
   &lt;/pluginRepositories&gt; 
   &lt;properties&gt;
-    &lt;ci4rcptt-maven-version&gt;2.0.0-SNAPSHOT&lt;/ci4rcptt-maven-version&gt;
+    &lt;rcptt-maven-version&gt;2.0.0-SNAPSHOT&lt;/rcptt-maven-version&gt;
   &lt;/properties&gt; 
 
   &lt;build&gt;
