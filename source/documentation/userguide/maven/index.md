@@ -34,7 +34,10 @@ Below is a basic POM template which can be used as starting point of automating 
     &lt;/pluginRepository&gt;
     &lt;pluginRepository&gt;
       &lt;id&gt;rcptt-snapshots&lt;/id&gt;
-      &lt;name&gt;Xored Maven repository&lt;/name&gt;
+      &lt;name&gt;RCPTT Maven Snapshots repository&lt;/name&gt;
+      &lt;snapshots&gt;
+      	&lt;updatePolicy&gt;always&lt;/updatePolicy&gt;
+      &lt;/snapshots&gt;
       &lt;url&gt;https://repo.eclipse.org/content/repositories/rcptt-snapshots/&lt;/url&gt;
     &lt;/pluginRepository&gt;
   &lt;/pluginRepositories&gt; 
@@ -51,7 +54,7 @@ Below is a basic POM template which can be used as starting point of automating 
         &lt;extensions&gt;true&lt;/extensions&gt;
         &lt;configuration&gt;
         	&lt;runner&gt;
-        		&lt;version&gt;1.5.6-SNAPSHOT&lt;/version&gt;
+        		&lt;version&gt;2.0.0-SNAPSHOT&lt;/version&gt;
         	&lt;/runner&gt;
           &lt;!-- The main configuration section goes here --&gt; 
         &lt;/configuration&gt;
@@ -75,7 +78,7 @@ Use <code>runner/version</code> to specify version of RCPTT Runner to use.
 <pre>
 <code>&lt;runner&gt;
   &lt;!-- version of RCPTT Runner --&gt;
-  &lt;version&gt;1.5.6-SNAPSHOT&lt;/version&gt;
+  &lt;version&gt;2.0.0-SNAPSHOT&lt;/version&gt;
 &lt;/runner&gt;
 </code></pre>
 
