@@ -60,7 +60,7 @@ function generateDownloadBlock($title, $baseUri, $repoUri, $runner = null) {
     $html .= "      </td>";
     $html .= "      <td>";
     $html .= "        <ul>";
-    $html .= "          <li><a href='" . $repoUri . "'>Update Site (Indigo)</a></li>";
+    $html .= "          <li><a href='" . $repoUri . "'>Update Site (Mars)</a></li>";
     if (!empty($runner)) {
       $html .= "          <li><a href='" . $runner . "'>Test Runner</a></li>";
     }
@@ -96,9 +96,8 @@ $latestRelease=getLastChild($releasesHome);
 
 
 $nightlyHome = $downloadsHome . "/nightly";
-#Ignoring Mars's 2.0.0
-#Selecting 1.x.x
-$latestNightlyUnqualified = getLastMatchingChild($nightlyHome, '/1\.[\d\.]+/');
+#Selecting 2.x.x
+$latestNightlyUnqualified = getLastMatchingChild($nightlyHome, '/2\.[\d\.]+/');
 $latestNightlyHome = $nightlyHome . "/" . $latestNightlyUnqualified;
 $latestNightlyQualifier = getLastMatchingChild($latestNightlyHome, '/\d+/');
 
