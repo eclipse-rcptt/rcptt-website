@@ -60,7 +60,7 @@ Do the following steps for that purpose:
 5. When AUT is launched, the destination file is created and filled during the test.
 6. After execution, the file can be imported as coverage session to Eclipse/EclEmma to have the results in the known view in Eclipse.
 
-You may look at whole <a href="{{site.url}}/_posts/pom.xml">pom.xml</a> example.
+You may look at whole <a href="{{site.url}}/blog/pom.xml">pom.xml</a> example.
 
 
 
