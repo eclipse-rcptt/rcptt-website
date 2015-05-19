@@ -60,7 +60,7 @@ function generateDownloadBlock($title, $baseUri, $repoUri, $runner = null) {
     $html .= "      </td>";
     $html .= "      <td>";
     $html .= "        <ul>";
-    $html .= "          <li><a href='" . $repoUri . "'>Update Site (Mars)</a></li>";
+    $html .= "          <li><a href='" . $repoUri . "'>Update Site</a></li>";
     if (!empty($runner)) {
       $html .= "          <li><a href='" . $runner . "'>Test Runner</a></li>";
     }
