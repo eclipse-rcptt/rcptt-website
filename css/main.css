@@ -37,6 +37,7 @@ table.downloads{
     margin-bottom: 20px;
 }
 table.downloads td{
+   horizontal-align: center;
    padding: 20px;
    vertical-align: top;
 }
