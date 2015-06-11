@@ -41,7 +41,7 @@ table.downloads td{
    vertical-align: top;
 }
 table.downloads tr.icons{
-    horizontal-align: center;
+    horizontal-align: middle;
     border-bottom: 1px solid #eee;
 }
 
