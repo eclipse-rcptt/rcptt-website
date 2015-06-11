@@ -35,10 +35,10 @@ function generateDownloadBlock($title, $baseUri, $repoUri, $runner = null) {
     $html .= "  <table class='downloads'>";
     $html .= "  <tbody>";
     $html .= "    <tr class='icons'>";
-    $html .= "      <td><img src='/rcptt/img/ico-win.png' /></td>";
-    $html .= "      <td><img src='/rcptt/img/ico-linux.png' /></td>";
-    $html .= "      <td><img src='/rcptt/img/ico-mac.png' /></td>";
-    $html .= "      <td><img src='/rcptt/img/ico-eclipse.png' /></td>";    
+    $html .= "      <td align="center"><img src='/rcptt/img/ico-win.png' /></td>";
+    $html .= "      <td align="center"><img src='/rcptt/img/ico-linux.png' /></td>";
+    $html .= "      <td align="center"><img src='/rcptt/img/ico-mac.png' /></td>";
+    $html .= "      <td align="center"><img src='/rcptt/img/ico-eclipse.png' /></td>";    
     $html .= "    </tr>";
     $html .= "    <tr>";
     $html .= "      <td>";
