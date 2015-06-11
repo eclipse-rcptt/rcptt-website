@@ -37,11 +37,11 @@ table.downloads{
     margin-bottom: 20px;
 }
 table.downloads td{
-   horizontal-align: center;
    padding: 20px;
    vertical-align: top;
 }
 table.downloads tr.icons{
+    horizontal-align: center;
     border-bottom: 1px solid #eee;
 }
 
