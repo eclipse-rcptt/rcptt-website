@@ -106,13 +106,13 @@ $html = "<div id='midcolumn'>";
 $html .= "<h2>RCP Testing Tool IDE Downloads</h2>";
 
 # www.eclipse.org/downloads/download.php?file=/rcptt/release/1.5.1/ide/rcptt.ide-1.5.1-macosx.cocoa.x86_64.zip
-$relPrefix = "http://www.eclipse.org/downloads/download.php?file=/rcptt/release/" . $latestRelease
-$relURI = "http://download.eclipse.org/rcptt/release/"
+$relPrefix = "http://www.eclipse.org/downloads/download.php?file=/rcptt/release/" . $latestRelease;
+$relURI = "http://download.eclipse.org/rcptt/release/";
 $html .= generateDownloadBlock(
   $latestRelease . " Release",
   $relPrefix . "/ide/rcptt.ide-" . $latestRelease ."-[classifier].zip",
   $relURI . $latestRelease . "/repository",
-  " (Mars)"
+  " (Mars)",
   $relPrefix . "/runner/rcptt.runner-" . $latestRelease . ".zip"
   );
 
@@ -125,7 +125,7 @@ $html .= generateDownloadBlock(
   $latestNightlyUnqualified . "." . $latestNightlyQualifier . " Nightly",
   $prefix . "/ide/rcptt.ide-" . $decoration . "-[classifier].zip",
   $prefix . "/repository",
-  " (Mars)"
+  " (Mars)",
   $prefix . "/runner/rcptt.runner-" . $decoration . ".zip"
   );
 $html .= "</div>";
