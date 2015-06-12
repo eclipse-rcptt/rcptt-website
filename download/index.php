@@ -112,7 +112,7 @@ $html .= generateDownloadBlock(
   $latestRelease . " Release",
   $relPrefix . "/ide/rcptt.ide-" . $latestRelease ."-[classifier].zip",
   $relURI . $latestRelease . "/repository",
-  " (Mars)",
+  " (Mars)"
   $relPrefix . "/runner/rcptt.runner-" . $latestRelease . ".zip"
   );
 
@@ -125,7 +125,7 @@ $html .= generateDownloadBlock(
   $latestNightlyUnqualified . "." . $latestNightlyQualifier . " Nightly",
   $prefix . "/ide/rcptt.ide-" . $decoration . "-[classifier].zip",
   $prefix . "/repository",
-  " (Mars)",
+  " (Mars)"
   $prefix . "/runner/rcptt.runner-" . $decoration . ".zip"
   );
 $html .= "</div>";
