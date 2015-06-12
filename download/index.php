@@ -25,7 +25,7 @@ function getLastMatchingChild($dir, $pattern) {
     return $result;
 }
 
-function generateDownloadBlock($title, $baseUri, $repoUri, $runner = null) {
+function generateDownloadBlock($title, $baseUri, $repoUri, $mars=null, $runner = null) {
     $html = "<h3>" . $title . "</h3>";
     $win32 = str_replace("[classifier]", "win32.win32.x86", $baseUri);
     $win64 = str_replace("[classifier]", "win32.win32.x86_64", $baseUri);
@@ -60,7 +60,7 @@ function generateDownloadBlock($title, $baseUri, $repoUri, $runner = null) {
     $html .= "      </td>";
     $html .= "      <td>";
     $html .= "        <ul>";
-    $html .= "          <li><a href='" . $repoUri . "'>Update Site (Mars)</a></li>";
+    $html .= "          <li><a href='" . $repoUri . "'>Update Site$mars</a></li>";
     if (!empty($runner)) {
       $html .= "          <li><a href='" . $runner . "'>Test Runner</a></li>";
     }
@@ -106,21 +106,26 @@ $html = "<div id='midcolumn'>";
 $html .= "<h2>RCP Testing Tool IDE Downloads</h2>";
 
 # www.eclipse.org/downloads/download.php?file=/rcptt/release/1.5.1/ide/rcptt.ide-1.5.1-macosx.cocoa.x86_64.zip
+$relPrefix = "http://www.eclipse.org/downloads/download.php?file=/rcptt/release/" . $latestRelease
+$relURI = "http://download.eclipse.org/rcptt/release/"
 $html .= generateDownloadBlock(
   $latestRelease . " Release",
-  "http://www.eclipse.org/downloads/download.php?file=/rcptt/release/" . $latestRelease . "/ide/rcptt.ide-incubation-" . $latestRelease ."-[classifier].zip",
-  "http://download.eclipse.org/rcptt/release/" . $latestRelease . "/repository"
+  $relPrefix . "/ide/rcptt.ide-" . $latestRelease ."-[classifier].zip",
+  $relURI . $latestRelease . "/repository",
+  " (Mars)",
+  $relPrefix . "/runner/rcptt.runner-" . $latestRelease . ".zip"
   );
 
 # http://download.eclipse.org/rcptt/nightly/1.5.5/201503042108/ide/rcptt.ide-incubation-1.5.5-N201503042108-win32.win32.x86_64.zip
 # http://download.eclipse.org/rcptt/nightly/1.5.6/201503201039/runner/rcptt.runner-incubation-1.5.6-N201503201039.zip
 
 $prefix = "http://download.eclipse.org/rcptt/nightly/" . $latestNightlyUnqualified . "/" . $latestNightlyQualifier;
-$decoration = "incubation-" . $latestNightlyUnqualified . "-N" . $latestNightlyQualifier;
+$decoration = "" . $latestNightlyUnqualified . "-N" . $latestNightlyQualifier;
 $html .= generateDownloadBlock(
   $latestNightlyUnqualified . "." . $latestNightlyQualifier . " Nightly",
   $prefix . "/ide/rcptt.ide-" . $decoration . "-[classifier].zip",
   $prefix . "/repository",
+  " (Mars)",
   $prefix . "/runner/rcptt.runner-" . $decoration . ".zip"
   );
 $html .= "</div>";
