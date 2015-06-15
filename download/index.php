@@ -92,8 +92,8 @@ $releasesHome=$downloadsHome . "/release";
 
 # TODO: Once we get two parallel streams, we will need to make release logic more complex
 # TODO: Once we get beyond .9 bugfix version, we can't just use alphabetic sorting
-# $latestRelease=getLastChild($releasesHome);
-  $latestRelease="1.5.5";
+$latestRelease=getLastChild($releasesHome);
+#  $latestRelease="1.5.5";
 
 
 $nightlyHome = $downloadsHome . "/nightly";
@@ -111,10 +111,11 @@ $relPrefix = "http://www.eclipse.org/downloads/download.php?file=/rcptt/release/
 $relURI = "http://download.eclipse.org/rcptt/release/";
 $html .= generateDownloadBlock(
   $latestRelease . " Release",
-  $relPrefix . "/ide/rcptt.ide-" . $latestRelease ."-[classifier].zip",
-  $relURI . $latestRelease . "/repository",
-  "",
-  $relPrefix . "/runner/rcptt.runner-" . $latestRelease . ".zip"
+  $relPrefix . "/ide/rcptt.ide-incubation-" . $latestRelease ."-[classifier].zip",
+  $relURI . $latestRelease . "/repository"
+  #,
+  #"",
+  #$relPrefix . "/runner/rcptt.runner-incubation-" . $latestRelease . ".zip"
   );
 
 # http://download.eclipse.org/rcptt/nightly/1.5.5/201503042108/ide/rcptt.ide-incubation-1.5.5-N201503042108-win32.win32.x86_64.zip
