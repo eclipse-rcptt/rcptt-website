@@ -111,10 +111,10 @@ $relPrefix = "http://www.eclipse.org/downloads/download.php?file=/rcptt/release/
 $relURI = "http://download.eclipse.org/rcptt/release/";
 $html .= generateDownloadBlock(
   $latestRelease . " Release",
-  $relPrefix . "/ide/rcptt.ide-incubation" . $latestRelease ."-[classifier].zip",
+  $relPrefix . "/ide/rcptt.ide-incubation-" . $latestRelease ."-[classifier].zip",
   $relURI . $latestRelease . "/repository",
   "",
-  $relPrefix . "/runner/rcptt.runner-incubation" . $latestRelease . ".zip"
+  $relPrefix . "/runner/rcptt.runner-incubation-" . $latestRelease . ".zip"
   );
 
 # http://download.eclipse.org/rcptt/nightly/1.5.5/201503042108/ide/rcptt.ide-incubation-1.5.5-N201503042108-win32.win32.x86_64.zip
