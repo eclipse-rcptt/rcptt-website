@@ -80,116 +80,12 @@
 
 <p>RCPTT is UI testing tool so it is mostly useful for functional testing. Since it is common practice to combine Functional Testing and Code Coverage analysis, we decided to publish this instruction page. We don't provide this functionality out-of-the-box but it is easy to employ AUT virtual machine arguments to configure an arbitrary covers tool. Find instructions below to configure IDE and add analysis to CI with Maven.</p>
 
-<h3>How to get UI and Code Coverage testing from sources with RCPTT IDE&EclEmma in the one Eclipse instance</h3>
 
-<ol>
-<li>Install RCPTT as a plugin from <a href="http://download.eclipse.org/rcptt/nightly/2.0.0/latest/repository">Update site (Mars)</a></li>
-<li>Install <a href="http://update.eclemma.org/">EclEmma</a></li>
-<li>Download <a href="http://www.eclemma.org/jacoco/">JaCoCo agent</a></li>
-<li>Extract file to some folder (for me it was /Users/<user-name>/codecoverage/jacoco-0.7.5-20150410.145015-6/lib/jacocoagent.jar)</li>
-<li>Import, Build and Run your project</li>
-<li>Open Run configuration</li>
-<li><i>Add -javaagent:/Users/<user-name>/codecoverage/jacoco-0.7.5-20150410.145015-6/lib/jacocoagent.jar=destfile=/Users/<user-name>/codecoverage/test.exec to VM arguments</i></li>
 
-<p><img src="https://www.eclipse.org/rcptt/shared/img/blog/codeCoverage/RunConfigurationsVMArguments.png" /></p>
-
-<li>Add run configuration as Eclipse AUT (It should be done after adding VM argument)</li>
-
-<p><img src="https://www.eclipse.org/rcptt/shared/img/blog/codeCoverage/ApplicationUnderTest.png" /></p>
-
-<li>Run Test Suite</li>
-<li>After test suite execution had finished go File -> Import -> Coverage Session -> Choose /Users/<user-name>/codecoverage/test.exec -> Select all sources</li>
-<li>See coverage details</li>
-<br>
-<p><img src="https://www.eclipse.org/rcptt/shared/img/blog/codeCoverage/CoverageDetails.png" /></p>
-
-</ol>
-
-<h3>How to get UI and Code Coverage testing on Jenkins with RCPTT Runner&EclEmma</h3>
-
-<p>If you use Maven to build your project, you may use RCPTT Runner for functional testing of each build and Jacoco agent to get code coverage analysis.</p>
-
-<p>Do the following steps for that purpose:</p>
-
-<ol>
-<li>Configure RCPTT Maven plugin to execute RCPTT test project as it is described <a href="https://www.eclipse.org/rcptt/documentation/userguide/maven/">here</a></li>
-<li>Download Jacoco plugin</li>
-<li>Add the following line to your pom.xml</li>
-
-    <pre>
-    &lt;vmArgs&gt;
-          &lt;vmArg&gt;-javaagent:/Users/&lt;user-name&gt;/Downloads/jacoco-0.7.5-20150410.145015-6/lib/jacocoagent.jar=destfile=/Users/&lt;user-name&gt;/test.exec&lt;/vmArg&gt;
-    &lt;/vmArgs&gt;</pre>
-  
-
-<li>Run the project (start job on Jenkins or just execute <i>mvn clean package -e</i> in the folder with pom.xml)</li>
-<li>When AUT is launched, the destination file is created and filled during the test.</li>
-<li>After execution, the file can be imported as coverage session to Eclipse/EclEmma to have the results in the known view in Eclipse.</li>
-
-</ol>
-
-<p>The whole pom.xml with the basic settings will look like:</p>
-
-<pre>
-&lt;project&gt;
-  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-  &lt;groupId&gt;com.company.product&lt;/groupId&gt;
-  &lt;artifactId&gt;productTests&lt;/artifactId&gt;
-  &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;
-  &lt;packaging&gt;rcpttTest&lt;/packaging&gt;
-
-  &lt;pluginRepositories&gt;
-    &lt;pluginRepository&gt;
-      &lt;id&gt;xored&lt;/id&gt;
-      &lt;name&gt;RCPTT Maven Snapshots repository&lt;/name&gt;
-      &lt;url&gt;https://repo.eclipse.org/content/repositories/rcptt-snapshots/&lt;/url&gt;
-    &lt;/pluginRepository&gt;
-  &lt;/pluginRepositories&gt;
-  &lt;properties&gt;
-    &lt;rcptt-maven-version&gt;2.0.0-SNAPSHOT&lt;/rcptt-maven-version&gt;
-  &lt;/properties&gt;
-
-  &lt;build&gt;
-    &lt;plugins&gt;
-      &lt;plugin&gt;
-        &lt;groupId&gt;org.eclipse.rcptt&lt;/groupId&gt;
-        &lt;artifactId&gt;rcptt-maven-plugin&lt;/artifactId&gt;
-        &lt;version&gt;${rcptt-maven-version}&lt;/version&gt;
-        &lt;extensions&gt;true&lt;/extensions&gt;
-        &lt;configuration&gt;
-            &lt;runner&gt;
-                &lt;version&gt;2.0.0-SNAPSHOT&lt;/version&gt;
-            &lt;/runner&gt;
-          &lt;!-- The main configuration section goes here --&gt;
-
-          &lt;aut&gt;
-          &lt;explicit&gt;/Users/&lt;user-name&gt;/Downloads/rcptt-gerrit-47289&lt;/explicit&gt;
-          &lt;vmArgs&gt;
-          &lt;vmArg&gt;-javaagent:/Users/&lt;user-name&gt;/Downloads/jacoco-0.7.5-20150410.145015-6/lib/jacocoagent.jar=destfile=/Users/&lt;user-name&gt;/test.exec&lt;/vmArg&gt;
-          &lt;/vmArgs&gt;
-          &lt;/aut&gt;
-          &lt;suites&gt;
-          &lt;suite&gt;Suite1&lt;/suite&gt;
-          &lt;/suites&gt;
-        &lt;/configuration&gt;
-      &lt;/plugin&gt;
-    &lt;/plugins&gt;
-  &lt;/build&gt;
-&lt;/project&gt;]]>
-</pre>
-<p>
-Now you can play with settings of all of that tools.</p>
-
-<p>Documentation is available here:</p>
-<ul>
-<li><a href="https://www.eclipse.org/rcptt/documentation/userguide/getstarted/">RCPTT docs</a></li> 
-<li><a href="http://www.eclemma.org/jacoco/trunk/doc/agent.html">Jacoco agent docs</a></li> 
-<li><a href="http://www.eclemma.org/userdoc/index.html">EclEmma user guide</a></li>
-</ul>
-
-<p>If you have any questions about RCPTT please let us know on our forum. </p>
-
-                </div>
+            	<p><a href="https://www.eclipse.org/rcptt/blog/2015/06/17/code-coverage.html">
+            Read more of this post &raquo;
+	</a></p>
+          </div>
   </article>
   <article>
     <header>
