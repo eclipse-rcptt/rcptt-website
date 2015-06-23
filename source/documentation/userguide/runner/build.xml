@@ -20,7 +20,7 @@
 
   
   <target name="test" depends="init">
-    <java jar="${runner-path}/plugins/org.eclipse.equinox.launcher_1.2.0.v20110502.jar" fork="true">
+    <java jar="${runner-path}/plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar" fork="true">
       <arg value="-application" />
       <arg value="org.eclipse.rcptt.runner.headless" />
 
