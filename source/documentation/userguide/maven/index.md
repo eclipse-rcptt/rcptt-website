@@ -30,7 +30,7 @@ Below is a basic POM template which can be used as starting point of automating 
     &lt;pluginRepository&gt;
       &lt;id&gt;rcptt-releases&lt;/id&gt;
       &lt;name&gt;RCPTT Maven repository&lt;/name&gt;
-      &lt;url&gt;http://maven.xored.com/nexus/content/repositories/rcptt-releases/&lt;/url&gt;
+      &lt;url&gt;https://repo.eclipse.org/content/repositories/rcptt-releases/&lt;/url&gt;
     &lt;/pluginRepository&gt;
     &lt;pluginRepository&gt;
       &lt;id&gt;rcptt-snapshots&lt;/id&gt;
