@@ -279,13 +279,16 @@ This is a trivial example which uses most of defaults provided by rcptt-maven-pl
   &lt;pluginrepositories&gt; 
     &lt;pluginrepository&gt;
       &lt;id&gt;rcptt-snapshots&lt;/id&gt;
-      &lt;name&gt;Xored Maven repository&lt;/name&gt;
+      &lt;name&gt;RCPTT Maven Snapshots repository&lt;/name&gt;
+      &lt;snapshots&gt;
+      	&lt;updatePolicy&gt;always&lt;/updatePolicy&gt;
+      &lt;/snapshots&gt;
       &lt;url&gt;https://repo.eclipse.org/content/repositories/rcptt-snapshots/&lt;/url&gt;
     &lt;/pluginrepository&gt; 
      &lt;pluginrepository&gt;
       &lt;id&gt;rcptt-releases&lt;/id&gt;
       &lt;name&gt;RCPTT Maven repository&lt;/name&gt;
-      &lt;url&gt;https://repo.eclipse.org/content/repositories/rcptt-snapshots/&lt;/url&gt;
+      &lt;url&gt;https://repo.eclipse.org/content/repositories/rcptt-releases/&lt;/url&gt;
     &lt;/pluginrepository&gt;
   &lt;/pluginrepositories&gt;
 &lt;/project&gt;</code></pre>
