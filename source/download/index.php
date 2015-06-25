@@ -95,7 +95,6 @@ $releasesHome=$downloadsHome . "/release";
 $latestRelease=getLastChild($releasesHome);
 
 
-
 $nightlyHome = $downloadsHome . "/nightly";
 #Selecting 2.x.x
 $latestNightlyUnqualified = getLastMatchingChild($nightlyHome, '/2\.[\d\.]+/');
