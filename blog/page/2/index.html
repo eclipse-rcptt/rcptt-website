@@ -62,6 +62,43 @@
 		  <article>
     <header>
       <h2>
+	<a href="https://www.eclipse.org/rcptt/blog/2014/11/11/rcptt-blog-launched.html"> RCPTT Blog launched</a>
+	<small>Nov, 11, 2014 by Ivan Inozemtsev</small>      </h2>
+    </header>
+    <div>
+      
+            <p>Finally we've launched an RCPTT blog! We published a few older articles here, so that this blog wouldn't look too empty :).</p>
+
+<p>Oh, and by the way, if you haven't noticed yet, now we've got a nice syntax colorer for ECL snippets (thanks to an awesome <a href="http://prismjs.com">prism.js</a> library):</p>
+
+<p></p>
+<pre ><code class="language-ecl">&#x200b;proc "find-tab-folder" [val activePage] {
+  loop [val index [int 0]] {
+    let [val folder [get-tab-folder -index $index]] {
+      let [val folderActivePage [$folder | get-property activePage -raw]] {
+        if [$folderActivePage | eq $activePage] {
+          $folder //returning result
+        } -else {
+          recur [$index | plus 1]
+        }
+      }
+    }
+  }
+}
+find-tab-folder "Task List" | get-object | save-screenshot "/tmp/tmp/tsk.png"
+//get-property activePage | equals "Package Explorer" | verify-true
+</code></pre>
+
+<p>Things like rss/atom feeds and improved navigation are to be added in a nearest future.</p>
+
+<p>Stay tuned!</p>
+
+
+                </div>
+  </article>
+  <article>
+    <header>
+      <h2>
 	<a href="https://www.eclipse.org/rcptt/blog/2014/10/23/1_5_3-released.html"> RCPTT 1.5.3 Released</a>
 	<small>Oct, 23, 2014 by Ivan Inozemtsev</small>      </h2>
     </header>

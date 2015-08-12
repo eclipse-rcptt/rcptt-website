@@ -62,6 +62,31 @@
 		  <article>
     <header>
       <h2>
+	<a href="https://www.eclipse.org/rcptt/blog/2015/08/12/file-and-clipboard-content.html"> Reading File and Clipboard Content</a>
+	<small>Aug, 12, 2015 by Ulyana Skorokhodova</small>      </h2>
+    </header>
+    <div>
+      
+            
+<h3>Reading file content</h3>
+
+Until recently there was a few ways to get a file content:<br>
+
+<ul>
+<li>Opening file editor in GUI and getting it's <i>text</i> property
+<li>Using <a href="https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html#read-csv-file"><b>read-csv-file</b></a> and <a href="https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html#read-lines"><b>read-lines</b></a> commands</li>
+</ul>
+
+Both ways have obvious restrictions making their usage not very user-friendly, so we decided to implement a new <a href="https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html#read-file"><b>read-file</b></a> ECL command to get a file content.<br>
+
+            	<p><a href="https://www.eclipse.org/rcptt/blog/2015/08/12/file-and-clipboard-content.html">
+            Read more of this post &raquo;
+	</a></p>
+          </div>
+  </article>
+  <article>
+    <header>
+      <h2>
 	<a href="https://www.eclipse.org/rcptt/blog/2015/06/26/2_0-released.html"> RCPTT 2.0.0 (Mars) Released</a>
 	<small>Jun, 26, 2015 by Olga Yurchuk &amp; Ulyana Skorokhodova</small>      </h2>
     </header>
@@ -229,43 +254,6 @@ with [get-window "New plug-in project with a sample view"] {
             Read more of this post &raquo;
 	</a></p>
           </div>
-  </article>
-  <article>
-    <header>
-      <h2>
-	<a href="https://www.eclipse.org/rcptt/blog/2014/11/11/rcptt-blog-launched.html"> RCPTT Blog launched</a>
-	<small>Nov, 11, 2014 by Ivan Inozemtsev</small>      </h2>
-    </header>
-    <div>
-      
-            <p>Finally we've launched an RCPTT blog! We published a few older articles here, so that this blog wouldn't look too empty :).</p>
-
-<p>Oh, and by the way, if you haven't noticed yet, now we've got a nice syntax colorer for ECL snippets (thanks to an awesome <a href="http://prismjs.com">prism.js</a> library):</p>
-
-<p></p>
-<pre ><code class="language-ecl">&#x200b;proc "find-tab-folder" [val activePage] {
-  loop [val index [int 0]] {
-    let [val folder [get-tab-folder -index $index]] {
-      let [val folderActivePage [$folder | get-property activePage -raw]] {
-        if [$folderActivePage | eq $activePage] {
-          $folder //returning result
-        } -else {
-          recur [$index | plus 1]
-        }
-      }
-    }
-  }
-}
-find-tab-folder "Task List" | get-object | save-screenshot "/tmp/tmp/tsk.png"
-//get-property activePage | equals "Package Explorer" | verify-true
-</code></pre>
-
-<p>Things like rss/atom feeds and improved navigation are to be added in a nearest future.</p>
-
-<p>Stay tuned!</p>
-
-
-                </div>
   </article>
 
   <nav>
