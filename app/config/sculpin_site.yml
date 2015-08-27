@@ -106,5 +106,8 @@ faq:
   - name: What is the difference between Assert and Verify commands or how to get raw property values?
     url: faq/get-property-raw/
     slug: get-property-raw
+  - name: How to assert native message boxes?
+    url: faq/assert-native-message-box
+    slug: assert-native-message-boxes
 author: "RCP Testing Tool Team"
 email: "rcptt-dev@eclipse.org"
