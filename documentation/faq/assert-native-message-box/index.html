@@ -69,7 +69,7 @@
 	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/verify-control-size/">How to verify changing control sizes?</a>
 	</li>
-		<li class="active" ><a href="https://www.eclipse.org/rcptt/documentation/faq/suite-order/">Is it possible to order tests in a Test Suite?</a>
+		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/suite-order/">Is it possible to order tests in a Test Suite?</a>
 	</li>
 		<li ><a href="https://www.eclipse.org/rcptt/documentation/faq/runtime-features/">What does each runtime feature stand for?</a>
 	</li>
@@ -81,54 +81,34 @@
     </div>
   </div>
   <div class="col-sm-9">
-    <h1>Is it possible to order tests in a Test Suite?</h1>
+    <h1>How to assert native message boxes?</h1>
     <p></p>
 
 <div class="panel panel-default">
   <div class="panel-body">
-    <i>Is it possible to change the test case order inside a test suite? Currently it is organized in an alphabetical order...</i>
+   <i> I want to record the "Information" message box  which pops up in my tool. 
+   <br> How to use assert in this automation?
+</i>
   </div>
 </div>
 
-<p>One of core RCPTT principles is test independence (from each other), so you should not rely on test execution order. 
-Test cases independency is one of core principles of testing, and we believe RCPTT plays extremely well to implement 
-this principle with <a href="https://www.eclipse.org/rcptt/documentation/userguide/contexts/">Contexts</a>.</p>
+<p>Dealing with native message boxes, RCPTT might not show them during replay, 
+but instead remember its return value during recording (by adding a command 'set-dialog-result' to a script) 
+and automatically 'substitute' its value to your application's caller code (we have to do that, because RCPTT 
+does not work on an operating system level, hence if it would open this dialog, there won't be a way to automatically close it).</p>
 
-<p>However, there is a possibility to change test case order (disabled by defaut).</p>
+<p>But sometimes it may be needed to verify some properties of native message box like 'title' or 'message text'.</p>
 
-<p>To do this, please open rcptt.ini file and add <b><i>-Dorg.eclipse.rcptt.legacy.testSuite.manualOrdering=true</i></b> line after -vmargs.</p>
+<p>Now you can do it using <a href="https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html#get-last-message-box">get-last-message-box</a> ECL command.</p>
 
-<p>Once RCPTT is started you can see Move Up/Move Down buttons in Test Suite editor:</p>
+<p>Please note that this command can't be automatically recorded (you still can't select message box in assertion mode), instead, you should manually insert it into your test script:</p>
 
-<p><p>Move a mouse over highlighted areas on a screenshot below to get a documentation regarding UI elements</p>
-</p>
-
-<div class="screenshot">
-  <img src="https://www.eclipse.org/rcptt/shared/img/screenshot-test-suite-editor.png"></img>
-        
-<div class="ann" style="top:405px;left:519px;">
-  <div class="ann-border" style="width:153px;height:80px;"></div>
-  <div class="ann-overlay" style="left:0px;;">
-      Change order of test cases in a Test Suite (make the Test Suite orderable). 
-  
-  </div>
-</div>
-
-</div>
-
-<div class="panel panel-warning">
-<div class="panel-heading">
-    <h3 class="panel-title">Important</h3>
-  </div>
-  <div class="panel-body">
-  <ul>
-<li>Internally test suites store an option flag - ordered/unordered. By default all test suites are unordered</li>
-<li>If test suite is ordered OR there's an option in ini-file - test suite editor shows up/down buttons to change test case order.</li>
-<li>Changing test order automatically converts unordered test suite to ordered.</li>
-</ul>
-Therefore, this ini-file option is just a 'hidden' way to convert unordered test suites to ordered. Once a test suite is saved as ordered, any user who opens it should see buttons for changing test order in a test suite disregarding of whether they have this option or not.
-  </div>
-</div>
+<p></p>
+<pre ><code class="language-ecl">&#x200b;set-dialog-result MessageBox 128
+get-view "Q7 Quality Mockups" | get-group "MessageBox Test" | get-button "Message Box with YES/NO Buttons" | click
+get-last-message-box | get-property title | equals "Warning" | verify-true
+get-last-message-box | get-property message | equals "This MessageBox with warning" | verify-true
+</code></pre>
   </div>
 </div>
       </div>
