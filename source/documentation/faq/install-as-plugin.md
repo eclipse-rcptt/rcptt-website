@@ -10,16 +10,16 @@ layout: faq
 RCPTT consists of two parts - RCPTT IDE, which is used for launching AUTs, developing and running test cases, 
 and RCPTT Runtime (hidden), which is automatically put inside AUT in order to provide recording/replaying of user actions.
 
-RCPTT IDE can be installed as an Eclipse plug-in (from marketplace or update site), but only into Eclipse 3.7 Indigo, as it uses some internal APIs. 
+RCPTT IDE can be installed as an Eclipse plug-in (update site), but only into Eclipse 4.5(Mars) for 2.0 release and 4.6 Neon( for upcoming 2.1 release), as it uses some internal APIs. 
 Installing RCPTT IDE into Eclipse allows you to launch your AUT from sources.
 
-RCPTT Runtime supports all Eclipse versions from 3.5 to 4.4
+RCPTT Runtime supports all Eclipse versions from 3.6 to 4.6
 
 If you want to use RCPTT to connect to AUT from sources, then you should be able to do it like this:
 
 <ol>
-<li>Install RCPTT into Eclipse 3.7</li>
-<li>Set target platform to Eclipse 4.3</li>
+<li>Install RCPTT into Eclipse 4.5</li>
+<li>Set target platform to Eclipse 4.5</li>
 <li>Checkout your sources and create Eclipse Application launch configuration as you would normally do.</li>
 <li>In Run->Run configurations dialog find an 'Eclipse Application under Test' launch configuration type, create a new one and on launch configuration property page select your existing Eclipse Application launch configuration.
 If you switch to RCPTT perspective then, you should be able to see your AUT in Applications view and launch it.</li>
