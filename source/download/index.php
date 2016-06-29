@@ -120,12 +120,13 @@ $html .= generateDownloadBlock(
 # http://download.eclipse.org/rcptt/nightly/1.5.6/201503201039/runner/rcptt.runner-incubation-1.5.6-N201503201039.zip
 
 $prefix = "http://download.eclipse.org/rcptt/nightly/" . $latestNightlyUnqualified . "/" . $latestNightlyQualifier;
+$prefixLatest = "http://download.eclipse.org/rcptt/nightly/" . $latestNightlyUnqualified . "/latest";
 $decoration = "" . $latestNightlyUnqualified . "-N" . $latestNightlyQualifier;
 $html .= generateDownloadBlock(
   $latestNightlyUnqualified . "." . $latestNightlyQualifier . " Nightly",
   $prefix . "/ide/rcptt.ide-" . $decoration . "-[classifier].zip",
-  $prefix . "/repository",
-  " (Mars)",
+  $prefixLatest . "/repository",
+  " (Neon)",
   $prefix . "/runner/rcptt.runner-" . $decoration . ".zip"
   );
 $html .= "</div>";
