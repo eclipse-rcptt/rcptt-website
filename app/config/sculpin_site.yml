@@ -81,6 +81,25 @@ guide:
   - name: Maven plugin
     url: userguide/maven/
     slug: maven
+  - name: RAP
+    url: userguide/rap/
+    slug: rap  
+    children:
+     - name: Install instructions
+       url: userguide/rap/install/
+       slug: rap/install
+     - name: Record and Replay
+       url: userguide/rap/recordReplay/
+       slug: rap/recordReplay 
+     - name: Capability Contexts
+       url: userguide/rap/capability/
+       slug: rap/capability 
+     - name: ECL commands
+       url: userguide/rap/rap-commands/
+       slug: rap/rap-commands
+     - name: Maven plugin
+       url: userguide/rap/rap-maven/
+       slug: rap/rap-maven    
 faq:
   - name: How to pass a value to a test during its execution?
     url: faq/pass-value/
