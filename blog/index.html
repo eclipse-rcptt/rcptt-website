@@ -62,6 +62,38 @@
 		  <article>
     <header>
       <h2>
+	<a href="https://www.eclipse.org/rcptt/blog/2016/08/05/rap.html"> RCPTT RAP</a>
+	<small>Aug, 05, 2016 by Ulyana Skorokhodova</small>      </h2>
+    </header>
+    <div>
+      
+            
+<h3>RCPTT can now test Eclipse RAP applications!</h3>
+
+<img src="https://www.eclipse.org/rcptt/shared/img/rap/pasted-image-88.png" width="600"></img>
+
+<h4>Features supported</h4>
+
+<ul>
+<li> RAP Recording</li>
+<li> RAP Replay</li>
+<li> Folder/ECL/Workbench/Parameters context support</li>
+<li> Unzipped WAR launching via Launch configurations from RCPTT</li>
+<li> Capability Context / Convert contexts to Capability context</li>
+<li> RAP Download/Upload support</li>
+<li> Extra ECL command for RAP</li> 
+</ul>
+
+Find more in <a href="https://www.eclipse.org/rcptt/documentation/userguide/rap">RAP documentation</a>.  
+
+
+
+
+                </div>
+  </article>
+  <article>
+    <header>
+      <h2>
 	<a href="https://www.eclipse.org/rcptt/blog/2016/08/05/2_1_0-released.html"> RCPTT 2.1.0 (Neon) Released</a>
 	<small>Aug, 05, 2016 by Ulyana Skorokhodova</small>      </h2>
     </header>
@@ -76,7 +108,7 @@ On June, 26, we've released Neon-based version of RCP Testing Tool as participan
 <ul>
 <li>RCPTT IDE is migrated from Mars to Neon to allow users to install it into their developer Eclipse installations.</li>
 <p>
-<li>For RCPTT IDE assertion filtering was introduced helping to search by asserted value or property.</li><br>
+<li>For RCPTT IDE assertion filtering was introduced helping to search by asserted value or property.</li>
 </p>
 </ul>
 The review information is available <a href="https://projects.eclipse.org/projects/technology.rcptt/reviews/2.1-neon-release-review">here</a> and the latest version can be downloaded from <a href="https://www.eclipse.org/rcptt/download/">Downloads page</a>.
@@ -198,35 +230,6 @@ P.S.: Will miss the egg. It was cute, though.
 
 
             	<p><a href="https://www.eclipse.org/rcptt/blog/2015/06/17/code-coverage.html">
-            Read more of this post &raquo;
-	</a></p>
-          </div>
-  </article>
-  <article>
-    <header>
-      <h2>
-	<a href="https://www.eclipse.org/rcptt/blog/2014/12/10/test-about-dialog.html"> Testing About Dialog</a>
-	<small>Dec, 10, 2014 by Ivan Inozemtsev</small>      </h2>
-    </header>
-    <div>
-      
-            
-<p>In this post, I'm going to tell how to test an About dialog to ensure that all plug-ins are properly branded -- i.e. have correct provider name, plug-in name, etc.. While this information is rarely affects end users directly, it's still important to have it up-to-date, and it is really tedious to do such checks manually. Plus, it is a good demonstration of what RCPTT and ECL can do :).</p>
-
-<p>Currently, some entries in RCPTT About dialog are not well-formed:</p>
-<p><img src="https://www.eclipse.org/rcptt/shared/img/blog/about/about.png" /></p>
-
-<p>So, let's create a test case for RCPTT, which ensures that all RCPTT plug-ins (i.e. plug-ins whose ID starts with <kbd>org.eclipse.rcptt</kbd>) are packaged correctly, i.e. that all its plug-ins meet the following requirements:</p>
-<ul>
-  <li>Provider name is <kbd>Eclipse RCP Testing Tool Project</kbd></li>
-  <li>Plug-in name is not empty and ends with <kbd>(Incubation)</kbd></li>
-  <li>All plug-ins have a   <span class="uiElement">Legal Info</span>
- button enabled</li>
-</ul>
-
-
-
-            	<p><a href="https://www.eclipse.org/rcptt/blog/2014/12/10/test-about-dialog.html">
             Read more of this post &raquo;
 	</a></p>
           </div>
