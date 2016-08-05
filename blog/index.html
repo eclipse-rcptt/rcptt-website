@@ -62,6 +62,35 @@
 		  <article>
     <header>
       <h2>
+	<a href="https://www.eclipse.org/rcptt/blog/2016/08/05/2_1_0-released.html"> RCPTT 2.1.0 (Neon) Released</a>
+	<small>Aug, 05, 2016 by Ulyana Skorokhodova</small>      </h2>
+    </header>
+    <div>
+      
+            
+
+
+<p>
+On June, 26, we've released Neon-based version of RCP Testing Tool as participants of Simultaneous Neon Release. <br>
+
+<ul>
+<li>RCPTT IDE is migrated from Mars to Neon to allow users to install it into their developer Eclipse installations.</li>
+<p>
+<li>For RCPTT IDE assertion filtering was introduced helping to search by asserted value or property.</li><br>
+</p>
+</ul>
+The review information is available <a href="https://projects.eclipse.org/projects/technology.rcptt/reviews/2.1-neon-release-review">here</a> and the latest version can be downloaded from <a href="https://www.eclipse.org/rcptt/download/">Downloads page</a>.
+</p>
+<p>
+You can also install RCPTT as an eclipse plugin from an Update Site or from <a href="https://marketplace.eclipse.org/content/rcptt-eclipse-ui-testing-tool">Eclipse Marketplace</a>. 
+</p>
+
+
+                </div>
+  </article>
+  <article>
+    <header>
+      <h2>
 	<a href="https://www.eclipse.org/rcptt/blog/2015/08/12/file-and-clipboard-content.html"> Reading File and Clipboard Content</a>
 	<small>Aug, 12, 2015 by Ulyana Skorokhodova</small>      </h2>
     </header>
@@ -202,63 +231,10 @@ P.S.: Will miss the egg. It was cute, though.
 	</a></p>
           </div>
   </article>
-  <article>
-    <header>
-      <h2>
-	<a href="https://www.eclipse.org/rcptt/blog/2014/11/21/screenshots-with-rcptt.html"> Screenshots for documentation</a>
-	<small>Nov, 21, 2014 by Ivan Inozemtsev</small>      </h2>
-    </header>
-    <div>
-      
-            
-<p>
-  This year on EclipseCon Europe Jeremie Bresson pointed me to a <a href="http://model-driven-blogging.blogspot.ru/2009/03/shuangxi-effect-ui-testing-and.html">nice Cédric Brun's article</a> on how to use SWTBot to generate screenshots for documentation, and asked whether something like this is possible with RCPTT.
-</p>
-
-<p>
-  And the answer is &ndash; yes, indeed! Actually, I never thought about this use-case before, but we have a <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#save-screenshot">save-screenshot</a> command, which can save a screenshot of a control into a file. So, here's how to save screenshots for new plugin project wizard:
-</p>  
-
-
-<pre data-line="5,10,14,20"><code class="language-ecl">&#x200b;get-view "Package Explorer" | get-tree | get-menu "New/Plug-in Project" | click
-
-with [get-window "New Plug-in Project"] {
-  get-editbox -after [get-label "Project name:"] | set-text "org.sample.view"
-  get-object | save-screenshot "/tmp/tmp/demo/first-page.png"
-  get-button "Next >" | click
-
-  get-group Properties | get-editbox -after [get-label "Name:"]
-    | set-text "Sample View Plugin"
-  get-object | save-screenshot "/tmp/tmp/demo/second-page.png"
-  get-button "Next >" | click
-
-  get-table | select "Plug-in with a view"
-  get-object | save-screenshot "/tmp/tmp/demo/third-page.png"
-  get-button "Next >" | click
-}
-
-with [get-window "New plug-in project with a sample view"] {
-  get-button "Tree viewer" | click
-  get-object | save-screenshot "/tmp/tmp/demo/fourth-page.png"    
-  get-button Finish | click
-}
-</code></pre>
-
-
-<p>
-  This is just a recorded test case with manual insertion of <code class="language-ecl">&#x200b;get-object | save-screenshot &quot;/path/to/screenshot.png&quot;</code> snippets in interesting parts. Here <code class="language-ecl">&#x200b;get-object</code> takes an SWT object from RCPTT selector command (since we are in <code class="language-ecl">&#x200b;with</code> block, we are taking an SWT object from a window here), and <code class="language-ecl">&#x200b;save-screenshot</code> takes bounds of given control and saves a screenshot to given path. Here are the images, saved as an execution result of the script above:
-</p>
-
-
-            	<p><a href="https://www.eclipse.org/rcptt/blog/2014/11/21/screenshots-with-rcptt.html">
-            Read more of this post &raquo;
-	</a></p>
-          </div>
-  </article>
 
   <nav>
     <br />
-    <a href="https://www.eclipse.org/rcptt/blog/page/2">Older Posts</a><br />    
+    <a href="https://www.eclipse.org/rcptt/blog/page/2/">Older Posts</a><br />    
   </nav>
 	      </div>
 
