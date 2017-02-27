@@ -1,0 +1,285 @@
+---
+title: ECL commands for Excel import and export 
+slug: userguide/ecl/excel-import-export
+nav_name: userguide
+layout: doc
+---
+{% import "macros" as m %}
+<br>
+<h2>Excel export</h2><hr>
+
+<h3>write-excel-file</h3>
+
+Writes tables from input pipe to into excel (xls or xlsx) file. Fails if file is not found or format is invalid.
+
+Input:
+
+<ul>
+<li><b>tables</b> (1, ∞) Table: Tables to write</li>
+</ul>
+
+Parameters: 
+
+<ul>
+<li><b>uri</b> String: URI to write Excel data to. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.</li>
+<li><b>append</b> boolean: Whether to append given table data into file. Default value is false.</li>
+
+</ul>
+
+Output: 
+
+<ul>
+<li>The value of 'tables' argument</li>
+</ul>
+
+Example: 
+
+{% set snippet %}
+proc newDevice [val name] [val target] {
+ map [entry "Device Name" $name] [entry "Device Target" $target]
+}
+ 
+global [val supportedDevices [list
+ [newDevice "device 1" "target 1"]
+ [newDevice "device 2" "target 2"]
+ [newDevice "device 3" "target 3"]
+]]
+ 
+global [val allDevices [list
+ [newDevice "device 1" "target 1"]
+ [newDevice "device 2" "target 2"]
+ [newDevice "device 3" "target 3"]
+ [newDevice "device 4" "target 4"]
+ [newDevice "device 5" "target 5"]
+]]
+ 
+ 
+proc newTable [val table] [val name] {
+ $table | list-as-table-data | set-page-name $name
+}
+ 
+ 
+emit [newTable $supportedDevices "Supported devices"] [newTable $allDevices "All devices"]
+ | write-excel-file "workspace:/excel/devices.xls"
+ 
+newTable $supportedDevices "Supported devices"
+ | write-excel-file "workspace:/excel/devices.xls" -append
+{% endset %}
+{{m.ecl("#{snippet}")}}
+
+<br>
+<h2>Excel import</h2><hr>	
+
+<h3>read-excel-file</h3>
+
+Parses given excel file (xls or xlsx) into tables and write them to output pipe. Fails if file is not found or format is invalid.
+
+Parameters:
+
+<ul>
+<li><b>uri</b> String: URI to read Excel data from. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.</li>
+<li><b>sheets</b> (0, ∞) String: List of Excel sheet names to read data from</li>
+</ul>
+
+Output:
+
+<ul>
+<li>List of Table EMF Objects</li>
+</ul>
+
+Example: 
+
+{% set snippet %}
+proc logInfoItem [val row] [val columns] {
+ $columns | each [val column] {
+  log [format "%s: %s" $column [$row | get $column]]
+ }
+}
+ 
+global [val devicesInfo [
+ read-excel-file "workspace:/excel/devices.xls" "Supported devices" "All devices"
+  | to-list
+]]
+ 
+ 
+clear-log-view
+ 
+$devicesInfo | each [val table] {
+ log [format "Page name: %s" [$table | get-page-name]]
+ let [val columns [$table | get-column-names]] {
+  $table | get-rows-data | each [val item] {
+   // $item | get "Device Name" | log
+   logInfoItem $item $columns
+  }
+ }
+}
+{% endset %}
+{{m.ecl("#{snippet}")}}
+
+<br>
+<h2>Additional commands</h2><hr>
+
+<h3>get-page-name</h3>
+
+Get page name from table.
+
+Input:
+
+<ul>
+<li><b>table</b> Table: Table to get page name from
+</li>
+</ul>
+
+Output:
+
+<ul>
+<li>Table page name
+</li>
+</ul>
+
+Example: 
+
+{% set snippet %}
+get-view "Error Log" | get-tree | expand-all
+get-view "Error Log" | get-tree | get-table-data
+ | set-page-name "Table" | write-excel-file "workspace:/MyProject/AssertData/table.xls"
+ 
+read-excel-file "workspace:/MyProject/AssertData/table.xls"
+ | get-page-name | equals "Table" | assert-true
+{% endset %}
+{{m.ecl("#{snippet}")}}
+<br>
+<h3>set-page-name</h3>
+
+Set page name to table
+
+Input:
+
+<ul>
+<li><b>table</b> Table: Table to set page name to</li>
+</ul>
+
+Parameters:
+<ul>
+<li>name String: Page name to set</li>
+</ul>
+
+Output:
+
+The value of 'table' argument
+
+Example:
+
+{% set snippet %}
+get-view "Error Log" | get-tree | expand-all
+get-view "Error Log" | get-tree | get-table-data
+ | set-page-name "Table" | write-excel-file "workspace:/MyProject/AssertData/table.xls"
+ 
+read-excel-file "workspace:/MyProject/AssertData/table.xls"
+ | get-page-name | equals "Table" | assert-true
+{% endset %}
+{{m.ecl("#{snippet}")}}
+
+<br>
+<h3>get-column-names</h3>
+
+Get list of column names from table
+
+Input:
+<ul><li>
+<b>table</b> Table: Table to get column names from</li>
+</ul>
+Output:
+<ul><li>
+List of table column names</li>
+</ul>
+Example:
+
+{% set snippet %}
+proc logInfoItem [val row] [val columns] {
+ $columns | each [val column] {
+  log [format "%s: %s" $column [$row | get $column]]
+ }
+}
+ 
+get-view "Error Log" | get-tree | expand-all
+get-view "Error Log" | get-tree | get-table-data
+ | write-excel-file "workspace:/MyProject/AssertData/table.xls"
+ 
+read-excel-file "workspace:/MyProject/AssertData/table.xls"
+ | to-list | each [val table] {
+ let [val columns [$table | get-column-names]] {
+  $table | get-rows-data | each [val item] {
+   logInfoItem $item $columns
+  }
+ }
+}
+{% endset %}
+{{m.ecl("#{snippet}")}}
+
+<br>
+<h3>get-rows-data</h3>
+
+Converts table data to map, where column name is a key and cell is a value
+
+Input:
+<ul>
+<li><b>table</b> Table: Table to get rows data from</li>
+</ul>
+
+Output:
+<ul>
+<li>Map with row values</li>
+</ul>
+
+Example:
+
+{% set snippet %}
+get-view "Error Log" | get-tree | expand-all
+get-view "Error Log" | get-tree | get-table-data | write-excel-file
+"workspace:/MyProject/AssertData/table.xls"
+ 
+read-excel-file "workspace:/MyProject/AssertData/table.xls"
+ | get-rows-data | each [val item] {
+  $item | get "Message" | log
+}
+{% endset %}
+{{m.ecl("#{snippet}")}}
+
+<br>
+
+<h3>list-as-table-data</h3>
+
+Converts input list of map to table data format
+
+Input:
+<ul><li>
+<b>list</b> EclList: List of Map to convert to Table
+</li>
+</ul>
+Output:
+<ul>
+<li>Table EMF Object</li>
+</ul>
+
+Example:
+
+{% set snippet %}
+proc newDevice [val name] [val target] {
+ map [entry "Device Name" $name] [entry "Device Info" $target]
+}
+ 
+proc newTable [val table] [val name] {
+ $table | list-as-table-data | set-page-name $name
+}
+ 
+global [val devices [list
+ [newDevice "Device 1" "Info 1"]
+ [newDevice "Device 2" "Info 2"]
+ [newDevice "Device 3" "Info 3"]
+]]
+ 
+newTable $devices "Devices"
+ | write-excel-file "workspace:/MyProject/AssertData/devices.xls"
+{% endset %}
+{{m.ecl("#{snippet}")}}

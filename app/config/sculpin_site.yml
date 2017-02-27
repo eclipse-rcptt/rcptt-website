@@ -18,9 +18,9 @@ guide:
       - name: New ECL Command Guide
         url: userguide/ecl/new-command-guide/
         slug: ecl/new-command-guide
-      - name: ECL commands for Excel Import and Export
-      	url: userguide/ecl/excel-import-export/
-      	slug: ecl/excel-import-export
+      - name: ECL commands for Excel import and export 
+        url: userguide/ecl/excel-import-export/
+        slug: ecl/excel-import-export
   - name: Contexts
     url: userguide/contexts/
     slug: contexts
