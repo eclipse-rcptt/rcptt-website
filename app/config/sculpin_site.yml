@@ -102,7 +102,10 @@ guide:
        slug: rap/rap-commands
      - name: Maven plugin
        url: userguide/rap/rap-maven/
-       slug: rap/rap-maven    
+       slug: rap/rap-maven
+  - name: Integration with TestRail
+    url: userguide/integration/test-rail-integration/
+    slug: integration/test-rail-integration       
 faq:
   - name: How to pass a value to a test during its execution?
     url: faq/pass-value/
