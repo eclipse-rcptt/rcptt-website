@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<head>
+  <title>RCPTT Documentation Center</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/shared/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/shared/css/main.css">
+  <link rel="stylesheet" href="/shared/css/prism.css">
+  <link rel="icon" href="/shared/img/favicon.ico">
+  <script src="/shared/js/jquery.min.js"></script>
+  <script src="/shared/js/bootstrap.min.js"></script>
+  <script src="/shared/js/prism.js"></script>
+  <script src="/shared/js/ecl.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-39589807-5', 'eclipse.org');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body>
+  <div id="before-footer">
+    <header>
+      <nav class="navbar navbar-default navbar-static-top" role="navigation">
+	<div class="container">
+	  
+	  <div class="navbar-header">
+	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+	    </button>
+	    <span class="navbar-brand">RCPTT Documentation Center</span>
+	  </div>
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    <ul class="nav navbar-nav">
+	      <li  class="active" >
+		<a href="/documentation/userguide/getstarted">User Guide</a>
+	      </li>
+	      <li >
+		<a href="/documentation/faq/">FAQ</a>
+	      </li>
+	      <li>
+		<a href="http://eclipse.org/rcptt">Back to RCPTT Main Site</a>
+	      </li>
+	      <li>
+		<a href="http://eclipse.org">Eclipse.org</a>
+	      </li>
+	    </ul>
+	  </div>
+      </nav>
+    </header>
+    <section class="content">
+      <div class="container">
+	<div class="row">
+  <div class="col-sm-3">
+    <div class="rcptt-sidebar">
+      <ul class="nav">
+		<li ><a href="/documentation/userguide/getstarted/">Get Started</a>
+	  	</li>
+		<li ><a href="/documentation/userguide/testeditor/">Test Case Editor</a>
+	  	</li>
+		<li ><a href="/documentation/userguide/controlpanel">Control Panel</a>
+	  	</li>
+		<li ><a href="/documentation/userguide/assertions/">Assertions</a>
+	  	</li>
+		<li ><a href="/documentation/userguide/ecl/">Eclipse Command Language</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="/documentation/userguide/ecl/new-command-guide/">New ECL Command Guide</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/ecl/excel-import-export/">ECL commands for Excel import and export</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li ><a href="/documentation/userguide/contexts/">Contexts</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/workspace/">Workspace</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/workbench/">Workbench</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/launch/">Launch</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/preferences/">Preferences</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/parameters/">Parameters</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/group/">Group</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/folder/">Folder</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/default/">Default</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/super/">Super</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/ecl/">ECL Script</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li ><a href="/documentation/userguide/verifications/">Verifications</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="/documentation/userguide/verifications/text/">Text</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/verifications/treetable/">Table/Tree</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/verifications/errorlog/">Error Log</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/verifications/time/">Time</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li ><a href="/documentation/userguide/procedures/">Procedures and Variables</a>
+	  	</li>
+		<li ><a href="/documentation/userguide/runner/">Test Runner</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="/documentation/userguide/runner/arguments/">Arguments</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li ><a href="/documentation/userguide/maven/">Maven plugin</a>
+	  	</li>
+		<li ><a href="/documentation/userguide/rap/">RAP</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="/documentation/userguide/rap/install/">Install instructions</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/rap/recordReplay/">Record and Replay</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/rap/capability/">Capability Contexts</a>
+	    </li>
+	    	    <li  class="active" >
+	      <a href="/documentation/userguide/rap/rap-commands/">ECL commands</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/rap/rap-maven/">Maven plugin</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li ><a href="/documentation/userguide/integration/test-rail-integration/">Integration with TestRail</a>
+	  	</li>
+	      </ul>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <h1>Specific ECL commands for RAP</h1>
+    <p></p>
+
+<p>To support RAP more smooth we added following RCL commands.</p>
+
+<div class="beforeTable">
+</div>
+
+<table class="info" width="800" >
+    <thead>
+        <tr>
+            <th>Command</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="25%"><b>get-runtime-target</b></td>
+            <td>The command returns information about runtime id.<br>
+            <b><i><u>Returns value:</u></i></b><br>
+             “rap” or “swt”<br>
+   <b><i><u>Example:</u></i></b><br>
+   
+<pre ><code class="language-ecl">&#x200b;if [get-runtime-target | eq "rap" ] {
+   //some code
+}
+</code></pre>
+
+            
+</td></tr>
+
+<tr>
+            <td><b>mark-download-handler</b></td>
+            <td>The command notes a download handlers. This command is necessary because the RAP has no the standardized approach for the description of download files. 
+<br>
+            <b><i><u>Arguments:</u></i></b><br>
+             <b>-handler</b> - a string array with download handler ids.
+<br>
+   <b><i><u>Example:</u></i></b><br>
+   
+<pre ><code class="language-ecl">&#x200b;mark-download-handler "example.id.download.handler"
+</code></pre>
+
+            
+</td></tr>
+
+<tr>
+            <td><b>run-js</b></td>
+            <td>The command run java script code at the time of execution test.
+
+<br>
+            <b><i><u>Arguments:</u></i></b><br>
+             <b>-jsCode</b> - a string with JS code.
+
+<br>
+   <b><i><u>Example:</u></i></b><br>
+   
+<pre ><code class="language-ecl">&#x200b;run-js "alert(‘Hello world’)"
+</code></pre>
+
+            
+</td></tr>
+
+<tr>
+            <td><b>exec-without-js</b></td>
+            <td>The statement command which blocks method JavaScriptExecutor.execute.
+
+<br>
+   <b><i><u>Example:</u></i></b><br>
+   
+<pre ><code class="language-ecl">&#x200b;exec-without-js {
+   // this command will be call, but JS code not executed
+   // redirect will be ignored
+   run-js "window.location=http://127.0.0.1"  
+}
+</code></pre>
+
+            
+</td></tr>
+
+<tr>
+            <td><b>download-file</b></td>
+            <td>The command download file by url
+
+<br>
+
+<b><i><u>Arguments:</u></i></b><br>
+             <b>-url</b> - url for downloading file <br>
+             <b>-handlerId</b> - a downloading handlerId <br>
+   <b><i><u>Example:</u></i></b><br>
+   
+<pre ><code class="language-ecl">&#x200b;download-file "PGh0bWwgeG1sbnM6ZGF…."
+</code></pre>
+
+            
+</td></tr>
+
+
+<tr>
+            <td><b>match-binary</b></td>
+            <td>The command matching an array of bytes with file or base64 content
+
+<br>
+
+<b><i><u>Arguments:</u></i></b><br>
+             <b>-filePath</b> - a string to file for mathing. <br>
+             <b>-base64</b> - a string with base64 contef for mathing <br>
+   <b><i><u>Example:</u></i></b><br>
+   
+<pre ><code class="language-ecl">&#x200b;match-binary
+   -filePath "workspace://file.text"
+</code></pre>
+
+            
+</td></tr>
+
+<tr>
+            <td><b>upload-file</b></td>
+            <td>The command matching an array of bytes with file or base64 content
+
+<br>
+
+<b><i><u>Arguments:</u></i></b><br>
+             <b>-file</b> - a path to file. <br>
+             <b>-base64</b> - a string which contains encoded file on Base64  format. <br>
+   <b><i><u>Example:</u></i></b><br>
+   
+<pre ><code class="language-ecl">&#x200b;upload-file -base64 "PGh0bWwgeG1sbnM6ZGF…."
+</code></pre>
+
+            
+</td></tr>
+
+<tr>
+            <td><b>to-string</b></td>
+            <td>The command upload file from base64 format or file.
+
+<br>
+
+<b><i><u>Arguments:</u></i></b><br>
+             <b>-encode</b> - a character format (default UTF-8). <br>
+   <b><i><u>Example:</u></i></b><br>
+   
+<pre ><code class="language-ecl">&#x200b;download-file -handler "example.id.download.handler" 
+-url "http://download.example.web/file.html"  
+| to-string | conteins “searching string” | verify-true
+</code></pre>
+
+            
+</td></tr>
+
+</tbody></table>
+  </div>
+</div>
+      </div>
+
+    </section>
+    <script src="/shared/js/main.js"></script>
+</body>

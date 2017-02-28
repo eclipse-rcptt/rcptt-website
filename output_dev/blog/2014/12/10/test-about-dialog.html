@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<head>
+  <title>RCPTT Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/shared/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/shared/css/main.css">
+  <link rel="stylesheet" href="/shared/css/prism.css">
+  <link rel="icon" href="/shared/img/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="RCP Testing Tool Blog"/>
+  <script src="/shared/js/jquery.min.js"></script>
+  <script src="/shared/js/bootstrap.min.js"></script>
+  <script src="/shared/js/prism.js"></script>
+  <script src="/shared/js/ecl.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-39589807-5', 'eclipse.org');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body>
+  <div id="before-footer">
+    <header>
+      <nav class="navbar navbar-default navbar-static-top" role="navigation">
+	<div class="container">
+	  
+	  <div class="navbar-header">
+	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+	    </button>
+	    <a href="/blog"><span class="navbar-brand">RCPTT Blog</span></a>
+	  </div>
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    <ul class="nav navbar-nav">
+	      <li >
+		<a href="/blog/">Latest Entries</a>
+	      </li>
+	      <li >
+		<a href="/blog/categories">Categories</a>
+	      </li>
+	      <li >
+		<a href="/blog/tags">Tags</a>
+	      </li>
+	      <li>
+		<a href="http://eclipse.org/rcptt">Back to RCPTT Main Site</a>
+	      </li>
+	      <li>
+		<a href="http://eclipse.org">Eclipse.org</a>
+	      </li>
+	    </ul>
+	  </div>
+      </nav>
+    </header>
+    <section class="content">
+      <div class="container">
+	    <article>
+        <header>
+          <h2>Testing About Dialog</h2>
+	  <small>Dec, 10, 2014 by Ivan Inozemtsev</small>        </header>
+        <div>
+            
+<p>In this post, I'm going to tell how to test an About dialog to ensure that all plug-ins are properly branded -- i.e. have correct provider name, plug-in name, etc.. While this information is rarely affects end users directly, it's still important to have it up-to-date, and it is really tedious to do such checks manually. Plus, it is a good demonstration of what RCPTT and ECL can do :).</p>
+
+<p>Currently, some entries in RCPTT About dialog are not well-formed:</p>
+<p><img src="/shared/img/blog/about/about.png" /></p>
+
+<p>So, let's create a test case for RCPTT, which ensures that all RCPTT plug-ins (i.e. plug-ins whose ID starts with <kbd>org.eclipse.rcptt</kbd>) are packaged correctly, i.e. that all its plug-ins meet the following requirements:</p>
+<ul>
+  <li>Provider name is <kbd>Eclipse RCP Testing Tool Project</kbd></li>
+  <li>Plug-in name is not empty and ends with <kbd>(Incubation)</kbd></li>
+  <li>All plug-ins have a   <span class="uiElement">Legal Info</span>
+ button enabled</li>
+</ul>
+
+<!-- break -->
+<p>To begin with, I'm recording a new test case, open   <span class="uiElement">About</span>
+ dialog, switching to   <span class="uiElement">Plug-ins</span>
+ tab and selecting a random plug-in. The recorded script looks like this:</p>
+
+<pre ><code class="language-ecl">&#x200b;get-about-menu | click
+with [get-window "About RCP Testing Tool"] {
+	get-button "Installation Details" | click
+	with [get-window "RCP Testing Tool Installation Details"] {
+		get-tab-folder | get-tab-item "Plug-ins" | click
+		get-table | select [get-item "Eclipse.org" -column Provider -index 15]
+	}
+}
+</code></pre>
+
+
+<p>That is just a starting point, and I'm going to modify it manually. The basic idea is obvious &ndash; iterate over all items in a table, and if an item corresponds to RCPTT plug-in, perform required checks. When some check does not match, we'll just write a message in Error Log, so that we can use <a href="/userguide/verifications/errorlog/">Error Log</a> verification to make test passing or failing.</p>
+
+<p>As a first step, I'm modifying recording script with invocation of a <a href="/documentation/userguide/procedures/">procedure</a> for verification, so that later I can focus on this procedure only:</p>
+<pre data-line="1, 10"><code class="language-ecl">&#x200b;proc "validate-plugins" [val table -input] {
+		
+}
+
+get-about-menu | click
+with [get-window "About RCP Testing Tool"] {
+	get-button "Installation Details" | click
+	with [get-window "RCP Testing Tool Installation Details"] {
+		get-tab-folder | get-tab-item "Plug-ins" | click
+		get-table | validate-plugins
+	}
+}
+</code></pre>
+
+
+<p>At first, we iterate through all items and calling additional procedure for rows, corresponding to RCPTT plug-ins:</p>
+<pre ><code class="language-ecl">&#x200b;$table | get-items | foreach [val item] {
+  if [$item | get-property "values['Plug-in Id']" -raw | matches "org\\.eclipse\\.rcptt.*"] {
+    $item | validate-plugin
+  }
+}
+</code></pre>
+
+
+<br/>
+<p>In <code class="language-ecl">&#x200b;validate-plugin</code> procedure, we can grab interesting values from UI into variables using <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#let">let</a> command:</p>
+<pre ><code class="language-ecl">&#x200b;proc "validate-plugin" [val item -input] {
+	let [val pluginId [$item | get-property "values['Plug-in Id']" -raw]]
+		[val pluginName [$item | get-property "values['Plug-in Name']" -raw]]
+		[val providerName [$item | get-property "values['Provider']" -raw]] {
+</code></pre>
+
+
+<p>Then, inside a let-block we can put some validation on these values:</p>
+<pre ><code class="language-ecl">&#x200b;		if [$providerName | not-eq "Eclipse RCP Testing Tool Project"] {
+			format "%s: wrong provider name (%s)" $pluginId $providerName | log -severity error
+		}
+		
+		if [not [$pluginName | invoke endsWith "(Incubation)"]] {
+			format "%s: wrong plugin name (%s)" $pluginId $pluginName | log -severity error
+		}
+</code></pre>
+
+<p>For a last check,   <span class="uiElement">Legal info</span>
+ button enablement, we need to select an item first:</p>
+<pre ><code class="language-ecl">&#x200b;		$item | select-item
+		let [val legalPresent 
+				[get-window ".*Installation Details" 
+					| get-button "Legal Info"
+					| get-property enablement -raw
+					| bool]] {
+		   
+		   if [not $legalPresent] {
+		   		format "%s: no about.html included" $pluginId | log -severity error
+		   }
+		}
+</code></pre>
+
+
+<p>Once this test case is executed, the Error Log contains a bunch of branding errors:</p>
+
+<p><img src="/shared/img/blog/about/log.png" /></p>
+
+<p>As the last step, to make test case failing if there are any errors logged, we add <a href="/userguide/verifications/errorlog/">Error Log</a> verification, which denies all errors, so when test case is executed, it fails with a message like this:</p>
+<pre>
+Error log verification 'no errors' failed:
+Log entry
+Status ERROR: org.eclipse.rcptt.ecl.platform code=0 org.eclipse.rcptt.launching.multiaut.ui: wrong provider name (providerName) null
+is denied by predicate
+ERROR
+Log entry
+Status ERROR: org.eclipse.rcptt.ecl.platform code=0 org.eclipse.rcptt.launching.multiaut.ui: wrong plugin name (pluginName) null
+is denied by predicate
+ERROR
+...
+</pre>
+<h3>Bonus &ndash; check that plug-in is signed</h3>
+<p>As RCPTT can detect paths where images has been loaded, we can also assert that a plug-in is correctly signed, by checking <kbd>image.path</kbd> property of a table item:</p>
+<pre ><code class="language-ecl">&#x200b;if [$item | get-property "image.path" -raw 
+          | eq "org.eclipse.ui/icons/full/obj16/signed_no_tbl.gif"] {
+  format "%s is not signed" $pluginId | log -severity error
+}
+
+</code></pre>
+
+
+        </div>
+                    <p class="categories">
+            Categories:
+                        <a href="/blog/categories/howtos">howtos</a>,                         <a href="/blog/categories/ecl">ecl</a>                        </p>
+                
+                    <nav class="article">
+                <ul>
+                                          <li>Next: <a class="next" href="/blog/2015/06/17/code-coverage.html" title="RCPTT &amp; Code Coverage"><span class="title">RCPTT &amp; Code Coverage</span></a></li>
+                                                                <li>Previous: <a class="previous" href="/blog/2014/11/21/screenshots-with-rcptt.html" title="Screenshots for documentation"><span class="title">Screenshots for documentation</span></a></li>
+                                    </ul>
+            </nav>
+          
+	  	    <p><a href="https://www.eclipse.org/forums/index.php/t/887754/">Discuss</a> this article on forum.</p>
+	      </article>
+      </div>
+
+    </section>
+    <script src="/shared/js/main.js"></script>
+</body>

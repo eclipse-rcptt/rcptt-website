@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<head>
+  <title>RCPTT Documentation Center</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/shared/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/shared/css/main.css">
+  <link rel="stylesheet" href="/shared/css/prism.css">
+  <link rel="icon" href="/shared/img/favicon.ico">
+  <script src="/shared/js/jquery.min.js"></script>
+  <script src="/shared/js/bootstrap.min.js"></script>
+  <script src="/shared/js/prism.js"></script>
+  <script src="/shared/js/ecl.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-39589807-5', 'eclipse.org');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body>
+  <div id="before-footer">
+    <header>
+      <nav class="navbar navbar-default navbar-static-top" role="navigation">
+	<div class="container">
+	  
+	  <div class="navbar-header">
+	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+	    </button>
+	    <span class="navbar-brand">RCPTT Documentation Center</span>
+	  </div>
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    <ul class="nav navbar-nav">
+	      <li  class="active" >
+		<a href="/documentation/userguide/getstarted">User Guide</a>
+	      </li>
+	      <li >
+		<a href="/documentation/faq/">FAQ</a>
+	      </li>
+	      <li>
+		<a href="http://eclipse.org/rcptt">Back to RCPTT Main Site</a>
+	      </li>
+	      <li>
+		<a href="http://eclipse.org">Eclipse.org</a>
+	      </li>
+	    </ul>
+	  </div>
+      </nav>
+    </header>
+    <section class="content">
+      <div class="container">
+	<div class="row">
+  <div class="col-sm-3">
+    <div class="rcptt-sidebar">
+      <ul class="nav">
+		<li ><a href="/documentation/userguide/getstarted/">Get Started</a>
+	  	</li>
+		<li ><a href="/documentation/userguide/testeditor/">Test Case Editor</a>
+	  	</li>
+		<li ><a href="/documentation/userguide/controlpanel">Control Panel</a>
+	  	</li>
+		<li ><a href="/documentation/userguide/assertions/">Assertions</a>
+	  	</li>
+		<li ><a href="/documentation/userguide/ecl/">Eclipse Command Language</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="/documentation/userguide/ecl/new-command-guide/">New ECL Command Guide</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/ecl/excel-import-export/">ECL commands for Excel import and export</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li ><a href="/documentation/userguide/contexts/">Contexts</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/workspace/">Workspace</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/workbench/">Workbench</a>
+	    </li>
+	    	    <li  class="active" >
+	      <a href="/documentation/userguide/contexts/launch/">Launch</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/preferences/">Preferences</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/parameters/">Parameters</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/group/">Group</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/folder/">Folder</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/default/">Default</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/super/">Super</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/contexts/ecl/">ECL Script</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li ><a href="/documentation/userguide/verifications/">Verifications</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="/documentation/userguide/verifications/text/">Text</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/verifications/treetable/">Table/Tree</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/verifications/errorlog/">Error Log</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/verifications/time/">Time</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li ><a href="/documentation/userguide/procedures/">Procedures and Variables</a>
+	  	</li>
+		<li ><a href="/documentation/userguide/runner/">Test Runner</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="/documentation/userguide/runner/arguments/">Arguments</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li ><a href="/documentation/userguide/maven/">Maven plugin</a>
+	  	</li>
+		<li ><a href="/documentation/userguide/rap/">RAP</a>
+	  	  <ul class="nav">
+	    	    <li >
+	      <a href="/documentation/userguide/rap/install/">Install instructions</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/rap/recordReplay/">Record and Replay</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/rap/capability/">Capability Contexts</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/rap/rap-commands/">ECL commands</a>
+	    </li>
+	    	    <li >
+	      <a href="/documentation/userguide/rap/rap-maven/">Maven plugin</a>
+	    </li>
+	    	  </ul>
+	  	</li>
+		<li ><a href="/documentation/userguide/integration/test-rail-integration/">Integration with TestRail</a>
+	  	</li>
+	      </ul>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <h1>Launch Contexts</h1>
+    <p></p>
+
+<p>Launch contexts are used to control AUT Launches and Launch Configurations.</p>
+
+<p><p>Move a mouse over highlighted areas on a screenshot below to get a documentation regarding UI elements</p>
+</p>
+
+<div class="screenshot">
+<img src="/shared/img/screenshot-launch-context-editor.png"></img>
+
+      
+<div class="ann" style="top:93px;left:118px;">
+  <div class="ann-border" style="width:100px;height:19px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      All you need to know about context name
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:119px;left:118px;">
+  <div class="ann-border" style="width:100px;height:19px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      All you need to know about tags
+  
+  </div>
+</div>
+
+        
+<div class="ann" style="top:118px;left:582px;">
+  <div class="ann-border" style="width:22px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      All you need to know about adding tags
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:92px;left:614px;">
+  <div class="ann-border" style="width:75px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Make a snapshot of AUT running launches and launch configurations and copy them into this context. 
+  
+  </div>
+</div>
+
+        
+<div class="ann" style="top:118px;left:614px;">
+  <div class="ann-border" style="width:75px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Adds launch configuration to AUT. Launches given configuration in a defined mode. Suspend launch at a given breakpoint.  If   <span class="uiElement">Clear workspace</span>
+ option is on, removes existing projects from AUT at first.
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:200px;left:75px;">
+  <div class="ann-border" style="width:180px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Turned on by default. Terminates all running launches if any. 
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:248px;left:75px;">
+  <div class="ann-border" style="width:608px;height:19px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      If   <span class="uiElement">Terminate existing launches</span>
+ is on - this option allows to specify a list of launches, which should be kept intact.
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:272px;left:75px;">
+  <div class="ann-border" style="width:180px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Turned off by default. Clears a list of AUT launch configurations. 
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:320px;left:75px;">
+  <div class="ann-border" style="width:608px;height:19px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      If   <span class="uiElement">Clear launch configurations</span>
+ is on - this option allows to specify a list of launch configurations, which should be kept intact.
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:343px;left:75px;">
+  <div class="ann-border" style="width:180px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Turned on by default.  Clears all breakpoints. 
+  
+  </div>
+</div>
+  
+        
+<div class="ann" style="top:365px;left:639px;">
+  <div class="ann-border" style="width:22px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      "Add" button is always disabled for now.
+  
+  </div>
+</div>
+  
+  
+        
+<div class="ann" style="top:365px;left:662px;">
+  <div class="ann-border" style="width:22px;height:22px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      Remove launch configuration/launch with this button. 
+  
+  </div>
+</div>
+  
+  </div>
+
+<h3> Introduction </h3>
+
+<p>Sometimes for our testing we need to specificly configure AUT launches. Launch Context can
+manage it.</p>
+
+<p>Launch Context serves the following porposes:</p>
+
+<ul>
+<li>Add Launch Configurations and/or run the required ones</li>
+<li>Add breakpoints and pause a required launch at a breakpoint</li>
+<li>Terminate existing launches (optional)</li>
+<li>Clear launch configurations (optional)</li>
+<li>Clear breakpoints (optional)</li>
+</ul>
+
+<p>Thus you may flexibly adjust your AUT Launch Configuration state to make everything ready
+for test creation.</p>
+
+<h3>Terminate Existing Launches.</h3>
+
+<p>Once you create a new Launch Context you can see that <i>Terminate existing launches</i> option
+is enabled by default. That means the following: when the context is executed all running launches in your AUT
+will be terminated.</p>
+
+<p>You can exclude any desired launches to avoid their termination - just list them
+in a <i>Do not terminate launches...</i> field:</p>
+
+<div class="screenshot">
+<img src="/shared/img/screenshot-launch-context-2.png"></img>
+
+      
+<div class="ann" style="top:248px;left:75px;">
+  <div class="ann-border" style="width:606px;height:19px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      When the context is executed all launches are terminated except "myClass".
+  
+  </div>
+</div>
+
+
+</div>
+
+<p>If you uncheck <i>Terminate existing launches</i> button option - no running launches will be
+terminated during context execution.</p>
+
+<h3>Clear Launch Configurations.</h3>
+
+<p>This option should be used if you wish to clear a list of existing Launch Configurations (disabled
+by default).</p>
+
+<p>By analogy with the termination described above you may want to leave some Run Configurations.
+Just list them in "Do not delete following configrations" field.</p>
+
+<h3>Capture running launches state into a Launch Context.</h3>
+
+<p>Let's say you have 2 Launch Configurations -  HelloWorld and ByeWorld -  and to do your test
+you need both of them running and suspending at breakpoints.</p>
+
+<p>Once you have this state in your AUT you can press <span class="uiElement"><img src="/shared/img/ui-capture.gif"></img> Capture</span> button and all your AUT launches
+state will be captured as a context which will have all information about:</p>
+
+<ul>
+<li>Existing launch configurations</li>
+<li>Exising running launches (and their running modes - "run" or "debug")</li>
+<li>Existing breakpoins</li>
+</ul>
+
+<p>Now you can use this context in your test case - it will add corresponding configurations, run the
+required launches in a debug mode and suspend them at their breakpoints.</p>
+
+<p>Once you captured launch configurations - you can always edit it manually by removing any of
+the configuration with <span class="uiElement"><img src="/shared/img/ui-remove.png"</img>Remove</span> button (<span class="uiElement"><img src="/shared/img/ui-add.gif"</img>Add</span> button is always disabled for now).</p>
+
+<p>You may also manually change the attribute values:</p>
+
+<div class="screenshot">
+<img src="/shared/img/screenshot-launch-context-2.png"></img>
+
+      
+<div class="ann" style="top:510px;left:425px;">
+  <div class="ann-border" style="width:40px;height:19px;"></div>
+  <div class="ann-overlay" style="left:0px;;">
+      You can change the mode, set 'run' or 'debug'. 
+  
+  </div>
+</div>
+
+
+</div>
+
+<h3>Test Example: verify variable value during a debug process.</h3>
+
+<p>Let's imagine that you need to create a test case which verifies that variables are correctly updated
+during a debug process.</p>
+
+<p>To get this you need to create your Java class file, set a breakpoint, run this class in a debug
+mode, switch to debug perspective with variables view and (finally!) make a verification.</p>
+
+<p>But in fact all actions before a verification - is AUT state and not the test itself.  Using RCPTT Contexts
+you may make your test elegant and easy-maintaining.</p>
+
+<p>So you need the following contexts:</p>
+
+<ol>
+<li><a href = "/documentation/userguide/contexts/workspace">Workspace context</a> - to put Java Project on AUT workspace:
+  
+  <p>Move a mouse over highlighted areas on a screenshot below to get a documentation regarding UI elements</p>
+<div class="screenshot">
+<img src="/shared/img/screenshot-workspace-context-for-launch-context-example.png"></img>
+ </div> 
+</li>
+<li><a href = "/documentation/userguide/contexts/workbench">Workbench context</a> - to switch to Debug Perspective:
+
+<div class="screenshot">
+<img src="/shared/img/screenshot-workbench-context-for-launch-context-example.png"></img>
+ </div> 
+</li>
+ 
+<li>Launch context - to set a breakpoint and run java class in a debug mode:
+
+<div class="screenshot">
+<img src="/shared/img/screenshot-launch-context-3.png"></img>
+ </div> 
+</li>
+
+Place these contexts into your test case and record your test which shrinks to a few lines of code:
+
+<div class="screenshot">
+<img src="/shared/img/screenshot-test-with-launch-context.png"></img>
+ </div>
+
+</ol>
+
+<p>You may note <i>Stop all launches</i> context marked as a <a href = "/documentation/userguide/contexts/default">Default context</a>.
+It terminates all active launches before a workspace context will try to delete all files.
+This hint helps us to avoid the situation when some files could be locked. It's a good practice
+to use this context as a Default Context for AUT with launches.</p>
+
+<p></div></p>
+  </div>
+</div>
+      </div>
+
+    </section>
+    <script src="/shared/js/main.js"></script>
+</body>
