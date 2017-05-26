@@ -166,254 +166,328 @@
     </div>
   </div>
   <div class="col-sm-9">
-    <h1>ECL commands for Excel import and export</h1>
+    <h1>ECL commands for XML import and export</h1>
     <br>
-<h2>Excel export</h2><hr>
+<h2>XML export</h2><hr>
 
-<h3>write-excel-file</h3>
+<h3>write-xml-file</h3>
 
-Writes tables from input pipe to into excel (xls or xlsx) file. Fails if file is not found or format is invalid.<br><br>
-
+Writes tables from input pipe to into xml file
+<br><br>
 Input:
+<br>
+<ul><li><b>tree</b> Tree: Tree to write</li></ul>
+Parameters:
+<br>
+<ul><li><b>uri</b> String: URI to write xml data to. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.</li></ul>
+Output:
+<ul><li>
+The value of 'tree' argument</li></ul>
+<br>
+Example:
 
-<ul>
-<li><b>tables</b> (1, ∞) Table: Tables to write</li>
-</ul>
-
-Parameters: 
-
-<ul>
-<li><b>uri</b> String: URI to write Excel data to. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.</li>
-<li><b>append</b> boolean: Whether to append given table data into file. Default value is false.</li>
-
-</ul>
-
-Output: 
-
-<ul>
-<li>The value of 'tables' argument</li>
-</ul>
-
-Example: 
-
-<pre ><code class="language-ecl">&#x200b;global [val supportedDevices [list
-    [list "Device Name" "Device Info"]
-    [list "Device 1" "Info 1"]
-    [list "Device 2" "Info 2"]
-    [list "Device 3" "Info 3"]
-]]
- 
-global [val allDevices [list
-    [list "Device Name" "Device Info"]
-    [list "Device 1" "Info 1"]
-    [list "Device 2" "Info 2"]
-    [list "Device 3" "Info 3"]
-    [list "Device 4" "Info 4"]
-    [list "Device 5" "Info 5"]
-]]
- 
- 
-proc newTable [val table] [val name] {
-    $table | list-as-table-data | set-page-name $name
+<pre ><code class="language-ecl">&#x200b;proc newDevice [val id] [val name] [val target] {
+    tree-node "Device"
+        [map [entry "id" $id]]
+        [tree-node -name "DeviceName" -text $name]
+        [tree-node -name "DeviceTarget" -text $target]
 }
  
  
-emit [newTable $supportedDevices "Supported devices"] [newTable $allDevices "All devices"]
-    | write-excel-file "workspace:/excel/devices.xlsx"
+global [val supportedDevices [tree-node "SupportedDevices"
+    [newDevice "1" "device 1" "target 1"]
+    [newDevice "2" "device 2" "target 2"]
+    [newDevice "3" "device 3" "target 3"]
+]]
+ 
+global [val allDevices [tree-node "AllDevices"
+    [newDevice "1" "device 1" "target 1"]
+    [newDevice "2" "device 2" "target 2"]
+    [newDevice "3" "device 3" "target 3"]
+    [newDevice "4" "device 4" "target 4"]
+    [newDevice "5" "device 5" "target 5"]
+]]
+ 
+global [val tree [
+    tree-node "DevicesInfo" $supportedDevices $allDevices
+]]
+ 
+$tree | write-xml-file "workspace:/xml/devices.xml"
 </code></pre>
 
 
 <br>
-<h2>Excel import</h2><hr>	
+<h2>XML import</h2><hr>
 
-<h3>read-excel-file</h3>
+<h3>read-xml-file</h3>
 
-Parses given excel file (xls or xlsx) into tables and write them to output pipe. Fails if file is not found or format is invalid.
+Parses given xml file into tree and write it to output pipe. Fails if file is not found or if it is invalid xml.
 <br><br>
+
 Parameters:
 <br>
-<ul>
-<li><b>uri</b> String: URI to read Excel data from. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.</li>
-<li><b>sheets</b> (0, ∞) String: List of Excel sheet names to read data from</li>
-</ul>
+<ul><li><b>uri</b> String: URI to read xml data from. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.</li></ul>
+<ul><li><b>xPath</b> String: XPath expression to find xml nodes</li></ul>
 
 Output:
+<ul><li>
+Tree EMF Object</li></ul>
+<br>
+Example:
 
-<ul>
-<li>List of Table EMF Objects</li>
-</ul>
-
-Example: 
-
-<pre ><code class="language-ecl">&#x200b;global [val devicesInfo [
-    read-excel-file "workspace:/excel/devices.xlsx" "Supported devices" "All devices"
-        | to-list
-]]
- 
- 
-clear-log-view
- 
-$devicesInfo | each [val table] {
-    log [format "Page name: %s" [$table | get pageName]]
-    $table | list [get rows] | each [val row] {
-        $row | list [get values] | each [val value] {
-            log $value
-        }
+<pre ><code class="language-ecl">&#x200b;
+proc logDevice [val device] {
+    if [$device | has-attr "id"] {
+        log [format "Device ID: %s" [$device | get-attr "id"]]
     }
+    log [format "Device Name: %s" [$device | get-nodes "DeviceName" | get text]]
+    log [format "Device Target: %s" [$device | get-nodes "DeviceTarget"  | get text]]
 }
  
-read-excel-file "workspace:/excel/devices.xlsx" "Additional info"
-    | get rows | get values | log
+ 
+global [val supportedDevices [
+    read-xml-file "workspace:/xml/devices.xml"
+        | get-nodes "SupportedDevices" | get-nodes "Device" | to-list
+]]
+ 
+$supportedDevices | each [val device] {
+    logDevice $device
+}
 </code></pre>
 
 
 <br>
 <h2>Additional commands</h2><hr>
 
-<h3>set-page-name</h3>
+<h3>tree-node</h3>
 
-Set page name to table
-
+Creates a new tree node
+<br><br>
 Input:
-
-<ul>
-<li><b>table</b> Table: Table to set page name to</li>
-</ul>
-
-Parameters:
-<ul>
-<li><b>name</b> String: Page name to set</li>
+<br><ul>
+<li><b>name</b> String: Name of the new node</li>
+<li><b>attrs</b> optional EclMap: Map with node attributes</li>
+<li><b>children</b> (0, ∞) Tree: Children of the new node</li>
+<li><b>text</b> optional String: Text of the new node</li>
 </ul>
 
 Output:
-
-The value of 'table' argument
-<br> <br>
+<br><ul>
+<li>Tree EMF Object</li></ul>
+<br>
 Example:
 
-<pre ><code class="language-ecl">&#x200b;get-view "Error Log" | get-tree | expand-all
-get-view "Error Log" | get-tree | get-table-data
- | set-page-name "Table" | write-excel-file "workspace:/MyProject/AssertData/table.xls"
- 
-read-excel-file "workspace:/MyProject/AssertData/table.xls"
- | get-page-name | equals "Table" | assert-true
+<pre ><code class="language-ecl">&#x200b;tree-node "Device"
+    [map [entry "id" "1"]]
+    [tree-node -name "DeviceName" -text "device"]
+    [tree-node -name "DeviceTarget" -text "target"]
 </code></pre>
 
 
-<br>
+<h3>get-attrs</h3>
 
-<h3>list-as-table-data</h3>
-
-Converts input list to table data format
+Gets attributes from the object
 <br><br>
 Input:
-<br>
-<ul><li><b>list</b> EclList: List of List of String to convert to Table</li></ul>
+<br><ul>
+<li><b>object</b> EObject: Object to get attributes from</li>
+
+</ul>
+
 Output:
-<ul><li>
-Table EMF Object</li></ul>
+<br><ul>
+<li>Map with object attributes</li></ul>
 <br>
 Example:
 
-<pre ><code class="language-ecl">&#x200b;proc newTable [val table] [val name] {
-    $table | list-as-table-data | set-page-name $name
+<pre ><code class="language-ecl">&#x200b;tree-node "Device" [map [entry "id" "1"] [entry "name" "first"]]
+    | get-attrs | get "name" | log
+</code></pre>
+
+
+<h3>get-attr</h3>
+
+Gets attribute from the tree node by name. Fails if attribute is not found.
+<br><br>
+Input:
+<br><ul>
+<li><b>object</b> EObject: Object to get attribute from</li>
+
+</ul>
+
+Parameters:
+<br>
+<ul><li><b>name</b> String: Name of the attribute</li></ul>
+
+Output:
+<br><ul>
+<li>Value of the attribute</li></ul>
+<br>
+Example:
+
+<pre ><code class="language-ecl">&#x200b;tree-node "Device" [map [entry "id" "1"] [entry "name" "first"]]
+    | get-attr "name" | log
+</code></pre>
+
+
+<h3>set-attr</h3>
+
+Sets value of the object attribute. If 'value' parameter is not specified, the attribute will be removed.
+<br><br>
+Input:
+<br><ul>
+<li><b>object</b> EObject: Object to set attribute to</li>
+
+</ul>
+
+Parameters:
+<br>
+<ul><li><b>name</b> String: Name of the attribute</li>
+<li><b>value</b> optional String: New value of the attribute</li>
+
+</ul>
+
+Output:
+<br><ul>
+<li>The value of 'object' argument</li></ul>
+<br>
+Example:
+
+<pre ><code class="language-ecl">&#x200b;tree-node "Device" [map [entry "id" "1"] [entry "name" "first"]]
+    | set-attr "name" "second" | get-attr "name" | log
+</code></pre>
+
+
+<h3>has-attr</h3>
+
+Checks if the object has attribute<br><br>
+Input:
+<br><ul>
+<li><b>object</b> EObject: Object to check attribute from</li>
+
+</ul>
+
+Parameters:
+<br>
+<ul><li><b>name</b> String: Name of the attribute</li>
+
+</ul>
+
+Output:
+<br><ul>
+<li>true when attribute is exist, false otherwise</li></ul>
+<br>
+Example:
+
+<pre ><code class="language-ecl">&#x200b;tree-node "Device" [map [entry "id" "1"] [entry "name" "first"]]
+    | has-attr "name" | log
+</code></pre>
+
+
+<h3>get-nodes</h3>
+
+Gets child nodes from the object and writes them into output pipe. Fails if 'pos' of 'len' parameter is out of range.
+
+<br><br>
+Input:
+<br><ul>
+<li><b>object</b> EObject: Object to get child nodes from</li>
+
+</ul>
+
+Parameters:
+<br>
+<ul>
+
+<li><b>name</b> optional String: Name of the nodes</li>
+<li><b>pos</b> optional Int: Start position. If 'name' attribute is provided, 'pos' is relative to the node list filtered by name.</li>
+<li><b>len</b> optional Int: Count of nodes. Default value is '-1' and it means the end of the node list. If 'name' attribute is provided, 'len' is relative to the node list filtered by name.</li>
+</ul>
+
+Output:
+<br><ul>
+<li>Child nodes of the object</li></ul>
+<br>
+Example:
+
+<pre ><code class="language-ecl">&#x200b;proc newDevice [val id] [val name] [val target] {
+    tree-node "Device"
+        [map [entry "id" $id]]
+        [tree-node -name "DeviceName" -text $name]
+        [tree-node -name "DeviceTarget" -text $target]
 }
  
-global [val devices [list
-    [list "Device Name" "Device Target"]
-    [list "Device 1" "Info 1"]
-    [list "Device 2" "Info 2"]
-    [list "Device 3" "Info 3"]
+global [val supportedDevices [tree-node "SupportedDevices"
+    [newDevice "1" "device 1" "target 1"]
+    [newDevice "2" "device 2" "target 2"]
+    [newDevice "3" "device 3" "target 3"]
 ]]
  
-newTable $devices "Devices"
-    | write-excel-file "workspace:/excel/devices.xls"
+$supportedDevices | get-nodes "Device" -pos 1 -len 1
+    | get-nodes "DeviceName" | get text
+    | equals "device 2" | verify-true
 </code></pre>
 
 
-<br>
+<h3>append</h3>
 
-<h3>get-table-cells</h3>
+Adds child nodes to the object. Fails if 'index' parameter is out of range.
 
-Gets cell values by excel names and writes them into the output pipe
 <br><br>
 Input:
-<br>
-<ul><li>
-<b>table</b> Table: Table to get cells from</li>
+<br><ul>
+<li><b>object</b> EObject: Object to add child nodes to</li>
+
 </ul>
+
 Parameters:
-<ul><li><b>cells</b> (1, ∞) String: Cell names</li></ul>
-Output:
-<ul><li>
-Cell values</li>
+<br>
+<ul>
+
+<li><b>children</b> (1, ∞) Tree: New child nodes to add to the object</li>
+<li><b>index</b> optional Int: Index of the first child node added in the node list. Min value is '0' and max value is size of node list. Default value is '-1' and it means size of node list.</li>
 </ul>
+
+Output:
+<br><ul>
+<li>The value of 'object' argument</li></ul>
+<br>
 Example:
 
-<pre ><code class="language-ecl">&#x200b;read-excel-file "workspace:/excel/devices.xlsx" "Supported devices"
-    | get-table-cells A1 | eq "Device Name" | verify-true
+<pre ><code class="language-ecl">&#x200b;tree-node "Device" [tree-node -name "DeviceName" -text "device"]
+    | append [tree-node -name "DeviceTarget" -text "target"] -index 0
+
 </code></pre>
 
 
-<br>
-<h3>get-table-range</h3>
+<h3>remove</h3>
 
-Gets range by excel name and writes it into the output pipe
+Removes child node from the object by index. Fails if 'index' parameter is out of range.
+
 <br><br>
 Input:
-<br>
-<ul>
-<li><b>table</b> Table: Table to get rows data from</li>
+<br><ul>
+<li><b>object</b> EObject: Object to remove child node from</li>
+
 </ul>
 
 Parameters:
-<ul>
-<li><b>range</b> String: Range name in the excel format (for example "A1:B2")</li>
-</ul>
-
-Output:
-<ul>
-<li>Table EMF Object</li>
-</ul>
-
-Example:
-
-<pre ><code class="language-ecl">&#x200b;read-excel-file "workspace:/excel/devices.xlsx" "Supported devices"
-    | get-table-range "A2:B4" | list [get rows] | each [val row] {
-        $row | list [get values] | each [val value] {
-            log $value
-        }
-}
-</code></pre>
-
-
 <br>
-
-<h3>set-table-cells</h3>
-
-Sets cell values to the table
-
-Input:
-<ul><li>
-<b>table</b> Table: Table to set cell values to
-</li>
-</ul>
-
-Parameters:
 <ul>
-<li><b>cells</b> EclMap: Map where key is cell name and value is cell value to set</li>
+
+<li><b>index</b> Int: Index of the child node. Min value is '0' and max value is the last index in the node list. Default value is '-1' and the last index in the node list.</li>
 </ul>
 
 Output:
-<ul>
-<li>The value of 'table' argument</li>
-</ul>
-
+<br><ul>
+<li>The value of 'object' argument</li></ul>
+<br>
 Example:
 
-<pre ><code class="language-ecl">&#x200b;read-excel-file "workspace:/excel/devices.xlsx" "Supported devices"
-    | set-table-cells [map [entry "A1" "New Device Name"] [entry "B1" "New Device Target"]]
-    | write-excel-file "workspace:/excel/devices.xlsx" -append
+<pre ><code class="language-ecl">&#x200b;tree-node "Device"
+    [tree-node -name "DeviceName" -text "device"]
+    [tree-node -name "DeviceTarget" -text "target"]
+        | remove -index 1
 </code></pre>
   </div>
 </div>
