@@ -169,7 +169,7 @@
 
 <h3>write-excel-file</h3>
 
-Writes tables from input pipe to into excel (xls or xlsx) file. Fails if file is not found or format is invalid.
+Writes tables from input pipe to into excel (xls or xlsx) file. Fails if file is not found or format is invalid.<br><br>
 
 Input:
 
@@ -193,35 +193,30 @@ Output:
 
 Example: 
 
-<pre ><code class="language-ecl">&#x200b;proc newDevice [val name] [val target] {
- map [entry "Device Name" $name] [entry "Device Target" $target]
-}
- 
-global [val supportedDevices [list
- [newDevice "device 1" "target 1"]
- [newDevice "device 2" "target 2"]
- [newDevice "device 3" "target 3"]
+<pre ><code class="language-ecl">&#x200b;global [val supportedDevices [list
+    [list "Device Name" "Device Info"]
+    [list "Device 1" "Info 1"]
+    [list "Device 2" "Info 2"]
+    [list "Device 3" "Info 3"]
 ]]
  
 global [val allDevices [list
- [newDevice "device 1" "target 1"]
- [newDevice "device 2" "target 2"]
- [newDevice "device 3" "target 3"]
- [newDevice "device 4" "target 4"]
- [newDevice "device 5" "target 5"]
+    [list "Device Name" "Device Info"]
+    [list "Device 1" "Info 1"]
+    [list "Device 2" "Info 2"]
+    [list "Device 3" "Info 3"]
+    [list "Device 4" "Info 4"]
+    [list "Device 5" "Info 5"]
 ]]
  
  
 proc newTable [val table] [val name] {
- $table | list-as-table-data | set-page-name $name
+    $table | list-as-table-data | set-page-name $name
 }
  
  
 emit [newTable $supportedDevices "Supported devices"] [newTable $allDevices "All devices"]
- | write-excel-file "workspace:/excel/devices.xls"
- 
-newTable $supportedDevices "Supported devices"
- | write-excel-file "workspace:/excel/devices.xls" -append
+    | write-excel-file "workspace:/excel/devices.xlsx"
 </code></pre>
 
 
@@ -231,9 +226,9 @@ newTable $supportedDevices "Supported devices"
 <h3>read-excel-file</h3>
 
 Parses given excel file (xls or xlsx) into tables and write them to output pipe. Fails if file is not found or format is invalid.
-
+<br><br>
 Parameters:
-
+<br>
 <ul>
 <li><b>uri</b> String: URI to read Excel data from. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.</li>
 <li><b>sheets</b> (0, ∞) String: List of Excel sheet names to read data from</li>
@@ -247,64 +242,31 @@ Output:
 
 Example: 
 
-<pre ><code class="language-ecl">&#x200b;proc logInfoItem [val row] [val columns] {
- $columns | each [val column] {
-  log [format "%s: %s" $column [$row | get $column]]
- }
-}
- 
-global [val devicesInfo [
- read-excel-file "workspace:/excel/devices.xls" "Supported devices" "All devices"
-  | to-list
+<pre ><code class="language-ecl">&#x200b;global [val devicesInfo [
+    read-excel-file "workspace:/excel/devices.xlsx" "Supported devices" "All devices"
+        | to-list
 ]]
  
  
 clear-log-view
  
 $devicesInfo | each [val table] {
- log [format "Page name: %s" [$table | get-page-name]]
- let [val columns [$table | get-column-names]] {
-  $table | get-rows-data | each [val item] {
-   // $item | get "Device Name" | log
-   logInfoItem $item $columns
-  }
- }
+    log [format "Page name: %s" [$table | get pageName]]
+    $table | list [get rows] | each [val row] {
+        $row | list [get values] | each [val value] {
+            log $value
+        }
+    }
 }
+ 
+read-excel-file "workspace:/excel/devices.xlsx" "Additional info"
+    | get rows | get values | log
 </code></pre>
 
 
 <br>
 <h2>Additional commands</h2><hr>
 
-<h3>get-page-name</h3>
-
-Get page name from table.
-
-Input:
-
-<ul>
-<li><b>table</b> Table: Table to get page name from
-</li>
-</ul>
-
-Output:
-
-<ul>
-<li>Table page name
-</li>
-</ul>
-
-Example: 
-
-<pre ><code class="language-ecl">&#x200b;get-view "Error Log" | get-tree | expand-all
-get-view "Error Log" | get-tree | get-table-data
- | set-page-name "Table" | write-excel-file "workspace:/MyProject/AssertData/table.xls"
- 
-read-excel-file "workspace:/MyProject/AssertData/table.xls"
- | get-page-name | equals "Table" | assert-true
-</code></pre>
-
-<br>
 <h3>set-page-name</h3>
 
 Set page name to table
@@ -317,13 +279,13 @@ Input:
 
 Parameters:
 <ul>
-<li>name String: Page name to set</li>
+<li><b>name</b> String: Page name to set</li>
 </ul>
 
 Output:
 
 The value of 'table' argument
-
+<br> <br>
 Example:
 
 <pre ><code class="language-ecl">&#x200b;get-view "Error Log" | get-tree | expand-all
@@ -336,80 +298,76 @@ read-excel-file "workspace:/MyProject/AssertData/table.xls"
 
 
 <br>
-<h3>get-column-names</h3>
 
-Get list of column names from table
+<h3>list-as-table-data</h3>
 
+Converts input list to table data format
+<br><br>
 Input:
-<ul><li>
-<b>table</b> Table: Table to get column names from</li>
-</ul>
+<br>
+<ul><li><b>list</b> EclList: List of List of String to convert to Table</li></ul>
 Output:
 <ul><li>
-List of table column names</li>
-</ul>
+Table EMF Object</li></ul>
+<br>
 Example:
 
-<pre ><code class="language-ecl">&#x200b;proc logInfoItem [val row] [val columns] {
- $columns | each [val column] {
-  log [format "%s: %s" $column [$row | get $column]]
- }
+<pre ><code class="language-ecl">&#x200b;proc newTable [val table] [val name] {
+    $table | list-as-table-data | set-page-name $name
 }
  
-get-view "Error Log" | get-tree | expand-all
-get-view "Error Log" | get-tree | get-table-data
- | write-excel-file "workspace:/MyProject/AssertData/table.xls"
+global [val devices [list
+    [list "Device Name" "Device Target"]
+    [list "Device 1" "Info 1"]
+    [list "Device 2" "Info 2"]
+    [list "Device 3" "Info 3"]
+]]
  
-read-excel-file "workspace:/MyProject/AssertData/table.xls"
- | to-list | each [val table] {
- let [val columns [$table | get-column-names]] {
-  $table | get-rows-data | each [val item] {
-   logInfoItem $item $columns
-  }
- }
-}
+newTable $devices "Devices"
+    | write-excel-file "workspace:/excel/devices.xls"
 </code></pre>
 
 
 <br>
-<h3>get-rows-data</h3>
 
-Converts table data to map, where column name is a key and cell is a value
+<h3>get-table-cells</h3>
 
+Gets cell values by excel names and writes them into the output pipe
+<br><br>
 Input:
+<br>
+<ul><li>
+<b>table</b> Table: Table to get cells from</li>
+</ul>
+Parameters:
+<ul><li><b>cells</b> (1, ∞) String: Cell names</li></ul>
+Output:
+<ul><li>
+Cell values</li>
+</ul>
+Example:
+
+<pre ><code class="language-ecl">&#x200b;read-excel-file "workspace:/excel/devices.xlsx" "Supported devices"
+    | get-table-cells A1 | eq "Device Name" | verify-true
+</code></pre>
+
+
+<br>
+<h3>get-table-range</h3>
+
+Gets range by excel name and writes it into the output pipe
+<br><br>
+Input:
+<br>
 <ul>
 <li><b>table</b> Table: Table to get rows data from</li>
 </ul>
 
-Output:
+Parameters:
 <ul>
-<li>Map with row values</li>
+<li><b>range</b> String: Range name in the excel format (for example "A1:B2")</li>
 </ul>
 
-Example:
-
-<pre ><code class="language-ecl">&#x200b;get-view "Error Log" | get-tree | expand-all
-get-view "Error Log" | get-tree | get-table-data | write-excel-file
-"workspace:/MyProject/AssertData/table.xls"
- 
-read-excel-file "workspace:/MyProject/AssertData/table.xls"
- | get-rows-data | each [val item] {
-  $item | get "Message" | log
-}
-</code></pre>
-
-
-<br>
-
-<h3>list-as-table-data</h3>
-
-Converts input list of map to table data format
-
-Input:
-<ul><li>
-<b>list</b> EclList: List of Map to convert to Table
-</li>
-</ul>
 Output:
 <ul>
 <li>Table EMF Object</li>
@@ -417,22 +375,42 @@ Output:
 
 Example:
 
-<pre ><code class="language-ecl">&#x200b;proc newDevice [val name] [val target] {
- map [entry "Device Name" $name] [entry "Device Info" $target]
+<pre ><code class="language-ecl">&#x200b;read-excel-file "workspace:/excel/devices.xlsx" "Supported devices"
+    | get-table-range "A2:B4" | list [get rows] | each [val row] {
+        $row | list [get values] | each [val value] {
+            log $value
+        }
 }
- 
-proc newTable [val table] [val name] {
- $table | list-as-table-data | set-page-name $name
-}
- 
-global [val devices [list
- [newDevice "Device 1" "Info 1"]
- [newDevice "Device 2" "Info 2"]
- [newDevice "Device 3" "Info 3"]
-]]
- 
-newTable $devices "Devices"
- | write-excel-file "workspace:/MyProject/AssertData/devices.xls"
+</code></pre>
+
+
+<br>
+
+<h3>set-table-cells</h3>
+
+Sets cell values to the table
+
+Input:
+<ul><li>
+<b>table</b> Table: Table to set cell values to
+</li>
+</ul>
+
+Parameters:
+<ul>
+<li><b>cells</b> EclMap: Map where key is cell name and value is cell value to set</li>
+</ul>
+
+Output:
+<ul>
+<li>The value of 'table' argument</li>
+</ul>
+
+Example:
+
+<pre ><code class="language-ecl">&#x200b;read-excel-file "workspace:/excel/devices.xlsx" "Supported devices"
+    | set-table-cells [map [entry "A1" "New Device Name"] [entry "B1" "New Device Target"]]
+    | write-excel-file "workspace:/excel/devices.xlsx" -append
 </code></pre>
   </div>
 </div>

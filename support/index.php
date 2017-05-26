@@ -9,7 +9,7 @@
  * Contributors:
  *    
  *******************************************************************************/
-
+	
 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/app.class.php");
 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/nav.class.php");
 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/menu.class.php");
@@ -18,19 +18,11 @@
 	$Menu 	= new Menu();
 	include($App->getProjectCommon());
 	
-	$localVersion = false;
+	$pageTitle 		= "Support";
 	
-	# Define these here, or in _projectCommon.php for site-wide values
-	$pageKeywords	= "eclipse, project";
-	$pageTitle 		= "RCP Testing Tool (RCPTT)";
+	$html = file_get_contents('_index.html');
 	
 	
-	$middle = file_get_contents('main_page_content.html');
-
-	$right = file_get_contents('right_content.html');
-
-	$html = $middle . $right;
 	# Generate the web page
 	$App->generatePage($theme, $Menu, $Nav, $pageAuthor, $pageKeywords, $pageTitle, $html);
-
 ?>
