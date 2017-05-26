@@ -21,6 +21,9 @@ guide:
       - name: ECL commands for Excel import and export 
         url: userguide/ecl/excel-import-export/
         slug: ecl/excel-import-export
+      - name: ECL commands for XML import and export
+        url: userguide/ecl/xml-import-export/
+        slug: ecl/xml-import-export
   - name: Contexts
     url: userguide/contexts/
     slug: contexts
