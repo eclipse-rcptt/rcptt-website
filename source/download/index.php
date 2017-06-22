@@ -92,7 +92,7 @@ $releasesHome=$downloadsHome . "/release";
 
 # TODO: Once we get two parallel streams, we will need to make release logic more complex
 # TODO: Once we get beyond .9 bugfix version, we can't just use alphabetic sorting
-$latestRelease="2.1.0";#getLastChild($releasesHome);
+$latestRelease="2.2.0";#getLastChild($releasesHome);
 
 
 $nightlyHome = $downloadsHome . "/nightly";
@@ -112,7 +112,7 @@ $html .= generateDownloadBlock(
   $latestRelease . " Release",
   $relPrefix . "/ide/rcptt.ide-" . $latestRelease ."-[classifier].zip",
   $relURI . $latestRelease . "/repository",
-  " (Neon)",
+  " (Oxygen)",
   $relPrefix . "/runner/rcptt.runner-" . $latestRelease . ".zip"
   );
 
@@ -126,7 +126,7 @@ $html .= generateDownloadBlock(
   $latestNightlyUnqualified . "." . $latestNightlyQualifier . " Nightly",
   $prefix . "/ide/rcptt.ide-" . $decoration . "-[classifier].zip",
   $prefixLatest . "/repository",
-  " (Neon)",
+  " (Oxygen)",
   $prefix . "/runner/rcptt.runner-" . $decoration . ".zip"
   );
 $html .= "</div>";
