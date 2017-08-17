@@ -330,7 +330,7 @@ For ease of use and ability of further customization, RCPTT tests projects use c
 	<tbody>
 		<tr>
 			<td>generate-resources</td>
-			<td>com.xored.ci4rcptt:ci4rcptt-maven-plugin:resources</td>
+			<td>rcptt-maven-plugin:resources</td>
 			<td>
 			<ul>
 				<li>Copies project to <code>target/projects/artifactId</code></li>
@@ -343,7 +343,7 @@ For ease of use and ability of further customization, RCPTT tests projects use c
 		</tr>
 		<tr>
 			<td>compile</td>
-			<td>com.xored.ci4rcptt:ci4rcptt-maven-plugin:execute</td>
+			<td>rcptt-maven-plugin:execute</td>
 			<td>
 			Launches RCPTT runner
 
@@ -356,7 +356,7 @@ For ease of use and ability of further customization, RCPTT tests projects use c
 		</tr>
 		<tr>
 			<td>package</td>
-			<td>com.xored.ci4rcptt:ci4rcptt-maven-plugin:package</td>
+			<td>rcptt-maven-plugin:package</td>
 			<td>Packages RCPTT project and execution results as artifacts (see below)</td>
 		</tr>
 		<tr>
