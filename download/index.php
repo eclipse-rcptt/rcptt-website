@@ -92,7 +92,7 @@ $releasesHome=$downloadsHome . "/release";
 
 # TODO: Once we get two parallel streams, we will need to make release logic more complex
 # TODO: Once we get beyond .9 bugfix version, we can't just use alphabetic sorting
-$latestRelease="2.2.0";#getLastChild($releasesHome);
+$latestRelease="2.3.0";#getLastChild($releasesHome);
 
 
 $nightlyHome = $downloadsHome . "/nightly";
