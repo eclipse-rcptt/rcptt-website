@@ -66,7 +66,7 @@
         <div>
             <p>On October, 23, we released a new bugfix version of RCP Testing Tool. The complete list of fixed issues is savailable on <a href="https://projects.eclipse.org/projects/technology.rcptt/releases/1.5.3/bugs">1.5.3 release page</a>, and the latest version can be downloaded from <a href="https://www.eclipse.org/rcptt/download">Downloads</a> page. In this topic I would like to outline a couple of my favourite improvements.</p>
 
-<h3 id="encryption-of-password-fields-during-recording-%28%7B%7Bm.bugzilla%28%22436965%22%29%7D%7D%29">Encryption of password fields during recording (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=436965">#436965</a>)</h3>
+<h3 id="encryption-of-password-fields-during-recording-%7B%7Bm.bugzilla%22436965%22%7D%7D">Encryption of password fields during recording (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=436965">#436965</a>)</h3>
 
 <p>Now, if you type a password in a password field during recording, for example in a dialog like this</p>
 
@@ -96,7 +96,7 @@
 
 <p>Encryption is performed via symmetric algorythm, there's a hard-coded predefined key, which can be overriden by setting <kbd>org.eclipse.rcptt.cryptoKey</kbd> system property in AUT &ndash; the simplest way to do this is to add <kbd>-Dorg.eclipse.rcptt.cryptoKey=anystring</kbd> in AUT VM arguments.</p>
 
-<h3 id="improved-assertions-of-text-editors-%28%7B%7Bm.bugzilla%28%22445403%22%29%7D%7D%29">Improved assertions of text editors (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=445403">#445403</a>)</h3>
+<h3 id="improved-assertions-of-text-editors-%7B%7Bm.bugzilla%22445403%22%7D%7D">Improved assertions of text editors (<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=445403">#445403</a>)</h3>
 
 <p>Now, when text editor is selected in assertion view, it is possible to see which markers this editor has, including its line, type, text and associated ruler column.</p>
 
