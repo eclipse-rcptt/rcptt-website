@@ -12,7 +12,7 @@ layout: doc
 <img src="{{site.url}}/shared/img/rap/pasted-image-82.png" width="800"></img>
 <br><br>
 
-3. Add update repository to http://download.eclipse.org/rcptt/nightly/2.2.0/latest/repository
+3. Add update repository to http://download.eclipse.org/rcptt/nightly/2.4.1/latest/repository
 <br>
 
 <img src="{{site.url}}/shared/img/rap/pasted-image-85.png"></img>
