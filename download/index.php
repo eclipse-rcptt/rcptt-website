@@ -25,11 +25,9 @@ function getLastMatchingChild($dir, $pattern) {
     return $result;
 }
 
-function generateDownloadBlock($title, $baseUri, $repoUri, $mars=null, $runner = null) {
+function generateDownloadBlock($title, $baseUri, $repoUri, $runner = null) {
     $html = "<h3>" . $title . "</h3>";
-    $win32 = str_replace("[classifier]", "win32.win32.x86", $baseUri);
     $win64 = str_replace("[classifier]", "win32.win32.x86_64", $baseUri);
-    $linux32 = str_replace("[classifier]", "linux.gtk.x86", $baseUri);
     $linux64 = str_replace("[classifier]", "linux.gtk.x86_64", $baseUri);
     $macosx64 = str_replace("[classifier]", "macosx.cocoa.x86_64", $baseUri);
     $html .= "  <table class='downloads'>";
@@ -43,13 +41,11 @@ function generateDownloadBlock($title, $baseUri, $repoUri, $mars=null, $runner =
     $html .= "    <tr>";
     $html .= "      <td>";
     $html .= "        <ul>";
-    $html .= "          <li><a href='" . $win32 . "'>Windows 32-bit</a></li>";
     $html .= "          <li><a href='" . $win64 . "'>Windows 64-bit</a></li>";
     $html .= "        </ul>";
     $html .= "      </td>";
     $html .= "      <td>";
     $html .= "        <ul>";
-    $html .= "          <li><a href='" . $linux32 . "'>Linux 32-bit</a></li>";
     $html .= "          <li><a href='" . $linux64 . "'>Linux 64-bit</a></li>";
     $html .= "        </ul>";
     $html .= "      </td>";
@@ -60,7 +56,7 @@ function generateDownloadBlock($title, $baseUri, $repoUri, $mars=null, $runner =
     $html .= "      </td>";
     $html .= "      <td>";
     $html .= "        <ul>";
-    $html .= "          <li><a href='" . $repoUri . "'>Update Site$mars</a></li>";
+    $html .= "          <li><a href='" . $repoUri . "'>Update Site</a></li>";
     if (!empty($runner)) {
       $html .= "          <li><a href='" . $runner . "'>Test Runner</a></li>";
     }
@@ -112,7 +108,6 @@ $html .= generateDownloadBlock(
   $latestRelease . " Release",
   $relPrefix . "/ide/rcptt.ide-" . $latestRelease ."-[classifier].zip",
   $relURI . $latestRelease . "/repository",
-  " (Oxygen)",
   $relPrefix . "/runner/rcptt.runner-" . $latestRelease . ".zip"
   );
 
@@ -126,7 +121,6 @@ $html .= generateDownloadBlock(
   $latestNightlyUnqualified . "." . $latestNightlyQualifier . " Nightly",
   $prefix . "/ide/rcptt.ide-" . $decoration . "-[classifier].zip",
   $prefixLatest . "/repository",
-  " (Oxygen)",
   $prefix . "/runner/rcptt.runner-" . $decoration . ".zip"
   );
 $html .= "</div>";
