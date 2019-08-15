@@ -21,7 +21,7 @@ Download and modify sample scripts below (parameters that need to be set/changed
 The base command line for RCPTT runner looks like this (backslashes indicate line breaks instead, on Windows, ^ is used instead):
   <pre>
 java &lt;RCPTT Runner VM arguments&gt;
-  -jar /path/to/runner/plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar \
+  -jar /path/to/runner/plugins/org.eclipse.equinox.launcher_1.5.*.jar \
   -application org.eclipse.rcptt.runner.headless \
   -data /path/to/runner/workspace \
   &lt;the rest of arguments in form of -argName argValue&gt;
