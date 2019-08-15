@@ -15,7 +15,7 @@ RMDIR /S /Q %RESULTS%
 :NORESULTS
 md %RESULTS%
 
-java -jar %RUNNER%/plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar ^
+java -jar %RUNNER%/plugins/org.eclipse.equinox.launcher_1.5.*.jar ^
  -application org.eclipse.rcptt.runner.headless ^
  -data %RESULTS%/runner-workspace/ ^
  -aut %AUT% ^
