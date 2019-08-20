@@ -102,7 +102,7 @@ $html = "<div id='midcolumn'>";
 $html .= "<h2>RCP Testing Tool IDE Downloads</h2>";
 
 # www.eclipse.org/downloads/download.php?file=/rcptt/release/1.5.1/ide/rcptt.ide-1.5.1-macosx.cocoa.x86_64.zip
-$relPrefix = "http://www.eclipse.org/downloads/download.php?file=/rcptt/release/" . $latestRelease;
+$relPrefix = "http://download.eclipse.org/rcptt/release/" . $latestRelease;
 $relURI = "http://download.eclipse.org/rcptt/release/";
 $html .= generateDownloadBlock(
   $latestRelease . " Release",
