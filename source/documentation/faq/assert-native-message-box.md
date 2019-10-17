@@ -21,7 +21,7 @@ does not work on an operating system level, hence if it would open this dialog, 
 
 But sometimes it may be needed to verify some properties of native message box like 'title' or 'message text'.
 
-Now you can do it using <a href="https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html#get-last-message-box">get-last-message-box</a> ECL command.
+Now you can do it using <a href="https://ci.eclipse.org/rcptt/job/master/lastSuccessfulBuild/artifact/releng/doc/target/doc/ecl/index.html#get-last-message-box">get-last-message-box</a> ECL command.
 
 Please note that this command can't be automatically recorded (you still can't select message box in assertion mode), instead, you should manually insert it into your test script:
 

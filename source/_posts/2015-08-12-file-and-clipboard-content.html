@@ -13,10 +13,10 @@ Until recently there was a few ways to get a file content:<br>
 
 <ul>
 <li>Opening file editor in GUI and getting it's <i>text</i> property
-<li>Using <a href="https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html#read-csv-file"><b>read-csv-file</b></a> and <a href="https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html#read-lines"><b>read-lines</b></a> commands</li>
+<li>Using <a href="https://ci.eclipse.org/rcptt/job/master/lastSuccessfulBuild/artifact/releng/doc/target/doc/ecl/index.html#read-csv-file"><b>read-csv-file</b></a> and <a href="https://ci.eclipse.org/rcptt/job/master/lastSuccessfulBuild/artifact/releng/doc/target/doc/ecl/index.html#read-lines"><b>read-lines</b></a> commands</li>
 </ul>
 
-Both ways have obvious restrictions making their usage not very user-friendly, so we decided to implement a new <a href="https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html#read-file"><b>read-file</b></a> ECL command to get a file content.<br><!-- break -->
+Both ways have obvious restrictions making their usage not very user-friendly, so we decided to implement a new <a href="https://ci.eclipse.org/rcptt/job/master/lastSuccessfulBuild/artifact/releng/doc/target/doc/ecl/index.html#read-file"><b>read-file</b></a> ECL command to get a file content.<br><!-- break -->
 It takes a file <i><b>uri</b></i> as an argument and returns a String content of a file:
 
 {% set snippet %}
@@ -52,7 +52,7 @@ What may go wrong?
 <h3>Operating with a Clipboard</h3>
 
 Clipboard is always used to check a correct work of Copy/Paste actions. <br>
-RCPTT can now operate with a clipboard directly using <b><a href="https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html#to-clipboard">to-clipboard</a></b> and <b><a href="https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html#from-clipboard">from-clipboard</a></b> commands.<br>
+RCPTT can now operate with a clipboard directly using <b><a href="https://ci.eclipse.org/rcptt/job/master/lastSuccessfulBuild/artifact/releng/doc/target/doc/ecl/index.html#to-clipboard">to-clipboard</a></b> and <b><a href="https://ci.eclipse.org/rcptt/job/master/lastSuccessfulBuild/artifact/releng/doc/target/doc/ecl/index.html#from-clipboard">from-clipboard</a></b> commands.<br>
 
 So if you need to paste something you don't need to do coping actions before. You can do like:
 
