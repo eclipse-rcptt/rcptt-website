@@ -3,7 +3,7 @@
     <title><![CDATA[RCP Testing Tool Blog]]></title>
     <link href="https://www.eclipse.org/rcptt/atom.xml" rel="self"/>
     <link href="https://www.eclipse.org/rcptt/"/>
-    <updated>2019-09-18T08:51:21+00:00</updated>
+    <updated>2019-10-17T11:29:56+00:00</updated>
     <id>https://www.eclipse.org/rcptt/blog</id>
             <author>
             <name><![CDATA[RCP Testing Tool Team]]></name>            <email><![CDATA[rcptt-dev@eclipse.org]]></email>        </author>
@@ -83,10 +83,10 @@ Until recently there was a few ways to get a file content:<br>
 
 <ul>
 <li>Opening file editor in GUI and getting it's <i>text</i> property
-<li>Using <a href="https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html#read-csv-file"><b>read-csv-file</b></a> and <a href="https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html#read-lines"><b>read-lines</b></a> commands</li>
+<li>Using <a href="https://ci.eclipse.org/rcptt/job/master/lastSuccessfulBuild/artifact/releng/doc/target/doc/ecl/index.html#read-csv-file"><b>read-csv-file</b></a> and <a href="https://ci.eclipse.org/rcptt/job/master/lastSuccessfulBuild/artifact/releng/doc/target/doc/ecl/index.html#read-lines"><b>read-lines</b></a> commands</li>
 </ul>
 
-Both ways have obvious restrictions making their usage not very user-friendly, so we decided to implement a new <a href="https://hudson.eclipse.org/rcptt/job/rcptt-all/ws/releng/doc/target/doc/ecl/index.html#read-file"><b>read-file</b></a> ECL command to get a file content.<br>
+Both ways have obvious restrictions making their usage not very user-friendly, so we decided to implement a new <a href="https://ci.eclipse.org/rcptt/job/master/lastSuccessfulBuild/artifact/releng/doc/target/doc/ecl/index.html#read-file"><b>read-file</b></a> ECL command to get a file content.<br>
 
 	    	    <p><a href="https://www.eclipse.org/rcptt/blog/2015/08/12/file-and-clipboard-content.html">
               Read more of this post
