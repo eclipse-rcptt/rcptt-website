@@ -106,9 +106,17 @@ guide:
      - name: Maven plugin
        url: userguide/rap/rap-maven/
        slug: rap/rap-maven
-  - name: Integration with TestRail
-    url: userguide/integration/test-rail-integration/
-    slug: integration/test-rail-integration       
+  - name: Integration
+    url: userguide/integration/
+    slug: integration
+    children:
+     - name: TestRail
+       url: userguide/integration/test-rail-integration/
+       slug: integration/test-rail-integration
+     - name: Zephyr
+       url: userguide/integration/zephyr-integration/
+       slug: integration/zephyr-integration
+            
 faq:
   - name: How to pass a value to a test during its execution?
     url: faq/pass-value/
