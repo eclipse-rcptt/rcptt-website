@@ -188,7 +188,8 @@
 <p><b><i>Login example snippet:</i></b></p>
 
 <p></p>
-<pre ><code class="language-ecl">&#x200b;//wait is is long operation 
+
+<p><pre ><code class="language-ecl">&#x200b;//wait is is long operation 
  with [get-window Login] {
     get-editbox -after [get-label "Username:"] | set-text admin
     get-editbox -after [get-label "Password:"] | 
@@ -197,6 +198,7 @@
 }
 wait 1000
 </code></pre>
+</p>
 
 <p><b># Now we can work as expected.</b></p>
 
@@ -205,18 +207,17 @@ wait 1000
 <p>To test file downloading, it is necessary to contact Product engineers and ask for a list of Identifiers of RAP handler implemented for downloading. The ids of a handlers. It is necessary as in RAP there are no strict mechanism for downloading and everything occurs through data recording in HttpResponse.</p>
 
 <p>To set identifier for handler we provide a ECL command: 
-</p>
 <pre ><code class="language-ecl">&#x200b;mark-download-handler "handler.id" 
 </code></pre>
 
-<p>Execution of this command is required to perform in context before recording a new download test scenario.</p>
+Execution of this command is required to perform in context before recording a new download test scenario.</p>
 
 <p>During downloading of files the majority of browsers open special download dialog.
 It results access to which it is impossible to get through a code in need to interfere the user.  In case of reproduction of tests it isn't admissible. 
 Therefore when the test replaying for file downloading is used special ECL command:
-</p>
 <pre ><code class="language-ecl">&#x200b;download-file
 </code></pre>
+</p>
 
 <p>The command executes download handler with URL.  This command is wrapped in <pre ><code class="language-ecl">&#x200b;exec-without-js
 </code></pre>
@@ -226,8 +227,7 @@ Therefore when the test replaying for file downloading is used special ECL comma
 
 <p><b><i>Download example:</i></b></p>
 
-<p></p>
-<pre ><code class="language-ecl">&#x200b;exec-without-js {
+<p><pre ><code class="language-ecl">&#x200b;exec-without-js {
      // this command move inside to exec-without-js because call 
    // window.location = download_url for download file
    get-window "Transformation complete" | get-button OK | click
@@ -237,20 +237,21 @@ Therefore when the test replaying for file downloading is used special ECL comma
     + "mQtdGltZXMiIHhtbG5zOnhjPSJodHRwOi…" | verify-true
 }
 </code></pre>
+</p>
 
 <p>For validation the contents of downloading file, you should to transform file to a string (use command <b>to-string</b>). Then it is possible to use any command which process strings (as example <b>contains</b>).</p>
 
 <p><b><i>Example:</i></b></p>
 
-<p></p>
-<pre ><code class="language-ecl">&#x200b;download-file -handlerId "id" -url "/?servicehandler=download.handler" | to-string "UTF-8" | contains "foo string" | verify-true
+<p><pre ><code class="language-ecl">&#x200b;download-file -handlerId "id" -url "/?servicehandler=download.handler" | to-string "UTF-8" | contains "foo string" | verify-true
 </code></pre>
+</p>
 
 <p><b><i>or:</i></b></p>
 
-<p></p>
-<pre ><code class="language-ecl">&#x200b;download-file -handlerId "id" -url "/?servicehandler=download.handler" | to-string "UTF-8" | mathing "regexp string" | verify-true
+<p><pre ><code class="language-ecl">&#x200b;download-file -handlerId "id" -url "/?servicehandler=download.handler" | to-string "UTF-8" | mathing "regexp string" | verify-true
 </code></pre>
+</p>
 
 <h3>Upload file:</h3>
 

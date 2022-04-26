@@ -99,8 +99,10 @@ When <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html
 is executed, internally it does not return a property value, but instead it returns a special
  verification handle object. So a script like this:
 </p>
-<pre ><code class="language-ecl">&#x200b;get-editbox | get-property "text" | equals "foo" | verify-true
+
+<p><pre ><code class="language-ecl">&#x200b;get-editbox | get-property "text" | equals "foo" | verify-true
 </code></pre>
+</p>
 
 <p>Internally it is executed like this:</p>
 
@@ -118,23 +120,27 @@ Later, with growing requirements for scripting logic, we needed to be able to op
 property values, for instance, use control enablement in if condition. <BR>Thus we added a <b>-raw</b> key to <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#get-property">get-property</a> command:</p>
 
 <p></p>
-<pre ><code class="language-ecl">&#x200b;// returns VerifyHandle, pretty useless without verify-true:
+
+<p><pre ><code class="language-ecl">&#x200b;// returns VerifyHandle, pretty useless without verify-true:
 get-editbox | get-property text
 // returns actual text value
 // can be stored in variable, passed to another command, etc 
 get-editbox | get-property text -raw 
 </code></pre>
+</p>
 
 <p>In order to be able to operate with raw values, we also added commands 
 like <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#eq">eq</a>, <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#gt">gt</a>, <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#lt">lt</a> and <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#assert-true">assert-true</a> as general-purpose ECL commands, without any RCPTT specifics. And since <code class="language-ecl">&#x200b;assert-true</code> does not have a 'context' of assertion, it just gets a single boolean value as an input, we added -message argument to it, so that users can specify an error message.
 Hence finally we came to a situation when the same assertion can be expressed in two different ways:</p>
 
 <p></p>
-<pre ><code class="language-ecl">&#x200b;// Old RCPTT style:
+
+<p><pre ><code class="language-ecl">&#x200b;// Old RCPTT style:
 get-property text | equals foo | verify-true
 //ECL style:
 get-property text -raw | eq foo | assert-true "Text is not 'foo'"
 </code></pre>
+</p>
 
 <p>Indeed, many users found this situation confusing and wondered whether they need to
  use <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#eq">eq</a> or <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#equals">equals</a>,  so finally we also made old RCPTT commands, like <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#equals">equals</a> and <a href="http://download.eclipse.org/rcptt/release/1.5.4/doc/ecl/index.html#verify-true">verify-true</a> more flexible,  so that they behave differently depending on kind of input: if they get a VerifyHandle as an input, they use old behavior, if they get an actual value, they behave as their general-purpose ECL counterparts.</p>
