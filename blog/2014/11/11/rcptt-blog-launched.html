@@ -68,7 +68,8 @@
 
 <p>Oh, and by the way, if you haven't noticed yet, now we've got a nice syntax colorer for ECL snippets (thanks to an awesome <a href="http://prismjs.com">prism.js</a> library):</p>
 
-<p><pre ><code class="language-ecl">&#x200b;proc "find-tab-folder" [val activePage] {
+<p></p>
+<pre ><code class="language-ecl">&#x200b;proc "find-tab-folder" [val activePage] {
   loop [val index [int 0]] {
     let [val folder [get-tab-folder -index $index]] {
       let [val folderActivePage [$folder | get-property activePage -raw]] {
@@ -84,7 +85,6 @@
 find-tab-folder "Task List" | get-object | save-screenshot "/tmp/tmp/tsk.png"
 //get-property activePage | equals "Package Explorer" | verify-true
 </code></pre>
-</p>
 
 <p>Things like rss/atom feeds and improved navigation are to be added in a nearest future.</p>
 
