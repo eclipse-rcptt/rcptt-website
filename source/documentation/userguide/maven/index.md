@@ -185,12 +185,18 @@ Extra command-line arguments for application and/or for Java VM can be specified
     &lt;vmArg&gt;-Xmx1536m&lt;/vmArg&gt;  
     &lt;vmArg&gt;-XX:MaxPermSize=256m&lt;/vmArg&gt; 
   &lt;/vmArgs&gt; 
-
-  &lt;!-- Enable support software installation in the AUTs launch configuration --&gt; 
-  &lt;enableSoftwareInstallation&gt;true&lt;/enableSoftwareInstallation&gt; 
 &lt;/aut&gt;  
 </code></pre>
 
+###Enable Software Installation
+
+Enable Software Installation in AUTs launch configuration.
+
+<pre>
+<code>&lt;aut&gt;
+  &lt;enableSoftwareInstallation&gt;true&lt;/enableSoftwareInstallation&gt; 
+&lt;/aut&gt; 
+</code></pre> 
 ###Persistent workspace
 
 By default AUT's workspace is recreated each time AUT hangs and is forcefully restarted. This is done to prevent workspace corruption from blocking AUT startup (after test failures). If this is undesirable, use <code>reuseExistingWorkspace</code> option:
