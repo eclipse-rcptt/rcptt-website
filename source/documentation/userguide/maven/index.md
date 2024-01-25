@@ -190,7 +190,7 @@ Extra command-line arguments for application and/or for Java VM can be specified
 
 ###Enable Software Installation
 
-Enable Software Installation in AUTs launch configuration.
+Enable Software Installation in AUT
 
 <pre>
 <code>&lt;aut&gt;
