@@ -185,6 +185,9 @@ Extra command-line arguments for application and/or for Java VM can be specified
     &lt;vmArg&gt;-Xmx1536m&lt;/vmArg&gt;  
     &lt;vmArg&gt;-XX:MaxPermSize=256m&lt;/vmArg&gt; 
   &lt;/vmArgs&gt; 
+
+  &lt;!-- Enable support software installation in the AUTs launch configuration --&gt; 
+  &lt;enableSoftwareInstallation&gt;true&lt;/enableSoftwareInstallation&gt; 
 &lt;/aut&gt;  
 </code></pre>
 

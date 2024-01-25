@@ -55,7 +55,7 @@ noSecurityOverride | If provided, -eclipse.keyring parameter will not be specifi
 memoryUsage |If specified, print AUT memory usage in Runner stdout| This argument does not have value |	No
 tests  | Semicolon-separated list of test name glob patterns (* - any chars, ? - exactly one char). If this argument is set, RCPTT runner executes listed test cases only.	This argument also works with combination with `suites` argument, i.e. at first Runner collects all tests from provided suites and then filters it by test names | -tests myTest.test or -test myTest* | No
 reuseExistingWorkspace | If present, autWsPrefix is treated as full path to the existing workspace. This workspace is never recreated and always reused.| This argument does not have value |	No
-enableSoftwareInstallation | Enable support software installation in the launched application| This argument does not have value |	No
+enableSoftwareInstallation | Enable support software installation in the AUTs launch configuration| This argument does not have value |	No
 
 ### Injection options
 Injection mechanism allows to install some extra features into application-under-test before test execution. This might be useful in two cases:
