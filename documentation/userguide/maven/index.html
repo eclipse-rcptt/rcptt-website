@@ -360,6 +360,16 @@
 &lt;/aut&gt;  
 </code></pre>
 
+<h3 id="enable-software-installation">Enable Software Installation</h3>
+
+<p>Use Support software installation in the launched application to create p2 metadata for the plug-ins being launched and starts the application with a profile containing the metadata. If the launched application does not include p2, this option has no effect. The contents of the profile are cleared and recreated on each launch, but if the application is restarted the same profile is kept.</p>
+
+<pre>
+<code>&lt;aut&gt;
+  &lt;enableSoftwareInstallation&gt;true&lt;/enableSoftwareInstallation&gt; 
+&lt;/aut&gt; 
+</code></pre>
+
 <h3 id="persistent-workspace">Persistent workspace</h3>
 
 <p>By default AUT's workspace is recreated each time AUT hangs and is forcefully restarted. This is done to prevent workspace corruption from blocking AUT startup (after test failures). If this is undesirable, use <code>reuseExistingWorkspace</code> option:</p>
