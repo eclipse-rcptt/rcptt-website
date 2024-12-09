@@ -23,6 +23,7 @@ pluralizeListTitles = false
   hide_ad = false
   featured_content_publish_target = "eclipse_org"
   sidebar_layout = "default"
+  rcptt_release = "2.5.5"
 # js = ""
 # styles = ""
 # logo = ""
@@ -60,8 +61,8 @@ pluralizeListTitles = false
 
 [[menu.sidebar]]
   parent ="home"
-  name = "hugo-solstice-theme"
-  url = "https://webdev.eclipse.org/docs/hugo/"
+  name = "FAQ"
+  url = "faq"
   weight = 1
   pre = "<i class=\"fa fa-caret-right fa-fw\"></i>"
 
