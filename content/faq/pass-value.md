@@ -1,5 +1,5 @@
 ---
-title: How to pass a value to a test during its execution.
+title: How to pass a value to a test runtime
 slug: pass-value
 date: 2015-04-14
 ---
@@ -17,11 +17,11 @@ log [substitute-variables "${system_property:propertyName}"]
 
 With aid of <a href="{{site.url}}/documentation/userguide/procedures/"> variables and user-defined procedures</a>, this becomes even more convenient:
 - Create ECL context which consist of only one command, declaring global variables:
-{{< highlight ecl >}}
-global [val prop1 [substitute-variables "${system_property:prop1}"]]
+  ```
+  global [val prop1 [substitute-variables "${system_property:prop1}"]]
        [val prop2 [substitute-variables "${system_property:prop2}"]]
        [val prop3 [substitute-variables "${system_property:prop3}"]]
-{{< / highlight >}}
+  ```
 - Add this ECL context to project's default contexts in Project Settings<br></li>
 - Access these properties in any ECL using $-syntax:
 {{< highlight ecl >}}concat $prop1 $prop2 $prop3 | show-alert{{< / highlight >}}
