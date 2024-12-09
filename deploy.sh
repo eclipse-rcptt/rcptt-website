@@ -7,7 +7,7 @@ read -n 1 -p "Do you want to commit and push? [y/n] " answer
 case ${answer} in
     y|Y )
       git commit -a -s
-      git push gerrit HEAD:refs/for/master
+      git push origin master
       echo Success
     ;;
     * )
