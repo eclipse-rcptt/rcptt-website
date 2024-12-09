@@ -38,17 +38,12 @@ pluralizeListTitles = false
 # show_collapsible_menu = true
 
 [taxonomies]
-  tag = "tags"
+  tag = 'tags'
 
 [Author]
-  name = "Eclipse Foundation"
-  website = "https://www.eclipse.org"
-  email = "webdev@eclipse-foundation.org"
-  facebook = "eclipse.org"
-  twitter = "eclipsefdn"
-  youtube = "EclipseFdn"
-  googleplus = "+Eclipse"
-  linkedin = "company/eclipse-foundation/"
+  name = "Vasili Gulevich"
+  email = "vasili.gulevich@xored.com"
+  linkedin = "in/vasiligulevich/"
 
 [permalinks]
   news = "/:sections/:year/:month/:day/:slug/"
@@ -59,7 +54,7 @@ pluralizeListTitles = false
 
 [[menu.sidebar]]
   name = "Documentation"
-  url = "/home"
+  url = "/documentation"
   weight = 1
   identifier = "home"
 
