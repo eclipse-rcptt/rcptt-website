@@ -1,5 +1,5 @@
 ---
-title: How to extract an SWT widget from ECL command?
+title: How to extract an SWT widget with an ECL command?
 slug: extract-widget
 date: 2015-01-15
 ---

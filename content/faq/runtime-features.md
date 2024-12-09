@@ -1,8 +1,7 @@
 ---
 title: What does each runtime feature stand for?
 slug: runtime-features
-nav_name: faq
-layout: faq
+date: 2015-01-15
 ---
 
 <br>

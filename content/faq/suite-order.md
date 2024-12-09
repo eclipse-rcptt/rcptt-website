@@ -1,8 +1,7 @@
 ---
 title: Is it possible to order tests in a Test Suite?
 slug: suite-order
-nav_name: faq
-layout: faq
+date: 2015-01-15
 ---
 
 
