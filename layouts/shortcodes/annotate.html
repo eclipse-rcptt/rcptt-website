@@ -1,0 +1,10 @@
+{{- $left := .Get 0 -}}
+{{- $top := .Get 1 -}}
+{{- $width := .Get 2 -}}
+{{- $height := .Get 3 -}}
+<div class="ann" style="position: absolute; top:{{- $top -}}px;left:{{- $left -}}px;width:{{- $width -}}px;height:{{- $height -}}px;">
+    <div class="ann-border" title="{{- .Inner | plainify -}}"></div>
+    <div class="ann-overlay">
+        {{- .Inner -}}
+    </div>
+</div>

@@ -1,4 +1,4 @@
-baseurl = "https://eclipse.dev/hugo-eclipsefdn-website-boilerplate"
+baseurl = "https://eclipse.dev/rcptt"
 DefaultContentLanguage = "en"
 title = "The Community for Open Innovation and Collaboration"
 theme = "hugo-solstice-theme"
@@ -44,7 +44,7 @@ pluralizeListTitles = false
 [Author]
   name = "Vasili Gulevich"
   email = "vasili.gulevich@xored.com"
-  linkedin = "in/vasiligulevich/"
+  linkedin = "vasiligulevich"
 
 [permalinks]
   news = "/:sections/:year/:month/:day/:slug/"
