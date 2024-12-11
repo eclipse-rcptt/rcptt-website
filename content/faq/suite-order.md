@@ -2,6 +2,10 @@
 title: Is it possible to order tests in a Test Suite?
 slug: suite-order
 date: 2015-01-15
+sidebar: home
+menu:
+  sidebar:
+    parent: faq
 ---
 
 > Is it possible to change the test case order inside a test suite? Currently it is organized in an alphabetical order...

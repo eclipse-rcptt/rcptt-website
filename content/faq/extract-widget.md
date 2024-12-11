@@ -2,6 +2,10 @@
 title: How to extract an SWT widget with an ECL command?
 slug: extract-widget
 date: 2015-01-15
+sidebar: home
+menu:
+  sidebar:
+    parent: faq
 ---
 > I am trying to make a custom ECL command to extract a data from table in order to make my custom assertions on that data. I want to use the result of: `get-table | ...`
 > 

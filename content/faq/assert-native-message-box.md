@@ -2,6 +2,10 @@
 title: How to assert native message boxes?
 date: 2019-10-17
 slug: assert-native-message-box
+sidebar: home
+menu:
+  sidebar:
+    parent: faq
 ---
 
 > I want to record the "Information" message box  which pops up in my tool. How to use assert in this automation?

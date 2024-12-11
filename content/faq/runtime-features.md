@@ -2,6 +2,10 @@
 title: What does each runtime feature stand for?
 slug: runtime-features
 date: 2015-01-15
+sidebar: home
+menu:
+  sidebar:
+    parent: faq
 ---
 
 You can find different Runtime Features in RCPTT Advanced Options. Here you can find the description of the most of them. 

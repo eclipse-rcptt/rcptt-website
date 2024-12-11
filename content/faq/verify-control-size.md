@@ -2,6 +2,10 @@
 title: Verify control sizes
 slug: verify-control-size
 date: 2015-01-15
+sidebar: home
+menu:
+  sidebar:
+    parent: faq
 ---
 
 

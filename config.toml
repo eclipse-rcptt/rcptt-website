@@ -55,17 +55,10 @@ pluralizeListTitles = false
   hrefTargetBlank = true
 
 [[menu.sidebar]]
-  name = "Documentation"
-  url = "/documentation"
+  name = "Home"
+  url = "/"
   weight = 1
   identifier = "home"
-
-[[menu.sidebar]]
-  parent ="home"
-  name = "FAQ"
-  url = "faq"
-  weight = 1
-  pre = "<i class=\"fa fa-caret-right fa-fw\"></i>"
 
 [[menu.sidebar]]
   parent ="home"

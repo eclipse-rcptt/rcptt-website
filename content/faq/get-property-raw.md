@@ -2,6 +2,10 @@
 title: What is the difference between Assert and Verify commands or how to get raw property values?
 slug: get-property-raw
 date: 2015-01-15
+sidebar: home
+menu:
+  sidebar:
+    parent: faq
 ---
 
 Both commands can be used inside try/catch, however in this case an error message won't be displayed in a report.

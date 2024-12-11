@@ -2,6 +2,10 @@
 title: How to resize a window
 slug: resize-window
 date: 2015-01-15
+sidebar: home
+menu:
+  sidebar:
+    parent: faq
 ---
 
 Sometimes you may want a window to be a certain size.

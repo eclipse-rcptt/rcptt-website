@@ -2,6 +2,10 @@
 title: How to pass a value to a test runtime
 slug: pass-value
 date: 2015-04-14
+sidebar: home
+menu:
+  sidebar:
+    parent: faq
 ---
 
 

@@ -2,6 +2,10 @@
 title: Can RCPTT be installed as Eclipse plugin?
 slug: install-as-plugin
 date: 2016-06-23
+sidebar: home
+menu:
+  sidebar:
+    parent: faq
 ---
 
 RCPTT consists of two parts - RCPTT IDE, which is used for launching AUTs, developing and running test cases, 

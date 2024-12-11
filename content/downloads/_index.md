@@ -1,7 +1,10 @@
 ---
 title: "Downloads"
-params:
-hide_sidebar: false
+sidebar: home
+menu:
+  sidebar:
+    identifier: downloads
+    parent: home
 ---
 
 # {{< release >}} Release
