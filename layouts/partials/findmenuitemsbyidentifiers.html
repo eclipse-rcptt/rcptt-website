@@ -1,0 +1,2 @@
+{{- $search := ( partial "recursivesearch.html" (dict "heap" .menu "needle" .identifiers ) ) -}}
+{{- return ( slice $search ) }}

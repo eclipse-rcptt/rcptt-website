@@ -1,0 +1,14 @@
+{{- $lang := "ecl" }}
+{{if .Get 0 }}
+{{- $lang = .Get 0  }}
+{{ end }}
+{{- $classes := slice (printf "language-%s" $lang) }}
+{{- $attributes := dict "class" (delimit $classes " ") }}
+<code
+  {{- range $k, $v := $attributes }}
+    {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+  {{- end -}}
+>
+{{- trim .Inner "\n" -}}
+</code>
+{{- .Page.Store.Set "hasCodeBlock" true }}

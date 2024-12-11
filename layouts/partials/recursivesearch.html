@@ -1,0 +1,11 @@
+{{- $needle := .needle}}
+{{- $result := . }}
+{{- range .heap }}
+{{- if ( in $needle .Identifier ) }}
+    {{ $result = . }}
+{{- else }}
+    {{ $more := partial "recursivesearch.html" ( dict "heap" .Children "needle" $needle )  }}
+    {{ $result = $more }}
+{{- end }}
+{{ end }}
+{{ return $result }}
