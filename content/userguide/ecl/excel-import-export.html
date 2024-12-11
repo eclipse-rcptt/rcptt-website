@@ -1,0 +1,261 @@
+---
+title: ECL commands for Excel import and export 
+slug: userguide/ecl/excel-import-export
+sidebar: userguide
+layout: doc
+---
+<br>
+<h2>Excel export</h2><hr>
+
+### write-excel-file
+
+Writes tables from input pipe to into excel (xls or xlsx) file. Fails if file is not found or format is invalid.<br><br>
+
+Input:
+
+<ul>
+<li>**tables** (1, ∞) Table: Tables to write</li>
+</ul>
+
+Parameters: 
+
+<ul>
+<li>**uri** String: URI to write Excel data to. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.</li>
+<li>**append** boolean: Whether to append given table data into file. Default value is false.</li>
+
+</ul>
+
+Output: 
+
+<ul>
+<li>The value of 'tables' argument</li>
+</ul>
+
+Example: 
+
+```ecl
+global [val supportedDevices [list
+    [list "Device Name" "Device Info"]
+    [list "Device 1" "Info 1"]
+    [list "Device 2" "Info 2"]
+    [list "Device 3" "Info 3"]
+]]
+ 
+global [val allDevices [list
+    [list "Device Name" "Device Info"]
+    [list "Device 1" "Info 1"]
+    [list "Device 2" "Info 2"]
+    [list "Device 3" "Info 3"]
+    [list "Device 4" "Info 4"]
+    [list "Device 5" "Info 5"]
+]]
+ 
+ 
+proc newTable [val table] [val name] {
+    $table | list-as-table-data | set-page-name $name
+}
+ 
+ 
+emit [newTable $supportedDevices "Supported devices"] [newTable $allDevices "All devices"]
+    | write-excel-file "workspace:/excel/devices.xlsx"
+
+```
+
+<br>
+<h2>Excel import</h2><hr>	
+
+### read-excel-file
+
+Parses given excel file (xls or xlsx) into tables and write them to output pipe. Fails if file is not found or format is invalid.
+<br><br>
+Parameters:
+<br>
+<ul>
+<li>**uri** String: URI to read Excel data from. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.</li>
+<li>**sheets** (0, ∞) String: List of Excel sheet names to read data from</li>
+</ul>
+
+Output:
+
+<ul>
+<li>List of Table EMF Objects</li>
+</ul>
+
+Example: 
+
+{% set snippet %}
+global [val devicesInfo [
+    read-excel-file "workspace:/excel/devices.xlsx" "Supported devices" "All devices"
+        | to-list
+]]
+ 
+ 
+clear-log-view
+ 
+$devicesInfo | each [val table] {
+    log [format "Page name: %s" [$table | get pageName]]
+    $table | list [get rows] | each [val row] {
+        $row | list [get values] | each [val value] {
+            log $value
+        }
+    }
+}
+ 
+read-excel-file "workspace:/excel/devices.xlsx" "Additional info"
+    | get rows | get values | log
+{% endset %}
+
+<br>
+<h2>Additional commands</h2><hr>
+
+### set-page-name
+
+Set page name to table
+
+Input:
+
+<ul>
+<li>**table** Table: Table to set page name to</li>
+</ul>
+
+Parameters:
+<ul>
+<li>**name** String: Page name to set</li>
+</ul>
+
+Output:
+
+The value of 'table' argument
+<br> <br>
+Example:
+
+```ecl
+get-view "Error Log" | get-tree | expand-all
+get-view "Error Log" | get-tree | get-table-data
+ | set-page-name "Table" | write-excel-file "workspace:/MyProject/AssertData/table.xls"
+ 
+read-excel-file "workspace:/MyProject/AssertData/table.xls"
+ | get-page-name | equals "Table" | assert-true
+
+```
+
+<br>
+
+### list-as-table-data
+
+Converts input list to table data format
+<br><br>
+Input:
+<br>
+<ul><li>**list** EclList: List of List of String to convert to Table</li></ul>
+Output:
+<ul><li>
+Table EMF Object</li></ul>
+<br>
+Example:
+
+```ecl
+proc newTable [val table] [val name] {
+    $table | list-as-table-data | set-page-name $name
+}
+ 
+global [val devices [list
+    [list "Device Name" "Device Target"]
+    [list "Device 1" "Info 1"]
+    [list "Device 2" "Info 2"]
+    [list "Device 3" "Info 3"]
+]]
+ 
+newTable $devices "Devices"
+    | write-excel-file "workspace:/excel/devices.xls"
+
+```
+
+<br>
+
+### get-table-cells
+
+Gets cell values by excel names and writes them into the output pipe
+<br><br>
+Input:
+<br>
+<ul><li>
+**table** Table: Table to get cells from</li>
+</ul>
+Parameters:
+<ul><li>**cells** (1, ∞) String: Cell names</li></ul>
+Output:
+<ul><li>
+Cell values</li>
+</ul>
+Example:
+
+```ecl
+read-excel-file "workspace:/excel/devices.xlsx" "Supported devices"
+    | get-table-cells A1 | eq "Device Name" | verify-true
+
+```
+
+<br>
+### get-table-range
+
+Gets range by excel name and writes it into the output pipe
+<br><br>
+Input:
+<br>
+<ul>
+<li>**table** Table: Table to get rows data from</li>
+</ul>
+
+Parameters:
+<ul>
+<li>**range** String: Range name in the excel format (for example "A1:B2")</li>
+</ul>
+
+Output:
+<ul>
+<li>Table EMF Object</li>
+</ul>
+
+Example:
+
+```ecl
+read-excel-file "workspace:/excel/devices.xlsx" "Supported devices"
+    | get-table-range "A2:B4" | list [get rows] | each [val row] {
+        $row | list [get values] | each [val value] {
+            log $value
+        }
+}
+
+```
+
+<br>
+
+### set-table-cells
+
+Sets cell values to the table
+
+Input:
+<ul><li>
+**table** Table: Table to set cell values to
+</li>
+</ul>
+
+Parameters:
+<ul>
+<li>**cells** EclMap: Map where key is cell name and value is cell value to set</li>
+</ul>
+
+Output:
+<ul>
+<li>The value of 'table' argument</li>
+</ul>
+
+Example:
+
+```ecl
+read-excel-file "workspace:/excel/devices.xlsx" "Supported devices"
+    | set-table-cells [map [entry "A1" "New Device Name"] [entry "B1" "New Device Target"]]
+    | write-excel-file "workspace:/excel/devices.xlsx" -append
+
+```

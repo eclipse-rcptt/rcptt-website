@@ -1,0 +1,53 @@
+<project name="rcptt-project" default="test">
+  <!-- Set properties below -->
+  <property name="runner-path" location="/path/to/runner" />
+  <property name="aut-path" location="/path/to/aut" />
+
+  <!-- properties below configure all intermediate and result files
+       to be put in "results" folder next to a project folder. If
+       that's ok, you can leave them as is -->
+  <property name="test-results" location="../results"/>
+  <property name="runner-workspace" location="${test-results}/runner-workspace"/>
+  <property name="aut-workspace" location="${test-results}/aut-workspace-"/>
+  <property name="aut-stdout" location="${test-results}/aut-out-"/>
+  <property name="junit-report" location="${test-results}/results.xml"/>
+  <property name="html-report" location="${test-results}/results.html"/>
+
+  <target name="init">
+    <delete dir="${test-results}" quiet="true"/>
+    <mkdir dir="${test-results}" />
+  </target>
+
+  
+  <target name="test" depends="init">
+    <java jar="${runner-path}/plugins/org.eclipse.equinox.launcher_1.5.*.jar" fork="true">
+      <arg value="-application" />
+      <arg value="org.eclipse.rcptt.runner.headless" />
+
+      <arg value="-data" />
+      <arg value="${runner-workspace}" />
+
+      <arg value="-aut" />
+      <arg value="${aut-path}" />
+
+      <arg value="-autWsPrefix" />
+      <arg value="${aut-workspace}" />
+
+      <arg value="-autConsolePrefix" />
+      <arg value="${aut-stdout}"/>
+
+      <arg value="-htmlReport" />
+      <arg value="${html-report}" />
+
+      <arg value="-junitReport" />
+      <arg value="${junit-report}" />
+
+      <arg value="-import" />
+      <arg value="${basedir}" />
+
+      <arg value="-testOptions" />
+      <arg value="testExecTimeout=300;execTimeout=3600" />
+
+    </java>
+  </target>
+</project>
