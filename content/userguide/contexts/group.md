@@ -1,12 +1,14 @@
 ---
 title: Group Contexts
-slug: contexts/group
+slug: group
 sidebar: userguide
-layout: doc
+menu:
+  sidebar:
+      parent: contexts
 ---
 
 The Group context represents combined references to contexts of other type which might help in context management. 
-It is possible to group together <a href = "{{site.url}}/documentation/userguide/contexts/workspace">Workspace</a>, <a href = "{{site.url}}/documentation/userguide/contexts/workbench">Workbench</a>, <a href = "{{site.url}}/documentation/userguide/contexts/preferences">Preferences</a>, etc., contexts together and refer to this group as 
+It is possible to group together [Workspace](../workspace), [Workbench](../workbench), [Preferences](../preferences), etc., contexts together and refer to this group as 
 a single Group context in the Test Editor. The Group Context editor looks quite similar to the Contexts panel in 
 the <a href = "{{site.url}}/documentation/userguide/testeditor">Test Editor</a>.
 

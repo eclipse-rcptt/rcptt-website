@@ -1,6 +1,6 @@
 ---
 title: Super Contexts
-slug: contexts/super
+slug: super
 sidebar: userguide
 layout: doc
 ---

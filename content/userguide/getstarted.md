@@ -1,8 +1,7 @@
 ---
 title: Getting Started
 slug: getstarted
-sidebar:
-- userguide
+sidebar: userguide
 menu:
   sidebar:
     identifier: getstarted

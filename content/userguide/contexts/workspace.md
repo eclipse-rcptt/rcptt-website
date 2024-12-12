@@ -1,6 +1,6 @@
 ---
 title: Workspace Contexts
-slug: contexts/workspace
+slug: workspace
 sidebar: userguide
 layout: doc
 ---
@@ -40,7 +40,7 @@ Workspace contexts are used to control the state of an application workspace.
 
   {# Apply button  #}
   {% set overlayContent %}
-  Copies given projects into AUT workspace. If {{m.uiElement("Clear workspace")}} option is on, removes existing projects from AUT at first.
+  Copies given projects into AUT workspace. If {{< uielement >}}Clear workspace{{< / uielement >}} option is on, removes existing projects from AUT at first.
   {% endset %}
   {% set top, left, width, height = 118, 616, 75, 22 %}
   {% include "overlay" %}
@@ -68,7 +68,7 @@ Workspace contexts are used to control the state of an application workspace.
   
   {# Keep projects #}
   {% set overlayContent %}
-  When {{m.uiElement("Clear workspace")}} is on, this option allows to specify a list of projects, which should be kept intact in AUT workspace.
+  When {{< uielement >}}Clear workspace{{< / uielement >}} is on, this option allows to specify a list of projects, which should be kept intact in AUT workspace.
   {% endset %}
   {% set top, left, width, height = 248, 75, 610, 19 %}
   {% include "overlay" %}

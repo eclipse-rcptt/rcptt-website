@@ -1,6 +1,6 @@
 ---
 title: Parameters Contexts
-slug: contexts/parameters
+slug: parameters
 sidebar: userguide
 layout: doc
 ---
@@ -89,7 +89,7 @@ layout: doc
   </div>
   
  Please learn more about more efficient way of script parametrization by 
- using <a href = "{{site.url}}/documentation/userguide/contexts/super"> Super Context</a>
+ using [ Super Context](../super)
   
   
   

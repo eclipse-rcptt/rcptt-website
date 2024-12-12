@@ -1,6 +1,6 @@
 ---
 title: Workbench Contexts
-slug: contexts/workbench
+slug: workbench
 sidebar: userguide
 layout: doc
 ---
@@ -42,7 +42,7 @@ Workbench contexts are used to control perspective, views and open editors of ap
 
   {# Apply button  #}
   {% set overlayContent %}
-  Opens given perspective, views and editors. If {{m.uiElement("Reset perspective")}} option is on, resets perspective to its default.
+  Opens given perspective, views and editors. If {{< uielement >}}Reset perspective{{< / uielement >}} option is on, resets perspective to its default.
   {% endset %}
   {% set top, left, width, height = 118, 616, 75, 22 %}
   {% include "overlay" %}
@@ -144,7 +144,7 @@ The {{< uielement ui-capture.gif >}} Capture{{< / uielement >}} button in the up
     <h3 class="panel-title">Important</h3>
   </div>
   <div class="panel-body">
-    While it is not currently tracked by RCPTT, the Workbench context actually can depend on certain Workspace contexts. For example, you specify to open an editor for */my_project/my_file*. In case there is no such file in the AUT workspace, applying this Workbench context will fail your test. When you are using <a href = "{{site.url}}/documentation/userguide/contexts/workspace">workspace contexts</a> and workbench contexts simultaneously (which is actually the recommended way), make sure that the workspace context goes before the workbench context.
+    While it is not currently tracked by RCPTT, the Workbench context actually can depend on certain Workspace contexts. For example, you specify to open an editor for */my_project/my_file*. In case there is no such file in the AUT workspace, applying this Workbench context will fail your test. When you are using [workspace contexts](../workspace) and workbench contexts simultaneously (which is actually the recommended way), make sure that the workspace context goes before the workbench context.
 Alternatively, unnecessary editors can be manually removed from the list of editors. 
   </div>
 </div>

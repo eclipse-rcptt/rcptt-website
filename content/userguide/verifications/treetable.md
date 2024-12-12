@@ -26,21 +26,21 @@ layout: doc
   
   {# Capture button  #}
   {% set overlayContent %}
-  Make a snapshot of AUT widget defined in {{m.uiElement("Widget")}} field and copy it into verification. 
+  Make a snapshot of AUT widget defined in {{< uielement >}}Widget{{< / uielement >}} field and copy it into verification. 
   {% endset %}
   {% set top, left, width, height = 92, 616, 75, 22 %}
   {% include "overlay" %}
 
   {# Verify button  #}
   {% set overlayContent %}
-  Verifies whether AUT tree/table defined in {{m.uiElement("Widget")}} matches the tree/table from a verification.
+  Verifies whether AUT tree/table defined in {{< uielement >}}Widget{{< / uielement >}} matches the tree/table from a verification.
   {% endset %}
   {% set top, left, width, height = 118, 616, 75, 22 %}
   {% include "overlay" %}
   
   {# Widget #}
   {% set overlayContent %}
-  AUT tree/table widget for verification. You can set the value manually or using {{m.uiElement("Pick...")}} button.
+  AUT tree/table widget for verification. You can set the value manually or using {{< uielement >}}Pick...{{< / uielement >}} button.
   {% endset %}
   {% set top, left, width, height = 202, 126, 511, 22 %}
   {% include "overlay" %}

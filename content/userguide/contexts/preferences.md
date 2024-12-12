@@ -1,6 +1,6 @@
 ---
 title: Preferences Contexts
-slug: contexts/preferences
+slug: preferences
 sidebar: userguide
 layout: doc
 ---
@@ -46,7 +46,7 @@ The Preferences Context editor displays tree of all available preferences and al
 
   {# Apply button  #}
   {% set overlayContent %}
-  Applies preferences to AUT.   If {{m.uiElement("Clear preferences")}} option is on, clears existing AUT preferences first
+  Applies preferences to AUT.   If {{< uielement >}}Clear preferences{{< / uielement >}} option is on, clears existing AUT preferences first
   {% endset %}
   {% set top, left, width, height = 118, 616, 75, 22 %}
   {% include "overlay" %}

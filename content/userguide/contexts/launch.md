@@ -1,6 +1,6 @@
 ---
 title: Launch Contexts
-slug: contexts/launch
+slug: launch
 sidebar: userguide
 layout: doc
 ---
@@ -42,7 +42,7 @@ Launch contexts are used to control AUT Launches and Launch Configurations.
 
   {# Apply button  #}
   {% set overlayContent %}
-  Adds launch configuration to AUT. Launches given configuration in a defined mode. Suspend launch at a given breakpoint.  If {{m.uiElement("Clear workspace")}} option is on, removes existing projects from AUT at first.
+  Adds launch configuration to AUT. Launches given configuration in a defined mode. Suspend launch at a given breakpoint.  If {{< uielement >}}Clear workspace{{< / uielement >}} option is on, removes existing projects from AUT at first.
   {% endset %}
   {% set top, left, width, height = 118, 614, 75, 22 %}
   {% include "overlay" %}
@@ -56,7 +56,7 @@ Launch contexts are used to control AUT Launches and Launch Configurations.
   
   {# Keep launches #}
   {% set overlayContent %}
-  If {{m.uiElement("Terminate existing launches")}} is on - this option allows to specify a list of launches, which should be kept intact.
+  If {{< uielement >}}Terminate existing launches{{< / uielement >}} is on - this option allows to specify a list of launches, which should be kept intact.
   {% endset %}
   {% set top, left, width, height = 248, 75, 608, 19 %}
   {% include "overlay" %}
@@ -70,7 +70,7 @@ Launch contexts are used to control AUT Launches and Launch Configurations.
   
   {# Keep configurations #}
   {% set overlayContent %}
-  If {{m.uiElement("Clear launch configurations")}} is on - this option allows to specify a list of launch configurations, which should be kept intact.
+  If {{< uielement >}}Clear launch configurations{{< / uielement >}} is on - this option allows to specify a list of launch configurations, which should be kept intact.
   {% endset %}
   {% set top, left, width, height = 320, 75, 608, 19 %}
   {% include "overlay" %}
@@ -200,14 +200,14 @@ you may make your test elegant and easy-maintaining.
 
 So you need the following contexts:
 <ol>
-<li><a href = "{{site.url}}/documentation/userguide/contexts/workspace">Workspace context</a> - to put Java Project on AUT workspace:
+<li>[Workspace context](../workspace) - to put Java Project on AUT workspace:
   
   {% include "screenshot-guide" %}
 <div class="screenshot">
 <img src="{{site.url}}/shared/img/screenshot-workspace-context-for-launch-context-example.png"></img>
  </div> 
 </li>
-<li><a href = "{{site.url}}/documentation/userguide/contexts/workbench">Workbench context</a> - to switch to Debug Perspective:
+<li>[Workbench context](../workbench) - to switch to Debug Perspective:
 
 <div class="screenshot">
 <img src="{{site.url}}/shared/img/screenshot-workbench-context-for-launch-context-example.png"></img>
@@ -229,7 +229,7 @@ Place these contexts into your test case and record your test which shrinks to a
 
 </ol>
 
-You may note *Stop all launches* context marked as a <a href = "{{site.url}}/documentation/userguide/contexts/default">Default context</a>.
+You may note *Stop all launches* context marked as a [Default context](../default).
 It terminates all active launches before a workspace context will try to delete all files.
 This hint helps us to avoid the situation when some files could be locked. It's a good practice
 to use this context as a Default Context for AUT with launches.

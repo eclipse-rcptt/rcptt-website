@@ -1,6 +1,6 @@
 ---
 title: ECL Script Contexts
-slug: contexts_ecl
+slug: ecl
 sidebar: userguide
 menu:
   sidebar:

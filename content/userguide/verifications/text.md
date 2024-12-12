@@ -26,14 +26,14 @@ layout: doc
   
   {# Capture button  #}
   {% set overlayContent %}
-  Make a snapshot of a text from AUT widget defined in {{m.uiElement("Widget")}} field and copy it into this verification. 
+  Make a snapshot of a text from AUT widget defined in {{< uielement >}}Widget{{< / uielement >}} field and copy it into this verification. 
   {% endset %}
   {% set top, left, width, height = 92, 616, 75, 22 %}
   {% include "overlay" %}
 
   {# Verify button  #}
   {% set overlayContent %}
-  Verifies whether a text in a text {{m.uiElement("Widget")}} equals the text from a verification. If {{m.uiElement("Ignore text styling and colors")}} option is off,
+  Verifies whether a text in a text {{< uielement >}}Widget{{< / uielement >}} equals the text from a verification. If {{< uielement >}}Ignore text styling and colors{{< / uielement >}} option is off,
   verifies text style as well.  
   {% endset %}
   {% set top, left, width, height = 118, 616, 75, 22 %}
@@ -41,7 +41,7 @@ layout: doc
   
   {# Widget #}
   {% set overlayContent %}
-  AUT text widget from which a text is taken for verification. You can set the value manually or using {{m.uiElement("Pick...")}} button.
+  AUT text widget from which a text is taken for verification. You can set the value manually or using {{< uielement >}}Pick...{{< / uielement >}} button.
   {% endset %}
   {% set top, left, width, height = 202, 126, 511, 22 %}
   {% include "overlay" %}
@@ -55,7 +55,7 @@ layout: doc
   
   {# Text area #}
   {% set overlayContent %}
-  Verified text. If {{m.uiElement("Ignore text styling and colors")}} option is on you can edit text value. 
+  Verified text. If {{< uielement >}}Ignore text styling and colors{{< / uielement >}} option is on you can edit text value. 
   {% endset %}
   {% set top, left, width, height = 261, 75, 595, 159 %}
   {% include "overlay" %}
@@ -85,7 +85,7 @@ Set verification name and press Finish. Now, while you are in a Capture mode, se
   <img src="{{site.url}}/shared/img/screenshot-text-verification-2.png"></img></div>
 
 <li>If you open verification you can see that it contains the styled text to verify and the widget to take the text from. Verification checks both: widget 
-content and text styles. If you want to verify a plain text only, then you should select {{m.uiElement("Ignore text styling and colors")}} option.</li>
+content and text styles. If you want to verify a plain text only, then you should select {{< uielement >}}Ignore text styling and colors{{< / uielement >}} option.</li>
 
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-text-verification-3.png"></img></div>
