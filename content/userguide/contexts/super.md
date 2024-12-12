@@ -3,6 +3,9 @@ title: Super Contexts
 slug: super
 sidebar: userguide
 layout: doc
+menu:
+  sidebar:
+      parent: contexts
 ---
 
 ### Introduction

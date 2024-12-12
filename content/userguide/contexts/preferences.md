@@ -3,6 +3,9 @@ title: Preferences Contexts
 slug: preferences
 sidebar: userguide
 layout: doc
+menu:
+  sidebar:
+      parent: contexts
 ---
 
 ###  Introduction

@@ -3,6 +3,9 @@ title: Launch Contexts
 slug: launch
 sidebar: userguide
 layout: doc
+menu:
+  sidebar:
+      parent: contexts
 ---
 
 

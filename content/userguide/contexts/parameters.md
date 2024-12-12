@@ -3,6 +3,9 @@ title: Parameters Contexts
 slug: parameters
 sidebar: userguide
 layout: doc
+menu:
+  sidebar:
+      parent: contexts
 ---
 
 {% include "screenshot-guide" %}

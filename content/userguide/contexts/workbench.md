@@ -3,6 +3,9 @@ title: Workbench Contexts
 slug: workbench
 sidebar: userguide
 layout: doc
+menu:
+  sidebar:
+      parent: contexts
 ---
 
 Workbench contexts are used to control perspective, views and open editors of application under test

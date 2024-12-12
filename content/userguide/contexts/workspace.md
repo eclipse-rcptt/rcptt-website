@@ -3,6 +3,9 @@ title: Workspace Contexts
 slug: workspace
 sidebar: userguide
 layout: doc
+menu:
+  sidebar:
+      parent: contexts
 ---
 
 Workspace contexts are used to control the state of an application workspace.
