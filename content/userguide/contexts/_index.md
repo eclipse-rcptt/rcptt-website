@@ -25,14 +25,7 @@ In the verification phase the actual testing is performed, results are evaluated
 The clean-up phase should bring the application back to a state preceding the setup - a so-called base state - to make it ready 
 for the next test.
 
-
-
-<div class="panel panel-info">
-  <div class="panel-heading">
-    With RCPTT Contexts there is no need to write any set-up and clean-up code; moreover, they represent reusable units of code 
-    which can be included in different test cases. It increases test base maintainability, resolving the task of AUT setup
-  </div>
-</div>
+> With RCPTT Contexts there is no need to write any set-up and clean-up code; moreover, they represent reusable units of code which can be included in different test cases. It increases test base maintainability, resolving the task of AUT setup
 
 If a test case relies on the results of the preceding test case, then failure of the latter one most likely will cause the failure 
 of the one that runs afterwards. Such cascading errors would make it very difficult to find the core of these failures. 
@@ -44,22 +37,11 @@ Test cases should be executable in any sequence. This important characteristic w
 test cases to run without having to concern about the interdependencies between test cases. This is quite difficult to be 
 implemented on practice.
 
-<div class="panel panel-info">
-  <div class="panel-heading">
-    RCPTT lets you have Independent test cases, without any efforts. What is important, 
-    RCPTT test cases do not require AUT to be in the base state, letting you to start any test case from any AUT state. 
-    Contexts are responsible to bring AUT to the state required for the particular test execution.
-  </div>
-</div>
+> RCPTT lets you have Independent test cases, without any efforts. Importantly, RCPTT test cases do not require AUT to be in the base state, letting you to start any test case from any AUT state. Contexts are responsible for bringing an AUT to the state required for the particular test execution.
 
 Moreover, while using other frameworks and tools, the requirement to run each and every test from the zero state would be 
 far too expensive in case of tests that modify a complex global state (e.g. creating or modifying a database). 
 In such situations test cases relying on specific presets can be grouped together but the interdependencies between them
  should be well documented to help future maintainers with analysis of such a Test Suite.
  
- <div class="panel panel-info">
-  <div class="panel-heading">
-    RCPTT can perform deep analysis of the contexts being used within the test suite and group them together for faster test execution. 
-    This would be done by RCPTT automatically without any work on test execution performance required from a tester.
-  </div>
-</div>
+> RCPTT can perform deep analysis of the contexts being used within the test suite and group them together for faster test execution. This would be done by RCPTT automatically without any work on test execution performance required from a tester.
