@@ -108,6 +108,7 @@ Folder Context - to put files for import into a *home://Desktop/TestData folder*
 
 Next, create a test case and add these three contexts into it and start recording - the contexts will be applied to make everything ready for a file Import:
 ![](screenshot-folder-context-editor-9.png)
+
 Do not forget to add an [assertion](../../assertions) to verify that the images were successfully imported into a Project1 (see the selected script).
    
    
