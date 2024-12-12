@@ -1,6 +1,6 @@
 ---
 title: Default Contexts
-slug: contexts_default
+slug: default
 sidebar: userguide
 menu:
   sidebar:
@@ -26,7 +26,7 @@ Description of project can be given in "Description" section of the
 Default Contexts can be set in "Default Contexts" section. Contexts to default contexts
  list can be added from this RCPTT project and also from related RCPTT projects.
  
- ![](../screenshot-default-context-editor.png)
+ ![](screenshot-default-context-editor.png)
   
   These default contexts are displayed in test cases. Sequence contexts defined in the Default Contexts 
    list can not be changed in the test case and custom contexts can be added to test case only after 
@@ -34,10 +34,10 @@ Default Contexts can be set in "Default Contexts" section. Contexts to default c
    from test case by clicking on {{m.uiElement("", "#{site.url}/shared/img/ui-configure-project-default-contexts.png")}}
    link.
   
- ![](../screenshot-default-context-editor-2.png)
+ ![](screenshot-default-context-editor-2.png)
    
   At the replaying test case the default contexts are displayed in {{< uielement "../ui-execution-view.png" >}}Execution View{{< / uielement >}}. 
   Custom contexts are executed after default contexts execution.
   
-  ![](../creenshot-default-context-editor-3.png)
+  ![](screenshot-default-context-editor-3.png)
   
