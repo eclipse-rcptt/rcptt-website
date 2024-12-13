@@ -14,28 +14,28 @@ test execution. But sometimes you may need to put data somewhere outside your AU
  
  {{< annotatedImage screenshot-folder-context-editor.png >}}
  <!-- Name -->
- {{< annotate 118 93 488 19 >}}A searchable name to quickly identify and find the context among others{{< / annotate >}} 
+ {{< annotate 118 93 606 112 >}}A searchable name to quickly identify and find the context among others{{< / annotate >}} 
  <!-- Tags -->
- {{< annotate 118 119 464 19 >}}Tags allow arbitrary grouping of contexts. Use Tags view to see the groups.{{< / annotate >}} 
+ {{< annotate 118 119 582 138 >}}Tags allow arbitrary grouping of contexts. Use Tags view to see the groups.{{< / annotate >}} 
  <!-- Add Tags -->
- {{< annotate 584 118 22 22 >}}Add tags interactively{{< / annotate >}}
+ {{< annotate 584 118 606 140 >}}Add tags interactively{{< / annotate >}}
  <!-- Capture -->
- {{% annotate 616 92 75 22 %}}Make a snapshot of resources from a root path and copy them into this context{{% / annotate %}} 
+ {{< annotate 616 92 691 114 >}}Make a snapshot of resources from a root path and copy them into this context{{< / annotate >}} 
  <!-- Apply -->
- {{< annotate 616 118 75 22 >}}Copy files from context into root. If {{< uielement >}}Clear root folder{{< / uielement >}} option is on, removes existing files from a root first. If the option is off, exising files are still replaced with matching ones from the context.{{< / annotate >}}
+ {{< annotate 616 118 691 140 >}}Copy files from context into root. If {{< uielement >}}Clear root folder{{< / uielement >}} option is on, removes existing files from a root first. If the option is off, exising files are still replaced with matching ones from the context.{{< / annotate >}}
  <!-- Root path -->
- {{< annotate 145 202 471 22 >}}A destination for files. When a context is applied - its resources are copied into this location. If {{< uielement >}}Clear root folder{{< / uielement >}} option is on, it is wiped beforehand.{{< / annotate >}}
+ {{< annotate 145 202 616 224 >}}A destination for files. When a context is applied - its resources are copied into this location. If {{< uielement >}}Clear root folder{{< / uielement >}} option is on, it is wiped beforehand.{{< / annotate >}}
  <!-- Browse... -->
- {{< annotate 626 202 59 22 >}}Show Open File dialog to select root path{{< / annotate >}}
+ {{< annotate 626 202 685 224 >}}Show Open File dialog to select root path{{< / annotate >}}
  <!-- Clear root folder before context application -->
- {{< annotate 75 232 280 22 >}}Clean (delete everything from, wipe) root before the context is applied. Dangerous - a typo in the {{< uielement >}}Root path{{< / uielement >}} may delete anything from filesystem irreversibly.{{< / annotate >}}
- {{< annotate 75 262 499 72 >}}Current content of the context. These files will owerwrite the data in the {{< uielement >}}Root path{{< / uielement >}} when context is applied.{{< / annotate >}}
+ {{< annotate 75 232 355 254 >}}Clean (delete everything from, wipe) root before the context is applied. Dangerous - a typo in the {{< uielement >}}Root path{{< / uielement >}} may delete anything from filesystem irreversibly.{{< / annotate >}}
+ {{< annotate 75 262 574 334 >}}Current content of the context. These files will owerwrite the data in the {{< uielement >}}Root path{{< / uielement >}} when context is applied.{{< / annotate >}}
   <!-- Add Files... -->
- {{< annotate 584 262 101 22 >}}Import files into the context. Allows to exlpicitly manage the content when {{< uielement "../ui-capture.gif" >}}Capture{{< / uielement >}} is not suitable.{{< / annotate >}}
+ {{< annotate 584 262 685 284 >}}Import files into the context. Allows to exlpicitly manage the content when {{< uielement "../ui-capture.gif" >}}Capture{{< / uielement >}} is not suitable.{{< / annotate >}}
   <!-- Add Folder... -->
- {{< annotate 584 287 101 22 >}}Recursively import folder into a context. Allows to exlpicitly manage the content when {{< uielement "../ui-capture.gif" >}}Capture{{< / uielement >}} is not suitable.{{< / annotate >}}
+ {{< annotate 584 287 685 309 >}}Recursively import folder into a context. Allows to exlpicitly manage the content when {{< uielement "../ui-capture.gif" >}}Capture{{< / uielement >}} is not suitable.{{< / annotate >}}
   <!-- Remove -->
- {{< annotate 584 312 101 22 >}}Remove selected resource(s) from this context. The resources in root path are untouched, but wil no logner be updated on {{< uielement "../ui-replay.gif">}}Apply{{< / uielement >}}{{< / annotate >}}
+ {{< annotate 584 312 685 334 >}}Remove selected resource(s) from this context. The resources in root path are untouched, but wil no logner be updated on {{< uielement "../ui-replay.gif">}}Apply{{< / uielement >}}{{< / annotate >}}
  {{< / annotatedImage >}}
 
   Above is a Folder Context which puts *img1.jpg* and *img2.jpg* files  in a *TestData* folder on a *C* disc.  

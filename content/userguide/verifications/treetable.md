@@ -9,69 +9,48 @@ layout: doc
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-tree-verification.png"></img>
   
-  {# Name #}
-  {% set overlayContent %}
-  Verification name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with 
-  underscore character.
-  {% endset %}
+  <!-- Name -->
+ {{< annotate  >}}  Verification name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with 
+  underscore character.{{< / annotate >}}
   {% set top, left, width, height = 93, 118, 100, 19 %}
-  {% include "overlay" %}
 
-  {# Tags #}
-  {% set overlayContent %}
-  Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>
-  {% endset %}
+  <!-- Tags -->
+ {{< annotate  >}}  Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>{{< / annotate >}}
   {% set top, left, width, height = 119, 118, 100, 19 %}
-  {% include "overlay" %}
   
-  {# Capture button  #}
+  <!-- Capture button  -->
   {% set overlayContent %}
   Make a snapshot of AUT widget defined in {{< uielement >}}Widget{{< / uielement >}} field and copy it into verification. 
   {% endset %}
   {% set top, left, width, height = 92, 616, 75, 22 %}
-  {% include "overlay" %}
 
-  {# Verify button  #}
+  <!-- Verify button  -->
   {% set overlayContent %}
   Verifies whether AUT tree/table defined in {{< uielement >}}Widget{{< / uielement >}} matches the tree/table from a verification.
   {% endset %}
   {% set top, left, width, height = 118, 616, 75, 22 %}
-  {% include "overlay" %}
   
-  {# Widget #}
+  <!-- Widget -->
   {% set overlayContent %}
   AUT tree/table widget for verification. You can set the value manually or using {{< uielement >}}Pick...{{< / uielement >}} button.
   {% endset %}
   {% set top, left, width, height = 202, 126, 511, 22 %}
-  {% include "overlay" %}
   
-  {# Verify styles option  #}
-  {% set overlayContent %}
-  Styles option for verification. Can be All/Ignore Styles/Ignore Styled Text. 
-  {% endset %}
+  <!-- Verify styles option  -->
+ {{< annotate  >}}  Styles option for verification. Can be All/Ignore Styles/Ignore Styled Text. {{< / annotate >}}
   {% set top, left, width, height = 239, 155, 155, 22 %}
-  {% include "overlay" %}
   
-  {# Allow children #}
-  {% set overlayContent %}
- Turned on by default. If this option is off - verification fails if there are uncaptured children in AUT tree. 
-  {% endset %}
+  <!-- Allow children -->
+ {{< annotate  >}} Turned on by default. If this option is off - verification fails if there are uncaptured children in AUT tree. {{< / annotate >}}
   {% set top, left, width, height = 239, 317, 165, 23 %}
-  {% include "overlay" %}
   
-  {# Verify icons #}
-  {% set overlayContent %}
- Turned on by default. If this option is off - verification ignores icons. 
-  {% endset %}
+  <!-- Verify icons -->
+ {{< annotate  >}} Turned on by default. If this option is off - verification ignores icons. {{< / annotate >}}
   {% set top, left, width, height = 239, 486, 110, 23 %}
-  {% include "overlay" %}
   
-  {# Tree area #}
-  {% set overlayContent %}
-  Captured tree/table. 
-  {% endset %}
+  <!-- Tree area -->
+ {{< annotate  >}}  Captured tree/table. {{< / annotate >}}
   {% set top, left, width, height = 284, 75, 610, 94 %}
-  {% include "overlay" %}
   
   </div>
   

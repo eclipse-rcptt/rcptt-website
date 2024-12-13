@@ -5,7 +5,8 @@
     {{ $src = printf "../%s" $src }}
 {{ end }}
 
-<figure class="annotated-image">
+<figure class="ann-image">
     <img src="{{- $src -}}"/>
+    <div class="ann-debug"></div>
     {{- .Inner -}}
 </figure>

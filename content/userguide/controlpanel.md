@@ -19,17 +19,14 @@ See Control Panel screenshot below for more information.
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-cp.png"></img>
 
-  {# Home Button #}
-  {% set overlayContent %}
-  <h5>Return to IDE button</h5>
+  <!-- Home Button -->
+ {{< annotate  >}}  <h5>Return to IDE button</h5>
 
-  <p>Closes control panel and restores main RCPTT IDE window. If recording is in progress, it is automatically stopped. If test case is not saved, prompts for a save.</p>
-  {% endset %}
+  <p>Closes control panel and restores main RCPTT IDE window. If recording is in progress, it is automatically stopped. If test case is not saved, prompts for a save.</p>{{< / annotate >}}
   {% set top, left, width, height = 64, 74, 19, 19 %}
-  {% include "overlay" %}
 
 
-  {# Save button #}
+  <!-- Save button -->
   {% set overlayContent %}
   
   <h5>Save Button</h5>
@@ -37,28 +34,21 @@ See Control Panel screenshot below for more information.
 
   {% endset %}
   {% set top, left, width, height = 64, 95, 28, 19  %}
-  {% include "overlay" %}
   
 
-  {# Record button #}
-  {% set overlayContent %}
-  <h5>Record/Stop button</h5>
+  <!-- Record button -->
+ {{< annotate  >}}  <h5>Record/Stop button</h5>
 
   <p>Used to control recording</p>
-
-  {% endset %}
+{{< / annotate >}}
   {% set top, left, width, height = 64, 136, 19, 19 %}
-  {% include "overlay" %}
 
-  {# Replay button #}
-  {% set overlayContent %}
-  <h5>Replay button</h5>
-  <p>Replay current test case</p>
-  {% endset %}
+  <!-- Replay button -->
+ {{< annotate  >}}  <h5>Replay button</h5>
+  <p>Replay current test case</p>{{< / annotate >}}
   {% set top, left, width, height = 64, 157, 19, 19 %}
-  {% include "overlay" %}
 
-  {# Capture/Assertion modes #}
+  <!-- Capture/Assertion modes -->
   {% set overlayContent %}
   <h5>Mode buttons</h5>
   <p>When recording is in progress, these buttons allow to switch between two modes:
@@ -69,62 +59,40 @@ See Control Panel screenshot below for more information.
   </p>
   {% endset %}
   {% set top, left, width, height = 60, 186, 48, 26 %}
-  {% include "overlay" %}
 
-  {# Script tab #}
-  {% set overlayContent %}
-  <h5>Script tab (active by default)</h5>
-  <p>Current test script. When recording is in progress, it is automatically appended with newly recorded actions. When recording is stopped, its contents is editable.</p>
-  {% endset %}
+  <!-- Script tab -->
+ {{< annotate  >}}  <h5>Script tab (active by default)</h5>
+  <p>Current test script. When recording is in progress, it is automatically appended with newly recorded actions. When recording is stopped, its contents is editable.</p>{{< / annotate >}}
   {% set top, left, width, height = 91, 62, 54, 20 %}
-  {% include "overlay" %}
 
-  {#Contexts tab #}
-  {% set overlayContent %}
-  <h5>Contexts tab</h5>
-  <p>Allows to add/remove [contexts](../contexts/) to current test case.</p>
-  {% endset %}
+  <!--Contexts tab -->
+ {{< annotate  >}}  <h5>Contexts tab</h5>
+  <p>Allows to add/remove [contexts](../contexts/) to current test case.</p>{{< / annotate >}}
   {% set top, left, width, height = 91, 130, 72, 20 %}
-  {% include "overlay" %}
 
-  {# Verifications tab #}
-  {% set overlayContent %}
-  <h5>Verifications tab</h5>
-  <p>Allows to add/remove [verifications](../verifications/) to current test case.</p>
-  {% endset %}
+  <!-- Verifications tab -->
+ {{< annotate  >}}  <h5>Verifications tab</h5>
+  <p>Allows to add/remove [verifications](../verifications/) to current test case.</p>{{< / annotate >}}
   {% set top, left, width, height = 91, 210, 87, 20 %}
-  {% include "overlay" %}
 
-  {# Description tab #}
-  {% set overlayContent %}
-  <h5>Description tab</h5>
-  <p>Allows to view/edit a description of a current test case. This tab can be activated while recording in progress, so it might be convenient to put test steps into description section before starting recording and then follow those steps to avoid recoding of unnecessary actions.</p>
-  {% endset %}
+  <!-- Description tab -->
+ {{< annotate  >}}  <h5>Description tab</h5>
+  <p>Allows to view/edit a description of a current test case. This tab can be activated while recording in progress, so it might be convenient to put test steps into description section before starting recording and then follow those steps to avoid recoding of unnecessary actions.</p>{{< / annotate >}}
   {% set top, left, width, height = 91, 303, 84, 20 %}
-  {% include "overlay" %}
 
-  {# Options tab #}
-  {% set overlayContent %}
-  <h5>Options tab</h5>
-  <p>Contains a few rarely used options controlling the way in which user actions are being recorded.</p>
-  {% endset %}
+  <!-- Options tab -->
+ {{< annotate  >}}  <h5>Options tab</h5>
+  <p>Contains a few rarely used options controlling the way in which user actions are being recorded.</p>{{< / annotate >}}
   {% set top, left, width, height = 91, 392, 67, 20 %}
-  {% include "overlay" %}
 
-  {# AUT name #}
-  {% set overlayContent %}
-  <h5>AUT name</h5>
-  <p>Indicates which application this control panel is currently working with.</p>
-  {% endset %}
+  <!-- AUT name -->
+ {{< annotate  >}}  <h5>AUT name</h5>
+  <p>Indicates which application this control panel is currently working with.</p>{{< / annotate >}}
   {% set top, left, width, height = 37, 330, 122, 18 %}
-  {% include "overlay" %}
 
-  {# [Recording] #}
-  {% set overlayContent %}
-  <p>Indicates that recording is in progress now.</p>
-  {% endset %}
+  <!-- [Recording] -->
+ {{< annotate  >}}  <p>Indicates that recording is in progress now.</p>{{< / annotate >}}
   {% set top, left, width, height = 37, 453, 76, 18 %}
-  {% include "overlay" %}
 
   
 </div>

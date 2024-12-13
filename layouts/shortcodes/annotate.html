@@ -1,7 +1,9 @@
-{{- $left := .Get 0 -}}
-{{- $top := .Get 1 -}}
-{{- $width := .Get 2 -}}
-{{- $height := .Get 3 -}}
+{{- $left := int (.Get 0) -}}
+{{- $top := int (.Get 1) -}}
+{{- $x2 := int (.Get 2) }}
+{{- $y2 := int (.Get 3) }}
+{{- $width := sub $x2 $left -}}
+{{- $height := sub $y2 $top -}}
 <div class="ann" style="position: absolute; top:{{- $top -}}px;left:{{- $left -}}px;width:{{- $width -}}px;height:{{- $height -}}px;">
     <div class="ann-border" title="{{- .Inner | plainify -}}"></div>
     <div class="ann-overlay">

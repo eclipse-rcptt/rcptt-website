@@ -9,79 +9,49 @@ layout: doc
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-error-log-verification-editor.png"></img>
   
-  {# Name #}
-  {% set overlayContent %}
-  Verification name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with 
-  underscore character.
-  {% endset %}
+  <!-- Name -->
+ {{< annotate  >}}  Verification name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with 
+  underscore character.{{< / annotate >}}
   {% set top, left, width, height = 93, 118, 150, 19 %}
-  {% include "overlay" %}
 
-  {# Tags #}
-  {% set overlayContent %}
-  Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>
-  {% endset %}
+  <!-- Tags -->
+ {{< annotate  >}}  Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>{{< / annotate >}}
   {% set top, left, width, height = 119, 118, 150, 19 %}
-  {% include "overlay" %}
   
-  {# Capture button  #}
-  {% set overlayContent %}
-  Make a snapshot of all Error Log messages which are thrown during the last test case execution. 
-  {% endset %}
+  <!-- Capture button  -->
+ {{< annotate  >}}  Make a snapshot of all Error Log messages which are thrown during the last test case execution. {{< / annotate >}}
   {% set top, left, width, height = 92, 616, 75, 22 %}
-  {% include "overlay" %}
 
-  {# Verify button  #}
-  {% set overlayContent %}
-  Disabled for Error Log Verification
-  {% endset %}
+  <!-- Verify button  -->
+ {{< annotate  >}}  Disabled for Error Log Verification{{< / annotate >}}
   {% set top, left, width, height = 118, 616, 75, 22 %}
-  {% include "overlay" %}
   
-  {# Require area #}
-  {% set overlayContent %}
-  Define the Error Log messages which are required here. Regular expressions are supported. You can drag and drop message 
-  patterns from one rule area to another. 
-  {% endset %}
+  <!-- Require area -->
+ {{< annotate  >}}  Define the Error Log messages which are required here. Regular expressions are supported. You can drag and drop message 
+  patterns from one rule area to another. {{< / annotate >}}
   {% set top, left, width, height = 206, 75, 610, 74 %}
-  {% include "overlay" %}
   
-  {# Add button #}
-  {% set overlayContent %}
-  Add new message pattern
-  {% endset %}
+  <!-- Add button -->
+ {{< annotate  >}}  Add new message pattern{{< / annotate >}}
   {% set top, left, width, height = 181, 597, 21, 21 %}
-  {% include "overlay" %}
   
-   {# Remove button #}
-  {% set overlayContent %}
-  Remove selected message pattern(s) 
-  {% endset %}
+   <!-- Remove button -->
+ {{< annotate  >}}  Remove selected message pattern(s) {{< / annotate >}}
   {% set top, left, width, height = 181, 620, 21, 21 %}
-  {% include "overlay" %}
   
-  {# Order buttons #}
-  {% set overlayContent %}
-  Change the order of patterns.  
-  {% endset %}
+  <!-- Order buttons -->
+ {{< annotate  >}}  Change the order of patterns.  {{< / annotate >}}
   {% set top, left, width, height = 181, 643, 40, 21 %}
-  {% include "overlay" %}
   
-  {# Allow area #}
-  {% set overlayContent %}
-  Define the Error Log messages which are allowed here. Regular expressions are supported. You can drag and drop message 
-  patterns from one rule area to another. 
-  {% endset %}
+  <!-- Allow area -->
+ {{< annotate  >}}  Define the Error Log messages which are allowed here. Regular expressions are supported. You can drag and drop message 
+  patterns from one rule area to another. {{< / annotate >}}
   {% set top, left, width, height = 312, 75, 610, 74 %}
-  {% include "overlay" %}
   
-  {# Deny area #}
-  {% set overlayContent %}
-  Define the Error Log messages which are not allowed here. Regular expressions are supported. You can drag and drop message 
-  patterns from one rule area to another. 
-  {% endset %}
+  <!-- Deny area -->
+ {{< annotate  >}}  Define the Error Log messages which are not allowed here. Regular expressions are supported. You can drag and drop message 
+  patterns from one rule area to another. {{< / annotate >}}
   {% set top, left, width, height = 418, 75, 610, 74 %}
-  {% include "overlay" %}
   
   </div>
   

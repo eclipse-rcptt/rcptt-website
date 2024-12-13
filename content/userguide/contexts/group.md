@@ -10,78 +10,50 @@ menu:
 The Group context represents combined references to contexts of other type which might help in context management. 
 It is possible to group together [Workspace](../workspace), [Workbench](../workbench), [Preferences](../preferences), etc., contexts together and refer to this group as 
 a single Group context in the Test Editor. The Group Context editor looks quite similar to the Contexts panel in 
-the <a href = "{{site.url}}/documentation/userguide/testeditor">Test Editor</a>.
+the [Test Editor](../../testeditor).
 
-
-{% include "screenshot-guide" %}
-
-<div class="screenshot">
-<img src="{{site.url}}/shared/img/screenshot-group-context-editor.png"></img>
-
-{# Name #}
-  {% set overlayContent %}
-  All you need to know about context name
-  {% endset %}
-  {% set top, left, width, height = 93, 118, 100, 19 %}
-  {% include "overlay" %}
+{{< annotatedImage "screenshot-group-context-editor.png" >}}
+<!-- Name -->
+{{< annotate 118 93 606 112 >}}A searchable name to quickly identify and find the context among others{{< / annotate >}}
   
-  {# Tags #}
-  {% set overlayContent %}
-  All you need to know about tags
-  {% endset %}
+  <!-- Tags -->
+ {{< annotate 118 119 581 138 >}}  All you need to know about tags{{< / annotate >}}
   {% set top, left, width, height = 119, 118, 100, 19 %}
-  {% include "overlay" %}
 
-  {# Add Tags #}
-  {% set overlayContent %}
-  All you need to know about adding tags
-  {% endset %}
+  <!-- Add Tags -->
+ {{< annotate  >}}  All you need to know about adding tags{{< / annotate >}}
   {% set top, left, width, height = 118, 584, 22, 22 %}
-  {% include "overlay" %}
   
-  {# Capture button  #}
-  {% set overlayContent %}
-  Capturing is disabled for Group Context
-  {% endset %}
+  <!-- Capture button  -->
+ {{< annotate  >}}  Capturing is disabled for Group Context{{< / annotate >}}
   {% set top, left, width, height = 92, 616, 75, 22 %}
-  {% include "overlay" %}
 
-	{# Add context #}
-  {% set overlayContent %}
-  Opens context selection dialog
-  {% endset %}
+	<!-- Add context -->
+ {{< annotate  >}}  Opens context selection dialog{{< / annotate >}}
   {% set top, left, width, height = 181, 598, 20, 20 %}
-  {% include "overlay" %}
   
-  {# Move up #}
-  {% set overlayContent %}
-  Moves selected context up
-  {% endset %}
+  <!-- Move up -->
+ {{< annotate  >}}  Moves selected context up{{< / annotate >}}
   {% set top, left, width, height = 181, 642, 20, 20 %}
-  {% include "overlay" %}
 
-  {# Move down #}
-  {% set overlayContent %}
-  Moves selected context down
-  {% endset %}
+  <!-- Move down -->
+ {{< annotate  >}}  Moves selected context down{{< / annotate >}}
   {% set top, left, width, height = 181, 664, 20, 20 %}
-  {% include "overlay" %}
   
-  {# Replay button  #}
-  {% set overlayContent %}
-  Applies the contexts one by one in the order they are displayed. 
-  {% endset %}
+  <!-- Replay button  -->
+ {{< annotate  >}}  Applies the contexts one by one in the order they are displayed. {{< / annotate >}}
   {% set top, left, width, height = 118, 616, 75, 22 %}
-  {% include "overlay" %}
   
-  {# Contexts area #}
+  <!-- Contexts area -->
   {% set overlayContent %}
+
+{{< / annotatedImage >}}
+
   <p>Context area lists current [contexts](../contexts/). Drag contexts to change their order, drop contexts from Test Explorer to add. When group context is executed, contexts are applied in order they listed.</p>
 
   <p>Sometimes context order is important &ndash; for instance, if workbench context opens a file in editor, usually [workspace</a> context which ensures this file exists should go before <a href="{{site.url}}/documentation/userguide/contexts/workbench">workbench](../contexts/workspace) context.</p>
   {% endset %}
   {% set top, left, width, height = 206, 75, 610, 113 %}
-  {% include "overlay" %}
   
   
 

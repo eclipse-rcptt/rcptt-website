@@ -19,82 +19,51 @@ The Preferences Context editor displays tree of all available preferences and al
 {% include "screenshot-guide" %}
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-preferences-context-editor.png"></img>
-  {# Name #}
-  {% set overlayContent %}
-  Context name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with underscore character.
-  {% endset %}
+  <!-- Name -->
+ {{< annotate  >}}  Context name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with underscore character.{{< / annotate >}}
   {% set top, left, width, height = 93, 118, 120, 19 %}
-  {% include "overlay" %}
   
-  {# Tags #}
-  {% set overlayContent %}
-  All you need to know about tags
-  {% endset %}
+  <!-- Tags -->
+ {{< annotate  >}}  All you need to know about tags{{< / annotate >}}
   {% set top, left, width, height = 119, 118, 100, 19 %}
-  {% include "overlay" %}
 
-  {# Add Tags #}
-  {% set overlayContent %}
-  Use this button to open tag selection dialog with list of tags from another test resources
-  {% endset %}
+  <!-- Add Tags -->
+ {{< annotate  >}}  Use this button to open tag selection dialog with list of tags from another test resources{{< / annotate >}}
   {% set top, left, width, height = 118, 584, 22, 22 %}
-  {% include "overlay" %}
   
-  {# Capture button  #}
-  {% set overlayContent %}
-  Make a snapshot of AUT preferences and copy them into this context
-  {% endset %}
+  <!-- Capture button  -->
+ {{< annotate  >}}  Make a snapshot of AUT preferences and copy them into this context{{< / annotate >}}
   {% set top, left, width, height = 92, 616, 75, 22 %}
-  {% include "overlay" %}
 
-  {# Apply button  #}
+  <!-- Apply button  -->
   {% set overlayContent %}
   Applies preferences to AUT.   If {{< uielement >}}Clear preferences{{< / uielement >}} option is on, clears existing AUT preferences first
   {% endset %}
   {% set top, left, width, height = 118, 616, 75, 22 %}
-  {% include "overlay" %}
   
-   {# Description #}
-  {% set overlayContent %}
-  Arbitrary plain text associated with a context
-  {% endset %}
+   <!-- Description -->
+ {{< annotate  >}}  Arbitrary plain text associated with a context{{< / annotate >}}
   {% set top, left, width, height = 152, 69, 95, 20 %}
-  {% include "overlay" %}
 
-  {# Clear Preferences #}
-  {% set overlayContent %}
-  Click this button to clear current AUT preferences first
-  {% endset %}
+  <!-- Clear Preferences -->
+ {{< annotate  >}}  Click this button to clear current AUT preferences first{{< / annotate >}}
   {% set top, left, width, height = 200, 75, 115, 21 %}
-  {% include "overlay" %}
   
-  {# Import buttons #}
-  {% set overlayContent %}
-  Pretty much the same as Eclipse's standard Project/FileSystem import wizards, but imported resources go directly inside Preferences context, not inside RCPTT workspace.
-  {% endset %}
+  <!-- Import buttons -->
+ {{< annotate  >}}  Pretty much the same as Eclipse's standard Project/FileSystem import wizards, but imported resources go directly inside Preferences context, not inside RCPTT workspace.{{< / annotate >}}
   {% set top, left, width, height = 227, 541, 144, 22 %}
-  {% include "overlay" %}
   
-  {# Add buttons #}
-  {% set overlayContent %}
-  You can manually add a preference into a context with this button
-  {% endset %}
+  <!-- Add buttons -->
+ {{< annotate  >}}  You can manually add a preference into a context with this button{{< / annotate >}}
   {% set top, left, width, height = 256, 541, 144, 22 %}
-  {% include "overlay" %}
   
-  {# Remove button #}
-  {% set overlayContent %}
-  Removes selected preference(s) from a context
-  {% endset %}
+  <!-- Remove button -->
+ {{< annotate  >}}  Removes selected preference(s) from a context{{< / annotate >}}
   {% set top, left, width, height = 285, 541, 144, 22 %}
-  {% include "overlay" %}
   
-  {# Preferences section #}
-  {% set overlayContent %}
-  List of preferences which should be applied. You can change the value of any preference.
-  {% endset %}
+  <!-- Preferences section -->
+ {{< annotate  >}}  List of preferences which should be applied. You can change the value of any preference.{{< / annotate >}}
   {% set top, left, width, height = 227, 75, 460, 230 %}
-  {% include "overlay" %}
   
   </div>
   

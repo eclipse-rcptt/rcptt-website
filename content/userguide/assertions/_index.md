@@ -24,8 +24,8 @@ In assertion mode you can verify any property of any widget (tree, button, text,
 During a test recording switch to assertion mode:
 
 {{< annotatedImage "screenshot-assertion-1.png" >}}
-{{< annotate 210 62 22 22 >}}Use button to switch to assertion mode{{< /annotate >}}
-{{< annotate 55 250 300 22 >}}You can also use hotkeys to switch to assertion mode{{< /annotate >}}
+{{< annotate 210 62 232 84 >}}Use button to switch to assertion mode{{< /annotate >}}
+{{< annotate 55 250 355 272 >}}You can also use hotkeys to switch to assertion mode{{< /annotate >}}
 {{< / annotatedImage >}}
 Select any AUT widget you want to assert (you will see red frames). 
 Let's say we need to assert that Finish button is disabled in New Java Class Dialog:

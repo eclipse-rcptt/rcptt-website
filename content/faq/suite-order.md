@@ -21,7 +21,7 @@ To do this, please open rcptt.ini file and add `-Dorg.eclipse.rcptt.legacy.testS
 Once RCPTT is started you can see Move Up/Move Down buttons in Test Suite editor:
 
 {{< annotatedImage "screenshot-test-suite-editor.png" >}}
-{{< annotate 519 405 153 80 >}}Change order of test cases in a Test Suite (make the Test Suite orderable).{{< / annotate >}}
+{{< annotate 519 405 672 485 >}}Change order of test cases in a Test Suite (make the Test Suite orderable).{{< / annotate >}}
 {{< / annotatedImage >}}
 
 ## Important

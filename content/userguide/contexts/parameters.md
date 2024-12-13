@@ -12,54 +12,33 @@ menu:
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-parameters-context-editor.png"></img>
   
-  {# Name #}
-  {% set overlayContent %}
-  Context name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with underscore character.
-  {% endset %}
+  <!-- Name -->
+ {{< annotate  >}}  Context name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with underscore character.{{< / annotate >}}
   {% set top, left, width, height = 93, 118, 100, 19 %}
-  {% include "overlay" %}
 
-  {# Tags #}
-  {% set overlayContent %}
-  Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>
-  {% endset %}
+  <!-- Tags -->
+ {{< annotate  >}}  Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>{{< / annotate >}}
   {% set top, left, width, height = 119, 118, 100, 19 %}
-  {% include "overlay" %}
   
-  {# Add Tags #}
-  {% set overlayContent %}
-  Use this button to open tag selection dialog with list of tags from another test resources.
-  {% endset %}
+  <!-- Add Tags -->
+ {{< annotate  >}}  Use this button to open tag selection dialog with list of tags from another test resources.{{< / annotate >}}
   {% set top, left, width, height = 118, 583, 22, 22 %}
-  {% include "overlay" %}
 
-  {# Capture button  #}
-  {% set overlayContent %}
-  Disabled for Parameters Context
-  {% endset %}
+  <!-- Capture button  -->
+ {{< annotate  >}}  Disabled for Parameters Context{{< / annotate >}}
   {% set top, left, width, height = 92, 615, 75, 22 %}
-  {% include "overlay" %}
 
-  {# Add #}
-  {% set overlayContent %}
-  Add new parameter in a Parameters Context
-  {% endset %}
+  <!-- Add -->
+ {{< annotate  >}}  Add new parameter in a Parameters Context{{< / annotate >}}
   {% set top, left, width, height = 210, 610, 74, 22 %}
-  {% include "overlay" %}
   
-  {# Remove #}
-  {% set overlayContent %}
-  Remove parameter(s) from a Context
-  {% endset %}
+  <!-- Remove -->
+ {{< annotate  >}}  Remove parameter(s) from a Context{{< / annotate >}}
   {% set top, left, width, height = 239, 610, 74, 22 %}
-  {% include "overlay" %}
   
-  {# Parameters list #}
-  {% set overlayContent %}
-  A list of parameters with their values
-  {% endset %}
+  <!-- Parameters list -->
+ {{< annotate  >}}  A list of parameters with their values{{< / annotate >}}
   {% set top, left, width, height = 210, 75, 529, 110 %}
-  {% include "overlay" %}
   
   </div>
   

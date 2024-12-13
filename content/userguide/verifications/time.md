@@ -9,48 +9,30 @@ layout: doc
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-time-verification-editor.png"></img>
   
-  {# Name #}
-  {% set overlayContent %}
-  Verification name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with 
-  underscore character.
-  {% endset %}
+  <!-- Name -->
+ {{< annotate  >}}  Verification name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with 
+  underscore character.{{< / annotate >}}
   {% set top, left, width, height = 93, 118, 100, 19 %}
-  {% include "overlay" %}
 
-  {# Tags #}
-  {% set overlayContent %}
-  Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>
-  {% endset %}
+  <!-- Tags -->
+ {{< annotate  >}}  Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>{{< / annotate >}}
   {% set top, left, width, height = 119, 118, 100, 19 %}
-  {% include "overlay" %}
   
-  {# Capture button  #}
-  {% set overlayContent %}
-  Disabled for time verification 
-  {% endset %}
+  <!-- Capture button  -->
+ {{< annotate  >}}  Disabled for time verification {{< / annotate >}}
   {% set top, left, width, height = 92, 616, 75, 22 %}
-  {% include "overlay" %}
 
-  {# Verify button  #}
-  {% set overlayContent %}
-  Disabled for time verification
-  {% endset %}
+  <!-- Verify button  -->
+ {{< annotate  >}}  Disabled for time verification{{< / annotate >}}
   {% set top, left, width, height = 118, 616, 75, 22 %}
-  {% include "overlay" %}
   
-  {# Execution time  #}
-  {% set overlayContent %}
-  Verification checks that a test case is executed no longer than specified amount of time
-  {% endset %}
+  <!-- Execution time  -->
+ {{< annotate  >}}  Verification checks that a test case is executed no longer than specified amount of time{{< / annotate >}}
   {% set top, left, width, height = 228, 100, 220, 27 %}
-  {% include "overlay" %}
   
-  {# Include context option  #}
-  {% set overlayContent %}
-  Disabled by default. If this option is on, verification checks the test execution time including a time of contexts execution
-  {% endset %}
+  <!-- Include context option  -->
+ {{< annotate  >}}  Disabled by default. If this option is on, verification checks the test execution time including a time of contexts execution{{< / annotate >}}
   {% set top, left, width, height = 265, 75, 307, 22 %}
-  {% include "overlay" %}
   </div>
   
   Execution time verification can be used for performance testing. Being added to a test case verification makes sure that test case execution taked no longer then a specified

@@ -15,90 +15,60 @@ Launch contexts are used to control AUT Launches and Launch Configurations.
 <div class="screenshot">
 <img src="{{site.url}}/shared/img/screenshot-launch-context-editor.png"></img>
 
-{# Name #}
-  {% set overlayContent %}
-  All you need to know about context name
-  {% endset %}
+<!-- Name -->
+ {{< annotate  >}}  All you need to know about context name{{< / annotate >}}
   {% set top, left, width, height = 93, 118, 100, 19 %}
-  {% include "overlay" %}
   
-  {# Tags #}
-  {% set overlayContent %}
-  All you need to know about tags
-  {% endset %}
+  <!-- Tags -->
+ {{< annotate  >}}  All you need to know about tags{{< / annotate >}}
   {% set top, left, width, height = 119, 118, 100, 19 %}
-  {% include "overlay" %}
 
-  {# Add Tags #}
-  {% set overlayContent %}
-  All you need to know about adding tags
-  {% endset %}
+  <!-- Add Tags -->
+ {{< annotate  >}}  All you need to know about adding tags{{< / annotate >}}
   {% set top, left, width, height = 118, 582, 22, 22 %}
-  {% include "overlay" %}
   
-  {# Capture button  #}
-  {% set overlayContent %}
-  Make a snapshot of AUT running launches and launch configurations and copy them into this context. 
-  {% endset %}
+  <!-- Capture button  -->
+ {{< annotate  >}}  Make a snapshot of AUT running launches and launch configurations and copy them into this context. {{< / annotate >}}
   {% set top, left, width, height = 92, 614, 75, 22 %}
-  {% include "overlay" %}
 
-  {# Apply button  #}
+  <!-- Apply button  -->
   {% set overlayContent %}
   Adds launch configuration to AUT. Launches given configuration in a defined mode. Suspend launch at a given breakpoint.  If {{< uielement >}}Clear workspace{{< / uielement >}} option is on, removes existing projects from AUT at first.
   {% endset %}
   {% set top, left, width, height = 118, 614, 75, 22 %}
-  {% include "overlay" %}
   
-  {# Terminate existing launches #}
-  {% set overlayContent %}
-  Turned on by default. Terminates all running launches if any. 
-  {% endset %}
+  <!-- Terminate existing launches -->
+ {{< annotate  >}}  Turned on by default. Terminates all running launches if any. {{< / annotate >}}
   {% set top, left, width, height = 200, 75, 180, 22 %}
-  {% include "overlay" %}
   
-  {# Keep launches #}
+  <!-- Keep launches -->
   {% set overlayContent %}
   If {{< uielement >}}Terminate existing launches{{< / uielement >}} is on - this option allows to specify a list of launches, which should be kept intact.
   {% endset %}
   {% set top, left, width, height = 248, 75, 608, 19 %}
-  {% include "overlay" %}
   
-  {# Clear launch configurations #}
-  {% set overlayContent %}
-  Turned off by default. Clears a list of AUT launch configurations. 
-  {% endset %}
+  <!-- Clear launch configurations -->
+ {{< annotate  >}}  Turned off by default. Clears a list of AUT launch configurations. {{< / annotate >}}
   {% set top, left, width, height = 272, 75, 180, 22 %}
-  {% include "overlay" %}
   
-  {# Keep configurations #}
+  <!-- Keep configurations -->
   {% set overlayContent %}
   If {{< uielement >}}Clear launch configurations{{< / uielement >}} is on - this option allows to specify a list of launch configurations, which should be kept intact.
   {% endset %}
   {% set top, left, width, height = 320, 75, 608, 19 %}
-  {% include "overlay" %}
   
-  {# Clear breakpoints #}
-  {% set overlayContent %}
-  Turned on by default.  Clears all breakpoints. 
-  {% endset %}
+  <!-- Clear breakpoints -->
+ {{< annotate  >}}  Turned on by default.  Clears all breakpoints. {{< / annotate >}}
   {% set top, left, width, height = 343, 75, 180, 22 %}
-  {% include "overlay" %}
   
-  {# Add button #}
-  {% set overlayContent %}
-  "Add" button is always disabled for now.
-  {% endset %}
+  <!-- Add button -->
+ {{< annotate  >}}  "Add" button is always disabled for now.{{< / annotate >}}
   {% set top, left, width, height = 365, 639, 22, 22 %}
-  {% include "overlay" %}
   
   
-  {# Remove button #}
-  {% set overlayContent %}
-  Remove launch configuration/launch with this button. 
-  {% endset %}
+  <!-- Remove button -->
+ {{< annotate  >}}  Remove launch configuration/launch with this button. {{< / annotate >}}
   {% set top, left, width, height = 365, 662, 22, 22 %}
-  {% include "overlay" %}
   
   </div>
   
@@ -133,12 +103,9 @@ in a *Do not terminate launches...* field:
 <div class="screenshot">
 <img src="{{site.url}}/shared/img/screenshot-launch-context-2.png"></img>
 
-{# Keep launches #}
-  {% set overlayContent %}
-  When the context is executed all launches are terminated except "myClass".
-  {% endset %}
+<!-- Keep launches -->
+ {{< annotate  >}}  When the context is executed all launches are terminated except "myClass".{{< / annotate >}}
   {% set top, left, width, height = 248, 75, 606, 19 %}
-  {% include "overlay" %}
 
 
 </div>
@@ -180,12 +147,9 @@ You may also manually change the attribute values:
 <div class="screenshot">
 <img src="{{site.url}}/shared/img/screenshot-launch-context-2.png"></img>
 
-{# Keep launches #}
-  {% set overlayContent %}
-  You can change the mode, set 'run' or 'debug'. 
-  {% endset %}
+<!-- Keep launches -->
+ {{< annotate  >}}  You can change the mode, set 'run' or 'debug'. {{< / annotate >}}
   {% set top, left, width, height = 510, 425, 40, 19 %}
-  {% include "overlay" %}
 
 
 </div>

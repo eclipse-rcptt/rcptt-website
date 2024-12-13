@@ -9,56 +9,43 @@ layout: doc
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-text-verification-editor-1.png"></img>
   
-  {# Name #}
-  {% set overlayContent %}
-  Verification name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with 
-  underscore character.
-  {% endset %}
+  <!-- Name -->
+ {{< annotate  >}}  Verification name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with 
+  underscore character.{{< / annotate >}}
   {% set top, left, width, height = 93, 118, 100, 19 %}
-  {% include "overlay" %}
 
-  {# Tags #}
-  {% set overlayContent %}
-  Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>
-  {% endset %}
+  <!-- Tags -->
+ {{< annotate  >}}  Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>{{< / annotate >}}
   {% set top, left, width, height = 119, 118, 100, 19 %}
-  {% include "overlay" %}
   
-  {# Capture button  #}
+  <!-- Capture button  -->
   {% set overlayContent %}
   Make a snapshot of a text from AUT widget defined in {{< uielement >}}Widget{{< / uielement >}} field and copy it into this verification. 
   {% endset %}
   {% set top, left, width, height = 92, 616, 75, 22 %}
-  {% include "overlay" %}
 
-  {# Verify button  #}
+  <!-- Verify button  -->
   {% set overlayContent %}
   Verifies whether a text in a text {{< uielement >}}Widget{{< / uielement >}} equals the text from a verification. If {{< uielement >}}Ignore text styling and colors{{< / uielement >}} option is off,
   verifies text style as well.  
   {% endset %}
   {% set top, left, width, height = 118, 616, 75, 22 %}
-  {% include "overlay" %}
   
-  {# Widget #}
+  <!-- Widget -->
   {% set overlayContent %}
   AUT text widget from which a text is taken for verification. You can set the value manually or using {{< uielement >}}Pick...{{< / uielement >}} button.
   {% endset %}
   {% set top, left, width, height = 202, 126, 511, 22 %}
-  {% include "overlay" %}
   
-  {# Pick button #}
-  {% set overlayContent %}
-  Use this button to select AUT text widget for verification.
-  {% endset %}
+  <!-- Pick button -->
+ {{< annotate  >}}  Use this button to select AUT text widget for verification.{{< / annotate >}}
   {% set top, left, width, height = 202, 643, 42, 22 %}
-  {% include "overlay" %}
   
-  {# Text area #}
+  <!-- Text area -->
   {% set overlayContent %}
   Verified text. If {{< uielement >}}Ignore text styling and colors{{< / uielement >}} option is on you can edit text value. 
   {% endset %}
   {% set top, left, width, height = 261, 75, 595, 159 %}
-  {% include "overlay" %}
   
   
  </div>

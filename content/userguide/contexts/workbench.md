@@ -13,119 +13,73 @@ Workbench contexts are used to control perspective, views and open editors of ap
 {% include "screenshot-guide" %}
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-workbench-context-editor.png"></img>
-  {# Name #}
-  {% set overlayContent %}
-  All you need to know about context name
-  {% endset %}
+  <!-- Name -->
+ {{< annotate  >}}  All you need to know about context name{{< / annotate >}}
   {% set top, left, width, height = 93, 118, 240, 19 %}
-  {% include "overlay" %}
 
-  {# Tags #}
-  {% set overlayContent %}
-  All you need to know about tags
-  {% endset %}
+  <!-- Tags -->
+ {{< annotate  >}}  All you need to know about tags{{< / annotate >}}
   {% set top, left, width, height = 119, 118, 100, 19 %}
-  {% include "overlay" %}
 
-  {# Add Tags #}
-  {% set overlayContent %}
-  All you need to know about adding tags
-  {% endset %}
+  <!-- Add Tags -->
+ {{< annotate  >}}  All you need to know about adding tags{{< / annotate >}}
   {% set top, left, width, height = 118, 584, 22, 22 %}
-  {% include "overlay" %}
 
   
 
-  {# Capture button  #}
-  {% set overlayContent %}
-  Make a snapshot of all current AUT perspective, opened views and editors and copy them into this context. 
-  {% endset %}
+  <!-- Capture button  -->
+ {{< annotate  >}}  Make a snapshot of all current AUT perspective, opened views and editors and copy them into this context. {{< / annotate >}}
   {% set top, left, width, height = 92, 616, 75, 22 %}
-  {% include "overlay" %}
 
-  {# Apply button  #}
+  <!-- Apply button  -->
   {% set overlayContent %}
   Opens given perspective, views and editors. If {{< uielement >}}Reset perspective{{< / uielement >}} option is on, resets perspective to its default.
   {% endset %}
   {% set top, left, width, height = 118, 616, 75, 22 %}
-  {% include "overlay" %}
 
-  {# Description #}
-  {% set overlayContent %}
-   All you need to know about Description
-  {% endset %}
+  <!-- Description -->
+ {{< annotate  >}}   All you need to know about Description{{< / annotate >}}
   {% set top, left, width, height = 152, 69, 95, 20 %}
-  {% include "overlay" %}
 
-  {# Clear Description #}
-  {% set overlayContent %}
-  Click this button to erase current description contents
-  {% endset %}
+  <!-- Clear Description -->
+ {{< annotate  >}}  Click this button to erase current description contents{{< / annotate >}}
   {% set top, left, width, height = 154, 665, 19, 19 %}
-  {% include "overlay" %}
 
-  {# Perspective ID #}
-  {% set overlayContent %}
-  A perspective which should be open in AUT
-  {% endset %}
+  <!-- Perspective ID -->
+ {{< annotate  >}}  A perspective which should be open in AUT{{< / annotate >}}
   {% set top, left, width, height = 203, 73, 290, 19 %}
-  {% include "overlay" %}
 
-  {# Browse Perspective button #}
-  {% set overlayContent %}
-  Shows a perspective selection dialog populated with list of perspectives available in AUT
-  {% endset %}
+  <!-- Browse Perspective button -->
+ {{< annotate  >}}  Shows a perspective selection dialog populated with list of perspectives available in AUT{{< / annotate >}}
   {% set top, left, width, height = 202, 626, 59, 22 %}
-  {% include "overlay" %}
   
-  {# Reset perspective #}
-  {% set overlayContent %}
-  Whether to reset perspective to its defaults after opening
-  {% endset %}
+  <!-- Reset perspective -->
+ {{< annotate  >}}  Whether to reset perspective to its defaults after opening{{< / annotate >}}
   {% set top, left, width, height = 230, 74, 120, 20 %}
-  {% include "overlay" %}
 
-  {# Close modal dialogs #}
-  {% set overlayContent %}
-  Close all modal dialogs if any
-  {% endset %}
+  <!-- Close modal dialogs -->
+ {{< annotate  >}}  Close all modal dialogs if any{{< / annotate >}}
   {% set top, left, width, height = 255, 74, 150, 20 %}
-  {% include "overlay" %}
 
-  {# Clear clipboard #}
-  {% set overlayContent %}
-  Clear clipboard contents
-  {% endset %}
+  <!-- Clear clipboard -->
+ {{< annotate  >}}  Clear clipboard contents{{< / annotate >}}
   {% set top, left, width, height = 280, 74, 110, 20 %}
-  {% include "overlay" %}
   
-  {# Views section #}
-  {% set overlayContent %}
-  List of views which should be open. Also workbench context processor clears selection in views listed here.
-  {% endset %}
+  <!-- Views section -->
+ {{< annotate  >}}  List of views which should be open. Also workbench context processor clears selection in views listed here.{{< / annotate >}}
   {% set top, left, width, height = 331, 75, 329, 120 %}
-  {% include "overlay" %}
 
-  {# Add new view #}
-  {% set overlayContent %}
-  Opens a view selection dialog populated with list of views from AUT (so there's no chance to enter an invalid view id)
-  {% endset %}
+  <!-- Add new view -->
+ {{< annotate  >}}  Opens a view selection dialog populated with list of views from AUT (so there's no chance to enter an invalid view id){{< / annotate >}}
   {% set top, left, width, height = 306, 317, 20, 20 %}
-  {% include "overlay" %}
 
-  {# Editors section #}
-  {% set overlayContent %}
-  List of editors to be open in AUT
-  {% endset %}
+  <!-- Editors section -->
+ {{< annotate  >}}  List of editors to be open in AUT{{< / annotate >}}
   {% set top, left, width, height = 356, 416, 269, 95 %}
-  {% include "overlay" %}
 
-  {# Add Editor #}
-  {% set overlayContent %}
-  Allows to select a file from current RCPTT Project's workspace contexts to be open in an editor
-  {% endset %}
+  <!-- Add Editor -->
+ {{< annotate  >}}  Allows to select a file from current RCPTT Project's workspace contexts to be open in an editor{{< / annotate >}}
   {% set top, left, width, height = 306, 598, 20, 20 %}
-  {% include "overlay" %}
 </div>
 
 ### Introduction
