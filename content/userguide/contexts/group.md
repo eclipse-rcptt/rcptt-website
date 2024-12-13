@@ -14,47 +14,36 @@ the [Test Editor](../../testeditor).
 
 {{< annotatedImage "screenshot-group-context-editor.png" >}}
 <!-- Name -->
-{{< annotate 118 93 606 112 >}}A searchable name to quickly identify and find the context among others{{< / annotate >}}
+{{< annotate 118 93 606 112 >}} A searchable name to quickly identify and find the context among others{{< / annotate >}}
   
   <!-- Tags -->
- {{< annotate 118 119 581 138 >}}  All you need to know about tags{{< / annotate >}}
-  {% set top, left, width, height = 119, 118, 100, 19 %}
+ {{< annotate 118 119 581 138 >}} Tags allow arbitrary grouping of contexts. Use Tags view to see the groups.{{< / annotate >}}
 
   <!-- Add Tags -->
- {{< annotate  >}}  All you need to know about adding tags{{< / annotate >}}
-  {% set top, left, width, height = 118, 584, 22, 22 %}
+ {{< annotate 584 118 606 140 >}} Add tags interactively{{< / annotate >}}
   
   <!-- Capture button  -->
- {{< annotate  >}}  Capturing is disabled for Group Context{{< / annotate >}}
-  {% set top, left, width, height = 92, 616, 75, 22 %}
-
+ {{< annotate 616 92 691 114 >}} Group Context capture is not available{{< / annotate >}}
+ 
 	<!-- Add context -->
- {{< annotate  >}}  Opens context selection dialog{{< / annotate >}}
-  {% set top, left, width, height = 181, 598, 20, 20 %}
+ {{< annotate 598 181 618 201 >}} Add another child context {{< / annotate >}}
   
+  <!-- Remove -->
+ {{< annotate 620 181 640 201 >}} Removes selected child context {{< / annotate >}}
+
   <!-- Move up -->
- {{< annotate  >}}  Moves selected context up{{< / annotate >}}
-  {% set top, left, width, height = 181, 642, 20, 20 %}
+ {{< annotate 642 181 662 201 >}} Moves selected context up {{< / annotate >}}
 
   <!-- Move down -->
- {{< annotate  >}}  Moves selected context down{{< / annotate >}}
-  {% set top, left, width, height = 181, 664, 20, 20 %}
+ {{< annotate 664 181 684 201 >}} Moves selected context down {{< / annotate >}}
   
   <!-- Replay button  -->
- {{< annotate  >}}  Applies the contexts one by one in the order they are displayed. {{< / annotate >}}
-  {% set top, left, width, height = 118, 616, 75, 22 %}
-  
-  <!-- Contexts area -->
-  {% set overlayContent %}
+ {{< annotate 616 118 691 140 >}} Applies the contexts one by one in the order they are displayed. {{< / annotate >}}
 
+ <!-- Contexts area -->
+ {{% annotate 75 206 685 319 %}} 
+  Context area lists current [contexts](../). Drag contexts to change their order, drop contexts from Test Explorer to add. When group context is executed, contexts are applied in order they listed.
+
+  Sometimes context order is important &ndash; for instance, if workbench context opens a file in editor, usually [workspace context](../workspace) which ensures this file exists should go before [workbench context](../workbench).
+  {{% / annotate %}}
 {{< / annotatedImage >}}
-
-  <p>Context area lists current [contexts](../contexts/). Drag contexts to change their order, drop contexts from Test Explorer to add. When group context is executed, contexts are applied in order they listed.</p>
-
-  <p>Sometimes context order is important &ndash; for instance, if workbench context opens a file in editor, usually [workspace</a> context which ensures this file exists should go before <a href="{{site.url}}/documentation/userguide/contexts/workbench">workbench](../contexts/workspace) context.</p>
-  {% endset %}
-  {% set top, left, width, height = 206, 75, 610, 113 %}
-  
-  
-
-</div>
