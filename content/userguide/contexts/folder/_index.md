@@ -73,7 +73,7 @@ test execution. But sometimes you may need to put data somewhere outside your AU
 # Clear root folder option
 Like in a [Workspace context](../workspace) there is an option - Clear root 
 folder before context application (disabled when the context is created).
-{{< annotatedImage screenshot-folder-context-editor-5.png >}}
+{{< annotatedImage "screenshot-folder-context-editor-5.png" >}}
 <!--  Clear root  -->
 {{< annotate 75 232 280 22 >}}Turned off by default. Whether a root folder should be cleaned before the context is applied{{< / annotate >}} 
 {{< / annotatedImage >}}

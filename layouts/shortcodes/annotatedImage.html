@@ -1,4 +1,11 @@
+
+{{ $src := .Get 0 }}
+
+{{ if not .Page.BundleType -}}
+    {{ $src = printf "../%s" $src }}
+{{ end }}
+
 <figure class="annotated-image">
-    <img src="{{- .Get 0 | safeURL -}}"/>
+    <img src="{{- $src -}}"/>
     {{- .Inner -}}
 </figure>

@@ -70,7 +70,7 @@ Let's say you need to check the result of creating *public static void main* met
 So you go through the following steps:
 
 <ul>
-<li>Create a new test case, add required <a href = "{{site.url}}/documentation/userguide/contexts">contexts</a> and start recording. 
+<li>Create a new test case, add required [contexts](../../contexts) and start recording. 
 Create new Java class and check "create public static void main stubs" option. Stop recording - your actions are recorded as ECL script:</li>
 
 <div class="screenshot">
