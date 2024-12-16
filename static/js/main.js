@@ -25,6 +25,7 @@ $(".ann").each(function() {
 	}
     );
 
+	annBorder.removeAttr('title');
 });
 
 if (true) {
