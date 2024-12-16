@@ -5,7 +5,6 @@ sidebar: userguide
 layout: doc
 ---
 
-{% include "screenshot-guide" %}
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-time-verification-editor.png"></img>
   

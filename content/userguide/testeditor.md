@@ -7,7 +7,6 @@ layout: doc
 
 Test case editor is a main editor for creating, running and executing test cases.
 
-{% include "screenshot-guide" %}
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-test-editor.png"></img>
   <!-- Name -->

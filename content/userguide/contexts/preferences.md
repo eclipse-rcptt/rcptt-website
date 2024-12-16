@@ -16,7 +16,6 @@ The well-known example, while not completely relevant to test execution, is the 
 
 The Preferences Context editor displays tree of all available preferences and allows modifying/removing some of their values. 
 
-{% include "screenshot-guide" %}
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-preferences-context-editor.png"></img>
   <!-- Name -->

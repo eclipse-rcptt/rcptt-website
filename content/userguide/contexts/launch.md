@@ -11,7 +11,6 @@ menu:
 
 Launch contexts are used to control AUT Launches and Launch Configurations. 
 
-{% include "screenshot-guide" %}
 <div class="screenshot">
 <img src="{{site.url}}/shared/img/screenshot-launch-context-editor.png"></img>
 
@@ -169,8 +168,7 @@ So you need the following contexts:
 <ol>
 <li>[Workspace context](../workspace) - to put Java Project on AUT workspace:
   
-  {% include "screenshot-guide" %}
-<div class="screenshot">
+  <div class="screenshot">
 <img src="{{site.url}}/shared/img/screenshot-workspace-context-for-launch-context-example.png"></img>
  </div> 
 </li>

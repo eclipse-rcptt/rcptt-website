@@ -8,7 +8,6 @@ menu:
       parent: contexts
 ---
 
-{% include "screenshot-guide" %}
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-parameters-context-editor.png"></img>
   

@@ -10,7 +10,6 @@ menu:
 
 Workspace contexts are used to control the state of an application workspace.
 
-{% include "screenshot-guide" %}
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-workspace-context-editor.png"></img>
   <!-- Name -->

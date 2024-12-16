@@ -15,7 +15,6 @@ There are two ways to start recording and open Control Panel:
 - Use {{m.uiElement("Record a Snippet", "#{site.url}/shared/img/ui-snippet.png")}} button on RCPTT main toolbar. This mode is convenient for quick experiments or recording short snippets which can be pasted to other test cases later. As well it is possible to save recorded script as a new test case.
 
 See Control Panel screenshot below for more information.
-{% include "screenshot-guide" %}
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-cp.png"></img>
 

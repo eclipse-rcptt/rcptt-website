@@ -10,7 +10,6 @@ menu:
 
 Workbench contexts are used to control perspective, views and open editors of application under test
 
-{% include "screenshot-guide" %}
 <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-workbench-context-editor.png"></img>
   <!-- Name -->
