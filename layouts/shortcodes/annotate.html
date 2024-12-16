@@ -4,8 +4,8 @@
 {{- $y2 := int (.Get 3) }}
 {{- $width := sub $x2 $left -}}
 {{- $height := sub $y2 $top -}}
-<div class="ann" style="position: absolute; top:{{- $top -}}px;left:{{- $left -}}px;width:{{- $width -}}px;height:{{- $height -}}px;">
-    <div class="ann-border" title="{{- .Inner | plainify -}}"></div>
+<div class="ann" style="position: absolute; top:{{- $top -}}px;left:{{- $left -}}px;">
+    <div class="ann-border" title="{{- .Inner | plainify -}}" style="width:{{- $width -}}px;height:{{- $height -}}px;"></div>
     <div class="ann-overlay">
         {{- .Inner -}}
     </div>
