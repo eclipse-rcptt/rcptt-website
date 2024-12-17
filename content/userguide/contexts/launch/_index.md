@@ -97,7 +97,7 @@ Just list them in {{< uielement >}}Do not delete following configrations{{< / ui
 Let's say you have 2 Launch Configurations -  HelloWorld and ByeWorld -  and to do your test
 you need both of them running and suspending at breakpoints.
 
-Once you have this state in your AUT you can press {{< uielement "../ui-capture.gif" >}} Capture{{< / uielement >}} button and all your AUT launches
+Once you have this state in your AUT you can press {{< uielement "../../ui-capture.gif" >}} Capture{{< / uielement >}} button and all your AUT launches
 state will be captured as a context which will have all information about:
 
 - Existing launch configurations
@@ -108,7 +108,7 @@ Now you can use this context in your test case - it will add corresponding confi
 required launches in a debug mode and suspend them at their breakpoints.
 
 Once you captured launch configurations - you can always edit the context manually by removing any of
-the configurations with {{< uielement "../ui-remove.png" >}} Remove{{< / uielement >}} button ({{< uielement "../ui-add.gif" >}} Add{{< / uielement >}} function is not available in this context).
+the configurations with {{< uielement "../../ui-remove.png" >}} Remove{{< / uielement >}} button ({{< uielement "../../ui-add.gif" >}} Add{{< / uielement >}} function is not available in this context).
   
 You may also manually change the attribute values:
 

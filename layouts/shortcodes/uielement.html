@@ -1,1 +1,5 @@
-<span class="uiElement">{{- with .Get 0 }}<img src="../{{- . -}}"/>{{ end }}{{- .Inner -}}</span>
+{{ $src := .Get 0 }}
+{{ if not .Page.BundleType -}}
+    {{ $src = printf "../%s" $src }}
+{{ end }}
+<span class="uiElement">{{- with $src }}<img src="{{- . -}}"/>{{ end }}{{- .Inner -}}</span>

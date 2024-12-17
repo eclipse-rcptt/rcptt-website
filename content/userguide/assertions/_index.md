@@ -33,7 +33,7 @@ Let's say we need to assert that Finish button is disabled in New Java Class Dia
 ![](screenshot-assertion-2.png)
 
 Once you select a button the assertion window appears containing widget properties with their values.
-Select the required one and press {{< uielement ui-add.gif >}} Add{{< / uielement >}} button:
+Select the required one and press {{< uielement "../ui-add.gif" >}} Add{{< / uielement >}} button:
 
 ![](screenshot-assertion-3.png)
 

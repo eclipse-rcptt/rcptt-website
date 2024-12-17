@@ -31,9 +31,9 @@ test execution. But sometimes you may need to put data somewhere outside your AU
  {{< annotate 75 232 355 254 >}}Clean (delete everything from, wipe) root before the context is applied. Dangerous - a typo in the {{< uielement >}}Root path{{< / uielement >}} may delete anything from filesystem irreversibly.{{< / annotate >}}
  {{< annotate 75 262 574 334 >}}Current content of the context. These files will owerwrite the data in the {{< uielement >}}Root path{{< / uielement >}} when context is applied.{{< / annotate >}}
   <!-- Add Files... -->
- {{< annotate 584 262 685 284 >}}Import files into the context. Allows to exlpicitly manage the content when {{< uielement "../ui-capture.gif" >}}Capture{{< / uielement >}} is not suitable.{{< / annotate >}}
+ {{< annotate 584 262 685 284 >}}Import files into the context. Allows to exlpicitly manage the content when {{< uielement "../../ui-capture.gif" >}}Capture{{< / uielement >}} is not suitable.{{< / annotate >}}
   <!-- Add Folder... -->
- {{< annotate 584 287 685 309 >}}Recursively import folder into a context. Allows to exlpicitly manage the content when {{< uielement "../ui-capture.gif" >}}Capture{{< / uielement >}} is not suitable.{{< / annotate >}}
+ {{< annotate 584 287 685 309 >}}Recursively import folder into a context. Allows to exlpicitly manage the content when {{< uielement "../../ui-capture.gif" >}}Capture{{< / uielement >}} is not suitable.{{< / annotate >}}
   <!-- Remove -->
  {{< annotate 584 312 685 334 >}}Remove selected resource(s) from this context. The resources in root path are untouched, but wil no logner be updated on {{< uielement "../ui-replay.gif">}}Apply{{< / uielement >}}{{< / annotate >}}
  {{< / annotatedImage >}}
