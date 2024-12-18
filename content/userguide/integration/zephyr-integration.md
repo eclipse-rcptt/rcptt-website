@@ -3,18 +3,21 @@ title: Integration with Zephyr
 slug: userguide/integration/zephyr-integration
 sidebar: userguide
 layout: doc
+menu:
+  sidebar:
+      parent: integration
 ---
 
 To configure connection to Zephyr, you need to know the following parameters:
 
 <ul>
-<li>**baseUrl** — Zephyr Host. Should be valid URL.</li>
-<li>**username** — Username.</li>
-<li>**password** — Password.</li>
-<li>**project** — Project.</li>
-<li>**version** — Product version.</li>
-<li>**cycle** — Test cycle.</li>
-<li>**issue** — Jira issue number.</li>
+- **baseUrl** — Zephyr Host. Should be valid URL.</li>
+- **username** — Username.</li>
+- **password** — Password.</li>
+- **project** — Project.</li>
+- **version** — Product version.</li>
+- **cycle** — Test cycle.</li>
+- **issue** — Jira issue number.</li>
 </ul>
 
 <img src="{{site.url}}/shared/img/zephyr/screenshot-jira.png" width="640"></img><br><br>

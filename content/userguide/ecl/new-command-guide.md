@@ -1,16 +1,19 @@
 ---
 title: New Command Guide
-slug: ecl/new-command-guide
+slug: new-command-guide
 sidebar: userguide
 layout: doc
+menu:
+  sidebar:
+      parent: ecl
 ---
 
 In this guide we show different ways of extending an existing ECL commands functionality, such as:
 
 <ul>
-<li>Retrieve an existing method of Java Object with **get-object | invoke** commands</li>
-<li>Create static methods and use it with **invoke-static** command</li>
-<li>Create your own custom ECL command</li>
+- Retrieve an existing method of Java Object with **get-object | invoke** commands</li>
+- Create static methods and use it with **invoke-static** command</li>
+- Create your own custom ECL command</li>
 </ul>
 
 <h2>Use *invoke* command to call an existing method of Java object.</h2>
@@ -22,9 +25,7 @@ So using {{< eclCommand get-object >}} and {{< eclCommand invoke >}} ECL command
 
 <div class="panel panel-default">
   <div class="panel-body">
-<div class="screenshot">
-  <img src="{{site.url}}/shared/img/screenshot-invoke-1.png"></img>
-</div>
+![](screenshot-invoke-1.png)
 </div>
 </div>
 
@@ -32,9 +33,7 @@ You can define <a href ="{{site.url}}/userguide/procedures">ECL procedure</a>, t
 
 <div class="panel panel-default">
   <div class="panel-body">
-<div class="screenshot">
-  <img src="{{site.url}}/shared/img/screenshot-invoke-2.png"></img>
-</div>
+![](screenshot-invoke-2.png)
 </div>
 </div>
 
@@ -52,9 +51,7 @@ First of all you need to import RCPTT sources plugins from <a href="http://git.e
 First of all we'll create new plugin project for our ECL commands called **org.eclipse.rcptt.ecl.example.view**. 
 You can use any existing plug-in as well.
 
-<div class="screenshot">
-  <img src="{{site.url}}/shared/img/screenshot-new-command-guide-1.png"></img>
-</div>
+![](screenshot-new-command-guide-1.png)
 
 
 ### Define EMF model for ECL command
@@ -62,12 +59,10 @@ You can use any existing plug-in as well.
 We need to create two EMF classes to show registered plugins with ECL:
 
 <ul><li>**ShowViews</b> which will be used as an ECL command. This EClass should extend <b>Command</b> EClass from the <b>org.eclipse.rcptt.ecl.core/model/ecl.ecore** package</li>
-<li>**View** which will be used to store view details. It should contains three string properties: id, label and description.</li>
+- **View** which will be used to store view details. It should contains three string properties: id, label and description.</li>
 </ul>
 
-<div class="screenshot">
-  <img src="{{site.url}}/shared/img/screenshot-new-command-guide-4.png"></img>
-</div>
+![](screenshot-new-command-guide-4.png)
 
 If you're not experienced EMF user you can find detailed instruction on the [Define EMF model for ShowViews command](../ecl/define-emf-model/) page.
 
@@ -75,9 +70,7 @@ If you're not experienced EMF user you can find detailed instruction on the [Def
 
 Now we need to implement ECL command. Make sure you have all necessary dependencies:
 
-<div class="screenshot">
-  <img src="{{site.url}}/shared/img/screenshot-new-command-guide-7.png"></img>
-</div>
+![](screenshot-new-command-guide-7.png)
 
 <h4>Implement ICommandService interface</h4>
 
@@ -118,13 +111,11 @@ Then we write collected information to the output pipe. Note that view service w
 
 Finally we need to register our service using **org.eclipse.rcptt.ecl.core.scriptlet** extension point:
 
-<div class="screenshot">
-  <img src="{{site.url}}/shared/img/screenshot-new-command-guide-8.png"></img>
-</div>
+![](screenshot-new-command-guide-8.png)
 <ul>
-<li>**name** - name of the EClass which we use for ECL command</li>
-<li>**namespace** - EMF Package URI</li>
-<li>**class</b> - command implementation class. Should implement <b>ICommandService** interface</li>
+- **name** - name of the EClass which we use for ECL command</li>
+- **namespace** - EMF Package URI</li>
+- **class</b> - command implementation class. Should implement <b>ICommandService** interface</li>
 </ul>
 
 By default name of the command EClass will be transformed to the ECL command name. For example, in our case commands will be named show-views.
@@ -133,30 +124,28 @@ By default name of the command EClass will be transformed to the ECL command nam
  ### Use show-views command
  
  <ul>
-<li>Let's start new Eclipse instance with the following plugins installed:</li>
+- Let's start new Eclipse instance with the following plugins installed:</li>
 
 <ul>
-<li>**org.eclipse.rcptt.ecl.example.view**</li>
-<li>**org.eclipse.rcptt.ecl.core**</li>
-<li>**org.eclipse.rcptt.ecl.parser**</li>
-<li>**org.eclipse.rcptt.ecl.shell**</li>
-<li>**org.eclipse.rcptt.ecl.telnet.server**</li>
-<li>**org.eclipse.rcptt.ecl.telnet.server.ui**</li>
-<li>**org.eclipse.rcptt.tesla.jface.fragment**</li>
-<li>**org.eclipse.rcptt.tesla.swt.fragment**</li>
+- **org.eclipse.rcptt.ecl.example.view**</li>
+- **org.eclipse.rcptt.ecl.core**</li>
+- **org.eclipse.rcptt.ecl.parser**</li>
+- **org.eclipse.rcptt.ecl.shell**</li>
+- **org.eclipse.rcptt.ecl.telnet.server**</li>
+- **org.eclipse.rcptt.ecl.telnet.server.ui**</li>
+- **org.eclipse.rcptt.tesla.jface.fragment**</li>
+- **org.eclipse.rcptt.tesla.swt.fragment**</li>
 </ul>
 
 
-<li>Connect to the ECL telnet server started in this Eclipse (on the 2323 port by default) using any telnet client</li>
-<li>Enter show-views command</li>
+- Connect to the ECL telnet server started in this Eclipse (on the 2323 port by default) using any telnet client</li>
+- Enter show-views command</li>
 
 
-<li>As a result of your command you will see something like this:</li>
+- As a result of your command you will see something like this:</li>
 </ul>
 
-<div class="screenshot">
-  <img src="{{site.url}}/shared/img/screenshot-new-command-guide-12.png"></img>
-</div>
+![](screenshot-new-command-guide-12.png)
 
 ### Add show-view command
 
@@ -168,9 +157,7 @@ Now let's add another command which will open some view by id.
 Create one more EClass called **ShowView</b> with one string field <b>id**. This is ECL command and should 
 extend **Command** EClass.
 
-<div class="screenshot">
-  <img src="{{site.url}}/shared/img/screenshot-new-command-guide-10.png"></img>
-</div>
+![](screenshot-new-command-guide-10.png)
 
 <h4>Implement ShowView command</h4>
 
@@ -207,17 +194,13 @@ This allows us to get id of the view we need to open. Next we use Eclipse Platfo
 
 Finally we need to register new command through **org.eclipse.rcptt.ecl.core.scriptlet** extension point:
 
-<div class="screenshot">
-  <img src="{{site.url}}/shared/img/screenshot-new-command-guide-9.png"></img>
-</div>
+![](screenshot-new-command-guide-9.png)
 
 <h4>Use show-view command</h4>
 
 Now we can run our plugin and open necessary view by id:
 
-<div class="screenshot">
-  <img src="{{site.url}}/shared/img/screenshot-new-command-guide-13.png"></img>
-</div>
+![](screenshot-new-command-guide-13.png)
 <br>
 By the way, you can use **show-views** command to find id of a view you want to open.
 

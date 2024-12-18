@@ -2,6 +2,10 @@
 title: Eclipse Command Language
 slug: ecl
 sidebar: userguide
+menu:
+  sidebar:
+      identifier: ecl
+      parent: userguide
 layout: doc
 ---
 
@@ -19,7 +23,7 @@ What we did want from a Scripting-and-Automation solution is the following:
 
 <ul>
 
-<li>The scripting language should be CLI-oriented, which means an end user (software engineers, testers, etc.) 
+- The scripting language should be CLI-oriented, which means an end user (software engineers, testers, etc.) 
 must be able to do virtually anything with Eclipse from a console window, for example, the same way as with the Unix shell. 
 Here is a simple but actual ECL sample:
 <br><br>
@@ -30,7 +34,7 @@ Here is a simple but actual ECL sample:
 </div>
  
 </li>
-<li>
+- 
 
 The scripting solution should be expressive. Our goal is to save time for software engineers and/or users, 
 allowing to perform tasks faster then they would do with Java or JavaScript, or even using Eclipse UI. 
@@ -47,7 +51,7 @@ Please review the following code:
 Try to put the same code in Java using Eclipse APIs and it'll become several lines instead of a couple.<br><br>
 </li>
 
-<li>
+- 
 
 The scripting solution must be a general purpose instrument. 
 End users should be able to do virtually anything with their Eclipse environment using such a solution/language. As an example:<br><br>
@@ -61,7 +65,7 @@ End users should be able to do virtually anything with their Eclipse environment
 </div>
 </li>
 
-<li>
+- 
 
 The scripting language should be extendable and let different adopters develop their own commands, which will be interoperable with other commands (such as Unix commands, for example). 
 Moreover, these commands and internal data structures should be also interoperable with Eclipse Frameworks.

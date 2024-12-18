@@ -3,6 +3,9 @@ title: Integration with TestRail
 slug: userguide/integration/test-rail-integration
 sidebar: userguide
 layout: doc
+menu:
+  sidebar:
+      parent: integration
 ---
 
 <h2>Configuration</h2><hr>
@@ -10,12 +13,12 @@ layout: doc
 To configure connection to TestRail, you need to know the following parameters:
 
 <ul>
-<li>**host** — TestRail Host. Should be valid URL and end with slash "/".</li>
-<li>**username** — Username.</li>
-<li>**password** — Password or API Key.</li>
-<li>**projectId** — Project ID. Should start with "P" and end with positive number.</li>
-<li>**testRunId** (optional) — Test Run ID. Should start with "R" and end with positive number.</li>
-<li>**useUnicode** (optional) — Is Unicode used to encode requests to TestRail.</li>
+- **host** — TestRail Host. Should be valid URL and end with slash "/".</li>
+- **username** — Username.</li>
+- **password** — Password or API Key.</li>
+- **projectId** — Project ID. Should start with "P" and end with positive number.</li>
+- **testRunId** (optional) — Test Run ID. Should start with "R" and end with positive number.</li>
+- **useUnicode** (optional) — Is Unicode used to encode requests to TestRail.</li>
 </ul>
 
 ### Configure RCPTT IDE
@@ -95,10 +98,10 @@ If you use test-rail-step command, make sure that 'Test Case (Steps)' template i
 
 Command arguments:
 <ul>
-<li>**-content** — Step description.</li>
-<li>**-expected** — Expected result.</li>
-<li>**-actual** — Actual result.</li>
-<li>**-status** — Step status. One of TestRail statuses: passed, blocked, retest, failed.</li>
+- **-content** — Step description.</li>
+- **-expected** — Expected result.</li>
+- **-actual** — Actual result.</li>
+- **-status** — Step status. One of TestRail statuses: passed, blocked, retest, failed.</li>
 </ul><br>
 Example:
 

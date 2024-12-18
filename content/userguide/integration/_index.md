@@ -1,8 +1,12 @@
 ---
-title: INTEGRATION
+title: Integration
 slug: integration
 sidebar: userguide
 layout: doc
+menu:
+  sidebar:
+      identifier: integration
+      parent: userguide
 ---
 
 

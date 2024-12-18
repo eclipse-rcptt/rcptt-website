@@ -35,7 +35,7 @@ test execution. But sometimes you may need to put data somewhere outside your AU
   <!-- Add Folder... -->
  {{< annotate 584 287 685 309 >}}Recursively import folder into a context. Allows to exlpicitly manage the content when {{< uielement "../../ui-capture.gif" >}}Capture{{< / uielement >}} is not suitable.{{< / annotate >}}
   <!-- Remove -->
- {{< annotate 584 312 685 334 >}}Remove selected resource(s) from this context. The resources in root path are untouched, but wil no logner be updated on {{< uielement "../ui-replay.gif">}}Apply{{< / uielement >}}{{< / annotate >}}
+ {{< annotate 584 312 685 334 >}}Remove selected resource(s) from this context. The resources in root path are untouched, but wil no logner be updated on {{< uielement "../../ui-replay.gif">}}Apply{{< / uielement >}}{{< / annotate >}}
  {{< / annotatedImage >}}
 
   Above is a Folder Context which puts *img1.jpg* and *img2.jpg* files  in a *TestData* folder on a *C* disc.  

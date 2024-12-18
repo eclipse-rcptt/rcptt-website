@@ -86,13 +86,13 @@ Workbench contexts are used to control perspective, views and open editors of ap
 The {{< uielement ui-capture.gif >}} Capture{{< / uielement >}} button in the upper-right corner lets you automatically capture the current workbench state of your AUT. However, your can customize your workbench context using the settings listed below:
 
 <ul>
-<li>**Perspective id** - the perspective to be open in AUT before running the test. Use the Browse button to view the user-friendly list of all perspectives available in AUT</li>
-<li>**Reset perspective** - when this option is checked, the AUT perspective will be reset to its own defaults</li>
-<li>**Close all modal dialogs** - when this option is checked, the workbench context will close any modal dialogs opened in AUT. That is, if your test stops and leaves the New Project wizard opened, the workbench context of your current test will close it</li>
-<li>**Views** - the list of all views to be opened before running the test</li>
-<li>**Editors** - the list of all editors to be opened before running the test. You can add entries to this list manually (i.e. typing in the file path, such as /my_project/my_file) or browse for existing files in workspace contexts.</li>
-<li>**Close open editors** - optionally allows to close all other editors not listed in open editors list</li>
-<li>**Clear clipboard** - optionally allows to clear clipboard contents</li>
+- **Perspective id** - the perspective to be open in AUT before running the test. Use the Browse button to view the user-friendly list of all perspectives available in AUT</li>
+- **Reset perspective** - when this option is checked, the AUT perspective will be reset to its own defaults</li>
+- **Close all modal dialogs** - when this option is checked, the workbench context will close any modal dialogs opened in AUT. That is, if your test stops and leaves the New Project wizard opened, the workbench context of your current test will close it</li>
+- **Views** - the list of all views to be opened before running the test</li>
+- **Editors** - the list of all editors to be opened before running the test. You can add entries to this list manually (i.e. typing in the file path, such as /my_project/my_file) or browse for existing files in workspace contexts.</li>
+- **Close open editors** - optionally allows to close all other editors not listed in open editors list</li>
+- **Clear clipboard** - optionally allows to clear clipboard contents</li>
 </ul>
 
 <div class="panel panel-warning">

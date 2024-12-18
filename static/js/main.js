@@ -37,3 +37,5 @@ if (true) {
 		} );
 	});
 }
+
+$(`.submenu-item a[href="${location.pathname}"]`).parents('.collapse').collapse('show');

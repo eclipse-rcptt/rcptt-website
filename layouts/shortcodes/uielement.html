@@ -1,5 +1,5 @@
 {{ $src := .Get 0 }}
-{{ if not .Page.BundleType -}}
+{{ if and (not .Page.BundleType) ($src) -}}
     {{ $src = printf "../%s" $src }}
 {{ end }}
 <span class="uiElement">{{- with $src }}<img src="{{- . -}}"/>{{ end }}{{- .Inner -}}</span>
