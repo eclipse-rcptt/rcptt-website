@@ -3,6 +3,9 @@ title: Test Case Editor
 slug: testeditor
 sidebar: userguide
 layout: doc
+menu:
+  sidebar:
+      parent: userguide
 ---
 
 Test case editor is a main editor for creating, running and executing test cases.
@@ -26,13 +29,11 @@ Test case editor is a main editor for creating, running and executing test cases
   {% set top, left, width, height = 92, 622, 69, 22 %}
 
   <!-- Replay button  -->
-  {% set overlayContent %}
   Replay test case. Result is displayed in {{m.uiElement("Execution", "#{site.url}/shared/img/ui-execution-view.png")}} view.
   {% endset %}
   {% set top, left, width, height = 118, 622, 69, 22 %}
 
   <!-- Description -->
-  {% set overlayContent %}
   Arbitrary plain text associated with a test case, for example steps this test performs. It might be convenient to outline test case plan in description and follow it during recording (use {{m.uiElement("Description", "#{site.url}/shared/img/ui-description.gif")}} tab of [Control Panel](../controlpanel)).
   {% endset %}
   {% set top, left, width, height = 152, 69, 95, 20 %}
@@ -46,7 +47,6 @@ Test case editor is a main editor for creating, running and executing test cases
   {% set top, left, width, height = 247, 73, 300, 19 %}
 
   <!-- Contexts area -->
-  {% set overlayContent %}
   <p>Context area lists current [contexts](../contexts/). Drag contexts to change their order, drop contexts from Test Explorer to add. When test case is executed, contexts are applied in order they listed.</p>
 
   <p>Sometimes context order is important &ndash; for instance, if workbench context opens a file in editor, usually [workspace</a> context which ensures this file exists should go before <a href="{{site.url}}/documentation/userguide/contexts/workbench">workbench](../contexts/workspace) context.</p>
@@ -74,7 +74,6 @@ Test case editor is a main editor for creating, running and executing test cases
   {% set top, left, width, height = 364, 490, 195, 17 %}
 
   <!-- Script area  -->
-  {% set overlayContent %}
   Test case script section. Script contents can be recorded or written manually from scratch. Hover a command with a mouse to get its documentation. Use {{< kbd >}}Ctrl+Space{{< / kbd >}} for completion.
   {% endset %}
   {% set top, left, width, height = 385, 69, 64, 20 %}

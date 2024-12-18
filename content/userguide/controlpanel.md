@@ -3,6 +3,9 @@ title: Control Panel
 slug: controlpanel
 sidebar: userguide
 layout: doc
+menu:
+  sidebar:
+      parent: userguide
 ---
 
 
@@ -26,7 +29,6 @@ See Control Panel screenshot below for more information.
 
 
   <!-- Save button -->
-  {% set overlayContent %}
   
   <h5>Save Button</h5>
   <p>Saves current test case. If there's no current test case (i.e. Control Panel has been started by {{m.uiElement("Record a Snippet", "#{site.url}/shared/img/ui-snippet.png")}} button), prompts for a test case location.</p>
@@ -48,7 +50,6 @@ See Control Panel screenshot below for more information.
   {% set top, left, width, height = 64, 157, 19, 19 %}
 
   <!-- Capture/Assertion modes -->
-  {% set overlayContent %}
   <h5>Mode buttons</h5>
   <p>When recording is in progress, these buttons allow to switch between two modes:
     <ul>

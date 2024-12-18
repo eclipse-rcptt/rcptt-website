@@ -17,7 +17,7 @@ The Preferences Context editor displays tree of all available preferences and al
 
 {{< annotatedImage screenshot-preferences-context-editor.png >}}
   <!-- Name -->
- {{< annotate 118 93 605 112 >}}  Context name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with underscore character.{{< / annotate >}}
+ {{< annotate 118 93 605 112 >}}Context name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with underscore character.{{< / annotate >}}
   
   <!-- Tags -->
  {{< annotate 118 119 582 138 >}}Comma-separated list of arbitrary hierarchical tags, i.e. <code>resourcePerspective, jira/PC-1352, windows-only</code>{{< / annotate >}}

@@ -18,20 +18,17 @@ layout: doc
   {% set top, left, width, height = 119, 118, 100, 19 %}
   
   <!-- Capture button  -->
-  {% set overlayContent %}
   Make a snapshot of a text from AUT widget defined in {{< uielement >}}Widget{{< / uielement >}} field and copy it into this verification. 
   {% endset %}
   {% set top, left, width, height = 92, 616, 75, 22 %}
 
   <!-- Verify button  -->
-  {% set overlayContent %}
   Verifies whether a text in a text {{< uielement >}}Widget{{< / uielement >}} equals the text from a verification. If {{< uielement >}}Ignore text styling and colors{{< / uielement >}} option is off,
   verifies text style as well.  
   {% endset %}
   {% set top, left, width, height = 118, 616, 75, 22 %}
   
   <!-- Widget -->
-  {% set overlayContent %}
   AUT text widget from which a text is taken for verification. You can set the value manually or using {{< uielement >}}Pick...{{< / uielement >}} button.
   {% endset %}
   {% set top, left, width, height = 202, 126, 511, 22 %}
@@ -41,7 +38,6 @@ layout: doc
   {% set top, left, width, height = 202, 643, 42, 22 %}
   
   <!-- Text area -->
-  {% set overlayContent %}
   Verified text. If {{< uielement >}}Ignore text styling and colors{{< / uielement >}} option is on you can edit text value. 
   {% endset %}
   {% set top, left, width, height = 261, 75, 595, 159 %}
