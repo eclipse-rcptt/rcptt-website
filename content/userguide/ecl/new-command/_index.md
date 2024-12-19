@@ -41,7 +41,7 @@ We need to create two EMF classes to show registered plugins with ECL:
 - **ShowViews** which will be used as an ECL command. This EClass should extend **Command** EClass from the **org.eclipse.rcptt.ecl.core/model/ecl.ecore** package
 - **View** which will be used to store view details. It should contains three string properties: id, label and description.
 
-![](screenshot-new-command-guide-4.png)
+![](../screenshot-new-command-guide-4.png)
 
 If you're not experienced EMF user you can find detailed instruction on the [Define EMF model for ShowViews command](../define-emf-model/) page.
 

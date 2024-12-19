@@ -22,56 +22,36 @@ Created model will be opened in the editor and we need to specify package detail
 ### Add ShowViews command class
 
 We need to create new EClass for our ECL command.
-<ul>
 - Create new EClass and change its name to **ShowViews** in the Properties View
 - Right click your editor and select {{< uielement >}}Load Resource...{{< / uielement >}} menu item
 - In the opened dialog press {{< uielement >}}Browse Workspace...{{< / uielement >}} button
 - Select **org.eclipse.rcptt.ecl.core/model/ecl.ecore** package:
-</ul>
-<br>
 
 ![](screenshot-new-command-guide-3.png)
-<ul>
 - Add **Command** from the ECL package as a super type to your ShowViews class.
-</ul>
 
 ### Add View class
 
 Now we need one more EClass to represent Eclipse View details.
-<ul>
 - Create EClass called **View**
-- Add three string attributes to this class: **id**, **label</b> and <b>description**
-</ul>
+- Add three string attributes to this class: **id**, **label** and **description**
 
-![](screenshot-new-command-guide-4.png)
+![](../screenshot-new-command-guide-4.png)
 
 ### Generate java sources
 
 We need to create generation model to build java sources for our model.
-<ul>
-- Right click on the **view.ecore</b> file in the <b>Package Explorer</b> and select <b>New > Other... > Eclipse Modeling Framework > EMF Generator Model > Next**
+- Right click on the **view.ecore** file in the **Package Explorer** and select **New > Other... > Eclipse Modeling Framework > EMF Generator Model > Next**
 - Default **view.genmodel** name for generator model is OK for us, so just press {{< uielement >}}Next{{< / uielement >}}
 - Select Ecore model item and press {{< uielement >}}Next{{< / uielement >}}
 - Click {{< uielement >}}Load{{< / uielement >}} button and press {{< uielement >}}Next{{< / uielement >}} again
 - Select view.ecore as a root package and add ECL and EMF packages as references. Press {{< uielement >}}Finish{{< / uielement >}}
-</ul>
 
 ![](screenshot-new-command-guide-5.png)
-<ul>
 - In the opened editor select View package and change base package attribute to **org.eclipse.rcptt.ecl.example**:
-</ul>
 
 ![](screenshot-new-command-guide-6.png)
 
-<ul>
 - Right click View package and select {{< uielement >}}Generate Model Core{{< / uielement >}}. All necessary java sources will be generated.
-</ul>
 
-<div class="panel panel-warning">
-<div class="panel-heading">
-    <h3 class="panel-title">Important</h3>
-  </div>
-  <div class="panel-body">
-    Please note, that you should set the same runtime version for **view.genmodel</b> as you have for <b>ecl.genmodel</b> in <b>org.eclipse.rcptt.ecl.core**.
- </div>
-</div>
+>Please note, that you should set the same runtime version for **view.genmodel** as you have for **ecl.genmodel** in **org.eclipse.rcptt.ecl.core**.
