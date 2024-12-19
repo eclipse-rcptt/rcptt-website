@@ -21,63 +21,19 @@ either, including JavaScript used by this project.
 
 What we did want from a Scripting-and-Automation solution is the following:
 
-<ul>
-
 - The scripting language should be CLI-oriented, which means an end user (software engineers, testers, etc.) 
 must be able to do virtually anything with Eclipse from a console window, for example, the same way as with the Unix shell. 
 Here is a simple but actual ECL sample:
-<br><br>
-<div class="panel panel-default">
-  <div class="panel-body">
-    ecl-shell> create-project MyJavaProject -kind Java
-  </div>
-</div>
- 
-</li>
-- 
+  ```ecl
+  create-project MyJavaProject -kind Java
+  ```
+  The scripting solution should be expressive. Our goal is to save time for software engineers and/or users, allowing to perform tasks faster then they would do with Java or JavaScript, or even using Eclipse UI:
+  ![](screenshot-ecl-1.png)
+  
+  Same functionality on Java would be more verbose.
 
-The scripting solution should be expressive. Our goal is to save time for software engineers and/or users, 
-allowing to perform tasks faster then they would do with Java or JavaScript, or even using Eclipse UI. 
-Please review the following code:
-<br><br>
-<div class="panel panel-default">
-  <div class="panel-body">
-    <div class="screenshot">
-  <img src="{{site.url}}/shared/img/screenshot-ecl-1.png"></img>
-  </div>
-  </div>
-</div>
+- The scripting solution must be a general purpose instrument. End users should be able to do virtually anything with their Eclipse environment using such a solution/language. As an example:<br><br>
+  ![](screenshot-ecl-2.png)
+- The scripting language should be extendable and let different adopters develop their own commands, which will be interoperable with other commands (such as Unix commands, for example). Moreover, these commands and internal data structures should be also interoperable with Eclipse Frameworks.
 
-Try to put the same code in Java using Eclipse APIs and it'll become several lines instead of a couple.<br><br>
-</li>
-
-- 
-
-The scripting solution must be a general purpose instrument. 
-End users should be able to do virtually anything with their Eclipse environment using such a solution/language. As an example:<br><br>
-
-<div class="panel panel-default">
-  <div class="panel-body">
-    <div class="screenshot">
-  <img src="{{site.url}}/shared/img/screenshot-ecl-2.png"></img>
-  </div>
-  </div>
-</div>
-</li>
-
-- 
-
-The scripting language should be extendable and let different adopters develop their own commands, which will be interoperable with other commands (such as Unix commands, for example). 
-Moreover, these commands and internal data structures should be also interoperable with Eclipse Frameworks.
-
-</li>
-</ul>
-
-<div class="panel panel-info">
-<div class="panel-heading">
-    Important
-  </div>
-  <div class="panel-body">
-    To see the full list of ECL commands with their usage examples, please take a look at generated documentation <a href="https://ci.eclipse.org/rcptt/job/master/lastSuccessfulBuild/artifact/releng/doc/target/doc/ecl/index.html">here</a>. 
-  </div>
-</div>
+> To see the full list of ECL commands with their usage examples, please take a look at generated documentation [here](https://ci.eclipse.org/rcptt/job/master/lastSuccessfulBuild/artifact/releng/doc/target/doc/ecl/index.html). 
