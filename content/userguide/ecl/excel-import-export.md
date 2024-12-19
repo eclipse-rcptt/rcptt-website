@@ -7,32 +7,20 @@ menu:
   sidebar:
       parent: ecl
 ---
-<br>
-<h2>Excel export</h2><hr>
+## Export to Excel {{< eclCommand write-excel-file >}}
 
-### write-excel-file
-
-Writes tables from input pipe to into excel (xls or xlsx) file. Fails if file is not found or format is invalid.<br><br>
+Writes tables from input pipe to into excel (xls or xlsx) file. Fails if file is not found or format is invalid.
 
 Input:
-
-<ul>
-<li>**tables** (1, ∞) Table: Tables to write</li>
-</ul>
+- **tables** (1, ∞) Table: Tables to write
 
 Parameters: 
+- **uri** String: URI to write Excel data to. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.
+- **append** boolean: Whether to append given table data into file. Default value is false.
 
-<ul>
-<li>**uri** String: URI to write Excel data to. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.</li>
-<li>**append** boolean: Whether to append given table data into file. Default value is false.</li>
-
-</ul>
 
 Output: 
-
-<ul>
-<li>The value of 'tables' argument</li>
-</ul>
+- The value of 'tables' argument
 
 Example: 
 
@@ -64,29 +52,20 @@ emit [newTable $supportedDevices "Supported devices"] [newTable $allDevices "All
 
 ```
 
-<br>
-<h2>Excel import</h2><hr>	
-
-### read-excel-file
+## Import from Excel {{< eclCommand read-excel-file >}}
 
 Parses given excel file (xls or xlsx) into tables and write them to output pipe. Fails if file is not found or format is invalid.
-<br><br>
+
 Parameters:
-<br>
-<ul>
-<li>**uri** String: URI to read Excel data from. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.</li>
-<li>**sheets** (0, ∞) String: List of Excel sheet names to read data from</li>
-</ul>
+- **uri** String: URI to read Excel data from. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.
+- **sheets** (0, ∞) String: List of Excel sheet names to read data from
 
 Output:
-
-<ul>
-<li>List of Table EMF Objects</li>
-</ul>
+- List of Table EMF Objects
 
 Example: 
 
-{% set snippet %}
+```ecl
 global [val devicesInfo [
     read-excel-file "workspace:/excel/devices.xlsx" "Supported devices" "All devices"
         | to-list
@@ -106,30 +85,24 @@ $devicesInfo | each [val table] {
  
 read-excel-file "workspace:/excel/devices.xlsx" "Additional info"
     | get rows | get values | log
-{% endset %}
+```
 
-<br>
-<h2>Additional commands</h2><hr>
+## Additional commands
 
-### set-page-name
+### {{< eclCommand set-page-name >}}
 
 Set page name to table
 
 Input:
-
-<ul>
-<li>**table** Table: Table to set page name to</li>
-</ul>
+- **table** Table: Table to set page name to
 
 Parameters:
-<ul>
-<li>**name** String: Page name to set</li>
-</ul>
+- **name** String: Page name to set
 
 Output:
 
 The value of 'table' argument
-<br> <br>
+
 Example:
 
 ```ecl
@@ -142,19 +115,16 @@ read-excel-file "workspace:/MyProject/AssertData/table.xls"
 
 ```
 
-<br>
-
-### list-as-table-data
+### {{< eclCommand list-as-table-data >}}
 
 Converts input list to table data format
-<br><br>
+
 Input:
-<br>
-<ul><li>**list** EclList: List of List of String to convert to Table</li></ul>
+- **list** EclList: List of List of String to convert to Table
+
 Output:
-<ul><li>
-Table EMF Object</li></ul>
-<br>
+- Table EMF Object
+
 Example:
 
 ```ecl
@@ -174,51 +144,37 @@ newTable $devices "Devices"
 
 ```
 
-<br>
-
-### get-table-cells
+### {{< eclCommand get-table-cells >}}
 
 Gets cell values by excel names and writes them into the output pipe
-<br><br>
-Input:
-<br>
-<ul><li>
-**table** Table: Table to get cells from</li>
-</ul>
-Parameters:
-<ul><li>**cells** (1, ∞) String: Cell names</li></ul>
-Output:
-<ul><li>
-Cell values</li>
-</ul>
-Example:
 
+Input:
+- **table** Table: Table to get cells from
+
+Parameters:
+- **cells** (1, ∞) String: Cell names
+
+Output:
+- Cell values
+
+Example:
 ```ecl
 read-excel-file "workspace:/excel/devices.xlsx" "Supported devices"
     | get-table-cells A1 | eq "Device Name" | verify-true
 
 ```
 
-<br>
-### get-table-range
-
+### {{< eclCommand get-table-range >}}
 Gets range by excel name and writes it into the output pipe
-<br><br>
+
 Input:
-<br>
-<ul>
-<li>**table** Table: Table to get rows data from</li>
-</ul>
+- **table** Table: Table to get rows data from
 
 Parameters:
-<ul>
-<li>**range** String: Range name in the excel format (for example "A1:B2")</li>
-</ul>
+- **range** String: Range name in the excel format (for example "A1:B2")
 
 Output:
-<ul>
-<li>Table EMF Object</li>
-</ul>
+- Table EMF Object
 
 Example:
 
@@ -232,27 +188,17 @@ read-excel-file "workspace:/excel/devices.xlsx" "Supported devices"
 
 ```
 
-<br>
-
-### set-table-cells
-
+### {{< eclCommand set-table-cells >}}
 Sets cell values to the table
 
 Input:
-<ul><li>
-**table** Table: Table to set cell values to
-</li>
-</ul>
+- **table** Table: Table to set cell values to
 
 Parameters:
-<ul>
-<li>**cells** EclMap: Map where key is cell name and value is cell value to set</li>
-</ul>
+- **cells** EclMap: Map where key is cell name and value is cell value to set
 
 Output:
-<ul>
-<li>The value of 'table' argument</li>
-</ul>
+- The value of 'table' argument
 
 Example:
 
