@@ -1,12 +1,12 @@
 ---
 title: Maven plugin
 slug: maven
-aliases: /userguide/maven
+aliases: /userguide/integration/maven
 layout: doc
 sidebar: userguide
 menu:
   sidebar:
-      parent: integration
+      parent: userguide
 ---
 
 
