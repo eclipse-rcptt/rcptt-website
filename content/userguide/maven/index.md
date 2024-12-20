@@ -311,7 +311,8 @@ This is a trivial example which uses most of defaults provided by rcptt-maven-pl
 
 Dependencies between test projects are described in the same way as it is for other maven projects, one thing to note is that type element must be set to rcpttTest:
 
-```xml...
+```xml
+...
 <dependencies>
   <dependency>
     <groupid>com.xored.f4</groupid>
