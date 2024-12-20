@@ -8,14 +8,14 @@ layout: doc
 RCPTT Test Runner is command-line tool for launching <a href="http://eclipse.org/rcptt">RCPTT</a> tests.
 It takes various options like path to RCPTT projects, application-under-test and other parameters, runs all tests and produces reports in HTML and JUnit XML formats.
 
-###Quick start
+### Quick start
 Download and modify sample scripts below (parameters that need to be set/changed are explained in scipt commends):
 
 - [build.xml](../runner/build.xml) &ndash; sample Ant script
 - [runner.sh](../runner/runner.sh) &ndash; sample Shell script for Linux/Mac OS X
 - [runner.cmd](../runner/runner.cmd) &ndash; sample CMD script for Windows
 
-###Argument reference
+### Argument reference
 
 The base command line for RCPTT runner looks like this (backslashes indicate line breaks instead, on Windows, ^ is used instead):
   ```bash
@@ -25,7 +25,7 @@ java <RCPTT Runner VM arguments>
   -data /path/to/runner/workspace \
   <the rest of arguments in form of -argName argValue>
   ```
-###Basic command-line options 
+### Basic command-line options 
 
 The table below summarizes information about arguments, arguments are more or less sorted by decreasing importance
 
