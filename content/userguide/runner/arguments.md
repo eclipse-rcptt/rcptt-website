@@ -9,15 +9,15 @@ menu:
       parent: runner
 ---
 
-RCPTT Test Runner is command-line tool for launching <a href="http://eclipse.org/rcptt">RCPTT</a> tests.
+RCPTT Test Runner is command-line tool for launching [RCPTT](../../..) tests.
 It takes various options like path to RCPTT projects, application-under-test and other parameters, runs all tests and produces reports in HTML and JUnit XML formats.
 
 ### Quick start
 Download and modify sample scripts below (parameters that need to be set/changed are explained in scipt commends):
 
-- [build.xml](../runner/build.xml) &ndash; sample Ant script
-- [runner.sh](../runner/runner.sh) &ndash; sample Shell script for Linux/Mac OS X
-- [runner.cmd](../runner/runner.cmd) &ndash; sample CMD script for Windows
+- [build.xml](../build.xml) &ndash; sample Ant script
+- [runner.sh](../runner.sh) &ndash; sample Shell script for Linux/Mac OS X
+- [runner.cmd](../runner.cmd) &ndash; sample CMD script for Windows
 
 ### Argument reference
 
