@@ -70,7 +70,7 @@ spec:
         container('hugo') {
             dir('hugo') {
                 sh 'hugo -b https://eclipse.dev/${PROJECT_NAME}/'
-                archiveArtifacts artifacts: 'public/**/*',
+                archiveArtifacts artifacts: 'public/**/*', allowEmptyArchive: false, onlyIfSuccessful: false
             }
         }
       }
