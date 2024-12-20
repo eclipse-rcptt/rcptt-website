@@ -32,7 +32,8 @@ Here is a simple but actual ECL sample:
   
   Same functionality on Java would be more verbose.
 
-- The scripting solution must be a general purpose instrument. End users should be able to do virtually anything with their Eclipse environment using such a solution/language. As an example:<br><br>
+- The scripting solution must be a general purpose instrument. End users should be able to do virtually anything with their Eclipse environment using such a solution/language. As an example:
+
   ![](screenshot-ecl-2.png)
 - The scripting language should be extendable and let different adopters develop their own commands, which will be interoperable with other commands (such as Unix commands, for example). Moreover, these commands and internal data structures should be also interoperable with Eclipse Frameworks.
 

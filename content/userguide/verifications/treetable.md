@@ -60,23 +60,22 @@ layout: doc
   
   There are three options for styles verification: All, Ignore Styles, Ignore Styled text:
   
-  <ul>
-  <li>**All.** Tree is verified as it is:
+    <li>**All.** Tree is verified as it is:
   
   <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-tree-verification-all.png"></img>
-  </li>
+  
   
   <li>**Ignore Styles.** Styled text is verified as a plain text:
   
   <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-tree-verification-ignore-styles.png"></img>
-  </li>
+  
   
   <li>**Ignore Styled Text.** If there is a styled text - it will be ignored:
   
   <div class="screenshot">
   <img src="{{site.url}}/shared/img/screenshot-tree-verification-ignore-styled-text.png"></img>
-  </li>
+  
   
   </ul> 

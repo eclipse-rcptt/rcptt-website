@@ -66,10 +66,9 @@ Below is a basic POM template which can be used as starting point of automating 
 <div>Important things to note here:</div>
 
 <ul class="maven maven-margin">
-	<li>Packaging type is set to rcpttTest</li>
-	<li>Xored Maven repository added to pluginsRepositories</li>
-	<li>extensions set to true</li>
-</ul>
+	<li>Packaging type is set to rcpttTest
+	<li>Xored Maven repository added to pluginsRepositories
+	<li>extensions set to true
 
 ####RCPTT Runner Version
 
@@ -320,7 +319,7 @@ Dependencies between test projects are described in the same way as it is for ot
 
 Current implementation assumes that all dependencies are packed and located either in local or in some of configured remote repositories which means that when using dependencies between projects it is necessary to use at least install phase.
 
-<h2>Maven-related details</h2>
+## Maven-related details
 
 ####Phases and Goals
 
@@ -341,14 +340,12 @@ For ease of use and ability of further customization, RCPTT tests projects use c
 			<td>generate-resources</td>
 			<td>org.eclipse.rcptt:rcptt-maven-plugin:resources</td>
 			<td>
-			<ul>
-				<li>Copies project to <code>target/projects/artifactId</code></li>
-				<li>Resolves all dependencies of type rcpttTest and unpacks them to <code>target/projects</code></li>
-				<li>If AUT is an archive, unpacks AUT to <code>target/aut</code></li>
-				<li>Downloads if necessary and unpacks RCPTT runner to <code>target/runner</code></li>
-				<li>Creates <code>target/results</code> directory</li>
-			</ul>
-			</td>
+							<li>Copies project to <code>target/projects/artifactId</code>
+				<li>Resolves all dependencies of type rcpttTest and unpacks them to <code>target/projects</code>
+				<li>If AUT is an archive, unpacks AUT to <code>target/aut</code>
+				<li>Downloads if necessary and unpacks RCPTT runner to <code>target/runner</code>
+				<li>Creates <code>target/results</code> directory
+						</td>
 		</tr>
 		<tr>
 			<td>compile</td>
@@ -356,12 +353,10 @@ For ease of use and ability of further customization, RCPTT tests projects use c
 			<td>
 			Launches RCPTT runner
 
-			<ul>
-				<li>RCPTT runner workspace is set to <code>target/runner-workspace</code></li>
-				<li>AUT workspace prefix is <code>target/autWorkspace</code>.</li>
-				<li>Puts generated JUnit XML report to <code>target/surefire-reports</code></li>
-			</ul>
-			</td>
+							<li>RCPTT runner workspace is set to <code>target/runner-workspace</code>
+				<li>AUT workspace prefix is <code>target/autWorkspace</code>.
+				<li>Puts generated JUnit XML report to <code>target/surefire-reports</code>
+						</td>
 		</tr>
 		<tr>
 			<td>package</td>
@@ -386,16 +381,14 @@ For ease of use and ability of further customization, RCPTT tests projects use c
 <div>The package phase produces two artifacts:</div>
 
 <ul class="maven maven-margin">
-	<li>The project itself as primary artifact (so it can be references by other projects)</li>
-	<li>RCPTT execution results/logs/outputs and other information which can be helpful to identify the reason of failures. This artifact has classifier <code>results</code>.</li>
-</ul>
+	<li>The project itself as primary artifact (so it can be references by other projects)
+	<li>RCPTT execution results/logs/outputs and other information which can be helpful to identify the reason of failures. This artifact has classifier <code>results</code>.
 
 <div>Below is the complete list of items included into results artifact:</div>
 
 <ul class="maven maven-margin">
-	<li><strong>rcpttTests.html</strong>: HTML report</li>
-	<li><strong>out.txt</strong>: Runner process output stream contents</li>
-	<li><strong>err.txt</strong>: Runner process error stream contents</li>
-	<li><strong>log.txt, log1.txt</strong>: Runner workspace logs (.log and .bak_N.log files from .metadata)</li>
-	<li><strong>log&lt;N&gt;[restart&lt;M&gt;].txt</strong>: AUT workspace logs.</li>
-</ul>
+	<li><strong>rcpttTests.html</strong>: HTML report
+	<li><strong>out.txt</strong>: Runner process output stream contents
+	<li><strong>err.txt</strong>: Runner process error stream contents
+	<li><strong>log.txt, log1.txt</strong>: Runner workspace logs (.log and .bak_N.log files from .metadata)
+	<li><strong>log&lt;N&gt;[restart&lt;M&gt;].txt</strong>: AUT workspace logs.

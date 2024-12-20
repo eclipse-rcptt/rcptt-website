@@ -52,11 +52,9 @@ See Control Panel screenshot below for more information.
   <!-- Capture/Assertion modes -->
   <h5>Mode buttons</h5>
   <p>When recording is in progress, these buttons allow to switch between two modes:
-    <ul>
-      <li>{{m.uiElement("Capture Mode", "#{site.url}/shared/img/ui-capture-mode.gif")}} &ndash; all user actions in AUT are recorded in a script. This is a default mode when recording starts.</li>
+          <li>{{m.uiElement("Capture Mode", "#{site.url}/shared/img/ui-capture-mode.gif")}} &ndash; all user actions in AUT are recorded in a script. This is a default mode when recording starts.
       <li>{{m.uiElement("Assertion Mode", "#{site.url}/shared/img/ui-assert-mode.gif")}} &ndash; this mode allows to select any widget inside AUT to add [assertions](../assertions/) for it's properties.
-    </ul>
-  </p>
+      </p>
   {% endset %}
   {% set top, left, width, height = 60, 186, 48, 26 %}
 

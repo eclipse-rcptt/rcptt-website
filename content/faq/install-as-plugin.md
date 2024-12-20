@@ -41,7 +41,8 @@ Copy plugins from
 - rcptt/plugins/org.eclipse.rcptt.updates.aspectj.e38x_&lt;version>/dependencies/plugins (from Eclipse 3.8 to 4.3)
 - rcptt/plugins/org.eclipse.rcptt.updates.aspectj.e44x_&lt;version>/dependencies/plugins (from Eclipse 4.4 and higher)
 
-right into eclipse/plugins folder(or whatever where Equinox plugins are located):<br><br>
+right into eclipse/plugins folder(or whatever where Equinox plugins are located):
+
 
 There are four plugins to copy:
 - org.eclipse.equinox.weaving.aspectj_qualifier.jar

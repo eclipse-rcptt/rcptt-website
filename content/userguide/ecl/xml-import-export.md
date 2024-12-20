@@ -230,8 +230,7 @@ Input:
 - **object** EObject: Object to add child nodes to
 Parameters:
 - **children** (1, ∞) Tree: New child nodes to add to the object
-- **index** optional Int: Index of the first child node added in the node list. Min value is '0' and max value is size of node list. Default value is '-1' and it means size of node list.</li>
-</ul>
+- **index** optional Int: Index of the first child node added in the node list. Min value is '0' and max value is size of node list. Default value is '-1' and it means size of node list.
 
 Output:
 - The value of 'object' argument

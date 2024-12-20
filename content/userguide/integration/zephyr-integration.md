@@ -1,6 +1,6 @@
 ---
 title: Integration with Zephyr
-slug: userguide/integration/zephyr-integration
+slug: zephyr-integration
 sidebar: userguide
 layout: doc
 menu:
@@ -10,72 +10,67 @@ menu:
 
 To configure connection to Zephyr, you need to know the following parameters:
 
-<ul>
-- **baseUrl** — Zephyr Host. Should be valid URL.</li>
-- **username** — Username.</li>
-- **password** — Password.</li>
-- **project** — Project.</li>
-- **version** — Product version.</li>
-- **cycle** — Test cycle.</li>
-- **issue** — Jira issue number.</li>
-</ul>
+- **baseUrl** — Zephyr Host. Should be valid URL.
+- **username** — Username.
+- **password** — Password.
+- **project** — Project.
+- **version** — Product version.
+- **cycle** — Test cycle.
+- **issue** — Jira issue number.
 
-<img src="{{site.url}}/shared/img/zephyr/screenshot-jira.png" width="640"></img><br><br>
+![](../screenshot-jira.png)
 
 ### Configure RCPTT IDE
-
 To configure connection in RCPTT IDE, go to Window -> Preferences -> RCP Testing Tool -> Integrations -> Zephyr, activate 'Enable integration with Zephyr' checkbox and provide all parameters.
 You can test connection by using 'Test connection' button.
 
-<img src="{{site.url}}/shared/img/zephyr/screenshot-rcptt-preferences.png"></img><br><br>
+![](../screenshot-rcptt-preferences.png)
 
-Note that the password is stored in the Secure Storage, so you will be asked to type your master password.<br><br>
+Note that the password is stored in the Secure Storage, so you will be asked to type your master password.
 
-If you want to send Test Run results to Zephyr for specific Test Suite, you should enable 'Zephyr' engine in Run Configuration. To enable the engine, go to Run -> Run Configurations..., choose the Test Suite and activate 'Zephyr' checkbox on 'Test Engines' tab. By default, 'Zephyr' engine is disabled for Test Suite and Test Run results are not sent to Zephyr.
+If you want to send Test Run results to Zephyr for specific Test Suite, you should enable 'Zephyr' engine in Run Configuration. To enable the engine, go to Run -> Run Configurations..., choose the Test Suite and activate 'Zephyr' checkbox on 'Test Engines' tab. By default, 'Zephyr' engine is disabled and Test Suite and Test Run results are not sent to Zephyr.
 
-<img src="{{site.url}}/shared/img/zephyr/screenshot-rcptt-test-engine.png"></img><br><br>
+![](../screenshot-rcptt-test-engine.png)
 
 ### Using Zephyr features in RCPTT Test Case
 
-Provide Zephyr Issue
+#### Provide Zephyr Issue
 To bind RCPTT Test Case with Zephyr Issue, add a new Test Case property called 'zephyr-issue' and provide issue number from Jira.
-<br>
 
-<img src="{{site.url}}/shared/img/zephyr/screenshot-rcptt-test-editor.png"></img><br><br>
+![](../screenshot-rcptt-test-editor.png)
 
-<h4>Specify test project name, test version and test cycle</h4>
+#### Specify test project name, test version and test cycle
 
-Open Project properties -> Zephyr<br>
+Open Project properties -> Zephyr
 
-<img src="{{site.url}}/shared/img/zephyr/screenshot-rcptt-project-properties.png"></img><br><br>
+![](../screenshot-rcptt-project-properties.png)
 
-Execute the test case. Now you should see execution result in JIRA:<br>
+Execute the test case. Now you should see execution result in JIRA:
 
-<img src="{{site.url}}/shared/img/zephyr/screenshot-jira-test-pass.png"></img><br><br>
+![](../screenshot-jira-test-pass.png)
 
 ### Configure RCPTT Maven Plugin
 
 To configure connection in RCPTT Test Runner, add 'testEngines/testEngine' to the configuration section in your pom.xml.
 For Zephyr engine specify 'zephyr' ID value and list of parameters.
-<br>
+
 Example:
 
-<pre>
-&lt;configuration&gt;
+```
+<configuration>
   ...
-  &lt;testEngines&gt;
+  <testEngines>
     ...
-    &lt;testEngine&gt;
-      &lt;id&gt;zephyr&lt;/id&gt;
-      &lt;parameters&gt;
-        &lt;baseUrl&gt;https://zephyrexample.com/&lt;/host&gt;
-        &lt;username&gt;sephyr_username&lt;/username&gt;
-        &lt;password&gt;1234567890&lt;/password&gt;
-      &lt;/parameters&gt;
-    &lt;/testEngine&gt;
-  &lt;/testEngines&gt;
-&lt;/configuration&gt;
-</pre>
-<br>
+    <testEngine>
+      <id>zephyr</id>
+      <parameters>
+        <baseUrl>https://zephyrexample.com/</host>
+        <username>sephyr_username</username>
+        <password>1234567890</password>
+      </parameters>
+    </testEngine>
+  </testEngines>
+</configuration>
+```
 
 Please set project, version and cycle in .project file.
