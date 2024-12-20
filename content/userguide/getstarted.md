@@ -10,7 +10,7 @@ menu:
 
 To get an impression what it looks like to work with RCPTT, you'll need the following:
 
-- RCP Testing Tool IDE ([download it here](../../downloads)).
+- RCP Testing Tool IDE ([download it here](../../download)).
 - Eclipse-based application to test. This guide assumes that you are using Eclipse Classic standard package, which can be downloaded from [Eclipse downloads](http://eclipse.org/downloads).
 
 ### Launch RCPTT IDE

@@ -3,7 +3,7 @@ title: "Downloads"
 sidebar: home
 menu:
   sidebar:
-    identifier: downloads
+    identifier: download
     parent: home
 ---
 

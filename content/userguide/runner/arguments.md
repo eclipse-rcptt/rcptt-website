@@ -1,8 +1,12 @@
 ---
-title: Test Runner
-slug: runner/arguments
+title: Test Runner Arguments
+slug: arguments
 sidebar: userguide
 layout: doc
+sidebar: userguide
+menu:
+  sidebar:
+      parent: runner
 ---
 
 RCPTT Test Runner is command-line tool for launching <a href="http://eclipse.org/rcptt">RCPTT</a> tests.
