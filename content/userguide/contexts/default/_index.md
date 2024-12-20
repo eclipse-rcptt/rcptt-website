@@ -19,10 +19,10 @@ o each test case in RCPTT project. But this practice was uncomfortable, because 
 was necessary not to forget to add the Default Group Context. So we introduced the concept of the 
 Default Contexts list.
 
-At the creation new RCPTT Project the {{< uielement "../project-settings-icon.png" >}}Project Settings{{< / uielement >}} file is created automatically. 
+At the creation new RCPTT Project the {{< uielement "project-settings-icon.png" >}}Project Settings{{< / uielement >}} file is created automatically. 
 
 Description of project can be given in "Description" section of the 
-{{< uielement "../project-settings-icon.png" >}}Project Settings{{< / uielement >}}. 
+{{< uielement "project-settings-icon.png" >}}Project Settings{{< / uielement >}}. 
 Default Contexts can be set in "Default Contexts" section. Contexts to default contexts
  list can be added from this RCPTT project and also from related RCPTT projects.
  
@@ -30,7 +30,7 @@ Default Contexts can be set in "Default Contexts" section. Contexts to default c
   
   These default contexts are displayed in test cases. Sequence contexts defined in the Default Contexts 
    list can not be changed in the test case and custom contexts can be added to test case only after 
-   default contexts. {{< uielement "../project-settings-icon.png" >}}Project Settings{{< / uielement >}} can be opened 
+   default contexts. {{< uielement "project-settings-icon.png" >}}Project Settings{{< / uielement >}} can be opened 
    from test case by clicking on {{m.uiElement("", "#{site.url}/shared/img/ui-configure-project-default-contexts.png")}}
    link.
   
