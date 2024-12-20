@@ -3,6 +3,9 @@ title: Text Verifications
 slug: verifications/text
 sidebar: userguide
 layout: doc
+menu:
+  sidebar:
+      parent: verifications
 ---
 
 <div class="screenshot">

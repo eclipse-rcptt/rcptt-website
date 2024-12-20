@@ -1,8 +1,12 @@
 ---
 title: Verifications
 slug: verifications
+layout: list
 sidebar: userguide
-layout: doc
+menu:
+  sidebar:
+      identifier: verifications
+      parent: userguide
 ---
 
 A good functional test can be represented like this:

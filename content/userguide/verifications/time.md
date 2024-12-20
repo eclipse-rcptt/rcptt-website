@@ -3,6 +3,9 @@ title: Execution Time Verifications
 slug: verifications/time
 sidebar: userguide
 layout: doc
+menu:
+  sidebar:
+      parent: verifications
 ---
 
 <div class="screenshot">

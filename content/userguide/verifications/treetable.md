@@ -3,6 +3,9 @@ title: Tree/Table Verifications
 slug: verifications/treetable
 sidebar: userguide
 layout: doc
+menu:
+  sidebar:
+      parent: verifications
 ---
 
 <div class="screenshot">
