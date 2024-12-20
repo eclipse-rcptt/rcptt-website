@@ -78,4 +78,4 @@ layout: doc
   <img src="{{site.url}}/shared/img/screenshot-tree-verification-ignore-styled-text.png"></img>
   
   
-  </ul> 
+   

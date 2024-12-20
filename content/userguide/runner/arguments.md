@@ -18,14 +18,13 @@ Download and modify sample scripts below (parameters that need to be set/changed
 ###Argument reference
 
 The base command line for RCPTT runner looks like this (backslashes indicate line breaks instead, on Windows, ^ is used instead):
-  <pre>
-java &lt;RCPTT Runner VM arguments&gt;
+  ```bash
+java <RCPTT Runner VM arguments>
   -jar /path/to/runner/plugins/org.eclipse.equinox.launcher_1.5.*.jar \
   -application org.eclipse.rcptt.runner.headless \
   -data /path/to/runner/workspace \
-  &lt;the rest of arguments in form of -argName argValue&gt;
-  </pre>
-
+  <the rest of arguments in form of -argName argValue>
+  ```
 ###Basic command-line options 
 
 The table below summarizes information about arguments, arguments are more or less sorted by decreasing importance
@@ -66,18 +65,16 @@ Injection mechanism currently does not resolve dependencies automatically, i.e. 
 
 #### Injecting from Update Site
 In command line it is specified as argument with name injection.site where value is update site URL optionally followed by list of features separated by semicolon. If list of features is omitted, then all features from given site will be installed
-<pre>
+```bash
 -injection:site <update-site>(;feature-id1.feature.group;feature-id2.feature.group;plugin-id1;plugin-id2)
-</pre>
-
+```
 It is possible to specify this argument several times to inject features from more than one update site.
 
 #### Injecting from a directory
 This way is similar to dropping some plugins into eclipse/plugins folder:
-<pre>
+```bash
 -injection:dir <path-to-dir-with-plugins>
-</pre>
-
+```
 It is possible to specify this argument several times to inject plugins from more than one directory
 
 ### RCPTT Runtime options
