@@ -25,7 +25,7 @@ To configure connection in RCPTT IDE, go to Window -> Preferences -> RCP Testing
 
 You can test connection by using 'Test connection' button.
 
-![](../test-rail-1.png)
+![](test-rail-1.png)
 
 Note that the password is stored in the Secure Storage, so you will be asked to type your master password.
 
@@ -34,7 +34,7 @@ If you want to send Test Run results to TestRail for specific Test Suite, you sh
 To enable the engine, go to Run -> Run Configurations..., choose the Test Suite and activate 'TestRail' checkbox on 'Test Engines' tab.
 By default, 'TestRail' engine is disabled for Test Suite and Test Run results are not sent to TestRail. Also, you can specify ID of the existing Test Run on this tab.
 
-![](../test-rail-2.png)
+![](test-rail-2.png)
 
 ### Configure RCPTT Test Runner
 
@@ -82,17 +82,17 @@ Example:
 
 To bind RCPTT Test Case with TestRail Test Case, add a new Test Case property called 'testrail-id' and provide ID from TestRail.
 
-![](../test-rail-3.png)
+![](test-rail-3.png)
 
 Property name field has the suggestions list. So you can choose 'testrail-id' property from it.
 
-![](../test-rail-4.png)
+![](test-rail-4.png)
 
 Value field has the suggestions for 'testrail-id' too. All available Test Case IDs from TestRail are shown in this list.
 
 When one of IDs is chosen (1), its description is shown (2). You can copy it all with 'Copy to the clipboard' button (3).
 
-![](../test-rail-5.png)
+![](test-rail-5.png)
 
 ### Use TestRail Step ECL Command
 

@@ -38,4 +38,6 @@ if (true) {
 	});
 }
 
-$(`.submenu-item a[href="${location.pathname}"]`).parents('.collapse').collapse('show');
+let activeMenuItem =  $(`.submenu-item a[href="${location.pathname}"]`)
+//activeMenuItem.parents('.collapse').collapse('show');
+//activeMenuItem.collapse('show');
