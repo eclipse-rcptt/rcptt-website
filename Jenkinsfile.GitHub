@@ -58,7 +58,7 @@ spec:
                     if [ "${BRANCH_NAME}" = "main" ]; then
                       git checkout master
                     else
-                      git checkout ${BRANCH_NAME}
+                      git checkout ${BRANCH_NAME}_www
                     fi
                 '''
             }
@@ -66,13 +66,11 @@ spec:
       }
     }
     stage('Build website (main) with Hugo') {
-      when {
-        branch 'main'
-      }
       steps {
         container('hugo') {
             dir('hugo') {
                 sh 'hugo -b https://eclipse.dev/${PROJECT_NAME}/'
+                archiveArtifacts artifacts: 'public/**/*',
             }
         }
       }
@@ -98,7 +96,7 @@ spec:
                   if [ "${BRANCH_NAME}" = "main" ]; then
                     git push origin HEAD:master
                   else
-                    git push origin HEAD:${BRANCH_NAME}
+                    git push origin HEAD:${BRANCH_NAME}_www
                   fi
                 else
                   echo "No changes have been detected since last build, nothing to publish"
