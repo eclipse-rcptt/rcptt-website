@@ -7,23 +7,20 @@ menu:
   sidebar:
       parent: ecl
 ---
-<br>
-<h2>XML export</h2><hr>
 
-### write-xml-file
+## XML export
 
+### {{< eclCommand write-xml-file >}}
 Writes tables from input pipe to into xml file
-<br><br>
+
 Input:
-<br>
-<ul><li>**tree** Tree: Tree to write</li></ul>
+- **tree** Tree: Tree to write
 Parameters:
-<br>
-<ul><li>**uri** String: URI to write xml data to. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.</li></ul>
+- **uri** String: URI to write xml data to. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.
+
 Output:
-<ul><li>
-The value of 'tree' argument</li></ul>
-<br>
+- The value of 'tree' argument
+
 Example:
 
 ```ecl
@@ -54,30 +51,23 @@ global [val tree [
 ]]
  
 $tree | write-xml-file "workspace:/xml/devices.xml"
-
 ```
 
-<br>
-<h2>XML import</h2><hr>
+## XML import
 
-### read-xml-file
-
-Parses given xml file into tree and write it to output pipe. Fails if file is not found or if it is invalid xml.
-<br><br>
+### {{< eclCommand read-xml-file >}}
+Parses a given xml file into tree and write it to output pipe. Fails if file is not found or if it is invalid xml.
 
 Parameters:
-<br>
-<ul><li>**uri** String: URI to read xml data from. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.</li></ul>
-<ul><li>**xPath** String: XPath expression to find xml nodes</li></ul>
+- **uri** String: URI to read xml data from. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system.
+- **xPath** String: XPath expression to find xml nodes
 
 Output:
-<ul><li>
-Tree EMF Object</li></ul>
-<br>
+- Tree EMF Object
+
 Example:
 
-{% set snippet %}
-
+```ecl
 proc logDevice [val device] {
     if [$device | has-attr "id"] {
         log [format "Device ID: %s" [$device | get-attr "id"]]
@@ -95,27 +85,22 @@ global [val supportedDevices [
 $supportedDevices | each [val device] {
     logDevice $device
 }
-{% endset %}
+```
 
-<br>
-<h2>Additional commands</h2><hr>
+## Additional commands
 
-### tree-node
-
+### {{< eclCommand tree-node >}}
 Creates a new tree node
-<br><br>
+
 Input:
-<br><ul>
-<li>**name** String: Name of the new node</li>
-<li>**attrs** optional EclMap: Map with node attributes</li>
-<li>**children** (0, ∞) Tree: Children of the new node</li>
-<li>**text** optional String: Text of the new node</li>
-</ul>
+- **name** String: Name of the new node
+- **attrs** optional EclMap: Map with node attributes
+- **children** (0, ∞) Tree: Children of the new node
+- **text** optional String: Text of the new node
 
 Output:
-<br><ul>
-<li>Tree EMF Object</li></ul>
-<br>
+- Tree EMF Object
+
 Example:
 
 ```ecl
@@ -126,20 +111,16 @@ tree-node "Device"
 
 ```
 
-### get-attrs
+### {{< eclCommand get-attrs >}}
 
 Gets attributes from the object
-<br><br>
-Input:
-<br><ul>
-<li>**object** EObject: Object to get attributes from</li>
 
-</ul>
+Input:
+- **object** EObject: Object to get attributes from
 
 Output:
-<br><ul>
-<li>Map with object attributes</li></ul>
-<br>
+- Map with object attributes
+
 Example:
 
 ```ecl
@@ -148,24 +129,17 @@ tree-node "Device" [map [entry "id" "1"] [entry "name" "first"]]
 
 ```
 
-### get-attr
-
+### {{< eclCommand get-attr >}}
 Gets attribute from the tree node by name. Fails if attribute is not found.
-<br><br>
+
 Input:
-<br><ul>
-<li>**object** EObject: Object to get attribute from</li>
-
-</ul>
-
+- **object** EObject: Object to get attribute from
 Parameters:
-<br>
-<ul><li>**name** String: Name of the attribute</li></ul>
+- **name** String: Name of the attribute
 
 Output:
-<br><ul>
-<li>Value of the attribute</li></ul>
-<br>
+- Value of the attribute
+
 Example:
 
 ```ecl
@@ -174,27 +148,19 @@ tree-node "Device" [map [entry "id" "1"] [entry "name" "first"]]
 
 ```
 
-### set-attr
+### {{< eclCommand set-attr >}}
 
 Sets value of the object attribute. If 'value' parameter is not specified, the attribute will be removed.
-<br><br>
+
 Input:
-<br><ul>
-<li>**object** EObject: Object to set attribute to</li>
-
-</ul>
-
+- **object** EObject: Object to set attribute to
 Parameters:
-<br>
-<ul><li>**name** String: Name of the attribute</li>
-<li>**value** optional String: New value of the attribute</li>
-
-</ul>
+- **name** String: Name of the attribute
+- **value** optional String: New value of the attribute
 
 Output:
-<br><ul>
-<li>The value of 'object' argument</li></ul>
-<br>
+- The value of 'object' argument
+
 Example:
 
 ```ecl
@@ -203,57 +169,37 @@ tree-node "Device" [map [entry "id" "1"] [entry "name" "first"]]
 
 ```
 
-### has-attr
+### {{< eclCommand has-attr >}}
+Checks if the object has attribute
 
-Checks if the object has attribute<br><br>
 Input:
-<br><ul>
-<li>**object** EObject: Object to check attribute from</li>
-
-</ul>
-
+- **object** EObject: Object to check attribute from
 Parameters:
-<br>
-<ul><li>**name** String: Name of the attribute</li>
-
-</ul>
+- **name** String: Name of the attribute
 
 Output:
-<br><ul>
-<li>true when attribute is exist, false otherwise</li></ul>
-<br>
-Example:
+- true when attribute is exist, false otherwise
 
+Example:
 ```ecl
 tree-node "Device" [map [entry "id" "1"] [entry "name" "first"]]
     | has-attr "name" | log
 
 ```
 
-### get-nodes
-
+### {{< eclCommand get-nodes >}}
 Gets child nodes from the object and writes them into output pipe. Fails if 'pos' of 'len' parameter is out of range.
 
-<br><br>
 Input:
-<br><ul>
-<li>**object** EObject: Object to get child nodes from</li>
-
-</ul>
-
+- **object** EObject: Object to get child nodes from
 Parameters:
-<br>
-<ul>
-
-<li>**name** optional String: Name of the nodes</li>
-<li>**pos** optional Int: Start position. If 'name' attribute is provided, 'pos' is relative to the node list filtered by name.</li>
-<li>**len** optional Int: Count of nodes. Default value is '-1' and it means the end of the node list. If 'name' attribute is provided, 'len' is relative to the node list filtered by name.</li>
-</ul>
+- **name** optional String: Name of the nodes
+- **pos** optional Int: Start position. If 'name' attribute is provided, 'pos' is relative to the node list filtered by name.
+- **len** optional Int: Count of nodes. Default value is '-1' and it means the end of the node list. If 'name' attribute is provided, 'len' is relative to the node list filtered by name.
 
 Output:
-<br><ul>
-<li>Child nodes of the object</li></ul>
-<br>
+- Child nodes of the object
+
 Example:
 
 ```ecl
@@ -276,29 +222,20 @@ $supportedDevices | get-nodes "Device" -pos 1 -len 1
 
 ```
 
-### append
+### {{< eclCommand append >}}
 
 Adds child nodes to the object. Fails if 'index' parameter is out of range.
 
-<br><br>
 Input:
-<br><ul>
-<li>**object** EObject: Object to add child nodes to</li>
-
-</ul>
-
+- **object** EObject: Object to add child nodes to
 Parameters:
-<br>
-<ul>
-
-<li>**children** (1, ∞) Tree: New child nodes to add to the object</li>
-<li>**index** optional Int: Index of the first child node added in the node list. Min value is '0' and max value is size of node list. Default value is '-1' and it means size of node list.</li>
+- **children** (1, ∞) Tree: New child nodes to add to the object
+- **index** optional Int: Index of the first child node added in the node list. Min value is '0' and max value is size of node list. Default value is '-1' and it means size of node list.</li>
 </ul>
 
 Output:
-<br><ul>
-<li>The value of 'object' argument</li></ul>
-<br>
+- The value of 'object' argument
+
 Example:
 
 ```ecl
@@ -308,28 +245,18 @@ tree-node "Device" [tree-node -name "DeviceName" -text "device"]
 
 ```
 
-### remove
+### {{< eclCommand remove >}}
 
 Removes child node from the object by index. Fails if 'index' parameter is out of range.
 
-<br><br>
 Input:
-<br><ul>
-<li>**object** EObject: Object to remove child node from</li>
-
-</ul>
-
+- **object** EObject: Object to remove child node from
 Parameters:
-<br>
-<ul>
-
-<li>**index** Int: Index of the child node. Min value is '0' and max value is the last index in the node list. Default value is '-1' and the last index in the node list.</li>
-</ul>
+- **index** Int: Index of the child node. Min value is '0' and max value is the last index in the node list. Default value is '-1' and the last index in the node list.
 
 Output:
-<br><ul>
-<li>The value of 'object' argument</li></ul>
-<br>
+- The value of 'object' argument
+
 Example:
 
 ```ecl
@@ -339,4 +266,3 @@ tree-node "Device"
         | remove -index 1
 
 ```
-{{m.ecl("#{snippet}")}}
