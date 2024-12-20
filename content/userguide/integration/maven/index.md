@@ -335,11 +335,11 @@ For ease of use and ability of further customization, RCPTT tests projects use c
 |Phase|Goal|Description|
 |-----|----|-----------|
 |generate-resources|org.eclipse.rcptt:rcptt-maven-plugin:resources |{{< grid/div isMarkdown="true" >}}
-- Copies project to target/projects/artifactId
-- Resolves all dependencies of type rcpttTest and unpacks them to target/projects
-- If AUT is an archive, unpacks AUT to target/aut
-- Downloads if necessary and unpacks RCPTT runner to target/runner
-- Creates target/results directory
+- Copies project to `target/projects/artifactId`
+- Resolves all dependencies of type rcpttTest and unpacks them to `target/projects`
+- If AUT is an archive, unpacks AUT to `target/aut`
+- Downloads if necessary and unpacks RCPTT runner to `target/runner`
+- Creates `target/results` directory
 {{< / grid/div >}}
 |compile|org.eclipse.rcptt:rcptt-maven-plugin:execute|{{< grid/div isMarkdown="true" >}}
 Launches RCPTT runner:
