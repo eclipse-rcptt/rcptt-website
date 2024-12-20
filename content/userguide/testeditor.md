@@ -29,12 +29,12 @@ Test case editor is a main editor for creating, running and executing test cases
   {% set top, left, width, height = 92, 622, 69, 22 %}
 
   <!-- Replay button  -->
-  Replay test case. Result is displayed in {{m.uiElement("Execution", "#{site.url}/shared/img/ui-execution-view.png")}} view.
+  Replay test case. Result is displayed in {{< uielement "ui-execution-view.png" >}}Execution{{< / uielement >}} view.
   {% endset %}
   {% set top, left, width, height = 118, 622, 69, 22 %}
 
   <!-- Description -->
-  Arbitrary plain text associated with a test case, for example steps this test performs. It might be convenient to outline test case plan in description and follow it during recording (use {{m.uiElement("Description", "#{site.url}/shared/img/ui-description.gif")}} tab of [Control Panel](../controlpanel)).
+  Arbitrary plain text associated with a test case, for example steps this test performs. It might be convenient to outline test case plan in description and follow it during recording (use {{< uielement "ui-description.gif" >}}Description{{< / uielement >}} tab of [Control Panel](../controlpanel)).
   {% endset %}
   {% set top, left, width, height = 152, 69, 95, 20 %}
 

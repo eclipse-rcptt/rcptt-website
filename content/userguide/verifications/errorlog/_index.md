@@ -1,6 +1,6 @@
 ---
 title: Error Log Verifications
-slug: verifications/errorlog
+slug: errorlog
 sidebar: userguide
 layout: doc
 menu:
