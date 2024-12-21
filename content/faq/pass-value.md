@@ -14,12 +14,12 @@ In case when it is required to pass some values to a test in command line, it is
 - In AUT VM arguments pass desired parameters as Java properties, i.e. add arguments: 
 {{< highlight bash >}}-DpropertyName=propertyValue{{< / highlight >}}
 - Use ECL command {{< eclCommand substitute-variables >}} (which uses `org.eclipse.core.variables` plugin) to get a property value:
-{{< highlight ecl >}}
+```ecl
 // writes prop val to AUT workspace log
 log [substitute-variables "${system_property:propertyName}"]
-{{< / highlight >}}
+```
 
-With aid of <a href="{{site.url}}/documentation/userguide/procedures/"> variables and user-defined procedures</a>, this becomes even more convenient:
+With aid of [variables and user-defined procedures](../../userguide/procedures/) variables and user-defined procedures, this becomes even more convenient:
 - Create ECL context which consist of only one command, declaring global variables:
   ```
   global [val prop1 [substitute-variables "${system_property:prop1}"]]
