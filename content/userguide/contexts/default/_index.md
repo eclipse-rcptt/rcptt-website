@@ -31,8 +31,7 @@ Default Contexts can be set in "Default Contexts" section. Contexts to default c
   These default contexts are displayed in test cases. Sequence contexts defined in the Default Contexts 
    list can not be changed in the test case and custom contexts can be added to test case only after 
    default contexts. {{< uielement "project-settings-icon.png" >}}Project Settings{{< / uielement >}} can be opened 
-   from test case by clicking on {{m.uiElement("", "#{site.url}/shared/img/ui-configure-project-default-contexts.png")}}
-   link.
+   from test case by clicking on {{< uielement "ui-configure-project-default-contexts.png" / >}}
   
  ![](screenshot-default-context-editor-2.png)
    
