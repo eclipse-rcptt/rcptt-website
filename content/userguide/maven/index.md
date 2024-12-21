@@ -68,16 +68,14 @@ Below is a basic POM template which can be used as starting point of automating 
 </project>
 ```
 
-<div>Important things to note here:</div>
-
-<ul class="maven maven-margin">
-	<li>Packaging type is set to rcpttTest
-	<li>Xored Maven repository added to pluginsRepositories
-	<li>extensions set to true
+Important things to note here:
+- Packaging type is set to rcpttTest
+- Xored Maven repository added to pluginsRepositories
+- extensions set to true
 
 #### RCPTT Runner Version
 
-Use <code>runner/version</code> to specify version of RCPTT Runner to use.
+Use `runner/version` to specify version of RCPTT Runner to use.
 
 ```xml
 <runner>
@@ -88,7 +86,7 @@ Use <code>runner/version</code> to specify version of RCPTT Runner to use.
 
 ### RCPTT Runner VM Arguments
 
-Use <code>runner/vmArgs</code> to specify extra arguments for RCPTT Runner. For instance, to configure memory usage, the following lines can be added:
+Use `runner/vmArgs` to specify extra arguments for RCPTT Runner. For instance, to configure memory usage, the following lines can be added:
 
 ```xml
 <runner>
@@ -102,11 +100,11 @@ Use <code>runner/vmArgs</code> to specify extra arguments for RCPTT Runner. For 
 
 ### AUT specification
 
-RCPTT Maven Plugin supports two sources of applications-under-tests — it can either use Maven artifact resolution to download AUT from Maven repository, or get it explicitly from file system or http server. The configuration of AUT is specified in plugin configuration section under <code>aut</code> element.
+RCPTT Maven Plugin supports two sources of applications-under-tests — it can either use Maven artifact resolution to download AUT from Maven repository, or get it explicitly from file system or http server. The configuration of AUT is specified in plugin configuration section under `aut` element.
 
 #### Explicit AUT location
 
-Path on a local file system or AUT http(s) download URL can be specified in <code>explicit</code> element. If path is not absolute, then it is assumed that it is relative to project base dir:
+Path on a local file system or AUT http(s) download URL can be specified in `explicit` element. If path is not absolute, then it is assumed that it is relative to project base dir:
 
 ```xml
 <aut>
@@ -116,7 +114,7 @@ Path on a local file system or AUT http(s) download URL can be specified in <cod
 </aut>
 ```
 
-Explicit AUT specification supports some initial substitution — if path contains <code>[platform]</code>, it will be replaced with the eclipse classifier of current platform (i.e. <code>linux.gtk.x86_64</code>):
+Explicit AUT specification supports some initial substitution — if path contains `[platform]`, it will be replaced with the eclipse classifier of current platform (i.e. `linux.gtk.x86_64`):
 
 ```xml
 <aut>
@@ -128,7 +126,7 @@ Explicit AUT specification supports some initial substitution — if path contai
 
 #### Maven artifact resolution
 
-In case of Maven artifact resolution, artifact classifier is automatically set to current platform classifier, consisting of OS, Window System and architecture, for example <code>win32.win32.x86</code>, or <code>macosx.cocoa.x86_64</code>.
+In case of Maven artifact resolution, artifact classifier is automatically set to current platform classifier, consisting of OS, Window System and architecture, for example `win32.win32.x86`, or `macosx.cocoa.x86_64`.
 
 ```xml
 <aut>
@@ -203,7 +201,7 @@ Use Support software installation in the launched application to create p2 metad
 ``` 
 ### Persistent workspace
 
-By default AUT's workspace is recreated each time AUT hangs and is forcefully restarted. This is done to prevent workspace corruption from blocking AUT startup (after test failures). If this is undesirable, use <code>reuseExistingWorkspace</code> option:
+By default AUT's workspace is recreated each time AUT hangs and is forcefully restarted. This is done to prevent workspace corruption from blocking AUT startup (after test failures). If this is undesirable, use `reuseExistingWorkspace` option:
 
 ```xml
 <aut>
@@ -214,7 +212,7 @@ By default AUT's workspace is recreated each time AUT hangs and is forcefully re
 
 ### Extra projects
 
-In case of using linked projects or folders in Workspace context, it might be required to specify an extra projects to be imported into RCPTT Runner workspace. This can be done by using <code>projects</code> element:
+In case of using linked projects or folders in Workspace context, it might be required to specify an extra projects to be imported into RCPTT Runner workspace. This can be done by using `projects` element:
 
 ```xml
 <projects>
@@ -224,7 +222,7 @@ In case of using linked projects or folders in Workspace context, it might be re
 
 ### Test options
 
-Options related to test execution are specified under <code>testOptions</code> element in plugin configuration. There are no required options here, so by default this element is just omitted.
+Options related to test execution are specified under `testOptions` element in plugin configuration. There are no required options here, so by default this element is just omitted.
 
 The example below sets timeout options for the whole test suite and for a single test:
 
@@ -235,7 +233,7 @@ The example below sets timeout options for the whole test suite and for a single
 </testOptions>
 ```
 
-The complete list of parameters with their defaults is provided on <a href="https://ci.xored.com/doc/runner">RCPTT Runner</a> page.
+The complete list of parameters with their defaults is provided on [RCPTT Runner](../runner) page.
 
 ### Tags to skip
 

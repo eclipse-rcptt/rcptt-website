@@ -95,11 +95,11 @@ Finally we need to register our service using **org.eclipse.rcptt.ecl.core.scrip
 
 - **name** - name of the EClass which we use for ECL command
 - **namespace** - EMF Package URI
-- **class</b> - command implementation class. Should implement <b>ICommandService** interface
+- **class** - command implementation class. Should implement **ICommandService** interface
 
 
 By default name of the command EClass will be transformed to the ECL command name. For example, in our case commands will be named show-views.
- However you can override this name using **friendly_name</b> part of the <b>org.eclipse.rcptt.ecl.core.scriptlet** extension point.
+ However you can override this name using **friendly_name** part of the **org.eclipse.rcptt.ecl.core.scriptlet** extension point.
  
  ### Use show-views command
  

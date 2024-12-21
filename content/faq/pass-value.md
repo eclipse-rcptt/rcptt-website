@@ -26,7 +26,7 @@ With aid of [variables and user-defined procedures](../../userguide/procedures/)
        [val prop2 [substitute-variables "${system_property:prop2}"]]
        [val prop3 [substitute-variables "${system_property:prop3}"]]
   ```
-- Add this ECL context to project's default contexts in Project Settings<br>
+- Add this ECL context to project's default contexts in Project Settings
 - Access these properties in any ECL using $-syntax:
 {{< highlight ecl >}}concat $prop1 $prop2 $prop3 | show-alert{{< / highlight >}}
 

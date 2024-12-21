@@ -112,4 +112,4 @@ Example:
 test-rail-step -content "step one" -expected "success" -actual "success" -status passed
 test-rail-step -content "step two" -expected "success" -actual "failure" -status failed
 ```
-<img src="{{site.url}}/shared/img/test-rail-6.png"></img>
+![](test-rail-6.png)

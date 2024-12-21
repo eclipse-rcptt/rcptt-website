@@ -25,4 +25,4 @@ It's model is described like this:
 
 ![screenshot](../screenshot-invoke-model.png)
 
-An implementation of {{< eclCommand invoke >}} command can be found at RCPTT repo.</p>
+An implementation of {{< eclCommand invoke >}} command can be found at RCPTT repo.

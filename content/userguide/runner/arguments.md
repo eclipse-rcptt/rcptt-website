@@ -33,9 +33,6 @@ java <RCPTT Runner VM arguments>
 
 The table below summarizes information about arguments, arguments are more or less sorted by decreasing importance
 
-<div class="beforeTable">
-</div>
-
 Arg name | Description | Sample value | Required?
 --- | --- | --- | --
 aut | Path to application under test | "C:\Downloads\eclipse" | Yes
@@ -83,8 +80,6 @@ It is possible to specify this argument several times to inject plugins from mor
 
 ### RCPTT Runtime options
 This table summarizes RCPTT runtime options which are rarely need to be modified and can be specified in `testOptions` argument. In RCPTT IDE these options can be set by going to Preferences -> RCP Testing Tool -> Advanced Options.
-
-<div class="beforeTable"></div>
 
 Option Name | Default value | Description
 --- | --- | ---

@@ -26,10 +26,10 @@ If you want to use RCPTT to connect to AUT from sources, then you should be able
 If you switch to RCPTT perspective then, you should be able to see your AUT in Applications view and launch it.
 
 
-# Is support for latest PDE planned?</h3>
+# Is support for latest PDE planned?
 We strive to support current Eclipse release. Usally we manage to provide support within a month of PDE release. You can design tests and run them for all versions of Eclipse with RCPTT. No restrictions on this.
 
-# If AUT from sources launching fails with error message: No org.eclipse.equinox.weaving.hook plugin</h3>
+# If AUT from sources launching fails with error message: No org.eclipse.equinox.weaving.hook plugin
 ## Solutions:
 ### Recreate AUT's launch configiraiton
 If you open your target platforms in preferences, you can see a copy of your configured target, created with RCPTT. 
