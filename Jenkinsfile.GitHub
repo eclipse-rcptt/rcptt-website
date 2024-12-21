@@ -69,8 +69,9 @@ spec:
       steps {
         container('hugo') {
             dir('hugo') {
-                sh 'hugo -b https://eclipse.dev/${PROJECT_NAME}/'
+                sh 'HUGO_MINIFY_TDEWOLFF_HTML_KEEPCOMMENTS=true HUGO_ENABLEMISSINGTRANSLATIONPLACEHOLDERS=true  hugo -b https://eclipse.dev/${PROJECT_NAME}/'
                 archiveArtifacts artifacts: 'public/**/*', allowEmptyArchive: false, onlyIfSuccessful: false
+                sh '! grep -inorE "<\!-- raw HTML omitted -->|ZgotmplZ|\[i18n\]|\(<nil>\)|(&lt;nil&gt;)|hahahugo" public/'
             }
         }
       }
