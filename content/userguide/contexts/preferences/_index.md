@@ -55,7 +55,7 @@ The Preferences Context editor displays tree of all available preferences and al
   
  
 ## Example
-  In [UML Lab](http://uml-lab.com) when a user saves an UML diagram for the first time, the dialog popup appears which asks whether to turn automatic code generation on or off. 
+  In [UML Lab](https://www.uml-lab.com/) when a user saves an UML diagram for the first time, the dialog popup appears which asks whether to turn automatic code generation on or off. 
   Based on user input, it modifies its internal property `com.yattasolutions.codegen.GenerateCodeOnSave` and also sets `com.yattasolutions.umllab.dontshow.generateCodeOnSave` to `true`.
 
 Thus, if a test case is recorded for the first time, clicking on any option on the dialog popup is recorded as well, but later this dialog does not appear and, as a result, execution fails since it cannot find the specified dialog. 

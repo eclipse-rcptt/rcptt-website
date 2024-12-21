@@ -8,7 +8,7 @@ menu:
       parent: verifications
 ---
 
-{{< annotatedImage "../screenshot-error-log-verification-editor.png" >}}
+{{< annotatedImage "screenshot-error-log-verification-editor.png" >}}
   
   <!-- Name -->
  {{< annotate 118 93 605 112 >}}Verification name. This name is automatically synced with file system name. Symbols in name which are not allowed in file names are replaced with underscore character.{{< / annotate >}}

@@ -8,5 +8,5 @@ menu:
       parent: userguide
 ---
 
-- [TestRail Integration](../integration/test-rail-integration)
-- [Zephyr Integration](../integration/zephyr-integration)
+- [TestRail Integration](../integration/test-rail/)
+- [Zephyr Integration](../integration/zephyr/)

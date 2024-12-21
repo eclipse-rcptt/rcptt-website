@@ -1,6 +1,6 @@
 ---
 title: Integration with TestRail
-slug: test-rail-integration
+slug: test-rail
 sidebar: userguide
 layout: doc
 menu:

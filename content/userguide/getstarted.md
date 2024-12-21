@@ -105,7 +105,7 @@ While creating and running our test case, we had to make manual actions to make 
 1. Make sure that there's no project {{< kbd >}}sample{{< / kbd >}} in Workspace
 2. Make sure that current perspective is Java
 
-In other words, our test case makes certain assumptions about an application state, and we need somehow to make sure that an application state matches to test case expectations. For this purpose, RCPTT has [contexts](../contexts/). There are several different types of contexts, which describe different parts of an application state, but in this guide we'll focus on two of them &ndash; [Workspace]({{site.url}}/documentation/userguide/contexts/workspace/) and [Workbench]({{site.url}}/documentation/userguide/contexts/workbench/).
+In other words, our test case makes certain assumptions about an application state, and we need somehow to make sure that an application state matches to test case expectations. For this purpose, RCPTT has [contexts](../contexts/). There are several different types of contexts, which describe different parts of an application state, but in this guide we'll focus on two of them &ndash; [Workspace](../contexts/workspace/) and [Workbench](../contexts/workbench/).
 
 ### Workspace Context
 As it can be guessed by its name, Workspace Context is used to describe a state of an application's workspace. To create a workspace context, follow these steps:

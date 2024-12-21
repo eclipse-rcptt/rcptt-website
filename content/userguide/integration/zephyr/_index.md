@@ -1,6 +1,6 @@
 ---
 title: Integration with Zephyr
-slug: zephyr-integration
+slug: zephyr
 sidebar: userguide
 layout: doc
 menu:
