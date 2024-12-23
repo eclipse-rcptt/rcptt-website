@@ -58,7 +58,7 @@ spec:
                     if [ "${BRANCH_NAME}" = "main" ]; then
                       git checkout master
                     else
-                      git checkout ${BRANCH_NAME}_www || git swith --orphan ${BRANCH_NAME}_www
+                      git checkout ${BRANCH_NAME}_www || git switch --orphan ${BRANCH_NAME}_www
                     fi
                 '''
             }
