@@ -1,0 +1,2477 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Getting Started | The Eclipse Foundation</title>
+<meta property="og:title" content="Getting Started | The Eclipse Foundation" />
+<meta name="twitter:title" content="Getting Started | The Eclipse Foundation" />
+
+<meta name="description" content="The Eclipse Foundation provides our global community of individuals and organizations with a mature, scalable, and business-friendly environment for open source …">
+<meta property="og:description" content="The Eclipse Foundation provides our global community of individuals and organizations with a mature, scalable, and business-friendly environment for open source …">
+<meta name="twitter:description" content="The Eclipse Foundation provides our global community of individuals and organizations with a mature, scalable, and business-friendly environment for open source …">
+<link href='https://www.eclipse.org/favicon.ico' rel='icon' type='image/x-icon'/>
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://eclipse.dev/rcptt/userguide/getstarted/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Community for Open Innovation and Collaboration" />
+<meta name="keywords" content="eclipse, project, plug-ins, plugins, java, ide, swt, refactoring, free java ide, tools, platform, open source, development environment, development, ide">
+
+
+<meta name="generator" content="Hugo 0.110.0">
+
+<link rel="canonical" href="https://eclipse.dev/rcptt/userguide/getstarted/" />
+
+
+<link rel="stylesheet" href="https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/astro.min.css?v=1736521217">
+  
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5WLCZXC');</script>
+  
+<script>
+	
+		var tableClasses = "table";
+	
+</script>
+
+
+
+
+  
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" type="text/css"/>
+<script defer src="https://eclipse.dev/rcptt/js/prism.js"></script>
+<script defer src="https://eclipse.dev/rcptt/js/ecl.js"></script>
+<link rel="stylesheet" href="https://eclipse.dev/rcptt/css/prism.css">
+<link rel="stylesheet" href="https://eclipse.dev/rcptt/css/ecl.css">
+<link rel="stylesheet" href="https://eclipse.dev/rcptt/css/annotatedImage.css">
+<link rel="stylesheet" href="https://eclipse.dev/rcptt/css/uielement.css">
+
+  
+
+</head>
+<body>
+  
+
+
+
+
+
+
+
+
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WLCZXC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<a class="sr-only" href="#content">Skip to main content</a>
+<header class="header-wrapper header_wrapper_class" id="header">
+  
+
+
+
+
+
+<div class="header-toolbar">
+    <div class="container">
+        <div class="header-toolbar-row">
+            <div class="toolbar-btn toolbar-search-btn dropdown">
+                <button 
+                    class="dropdown-toggle" 
+                    id="toolbar-search" 
+                    type="button" 
+                    data-toggle="dropdown"
+                    tabindex="0"
+                    aria-label="Search"
+                >
+                    <i class="fa fa-search fa-lg" aria-role="none"></i>
+                </button>
+                <div 
+                    class="toolbar-search-bar-wrapper dropdown-menu dropdown-menu-right"
+                    aria-labelledby="toolbar-search"
+                >
+                      <form action="https://www.eclipse.org/home/search" method="get">
+                    <div class="search-bar">
+                        <input class="search-bar-input" name="q" placeholder="Search" />
+                        <button>
+                            <i class="fa fa-search" type="submit"></i>
+                        </button>
+                    </div>
+                      </form>
+                </div>
+            </div>
+            <div class="toolbar-btn toolbar-user-menu-btn dropdown">
+                <button 
+                    class="dropdown-toggle" 
+                    id="toolbar-user-menu" 
+                    type="button" 
+                    data-toggle="dropdown"
+                    tabindex="0"
+                    aria-label="User Menu"
+                >
+                    <i class="fa fa-user fa-lg"></i>
+                </button>
+                <ul class="toolbar-user-menu dropdown-menu dropdown-menu-right text-center"
+                    aria-labelledby="toolbar-user-menu">
+                    <li>
+                        <a href="https://accounts.eclipse.org/user">
+                            <i class="fa fa-user"></i>
+                            View My Account
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://accounts.eclipse.org/user/edit">
+                            <i class="fa fa-edit"></i>
+                            Edit My Account
+                        </a>
+                    </li>
+                    <li>
+                        <a class="toolbar-manage-cookies">
+                            <i class="fa fa-wrench"></i>
+                            Manage Cookies
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="header-navbar-wrapper">
+    <div class="container">
+        <div class="header-navbar">
+            <div class="header-navbar-brand">
+                <a class="logo-wrapper" href="/" title="The Community for Open Innovation and Collaboration">
+                    <img src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-grey-orange.svg" alt="" width="150" />
+                </a>
+            </div>
+            
+
+
+  
+
+
+
+
+
+
+
+
+
+<nav class="header-navbar-nav">
+    <ul class="header-navbar-nav-links">
+        
+            
+               
+            
+            
+
+            
+            
+            
+            
+              
+            
+
+            
+            
+              
+                
+              
+            
+              
+                
+              
+            
+
+            <li class="navbar-nav-links-item ">
+                
+                  <button 
+                      class="nav-link-js btn-link link-unstyled" 
+                      type="button"
+                      aria-expanded="true" 
+                      data-menu-target="projects-menu"
+                  >
+                      Projects
+                  </button>
+                
+            </li>
+        
+            
+               
+            
+            
+
+            
+            
+            
+            
+              
+            
+
+            
+            
+              
+                
+              
+            
+              
+                
+              
+            
+
+            <li class="navbar-nav-links-item ">
+                
+                  <button 
+                      class="nav-link-js btn-link link-unstyled" 
+                      type="button"
+                      aria-expanded="true" 
+                      data-menu-target="supporters-menu"
+                  >
+                      Supporters
+                  </button>
+                
+            </li>
+        
+            
+               
+            
+            
+
+            
+            
+            
+            
+              
+            
+
+            
+            
+              
+                
+              
+            
+              
+                
+              
+            
+
+            <li class="navbar-nav-links-item ">
+                
+                  <button 
+                      class="nav-link-js btn-link link-unstyled" 
+                      type="button"
+                      aria-expanded="true" 
+                      data-menu-target="collaborations-menu"
+                  >
+                      Collaborations
+                  </button>
+                
+            </li>
+        
+            
+               
+            
+            
+
+            
+            
+            
+            
+              
+            
+
+            
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+
+            <li class="navbar-nav-links-item ">
+                
+                  <button 
+                      class="nav-link-js btn-link link-unstyled" 
+                      type="button"
+                      aria-expanded="true" 
+                      data-menu-target="resources-menu"
+                  >
+                      Resources
+                  </button>
+                
+            </li>
+        
+            
+               
+            
+            
+
+            
+            
+            
+            
+              
+            
+
+            
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+
+            <li class="navbar-nav-links-item ">
+                
+                  <button 
+                      class="nav-link-js btn-link link-unstyled" 
+                      type="button"
+                      aria-expanded="true" 
+                      data-menu-target="the-foundation-menu"
+                  >
+                      The Foundation
+                  </button>
+                
+            </li>
+        
+    </ul>
+</nav>
+
+
+            <div class="header-navbar-end">
+                
+                  <a class="header-navbar-end-download-btn btn btn-primary" href="//eclipse.org/downloads/">
+                      <i class="fa fa-download" aria-hidden="true"></i>
+                      Download
+                  </a>
+                
+                <button class="mobile-menu-btn" aria-label="Toggle mobile navigation menu" aria-expanded="false">
+                    <i class="fa fa-bars fa-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  
+
+
+
+
+
+    
+
+
+
+
+<nav class="mobile-menu hidden" aria-expanded="false">
+    <ul>
+        
+            
+            
+            
+
+            
+            
+              
+            
+
+            
+            
+              
+                
+              
+            
+              
+                
+              
+            
+            
+            
+
+            
+              
+  <li class="mobile-menu-dropdown">
+    <a class="mobile-menu-item mobile-menu-dropdown-toggle" data-target="projects-menu">
+      <span>Projects</span>
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </a>
+    <div class="mobile-menu-sub-menu-wrapper">
+      <ul class="mobile-menu-sub-menu hidden" id="projects-menu">
+        
+          <li class="mobile-menu-dropdown">
+            <a 
+              data-target="projects-technologies-sub-menu"
+              class="mobile-menu-item mobile-menu-dropdown-toggle" 
+              aria-expanded="false"
+            >
+              <span>Technologies</span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="mobile-menu-sub-menu-wrapper">
+              <ul 
+                class="mobile-menu-sub-menu mobile-menu-links-menu hidden"
+                id="projects-technologies-sub-menu"
+              >
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/topics/ide/">
+                      Developer Tools &amp; IDEs
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/topics/cloud-native/">
+                      Cloud Native
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/topics/edge-and-iot/">
+                      Edge &amp; IoT
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/topics/automotive-and-mobility/">
+                      Automotive &amp; Mobility
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+          <li class="mobile-menu-dropdown">
+            <a 
+              data-target="projects-projects-sub-menu"
+              class="mobile-menu-item mobile-menu-dropdown-toggle" 
+              aria-expanded="false"
+            >
+              <span>Projects</span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="mobile-menu-sub-menu-wrapper">
+              <ul 
+                class="mobile-menu-sub-menu mobile-menu-links-menu hidden"
+                id="projects-projects-sub-menu"
+              >
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://projects.eclipse.org/">
+                      Project Finder
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/projects/project_activity.php">
+                      Project Activity
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/projects/resources/">
+                      Project Resources
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/specifications/">
+                      Specifications
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/contribute/">
+                      Contribute
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </li>
+ 
+            
+        
+            
+            
+            
+
+            
+            
+              
+            
+
+            
+            
+              
+                
+              
+            
+              
+                
+              
+            
+            
+            
+
+            
+              
+  <li class="mobile-menu-dropdown">
+    <a class="mobile-menu-item mobile-menu-dropdown-toggle" data-target="supporters-menu">
+      <span>Supporters</span>
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </a>
+    <div class="mobile-menu-sub-menu-wrapper">
+      <ul class="mobile-menu-sub-menu hidden" id="supporters-menu">
+        
+          <li class="mobile-menu-dropdown">
+            <a 
+              data-target="supporters-membership-sub-menu"
+              class="mobile-menu-item mobile-menu-dropdown-toggle" 
+              aria-expanded="false"
+            >
+              <span>Membership</span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="mobile-menu-sub-menu-wrapper">
+              <ul 
+                class="mobile-menu-sub-menu mobile-menu-links-menu hidden"
+                id="supporters-membership-sub-menu"
+              >
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/membership/explore-membership/">
+                      Our Members
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/membership/">
+                      Member Benefits
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/membership/#tab-levels">
+                      Membership Levels &amp; Fees
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/membership/#tab-membership">
+                      Membership Application
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/membership/#tab-resources">
+                      Member Resources
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://membership.eclipse.org/portal">
+                      Member Portal
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+          <li class="mobile-menu-dropdown">
+            <a 
+              data-target="supporters-sponsorship-sub-menu"
+              class="mobile-menu-item mobile-menu-dropdown-toggle" 
+              aria-expanded="false"
+            >
+              <span>Sponsorship</span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="mobile-menu-sub-menu-wrapper">
+              <ul 
+                class="mobile-menu-sub-menu mobile-menu-links-menu hidden"
+                id="supporters-sponsorship-sub-menu"
+              >
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/sponsor/">
+                      Sponsor
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/org/corporate-sponsors/">
+                      Corporate Sponsorship
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/sponsor/collaboration/">
+                      Sponsor a Collaboration
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </li>
+ 
+            
+        
+            
+            
+            
+
+            
+            
+              
+            
+
+            
+            
+              
+                
+              
+            
+              
+                
+              
+            
+            
+            
+
+            
+              
+  <li class="mobile-menu-dropdown">
+    <a class="mobile-menu-item mobile-menu-dropdown-toggle" data-target="collaborations-menu">
+      <span>Collaborations</span>
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </a>
+    <div class="mobile-menu-sub-menu-wrapper">
+      <ul class="mobile-menu-sub-menu hidden" id="collaborations-menu">
+        
+          <li class="mobile-menu-dropdown">
+            <a 
+              data-target="collaborations-industry-collaborations-sub-menu"
+              class="mobile-menu-item mobile-menu-dropdown-toggle" 
+              aria-expanded="false"
+            >
+              <span>Industry Collaborations</span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="mobile-menu-sub-menu-wrapper">
+              <ul 
+                class="mobile-menu-sub-menu mobile-menu-links-menu hidden"
+                id="collaborations-industry-collaborations-sub-menu"
+              >
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/collaborations/">
+                      About Industry Collaborations
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/org/workinggroups/explore.php">
+                      Current Collaborations
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/org/workinggroups/about.php">
+                      About Working Groups
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/collaborations/interest-groups/">
+                      About Interest Groups
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+          <li class="mobile-menu-dropdown">
+            <a 
+              data-target="collaborations-research-collaborations-sub-menu"
+              class="mobile-menu-item mobile-menu-dropdown-toggle" 
+              aria-expanded="false"
+            >
+              <span>Research Collaborations</span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="mobile-menu-sub-menu-wrapper">
+              <ul 
+                class="mobile-menu-sub-menu mobile-menu-links-menu hidden"
+                id="collaborations-research-collaborations-sub-menu"
+              >
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/research/">
+                      Research @ Eclipse
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </li>
+ 
+            
+        
+            
+            
+            
+
+            
+            
+              
+            
+
+            
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+            
+            
+
+            
+              
+  <li class="mobile-menu-dropdown">
+    <a class="mobile-menu-item mobile-menu-dropdown-toggle" data-target="resources-menu">
+      <span>Resources</span>
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </a>
+    <div class="mobile-menu-sub-menu-wrapper">
+      <ul class="mobile-menu-sub-menu hidden" id="resources-menu">
+        
+          <li class="mobile-menu-dropdown">
+            <a 
+              data-target="resources-open-source-sub-menu"
+              class="mobile-menu-item mobile-menu-dropdown-toggle" 
+              aria-expanded="false"
+            >
+              <span>Open Source for Business</span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="mobile-menu-sub-menu-wrapper">
+              <ul 
+                class="mobile-menu-sub-menu mobile-menu-links-menu hidden"
+                id="resources-open-source-sub-menu"
+              >
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/org/value/">
+                      Business Value of Open Source
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/os4biz/ospo/">
+                      Open Source Program Offices
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+          <li class="mobile-menu-dropdown">
+            <a 
+              data-target="resources-happening-sub-menu"
+              class="mobile-menu-item mobile-menu-dropdown-toggle" 
+              aria-expanded="false"
+            >
+              <span>What&#39;s Happening</span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="mobile-menu-sub-menu-wrapper">
+              <ul 
+                class="mobile-menu-sub-menu mobile-menu-links-menu hidden"
+                id="resources-happening-sub-menu"
+              >
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://newsroom.eclipse.org/">
+                      News
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://events.eclipse.org/">
+                      Events
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/community/eclipse_newsletter/">
+                      Newsletter
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://newsroom.eclipse.org/news/press-releases">
+                      Press Releases
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/org/foundation/eclipseawards/">
+                      Awards &amp; Recognition
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+          <li class="mobile-menu-dropdown">
+            <a 
+              data-target="resources-developer-sub-menu"
+              class="mobile-menu-item mobile-menu-dropdown-toggle" 
+              aria-expanded="false"
+            >
+              <span>Developer Resources</span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="mobile-menu-sub-menu-wrapper">
+              <ul 
+                class="mobile-menu-sub-menu mobile-menu-links-menu hidden"
+                id="resources-developer-sub-menu"
+              >
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://eclipse.org/forums/">
+                      Forum
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://accounts.eclipse.org/mailing-list">
+                      Mailing Lists
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/blogs-and-videos/">
+                      Blogs &amp; Videos
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/resources/marketplaces/">
+                      Marketplaces
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </li>
+ 
+            
+        
+            
+            
+            
+
+            
+            
+              
+            
+
+            
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+            
+            
+
+            
+              
+  <li class="mobile-menu-dropdown">
+    <a class="mobile-menu-item mobile-menu-dropdown-toggle" data-target="the-foundation-menu">
+      <span>The Foundation</span>
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </a>
+    <div class="mobile-menu-sub-menu-wrapper">
+      <ul class="mobile-menu-sub-menu hidden" id="the-foundation-menu">
+        
+          <li class="mobile-menu-dropdown">
+            <a 
+              data-target="the-foundation-about-sub-menu"
+              class="mobile-menu-item mobile-menu-dropdown-toggle" 
+              aria-expanded="false"
+            >
+              <span>About</span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="mobile-menu-sub-menu-wrapper">
+              <ul 
+                class="mobile-menu-sub-menu mobile-menu-links-menu hidden"
+                id="the-foundation-about-sub-menu"
+              >
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/org/">
+                      About the Eclipse Foundation
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/org/governance/">
+                      Board &amp; Governance
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/org/foundation/staff.php">
+                      Staff
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/org/services/">
+                      Services
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+          <li class="mobile-menu-dropdown">
+            <a 
+              data-target="the-foundation-legal-sub-menu"
+              class="mobile-menu-item mobile-menu-dropdown-toggle" 
+              aria-expanded="false"
+            >
+              <span>Legal</span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="mobile-menu-sub-menu-wrapper">
+              <ul 
+                class="mobile-menu-sub-menu mobile-menu-links-menu hidden"
+                id="the-foundation-legal-sub-menu"
+              >
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/legal/">
+                      Legal Policies
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/legal/privacy/">
+                      Privacy Policy
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/legal/terms-of-use/">
+                      Terms of Use
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/legal/compliance/">
+                      Compliance
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/legal/epl-2.0/">
+                      Eclipse Public License
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+          <li class="mobile-menu-dropdown">
+            <a 
+              data-target="the-foundation-more-sub-menu"
+              class="mobile-menu-item mobile-menu-dropdown-toggle" 
+              aria-expanded="false"
+            >
+              <span>More</span>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <div class="mobile-menu-sub-menu-wrapper">
+              <ul 
+                class="mobile-menu-sub-menu mobile-menu-links-menu hidden"
+                id="the-foundation-more-sub-menu"
+              >
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://newsroom.eclipse.org/news/press-releases">
+                      Press Releases 
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/careers/">
+                      Careers
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/org/artwork/">
+                      Logos &amp; Artwork
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a class="mobile-menu-item" href="https://www.eclipse.org/org/foundation/contact.php">
+                      Contact Us
+                    </a>
+                  </li>
+                
+              </ul>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </li>
+ 
+            
+        
+    </ul>
+</nav>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="eclipsefdn-mega-menu">
+    
+        
+        
+
+        <div class="mega-menu-submenu container hidden" data-menu-id="projects-menu">
+            <div class="mega-menu-submenu-featured-story">
+
+              
+                <p class="mega-menu-submenu-featured-story-heading">Projects</p>
+                <p class="mega-menu-submenu-featured-story-text">      The Eclipse Foundation is home to the Eclipse IDE, Jakarta EE, and
+      hundreds of open source projects, including runtimes, tools,
+      specifications, and frameworks for cloud and edge applications, IoT, AI,
+      automotive, systems engineering, open processor designs, and many others.
+    </p>
+              
+
+              
+
+            </div>
+            <div class="mega-menu-submenu-links-section">
+                
+                    <div class="mega-menu-submenu-links">
+                        <p class="menu-heading">Technologies</p>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/topics/ide/">Developer Tools &amp; IDEs</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/topics/cloud-native/">Cloud Native</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/topics/edge-and-iot/">Edge &amp; IoT</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/topics/automotive-and-mobility/">Automotive &amp; Mobility</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                
+                    <div class="mega-menu-submenu-links">
+                        <p class="menu-heading">Projects</p>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://projects.eclipse.org/">Project Finder</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/projects/project_activity.php">Project Activity</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/projects/resources/">Project Resources</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/specifications/">Specifications</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/contribute/">Contribute</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                
+            </div>
+            <div class="mega-menu-submenu-ad-wrapper">
+              
+                <div
+                  class="eclipsefdn-mega-menu-promo-content mega-menu-promo-content"
+                  data-ad-format="ads_square"
+                  data-ad-publish-to="eclipse_org_home"
+                >
+                </div>
+              
+            </div>
+        </div>
+    
+        
+        
+
+        <div class="mega-menu-submenu container hidden" data-menu-id="supporters-menu">
+            <div class="mega-menu-submenu-featured-story">
+
+              
+                <p class="mega-menu-submenu-featured-story-heading">Supporters</p>
+                <p class="mega-menu-submenu-featured-story-text">      The Eclipse Foundation is an international non-profit association
+      supported by our members, including industry leaders who value open
+      source as a key enabler for their business strategies.
+    </p>
+              
+
+              
+
+            </div>
+            <div class="mega-menu-submenu-links-section">
+                
+                    <div class="mega-menu-submenu-links">
+                        <p class="menu-heading">Membership</p>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/membership/explore-membership/">Our Members</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/membership/">Member Benefits</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/membership/#tab-levels">Membership Levels &amp; Fees</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/membership/#tab-membership">Membership Application</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/membership/#tab-resources">Member Resources</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://membership.eclipse.org/portal">Member Portal</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                
+                    <div class="mega-menu-submenu-links">
+                        <p class="menu-heading">Sponsorship</p>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/sponsor/">Sponsor</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/org/corporate-sponsors/">Corporate Sponsorship</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/sponsor/collaboration/">Sponsor a Collaboration</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                
+            </div>
+            <div class="mega-menu-submenu-ad-wrapper">
+              
+                <div
+                  class="eclipsefdn-mega-menu-promo-content mega-menu-promo-content"
+                  data-ad-format="ads_square"
+                  data-ad-publish-to="eclipse_org_home"
+                >
+                </div>
+              
+            </div>
+        </div>
+    
+        
+        
+
+        <div class="mega-menu-submenu container hidden" data-menu-id="collaborations-menu">
+            <div class="mega-menu-submenu-featured-story">
+
+              
+                <p class="mega-menu-submenu-featured-story-heading">Collaborations</p>
+                <p class="mega-menu-submenu-featured-story-text">      Whether you intend on contributing to Eclipse technologies that are
+      important to your product strategy, or simply want to explore a specific
+      innovation area with like-minded organisations, the Eclipse Foundation is
+      the open source home for industry collaboration.
+    </p>
+              
+
+              
+
+            </div>
+            <div class="mega-menu-submenu-links-section">
+                
+                    <div class="mega-menu-submenu-links">
+                        <p class="menu-heading">Industry Collaborations</p>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/collaborations/">About Industry Collaborations</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/org/workinggroups/explore.php">Current Collaborations</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/org/workinggroups/about.php">About Working Groups</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/collaborations/interest-groups/">About Interest Groups</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                
+                    <div class="mega-menu-submenu-links">
+                        <p class="menu-heading">Research Collaborations</p>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/research/">Research @ Eclipse</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                
+            </div>
+            <div class="mega-menu-submenu-ad-wrapper">
+              
+                <div
+                  class="eclipsefdn-mega-menu-promo-content mega-menu-promo-content"
+                  data-ad-format="ads_square"
+                  data-ad-publish-to="eclipse_org_home"
+                >
+                </div>
+              
+            </div>
+        </div>
+    
+        
+        
+
+        <div class="mega-menu-submenu container hidden" data-menu-id="resources-menu">
+            <div class="mega-menu-submenu-featured-story">
+
+              
+                <p class="mega-menu-submenu-featured-story-heading">Resources</p>
+                <p class="mega-menu-submenu-featured-story-text">      The Eclipse community consists of individual developers and organisations
+      spanning many industries. Stay up to date on our open source community
+      and find resources to support your journey.
+    </p>
+              
+
+              
+
+            </div>
+            <div class="mega-menu-submenu-links-section">
+                
+                    <div class="mega-menu-submenu-links">
+                        <p class="menu-heading">Open Source for Business</p>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/org/value/">Business Value of Open Source</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/os4biz/ospo/">Open Source Program Offices</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                
+                    <div class="mega-menu-submenu-links">
+                        <p class="menu-heading">What&#39;s Happening</p>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://newsroom.eclipse.org/">News</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://events.eclipse.org/">Events</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/community/eclipse_newsletter/">Newsletter</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://newsroom.eclipse.org/news/press-releases">Press Releases</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/org/foundation/eclipseawards/">Awards &amp; Recognition</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                
+                    <div class="mega-menu-submenu-links">
+                        <p class="menu-heading">Developer Resources</p>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://eclipse.org/forums/">Forum</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://accounts.eclipse.org/mailing-list">Mailing Lists</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/blogs-and-videos/">Blogs &amp; Videos</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/resources/marketplaces/">Marketplaces</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                
+            </div>
+            <div class="mega-menu-submenu-ad-wrapper">
+              
+                <div
+                  class="eclipsefdn-mega-menu-promo-content mega-menu-promo-content"
+                  data-ad-format="ads_square"
+                  data-ad-publish-to="eclipse_org_home"
+                >
+                </div>
+              
+            </div>
+        </div>
+    
+        
+        
+
+        <div class="mega-menu-submenu container hidden" data-menu-id="the-foundation-menu">
+            <div class="mega-menu-submenu-featured-story">
+
+              
+                <p class="mega-menu-submenu-featured-story-heading">The Foundation</p>
+                <p class="mega-menu-submenu-featured-story-text">      The Eclipse Foundation provides our global community of individuals and
+      organisations with a mature, scalable, and vendor-neutral environment for
+      open source software collaboration and innovation.
+    </p>
+              
+
+              
+
+            </div>
+            <div class="mega-menu-submenu-links-section">
+                
+                    <div class="mega-menu-submenu-links">
+                        <p class="menu-heading">About</p>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/org/">About the Eclipse Foundation</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/org/governance/">Board &amp; Governance</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/org/foundation/staff.php">Staff</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/org/services/">Services</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                
+                    <div class="mega-menu-submenu-links">
+                        <p class="menu-heading">Legal</p>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/legal/">Legal Policies</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/legal/privacy/">Privacy Policy</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/legal/terms-of-use/">Terms of Use</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/legal/compliance/">Compliance</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/legal/epl-2.0/">Eclipse Public License</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                
+                    <div class="mega-menu-submenu-links">
+                        <p class="menu-heading">More</p>
+                        <ul>
+                            
+                                <li>
+                                    <a href="https://newsroom.eclipse.org/news/press-releases">Press Releases </a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/careers/">Careers</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/org/artwork/">Logos &amp; Artwork</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="https://www.eclipse.org/org/foundation/contact.php">Contact Us</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                
+            </div>
+            <div class="mega-menu-submenu-ad-wrapper">
+              
+                <div
+                  class="eclipsefdn-mega-menu-promo-content mega-menu-promo-content"
+                  data-ad-format="ads_square"
+                  data-ad-publish-to="eclipse_org_home"
+                >
+                </div>
+              
+            </div>
+        </div>
+    
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</header>
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<main>
+  <div class="container padding-bottom-30">
+    
+      <div class="row">
+        <div class="col-md-18">
+    
+    
+      
+
+
+
+
+
+
+
+<div class="default-breadcrumbs hidden-print" id="breadcrumb">
+  <div class="">
+    <div class="row">
+      <div class="col-sm-24">
+        <ol aria-label="Breadcrumb" class="breadcrumb">
+          
+            
+              
+            
+              
+            
+            <li >
+              <a href="https://eclipse.dev/rcptt/">RCP Testing Tool</a>
+            </li>
+          
+            
+            <li >
+              <a href="https://eclipse.dev/rcptt/userguide/">User Guide</a>
+            </li>
+          
+            
+            <li  class="active" aria-current="page">
+              <a href="https://eclipse.dev/rcptt/userguide/getstarted/">Getting Started</a>
+            </li>
+          
+          </ol>
+          
+        </div>
+    </div>
+  </div>
+</div>
+
+
+    
+    
+
+    
+      <h1>
+        
+          Getting Started
+        
+      </h1>
+    
+
+
+
+  
+  <p>To get an impression what it looks like to work with RCPTT, you&rsquo;ll need the following:</p>
+<ul>
+<li>RCP Testing Tool IDE (<a href="../../download">download it here</a>).</li>
+<li>Eclipse-based application to test. This guide assumes that you are using Eclipse Classic standard package, which can be downloaded from <a href="http://eclipse.org/downloads">Eclipse downloads</a>.</li>
+</ul>
+<h3 id="launch-rcptt-ide">Launch RCPTT IDE</h3>
+<p>Just like usual Eclipse packages, RCPTT IDE does not require installation and can be just unpacked anywhere. So, at first download and unpack RCPTT IDE and your application-under-test somewhere on disk and launch RCPTT IDE.</p>
+<p>When you launch RCPTT IDE, you&rsquo;ll be prompted for a workspace location. If you don&rsquo;t know what is workspace in a context of Eclipse application, then just choose the default one (which is rcpttWorkspace folder in your Home directory).</p>
+<h3 id="add-an-application-under-test">Add an application-under-test</h3>
+<p>To be able to record and replay tests in an application, RCPTT IDE should launch application by itself. To add an application-under-test, go to 
+
+
+<span class="uiElement"><img src="../ui-applications.gif"/> Applications view </span> and click 
+
+
+<span class="uiElement"><img src="../ui-new-aut.gif"/> New&#8230;</span> button on View toolbar (alternatively, you may right-click anywhere inside a view and choose 
+
+
+<span class="uiElement"><img src="../ui-new-aut.gif"/> New&#8230;</span> in a context menu).</p>
+<p>In a dialog open, browse for an application-under-test (AUT) location on a disk. Once RCPTT IDE analyzes an AUT, it will automatically set its name to AUT&rsquo;s product id, however you may change it to whatever you like.</p>
+<p>Click 
+
+<span class="uiElement">Finish</span> in a wizard and double-click newly created application-under-test to launch it. Now we are ready to create a first test case.</p>
+<h3 id="creating-new-test-case">Creating new test case</h3>
+<p>RCPTT stores test cases just as usual files on a file system, so that they can be easily stored in version control system, copied, merged between branches, etc. So in order to create a test case, it is required to create an RCPTT Project first.</p>
+<p>Go to 
+
+<span class="uiElement">File &#8594; New &#8594; 
+
+
+<span class="uiElement"><img src="../ui-rcptt-project.png"/> RCP Testing Tool Project&#8230; </span></span>, type any name, for example <strong>First Project</strong>, and click 
+
+<span class="uiElement">Finish</span>.</p>
+<p>Once a project is created, right-click it in 
+
+
+<span class="uiElement"><img src="../ui-workspace.gif"/> Test Explorer</span> and select 
+
+<span class="uiElement">New &#8594; 
+
+
+<span class="uiElement"><img src="../ui-test.gif"/> Test Case</span></span>. Again, type any name, like <strong>First Test</strong>, and click 
+
+<span class="uiElement">Finish</span>.</p>
+<h3 id="record-a-test-case">Record a test case</h3>
+<p>RCPTT focuses on a productivity, and RCPTT team puts a great effort to make recorder as best as possible. So while it is possible to write a test script by hads, typically it is much faster to simply record actions and assertions, and then modify recorded script if necessary.</p>
+<p>While it might sound a bit boring, as we are starting from scratch, let&rsquo;s create a very simple test case, which creates new Java project and makes sure that this project contains an empty source folder. Before starting recording, make sure that AUT is in <em>Java</em> perspective (don&rsquo;t worry, we&rsquo;ll show how to make sure test case automatically runs with necessary perspective pretty soon).</p>
+<p>To make it easier for others to understand what a test case does, we can put a description of test case intention and performed actions into 
+
+<span class="uiElement">Description</span> section of a test case. Also we can change its name in an editor to <strong>New Java Project</strong> (note that once you save a test case, the name in 
+
+<span class="uiElement">Test Explorer</span> updates accordingly).</p>
+<p>To start test case recording, simply click a 
+
+
+<span class="uiElement"><img src="../ui-record.gif"/> Record</span> button in test case editor. Once RCPTT goes to recording mode, the main RCPTT window minimizes itself and shows a <a href="#">Control Panel</a>, so it is more convenient to interact with an application-under-test.</p>
+<p>So, once recording started, simply do the following actions:</p>
+<ol>
+<li>Select 
+
+<span class="uiElement">File &#8594; New &#8594; Java Project</span> in main menu</li>
+<li>Type <kbd>sample</kbd> into project name field</li>
+<li>Click Finish</li>
+<li>Once project is created, expand it in 
+
+<span class="uiElement">Package Explorer</span>.</li>
+</ol>
+<p>Note that 
+
+<span class="uiElement">Control Panel</span> contents is getting updated with recorded actions, but it doesn&rsquo;t include a tree item expansion action, as it assumes that this action is not really important enough.</p>
+<p>Once we recorded actions, we also need to assert the state of the UI to make sure that the result of our actions is what we expect. To do this, we need to switch to <em>Assertion Mode</em> on Control Panel toolbar (). Once in Assertion mode, you can click on any UI element on a screen and get an 
+
+<span class="uiElement">Assertion Window</span> with element&rsquo;s properties. At this point, we are interested in <strong>src/</strong> folder, so click on it, check an <strong>itemCount</strong> in Assertion Window, and click 
+
+
+<span class="uiElement"><img src="../ui-add.gif"/> Add</span> button.</p>
+<p>Once we are done, go to Control Panel toolbar, 
+
+
+<span class="uiElement"><img src="../ui-stop.gif"/> Stop</span>, 
+
+
+<span class="uiElement"><img src="../ui-save.gif"/> Save</span> and 
+
+
+<span class="uiElement"><img src="../ui-home.gif"/> Return to RCPTT</span>.</p>
+<p>Now, let&rsquo;s replay the resulting test, but before make sure to manually remove project <kbd>sample</kbd> from AUT&rsquo;s workspace and file system – we&rsquo;ll cover how to eleminate this manual step in a few minutes.</p>
+<p>To replay a test case, simply click a 
+
+
+<span class="uiElement"><img src="../ui-replay.gif"/> Replay</span> button in a test case editor. An 
+
+
+<span class="uiElement"><img src="../ui-execution-view.png"/> Execution</span> view will display test result.</p>
+<h3 id="ecl-script-intro">ECL Script Intro</h3>
+<p>Before we go to <a href="../contexts/">Contexts</a>, let&rsquo;s take a look at recorded script:</p>
+
+
+
+<pre class="language-ecl ">
+<code>get-menu &#34;File/New/Java Project&#34; | click
+with [get-window &#34;New Java Project&#34;] {
+    get-editbox -after [get-label &#34;Project name:&#34;] | set-text sample
+    get-button Finish | click
+}
+get-view &#34;Package Explorer&#34; | get-tree | get-item &#34;sample/src&#34;
+    | get-property childCount | equals 0 | verify-true</code>
+</pre><p>It&rsquo;s probably understandable intuitively, but here&rsquo;s a brief description how of it works. A scripting language we use, <a href="../ecl/">ECL</a> (which stands for Eclipse Command Language), is inspired by TCL and Powershell, and it consists of commands, connected by pipes.</p>
+<p>A command takes some input, arguments and optionally writes something to an output. A pipe (
+
+
+<code class="language-ecl">|</code>) can be used to redirect an output of the left command to the input of the right command. So, a line 
+
+
+<code class="language-ecl">get-menu &#34;File/New/Java Project&#34; | click</code> works like this:</p>
+<ol>
+<li>
+
+
+<code class="language-ecl">get-menu</code> command accepts a menu path (with segments separated by slashes) as an argument. Since there is no input (i.e. it is a first command in a pipeline), it assumes that given menu path addresses an application&rsquo;s main menu. So it makes sure that such menu path exists, and writes a reference to this menu item into its output.</li>
+<li>
+
+
+<code class="language-ecl">click</code> command takes a control reference from its input and sends events to emulate user&rsquo;s click</li>
+</ol>
+<p>Next, get on a next line of a script, 
+
+
+<code class="language-ecl">with</code> command. Here we can see two important things:</p>
+<ol>
+<li>An <em>output</em> of a command can be passed as an argument to another command by using square braces (i.e. 
+
+
+<code class="language-ecl">[some-command]</code>).</li>
+<li>A <em>command</em> itself can be passed as an argument to another command by using curly braces (i.e. 
+
+
+<code class="language-ecl">{ some-command }</code>).</li>
+</ol>
+<p>So, the 
+
+
+<code class="language-ecl">with</code> command works like this:</p>
+<ol>
+<li>Takes an <em>object</em> as a first argument</li>
+<li>Takes a <em>script</em> (just a sequence of pipelines) as a second argument</li>
+<li>Executes a <em>script</em> by prepending an <em>object</em> to an output of each command.</li>
+</ol>
+<p>In our test case above, a reference to a window is passed as an input to all commands in with-block, so that we don&rsquo;t need to explicitly tell each command that it should use a window as an input.</p>
+<p>Another use of square braces in a script above, is identifying an editbox (
+
+
+<code class="language-ecl">get-editbox -after [get-label &#34;Project name:&#34;]</code>). When we locate a textual input, we cannot rely on its text contents, so we are identifying it by its relative location to a label, hence we pass a label control (output of 
+
+
+<code class="language-ecl">get-label</code> command) as an argument to 
+
+
+<code class="language-ecl">get-editbox</code>. Also this line illustrates that commands may have named arguments, here 
+
+
+<code class="language-ecl">-after</code> is an argument name, while 
+
+
+<code class="language-ecl">[get-label ...]</code> is argument value.</p>
+<p>The last line, which has been recorded when we clicked 
+
+
+<span class="uiElement"><img src="../ui-add.gif"/> Add</span> button in an 
+
+<span class="uiElement">Assertion Window</span>, should be pretty understandable now &ndash; it takes a property from an object and verifies that its value is what we expect.</p>
+<h3 id="contexts">Contexts</h3>
+<p>While creating and running our test case, we had to make manual actions to make sure that our test case passes, and we promised to show how to eleminate it to make a test case fully automated. So, two things we need to fix, are the following:</p>
+<ol>
+<li>Make sure that there&rsquo;s no project <kbd>sample</kbd> in Workspace</li>
+<li>Make sure that current perspective is Java</li>
+</ol>
+<p>In other words, our test case makes certain assumptions about an application state, and we need somehow to make sure that an application state matches to test case expectations. For this purpose, RCPTT has <a href="../contexts/">contexts</a>. There are several different types of contexts, which describe different parts of an application state, but in this guide we&rsquo;ll focus on two of them – <a href="../contexts/workspace/">Workspace</a> and <a href="../contexts/workbench/">Workbench</a>.</p>
+<h3 id="workspace-context">Workspace Context</h3>
+<p>As it can be guessed by its name, Workspace Context is used to describe a state of an application&rsquo;s workspace. To create a workspace context, follow these steps:</p>
+<ol>
+<li>Right-click RCPTT project in 
+
+<span class="uiElement">Test Explorer</span>.</li>
+<li>Select 
+
+<span class="uiElement">New &#8594; 
+
+
+<span class="uiElement"><img src="../ui-context.gif"/>Context</span></span>.</li>
+<li>In a 
+
+<span class="uiElement">New Context Wizard</span>, type <kbd>Empty Workspace</kbd> as a context name and select 
+
+
+<span class="uiElement"><img src="../ui-workspace.gif"/> Workspace</span>.</li>
+<li>Click 
+
+<span class="uiElement">Finish</span>.</li>
+</ol>
+<p>You can see in workspace context editor that it is empty by default and it has an option 
+
+<span class="uiElement">Clear workspace</span> turned on by default, so we don&rsquo;t need to do anything else with it, we just need to associate our test case with this context.</p>
+<p>There are two ways to do that with a test case editor:</p>
+<ul>
+<li>Use 
+
+
+<span class="uiElement"><img src="../ui-add.gif"/> Add&#8230;</span> button on a 
+
+<span class="uiElement">Contexts</span> section toolbar and select required context from context selection dialog.</li>
+<li>Expand 
+
+<span class="uiElement">Contexts</span> section, drag a context from 
+
+<span class="uiElement">Test Explorer</span> and drop a context inside.</li>
+</ul>
+<p>It is not necessary to run a test case to see a context in action – use 
+
+
+<span class="uiElement"><img src="../ui-replay.gif"/> Apply</span> button in context editor to see how a context affects an application state. In our case, we can see that applying an empty workspace context indeed removes all projects from application workspace.</p>
+<h3 id="workbench-context">Workbench Context</h3>
+<p>Workbench context is used to describe a state of an application Workbench – which perspective is currently active and which views and editors are open. For our test case we need to specify that Java perpspective is open. To create a workbench context describing this, do the following:</p>
+<ol>
+<li>As with workspace context, create a new context named <kbd>Java Perspective</kbd> of 
+
+
+<span class="uiElement"><img src="../ui-workbench.gif"/> Workbench</span> type.</li>
+<li>In workbench context editor, use 
+
+
+<span class="uiElement"><img src="../ui-capture.gif"/> Capture</span> button to make a snapshot of a current application state. Assuming that Java perspective is open, the contents of a workbench text editor should be populated with a Java perspective and open views.</li>
+</ol>
+<p>Now, once a test case refers to two contexts, we don&rsquo;t need to do any manual steps to make test case passing – it can be successfully replayed several times in a row.</p>
+<p>Contexts are highly important for RCPTT test cases and greately improve QA Engineer productivity and overall reliability of test base.</p>
+<ul>
+<li><em>Contexts can be reused</em> – multiple test cases can refer to the same context. Thus it is possible to create a set of contexts describing an application state and create as many test cases starting from this state as necessary.</li>
+<li><em>Contexts isolate test cases from each other</em> – if some test case fails, it won&rsquo;t affect further test cases, allowing to get rid of false negative results.</li>
+</ul>
+<h3 id="conclusion">Conclusion</h3>
+<p>In this guide we have covered how to add and launch an application under test, how to create and record test cases, how to add assertions for properties of UI elements, how a test script looks like, how to create and capture contexts and add them to test cases. For more information on these topics, browse a documentation reference using a navigation tree on a left.</p>
+
+
+  
+
+    
+
+
+     
+      
+      </div>
+        <div class="col-md-6  padding-bottom-30">
+          
+            
+
+
+  
+
+  
+    
+  
+
+  
+
+  
+    <aside class="main-sidebar-default-margin" id="main-sidebar">
+      
+        
+          <ul class="ul-left-nav" id="leftnav" role="tablist" aria-multiselectable="true">
+            <li class="main-sidebar-main-item main-sidebar-item-indented separator">
+              
+                <a class="main-sidebar-heading link-unstyled" href="/rcptt/userguide/">
+                  User Guide
+                </a>
+              
+            </li>
+            
+              <li class="main-sidebar-item main-sidebar-item-indented">
+                
+                  <li class="main-sidebar-item main-sidebar-item-indented">
+                    <a class="link-unstyled" href="/rcptt/userguide/assertions/">
+                      <div>
+                        <span class="main-sidebar-item-pre" aria-hidden="true">
+                          
+                        </span>
+                        Assertions
+                      </div>
+                    </a>
+                  </li>
+                
+              </li>
+            
+              <li class="main-sidebar-item main-sidebar-item-indented">
+                
+                  <li class="main-sidebar-item main-sidebar-item-indented">
+                    <a class="link-unstyled" role="button" data-toggle="collapse" href="#contexts" aria-expanded="false" aria-controls="contexts">
+                      <span>Contexts</span>
+                      <i class="main-sidebar-item-icon fa fa-chevron-down" aria-hidden="true"></i>
+                    </a>
+                    <div class="collapse" id="contexts">
+                      <ul class="main-sidebar-item-submenu list-unstyled">
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/contexts/default/" target="_self">Default Contexts</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/contexts/ecl/" target="_self">ECL Script Contexts</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/contexts/folder/" target="_self">Folder Contexts</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/contexts/group/" target="_self">Group Contexts</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/contexts/launch/" target="_self">Launch Contexts</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/contexts/parameters/" target="_self">Parameters Contexts</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/contexts/preferences/" target="_self">Preferences Contexts</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/contexts/super/" target="_self">Super Contexts</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/contexts/workbench/" target="_self">Workbench Contexts</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/contexts/workspace/" target="_self">Workspace Contexts</a>
+                        </li>
+                        
+                      </ul>
+                    </div>
+                  </li>
+                
+              </li>
+            
+              <li class="main-sidebar-item main-sidebar-item-indented">
+                
+                  <li class="main-sidebar-item main-sidebar-item-indented">
+                    <a class="link-unstyled" href="/rcptt/userguide/controlpanel/">
+                      <div>
+                        <span class="main-sidebar-item-pre" aria-hidden="true">
+                          
+                        </span>
+                        Control Panel
+                      </div>
+                    </a>
+                  </li>
+                
+              </li>
+            
+              <li class="main-sidebar-item main-sidebar-item-indented">
+                
+                  <li class="main-sidebar-item main-sidebar-item-indented">
+                    <a class="link-unstyled" role="button" data-toggle="collapse" href="#ecl" aria-expanded="false" aria-controls="ecl">
+                      <span>Eclipse Command Language</span>
+                      <i class="main-sidebar-item-icon fa fa-chevron-down" aria-hidden="true"></i>
+                    </a>
+                    <div class="collapse" id="ecl">
+                      <ul class="main-sidebar-item-submenu list-unstyled">
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/ecl/define-emf-model/" target="_self">Define EMF model for ShowViews command</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/ecl/excel-import-export/" target="_self">ECL commands for Excel import and export</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/ecl/xml-import-export/" target="_self">ECL commands for XML import and export</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/ecl/new-command/" target="_self">New Command Guide</a>
+                        </li>
+                        
+                      </ul>
+                    </div>
+                  </li>
+                
+              </li>
+            
+              <li class="main-sidebar-item main-sidebar-item-indented">
+                
+                  <li class="main-sidebar-item main-sidebar-item-indented">
+                    <a class="link-unstyled" href="/rcptt/userguide/getstarted/">
+                      <div>
+                        <span class="main-sidebar-item-pre" aria-hidden="true">
+                          
+                        </span>
+                        Getting Started
+                      </div>
+                    </a>
+                  </li>
+                
+              </li>
+            
+              <li class="main-sidebar-item main-sidebar-item-indented">
+                
+                  <li class="main-sidebar-item main-sidebar-item-indented">
+                    <a class="link-unstyled" role="button" data-toggle="collapse" href="#integration" aria-expanded="false" aria-controls="integration">
+                      <span>Integration</span>
+                      <i class="main-sidebar-item-icon fa fa-chevron-down" aria-hidden="true"></i>
+                    </a>
+                    <div class="collapse" id="integration">
+                      <ul class="main-sidebar-item-submenu list-unstyled">
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/integration/test-rail/" target="_self">Integration with TestRail</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/integration/zephyr/" target="_self">Integration with Zephyr</a>
+                        </li>
+                        
+                      </ul>
+                    </div>
+                  </li>
+                
+              </li>
+            
+              <li class="main-sidebar-item main-sidebar-item-indented">
+                
+                  <li class="main-sidebar-item main-sidebar-item-indented">
+                    <a class="link-unstyled" href="/rcptt/userguide/maven/">
+                      <div>
+                        <span class="main-sidebar-item-pre" aria-hidden="true">
+                          
+                        </span>
+                        Maven plugin
+                      </div>
+                    </a>
+                  </li>
+                
+              </li>
+            
+              <li class="main-sidebar-item main-sidebar-item-indented">
+                
+                  <li class="main-sidebar-item main-sidebar-item-indented">
+                    <a class="link-unstyled" href="/rcptt/userguide/procedures/">
+                      <div>
+                        <span class="main-sidebar-item-pre" aria-hidden="true">
+                          
+                        </span>
+                        Procedures and Variables
+                      </div>
+                    </a>
+                  </li>
+                
+              </li>
+            
+              <li class="main-sidebar-item main-sidebar-item-indented">
+                
+                  <li class="main-sidebar-item main-sidebar-item-indented">
+                    <a class="link-unstyled" href="/rcptt/userguide/rap/">
+                      <div>
+                        <span class="main-sidebar-item-pre" aria-hidden="true">
+                          
+                        </span>
+                        RCPTT RAP
+                      </div>
+                    </a>
+                  </li>
+                
+              </li>
+            
+              <li class="main-sidebar-item main-sidebar-item-indented">
+                
+                  <li class="main-sidebar-item main-sidebar-item-indented">
+                    <a class="link-unstyled" href="/rcptt/userguide/testeditor/">
+                      <div>
+                        <span class="main-sidebar-item-pre" aria-hidden="true">
+                          
+                        </span>
+                        Test Case Editor
+                      </div>
+                    </a>
+                  </li>
+                
+              </li>
+            
+              <li class="main-sidebar-item main-sidebar-item-indented">
+                
+                  <li class="main-sidebar-item main-sidebar-item-indented">
+                    <a class="link-unstyled" role="button" data-toggle="collapse" href="#runner" aria-expanded="false" aria-controls="runner">
+                      <span>Test Runner</span>
+                      <i class="main-sidebar-item-icon fa fa-chevron-down" aria-hidden="true"></i>
+                    </a>
+                    <div class="collapse" id="runner">
+                      <ul class="main-sidebar-item-submenu list-unstyled">
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/runner/arguments/" target="_self">Test Runner Arguments</a>
+                        </li>
+                        
+                      </ul>
+                    </div>
+                  </li>
+                
+              </li>
+            
+              <li class="main-sidebar-item main-sidebar-item-indented">
+                
+                  <li class="main-sidebar-item main-sidebar-item-indented">
+                    <a class="link-unstyled" role="button" data-toggle="collapse" href="#verifications" aria-expanded="false" aria-controls="verifications">
+                      <span>Verifications</span>
+                      <i class="main-sidebar-item-icon fa fa-chevron-down" aria-hidden="true"></i>
+                    </a>
+                    <div class="collapse" id="verifications">
+                      <ul class="main-sidebar-item-submenu list-unstyled">
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/verifications/errorlog/" target="_self">Error Log Verifications</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/verifications/time/" target="_self">Execution Time Verifications</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/verifications/text/" target="_self">Text Verifications</a>
+                        </li>
+                        
+                        <li class="submenu-item">
+                          
+                          <a class="link-unstyled" href="/rcptt/userguide/verifications/treetable/" target="_self">Tree/Table Verifications</a>
+                        </li>
+                        
+                      </ul>
+                    </div>
+                  </li>
+                
+              </li>
+            
+          </ul>
+        
+      
+    </aside>
+  
+
+
+          
+        </div>
+      </div>
+    
+  </div>
+</main>
+  
+<script defer src="https://eclipse.dev/rcptt/js/main.js"></script>
+  
+  <div class="eclipsefdn-featured-footer featured-footer" id="featured-footer" data-publish-target="eclipse_org">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-24 featured-container">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+
+  
+
+<p id="back-to-top">
+  <a class="visible-xs" href="#">Back to the top</a>
+</p>
+<footer class="footer" id="footer">
+  <div class="container">
+    
+
+<div class="footer-end-social-container margin-bottom-30">
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer-end-social">
+    <p class="footer-end-social-text hidden-xs">Follow Us:</p>
+    <ul class="footer-end-social-links list-inline">
+        <li>
+            <a class="link-unstyled" href="https://twitter.com/EclipseFdn" title="Twitter account">
+                <span class="fa fa-stack">
+                    <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                    <span class="sr-only">Twitter account</span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a class="link-unstyled" href="https://www.facebook.com/eclipse.org" title="Facebook account">
+                <span class="fa fa-stack">
+                    <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                    <span class="sr-only">Facebook account</span>
+                </span>
+            </a>
+        </li> 
+        
+        <li>
+            <a class="link-unstyled" href="https://www.youtube.com/user/EclipseFdn" title="Youtube account">
+                <span class="fa fa-stack">
+                    <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+                    <i class="fa fa-youtube-play fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                    <span class="sr-only">Youtube account</span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a class="link-unstyled" href="https://www.linkedin.com/company/eclipse-foundation" title="Linkedin account">
+                <span class="fa fa-stack">
+                    <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                    <span class="sr-only">Linkedin account</span>
+                </span>
+            </a>
+        </li> 
+    </ul>
+</div>
+
+
+</div>
+
+
+    <div class="footer-sections row equal-height-md font-bold">
+        
+        <div class="col-md-15">
+          <div class="row">
+            
+
+
+
+
+  
+  <section id="footer-eclipse-foundation" class="footer-section col-sm-8">
+    <div class="menu-heading">Eclipse Foundation</div>
+    <ul class="nav">
+      <li><a href="https://www.eclipse.org/org/">About</a></li>
+      <li><a href="https://projects.eclipse.org/">Projects</a></li>
+      <li><a href="https://www.eclipse.org/collaborations/">Collaborations</a></li>
+      <li><a href="https://www.eclipse.org/membership/">Membership</a></li>
+      <li><a href="https://www.eclipse.org/sponsor/">Sponsor</a></li>
+    </ul>
+  </section>
+
+
+
+
+
+  
+  <section id="footer-legal" class="footer-section col-sm-8">
+    <div class="menu-heading">Legal</div>
+    <ul class="nav">
+      <li><a href="https://www.eclipse.org/legal/privacy/">Privacy Policy</a></li>
+      <li><a href="https://www.eclipse.org/legal/terms-of-use/">Terms of Use</a></li>
+      <li><a href="https://www.eclipse.org/legal/compliance/">Compliance</a></li>
+      <li><a href="https://www.eclipse.org/org/documents/Community_Code_of_Conduct.php">Code of Conduct</a></li>
+      <li><a href="https://www.eclipse.org/legal/">Legal Resources</a></li>
+      <li><a class="toolbar-manage-cookies" href="#" onclick="event.preventDefault()">Manage Cookies</a></li>
+    </ul>
+  </section>
+
+
+
+
+
+
+  
+  <section id="footer-more" class="footer-section col-sm-8">
+    <div class="menu-heading">More</div>
+    <ul class="nav">
+      <li><a href="https://www.eclipse.org/security/">Report a Vulnerability</a></li>
+      <li><a href="https://status.eclipse.org/">Service Status</a></li>
+      <li><a href="https://www.eclipse.org/org/foundation/contact.php">Contact Us</a></li>
+      <li><a href="https://www.eclipse.org/projects/support/">Support</a></li>
+    </ul>
+  </section>
+
+
+
+
+          </div>
+        </div>
+        
+
+
+
+
+  <div id="footer-end" class="footer-section col-md-8 col-md-offset-1 col-sm-24">
+    
+      <div class="footer-end-newsletter">
+        <form id="mc-embedded-subscribe-form" action="https://eclipsecon.us6.list-manage.com/subscribe/post" method="post" novalidate target="_blank">
+          <label class="footer-end-newsletter-label" for="email">Subscribe to our Newsletter</label>
+          <div class="footer-end-newsletter-input-wrapper">
+            <input class="footer-end-newsletter-input" type="email" id="email" name="EMAIL" autocomplete="email" placeholder="Enter your email address" />
+            <div>
+              <i class="fa fa-solid fa-envelope fa-lg" aria-hidden="true"></i>
+            </div>
+          </div>
+          <input type="hidden" name="u" value="eaf9e1f06f194eadc66788a85" />
+          <input type="hidden" name="id" value="46e57eacf1" />
+          <input id="mc-embedded-subscribe" type="submit" name="subscribe" hidden />
+        </form>
+      </div>
+    
+  </div>
+
+
+    </div>
+    
+
+
+
+<div class="col-sm-24 margin-top-20">
+  <div class="row">
+    <div id="copyright" class="col-md-16">
+      <p id="copyright-text">Copyright &copy; Eclipse Foundation AISBL. All Rights Reserved.</p>
+    </div>
+    
+  </div>
+</div>
+
+    <a href="#" class="scrollup">Back to the top</a>
+  </div>
+</footer>
+
+
+
+
+  
+  <div id="footer-js">
+  
+  <script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/astro.min.js?var=0.0.250?v=1736521217"></script>
+  
+
+  
+  
+
+  
+  <script>
+  (function($, document) {
+    
+    
+  })(jQuery, document);
+  </script>
+
+  
+</div>
+
+</body>
+</html>
+

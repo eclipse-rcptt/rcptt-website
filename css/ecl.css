@@ -1,0 +1,113 @@
+code.language-ecl {
+    /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+java+bash&plugins=line-highlight */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	font-size: 0.95em;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	line-height: 1.2;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #A3CDFE;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #a3cdfe;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f8f8f8;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	border: #ddd;border-style: solid;
+	border-width: 1px;
+	font-size: .8em;
+}
+
+pre[data-line] {
+	position: relative;
+	padding: 1em 0 1em 1em;
+}
+
+.line-highlight {
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: inherit 0;
+	margin-top: 1em; /* Same as .prism’s padding-top */
+
+	background: hsla(213, 50%, 9%,.1);
+	background: -moz-linear-gradient(left, hsla(213, 50%, 9%,.1) 70%, hsla(213, 50%, 9%,0));
+	background: -webkit-linear-gradient(left, hsla(213, 50%, 9%,.1) 70%, hsla(213, 50%, 9%,0));
+	background: -o-linear-gradient(left, hsla(213, 50%, 9%,.1) 70%, hsla(213, 50%, 9%,0));
+	background: linear-gradient(left, hsla(213, 50%, 9%,.1) 70%, hsla(213, 50%, 9%,0));
+
+	pointer-events: none;
+	
+	line-height: inherit;
+	white-space: pre;
+}
+
+.token.comment {
+  color: #272;
+}
+.token.string {
+  color: #3933ff;
+}
+.token.operator {
+  color: #000;
+}
+.token.command {
+    color: #931a68;
+    font-weight: bold;
+}
+.token.attr {
+  color: #555;
+}
+
+}

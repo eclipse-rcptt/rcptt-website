@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contexts on The Community for Open Innovation and Collaboration</title>
+    <link>https://eclipse.dev/rcptt/userguide/contexts/</link>
+    <description>Recent content in Contexts on The Community for Open Innovation and Collaboration</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>vasili.gulevich@xored.com (Vasili Gulevich)</managingEditor>
+    <webMaster>vasili.gulevich@xored.com (Vasili Gulevich)</webMaster><atom:link href="https://eclipse.dev/rcptt/userguide/contexts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ECL Script Contexts</title>
+      <link>https://eclipse.dev/rcptt/userguide/contexts/ecl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+      
+      <guid>https://eclipse.dev/rcptt/userguide/contexts/ecl/</guid>
+      <description>ECL Script contexts serve two purposes:
+Allow to execute any ECL script before running your test. This can be useful for some test setup routines which cannot be performed by other context types but still they need to be separated from the main testing logic and/or re-used in multiple tests. Allow to store user-defined procedures (defined as proc). </description>
+    </item>
+    
+  </channel>
+</rss>

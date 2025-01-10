@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eclipse Command Language on The Community for Open Innovation and Collaboration</title>
+    <link>https://eclipse.dev/rcptt/userguide/ecl/</link>
+    <description>Recent content in Eclipse Command Language on The Community for Open Innovation and Collaboration</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>vasili.gulevich@xored.com (Vasili Gulevich)</managingEditor>
+    <webMaster>vasili.gulevich@xored.com (Vasili Gulevich)</webMaster><atom:link href="https://eclipse.dev/rcptt/userguide/ecl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ECL commands for Excel import and export</title>
+      <link>https://eclipse.dev/rcptt/userguide/ecl/excel-import-export/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+      
+      <guid>https://eclipse.dev/rcptt/userguide/ecl/excel-import-export/</guid>
+      <description>Export to Excel write-excel-file Writes tables from input pipe to into excel (xls or xlsx) file. Fails if file is not found or format is invalid.
+Input:
+tables (1, ∞) Table: Tables to write Parameters:
+uri String: URI to write Excel data to. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system. append boolean: Whether to append given table data into file. Default value is false.</description>
+    </item>
+    
+    <item>
+      <title>ECL commands for XML import and export</title>
+      <link>https://eclipse.dev/rcptt/userguide/ecl/xml-import-export/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+      
+      <guid>https://eclipse.dev/rcptt/userguide/ecl/xml-import-export/</guid>
+      <description>XML export write-xml-file Writes tables from input pipe to into xml file
+Input:
+tree Tree: Tree to write Parameters: uri String: URI to write xml data to. Currently supported schemes are workspace:/ for files in workspace and file:/ for files on local file system. Output:
+The value of &amp;rsquo;tree&amp;rsquo; argument Example:
+proc newDevice [val id] [val name] [val target] { tree-node &amp;#34;Device&amp;#34; [map [entry &amp;#34;id&amp;#34; $id]] [tree-node -name &amp;#34;DeviceName&amp;#34; -text $name] [tree-node -name &amp;#34;DeviceTarget&amp;#34; -text $target] } global [val supportedDevices [tree-node &amp;#34;SupportedDevices&amp;#34; [newDevice &amp;#34;1&amp;#34; &amp;#34;device 1&amp;#34; &amp;#34;target 1&amp;#34;] [newDevice &amp;#34;2&amp;#34; &amp;#34;device 2&amp;#34; &amp;#34;target 2&amp;#34;] [newDevice &amp;#34;3&amp;#34; &amp;#34;device 3&amp;#34; &amp;#34;target 3&amp;#34;] ]] global [val allDevices [tree-node &amp;#34;AllDevices&amp;#34; [newDevice &amp;#34;1&amp;#34; &amp;#34;device 1&amp;#34; &amp;#34;target 1&amp;#34;] [newDevice &amp;#34;2&amp;#34; &amp;#34;device 2&amp;#34; &amp;#34;target 2&amp;#34;] [newDevice &amp;#34;3&amp;#34; &amp;#34;device 3&amp;#34; &amp;#34;target 3&amp;#34;] [newDevice &amp;#34;4&amp;#34; &amp;#34;device 4&amp;#34; &amp;#34;target 4&amp;#34;] [newDevice &amp;#34;5&amp;#34; &amp;#34;device 5&amp;#34; &amp;#34;target 5&amp;#34;] ]] global [val tree [ tree-node &amp;#34;DevicesInfo&amp;#34; $supportedDevices $allDevices ]] $tree | write-xml-file &amp;#34;workspace:/xml/devices.</description>
+    </item>
+    
+  </channel>
+</rss>

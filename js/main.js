@@ -24,4 +24,20 @@ $(".ann").each(function() {
 	    annOverlay.hide();
 	}
     );
+
+	annBorder.removeAttr('title');
 });
+
+if (true) {
+	$(".ann-image").each(function() {
+		let annDebug = $(this).find(".ann-debug");
+		annDebug.show();
+		$(this).find("img").on( "mousemove", (event) => {
+			annDebug.text( "" + event.offsetX + ", " + event.offsetY);
+		} );
+	});
+}
+
+let activeMenuItem =  $(`.submenu-item a[href="${location.pathname}"]`)
+//activeMenuItem.parents('.collapse').collapse('show');
+//activeMenuItem.collapse('show');

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test Runner on The Community for Open Innovation and Collaboration</title>
+    <link>https://eclipse.dev/rcptt/userguide/runner/</link>
+    <description>Recent content in Test Runner on The Community for Open Innovation and Collaboration</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>vasili.gulevich@xored.com (Vasili Gulevich)</managingEditor>
+    <webMaster>vasili.gulevich@xored.com (Vasili Gulevich)</webMaster><atom:link href="https://eclipse.dev/rcptt/userguide/runner/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test Runner Arguments</title>
+      <link>https://eclipse.dev/rcptt/userguide/runner/arguments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+      
+      <guid>https://eclipse.dev/rcptt/userguide/runner/arguments/</guid>
+      <description>RCPTT Test Runner is command-line tool for launching RCPTT tests. It takes various options like path to RCPTT projects, application-under-test and other parameters, runs all tests and produces reports in HTML and JUnit XML formats.
+Quick start Download and modify sample scripts below (parameters that need to be set/changed are explained in scipt commends):
+build.xml – sample Ant script runner.sh – sample Shell script for Linux/Mac OS X runner.cmd – sample CMD script for Windows Argument reference The base command line for RCPTT runner looks like this (backslashes indicate line breaks instead, on Windows, ^ is used instead):</description>
+    </item>
+    
+  </channel>
+</rss>

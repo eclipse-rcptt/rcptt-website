@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>User Guide on The Community for Open Innovation and Collaboration</title>
+    <link>https://eclipse.dev/rcptt/userguide/</link>
+    <description>Recent content in User Guide on The Community for Open Innovation and Collaboration</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>vasili.gulevich@xored.com (Vasili Gulevich)</managingEditor>
+    <webMaster>vasili.gulevich@xored.com (Vasili Gulevich)</webMaster><atom:link href="https://eclipse.dev/rcptt/userguide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debugging Test Cases</title>
+      <link>https://eclipse.dev/rcptt/userguide/debugging/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+      
+      <guid>https://eclipse.dev/rcptt/userguide/debugging/</guid>
+      <description>Debugging works</description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>https://eclipse.dev/rcptt/userguide/getstarted/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+      
+      <guid>https://eclipse.dev/rcptt/userguide/getstarted/</guid>
+      <description>To get an impression what it looks like to work with RCPTT, you&amp;rsquo;ll need the following:
+RCP Testing Tool IDE (download it here). Eclipse-based application to test. This guide assumes that you are using Eclipse Classic standard package, which can be downloaded from Eclipse downloads. Launch RCPTT IDE Just like usual Eclipse packages, RCPTT IDE does not require installation and can be just unpacked anywhere. So, at first download and unpack RCPTT IDE and your application-under-test somewhere on disk and launch RCPTT IDE.</description>
+    </item>
+    
+    <item>
+      <title>Maven plugin</title>
+      <link>https://eclipse.dev/rcptt/userguide/maven/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+      
+      <guid>https://eclipse.dev/rcptt/userguide/maven/</guid>
+      <description>RCPTT Maven plugin (requires Maven 3.1+) is a convenient way of automating RCPTT test execution during Maven build. It automatically downloads RCPTT Runner and launches it with command line arguments.
+Quick start Download basic pom.xml, place it in a root of RCPTT project and modify path to application under test. Execute mvn clean package from project&amp;rsquo;s dir Configuration Basic plugin configuration Below is a basic POM template which can be used as starting point of automating RCPTT tests with RCPTT Maven plugin.</description>
+    </item>
+    
+    <item>
+      <title>RCPTT RAP</title>
+      <link>https://eclipse.dev/rcptt/userguide/rap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+      
+      <guid>https://eclipse.dev/rcptt/userguide/rap/</guid>
+      <description>RAP support is deprecated See Remove RAP support #56</description>
+    </item>
+    
+  </channel>
+</rss>
