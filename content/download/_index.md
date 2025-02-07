@@ -25,6 +25,6 @@ menu:
 
  [![](ico-mac.png) MacOS IDE](http://download.eclipse.org/rcptt/nightly/{{< nightlyversion >}}/latest/ide/rcptt.ide-{{< nightlyversion >}}-nightly-macosx.cocoa.x86_64.zip)
 
- [![](ico-eclipse.png) Universal Test Runner](http://download.eclipse.org/rcptt/nightly/{{< nightlyversion >}}/latest/runner/rcptt.runner-{{< nightlyversion >}}-nightly.zip)
+ [![](ico-eclipse.png) Cross-platform Test Runner](http://download.eclipse.org/rcptt/nightly/{{< nightlyversion >}}/latest/runner/rcptt.runner-{{< nightlyversion >}}-nightly.zip)
 
  [![](ico-eclipse.png) Update Site](http://download.eclipse.org/rcptt/nightly/{{< nightlyversion >}}/latest/repository)
