@@ -190,6 +190,20 @@ Extra command-line arguments for application and/or for Java VM can be specified
 </aut>  
 ```
 
+RCPTT adds implicit arguments to command line. If your applicaiton does not support Eclipse Secure Preference Storage and complains:
+```text
+Illegal option: 'e' in '-eclipse.keyring'
+Invalid command line arguments
+```
+add `<useDefaultEclipseKeyring>true</useDefaultEclipseKeyring>` element to configuration (outside of `<aut>` element):
+```xml
+<useDefaultEclipseKeyring>true</useDefaultEclipseKeyring>
+<aut>
+  ...
+</aut>  
+```
+
+
 ### Enable Software Installation
 
 Use Support software installation in the launched application to create p2 metadata for the plug-ins being launched and starts the application with a profile containing the metadata. If the launched application does not include p2, this option has no effect. The contents of the profile are cleared and recreated on each launch, but if the application is restarted the same profile is kept.
