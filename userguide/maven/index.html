@@ -28,7 +28,7 @@
 <link rel="canonical" href="https://eclipse.dev/rcptt/userguide/maven/" />
 
 
-<link rel="stylesheet" href="https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/astro.min.css?v=1738959728">
+<link rel="stylesheet" href="https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/astro.min.css?v=1751843473">
   
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -1852,6 +1852,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     &lt;vmArg&gt;-XX:MaxPermSize=256m&lt;/vmArg&gt; 
   &lt;/vmArgs&gt; 
 &lt;/aut&gt;  </code>
+</pre><p>RCPTT adds implicit arguments to command line. If your applicaiton does not support Eclipse Secure Preference Storage and complains:</p>
+
+
+
+<pre class="language-text ">
+<code>Illegal option: &#39;e&#39; in &#39;-eclipse.keyring&#39;
+Invalid command line arguments</code>
+</pre><p>add <code>&lt;useDefaultEclipseKeyring&gt;true&lt;/useDefaultEclipseKeyring&gt;</code> element to configuration (outside of <code>&lt;aut&gt;</code> element):</p>
+
+
+
+<pre class="language-xml ">
+<code>&lt;useDefaultEclipseKeyring&gt;true&lt;/useDefaultEclipseKeyring&gt;
+&lt;aut&gt;
+  ...
+&lt;/aut&gt;  </code>
 </pre><h3 id="enable-software-installation">Enable Software Installation</h3>
 <p>Use Support software installation in the launched application to create p2 metadata for the plug-ins being launched and starts the application with a profile containing the metadata. If the launched application does not include p2, this option has no effect. The contents of the profile are cleared and recreated on each launch, but if the application is restarted the same profile is kept.</p>
 
@@ -2584,7 +2600,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
   <div id="footer-js">
   
-  <script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/astro.min.js?var=0.0.250?v=1738959729"></script>
+  <script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/astro.min.js?var=0.0.250?v=1751843476"></script>
   
 
   

@@ -28,7 +28,7 @@
 <link rel="canonical" href="https://eclipse.dev/rcptt/faq/extract-widget/" />
 
 
-<link rel="stylesheet" href="https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/astro.min.css?v=1738959726">
+<link rel="stylesheet" href="https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/astro.min.css?v=1751843473">
   
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -1686,17 +1686,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>But when I read an object from <code>process.getInput().read()</code>, I get an object of the class <code>ControlHandlerImpl</code> and I don&rsquo;t know how to handle this further. Do you have some examples using the input pipe?</p>
 </blockquote>
 <p>When RCPTT passes controls around (like in <code>get-view &quot;...&quot; | get-tree</code>), it does not operate on widgets, instead, a special descriptor EMF objects used.
-There is a special command <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#get-object"><code class="token command">get-object</code></a>, which allows to extract an actual widget object and pass it to other command.
+There is a special command <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#get-object"><code class="token command">get-object</code></a>, which allows to extract an actual widget object and pass it to other command.
 Therefore, while writing custom command, it is better to declare an input parameter in EMF model as EJavaObject and then use it like this:</p>
 
 
 
 <pre class="language-ecl ">
 <code>get-view &#34;Package Explorer&#34; | get-tree | get-object | my-custom-tree-command</code>
-</pre><p>A good starting point to look at might be an <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#invoke"><code class="token command">invoke</code></a> command, which takes a Java object from input and invokes methods via reflection.</p>
+</pre><p>A good starting point to look at might be an <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#invoke"><code class="token command">invoke</code></a> command, which takes a Java object from input and invokes methods via reflection.</p>
 <p>It&rsquo;s model is described like this:</p>
 <p><img src="../screenshot-invoke-model.png" alt="screenshot"></p>
-<p>An implementation of <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#invoke"><code class="token command">invoke</code></a> command can be found at RCPTT repo.</p>
+<p>An implementation of <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#invoke"><code class="token command">invoke</code></a> command can be found at RCPTT repo.</p>
 
 
   
@@ -2107,7 +2107,7 @@ Therefore, while writing custom command, it is better to declare an input parame
   
   <div id="footer-js">
   
-  <script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/astro.min.js?var=0.0.250?v=1738959729"></script>
+  <script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/astro.min.js?var=0.0.250?v=1751843473"></script>
   
 
   

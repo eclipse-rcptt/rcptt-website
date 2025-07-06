@@ -28,7 +28,7 @@
 <link rel="canonical" href="https://eclipse.dev/rcptt/faq/get-property-raw/" />
 
 
-<link rel="stylesheet" href="https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/astro.min.css?v=1738959726">
+<link rel="stylesheet" href="https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/astro.min.css?v=1751843473">
   
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -1688,9 +1688,9 @@ Originally ECL was an independent project, which we chose to use as a scripting 
 <li>General-purpose ECL commands</li>
 <li>RCPTT-specific commands</li>
 </ul>
-<p><a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#verify-true"><code class="token command">verify-true</code></a> is RCPTT-specific command.
+<p><a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#verify-true"><code class="token command">verify-true</code></a> is RCPTT-specific command.
 In order to provide user-friendly error messages (i.e. &ldquo;expected &lsquo;foo&rsquo;, but got &lsquo;bar&rsquo;&rdquo;), this command does not operate with raw property values.
-When <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#get-property"><code class="token command">get-property</code></a> command
+When <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#get-property"><code class="token command">get-property</code></a> command
 is executed, internally it does not return a property value, but instead it returns a special
 verification handle object. So a script like this:</p>
 
@@ -1699,9 +1699,9 @@ verification handle object. So a script like this:</p>
 <code>get-editbox | get-property &#34;text&#34; | equals &#34;foo&#34; | verify-true</code>
 </pre><p>is internally executed like this:</p>
 <p><img src="../pipeline.png" alt="screenshot"></p>
-<p>So, these commands are just passing and filling a verification object through a pipeline and at the end <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#verify-true"><code class="token command">verify-true</code></a> command takes a populated verification handle object and performs an actual check, producing an error message.
+<p>So, these commands are just passing and filling a verification object through a pipeline and at the end <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#verify-true"><code class="token command">verify-true</code></a> command takes a populated verification handle object and performs an actual check, producing an error message.
 Later, with growing requirements for scripting logic, we needed to be able to operate with actual
-property values, for instance, use control enablement in if condition. Thus we added a <code>-raw</code> key to <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#get-property"><code class="token command">get-property</code></a> command:</p>
+property values, for instance, use control enablement in if condition. Thus we added a <code>-raw</code> key to <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#get-property"><code class="token command">get-property</code></a> command:</p>
 
 
 <pre class="language-ecl ">
@@ -1711,7 +1711,7 @@ get-editbox | get-property text
 // can be stored in variable, passed to another command, etc 
 get-editbox | get-property text -raw </code>
 </pre><p>In order to be able to operate with raw values, we also added commands
-like <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#eq"><code class="token command">eq</code></a>, <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#gt"><code class="token command">gt</code></a>, <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#lt"><code class="token command">lt</code></a> and <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#assert-true"><code class="token command">assert-true</code></a> as general-purpose ECL commands, without any RCPTT specifics. And since <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#assert-true"><code class="token command">assert-true</code></a> does not have a &lsquo;context&rsquo; of assertion, but gets a single boolean value as an input, we added <code>-message</code> argument to it, so that users can specify an error message.
+like <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#eq"><code class="token command">eq</code></a>, <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#gt"><code class="token command">gt</code></a>, <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#lt"><code class="token command">lt</code></a> and <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#assert-true"><code class="token command">assert-true</code></a> as general-purpose ECL commands, without any RCPTT specifics. And since <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#assert-true"><code class="token command">assert-true</code></a> does not have a &lsquo;context&rsquo; of assertion, but gets a single boolean value as an input, we added <code>-message</code> argument to it, so that users can specify an error message.
 Hence finally we came to a situation when the same assertion can be expressed in two different ways:</p>
 
 
@@ -1721,7 +1721,7 @@ get-property text | equals foo | verify-true
 //ECL style:
 get-property text -raw | eq foo | assert-true &#34;Text is not &#39;foo&#39;&#34;</code>
 </pre><p>Indeed, many users found this situation confusing and wondered whether they need to
-use <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#eq"><code class="token command">eq</code></a> or <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#equals"><code class="token command">equals</code></a>,  so finally we also made old RCPTT commands, like <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#equals"><code class="token command">equals</code></a> and <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#verify-true"><code class="token command">verify-true</code></a> more flexible,  so that they behave differently depending on kind of input: if they get a VerifyHandle as an input, they use old behavior, if they get an actual value, they behave as their general-purpose ECL counterparts.</p>
+use <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#eq"><code class="token command">eq</code></a> or <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#equals"><code class="token command">equals</code></a>,  so finally we also made old RCPTT commands, like <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#equals"><code class="token command">equals</code></a> and <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#verify-true"><code class="token command">verify-true</code></a> more flexible,  so that they behave differently depending on kind of input: if they get a VerifyHandle as an input, they use old behavior, if they get an actual value, they behave as their general-purpose ECL counterparts.</p>
 
 
   
@@ -2132,7 +2132,7 @@ use <a href="http://download.eclipse.org/rcptt/release/2.5.5/doc/ecl/index.html#
   
   <div id="footer-js">
   
-  <script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/astro.min.js?var=0.0.250?v=1738959727"></script>
+  <script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/astro.min.js?var=0.0.250?v=1751843475"></script>
   
 
   
