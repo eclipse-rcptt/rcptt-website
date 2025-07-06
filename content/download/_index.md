@@ -12,7 +12,9 @@ menu:
 
 [![](ico-linux.png) Linux IDE](http://download.eclipse.org/rcptt/release/{{< release >}}/ide/rcptt.ide-{{< release >}}-linux.gtk.x86_64.zip)
 
-[![](ico-mac.png) MacOS IDE](http://download.eclipse.org/rcptt/release/{{< release >}}/ide/rcptt.ide-{{< release >}}-macosx.cocoa.x86_64.zip)
+[![](ico-mac.png) MacOS x86_64 IDE](http://download.eclipse.org/rcptt/release/{{< release >}}/ide/rcptt.ide-{{< release >}}-macosx.cocoa.x86_64.zip)
+
+[![](ico-mac.png) MacOS aarch64 IDE](http://download.eclipse.org/rcptt/release/{{< release >}}/ide/rcptt.ide-{{< release >}}-macosx.cocoa.aarch64.zip)
 
 [![](ico-eclipse.png) Cross-platform Test Runner](http://download.eclipse.org/rcptt/release/{{< release >}}/runner/rcptt.runner-{{< release >}}.zip)
 
@@ -23,7 +25,9 @@ menu:
 
  [![](ico-linux.png) Linux IDE](http://download.eclipse.org/rcptt/nightly/{{< nightlyversion >}}/latest/ide/rcptt.ide-{{< nightlyversion >}}-nightly-linux.gtk.x86_64.zip)
 
- [![](ico-mac.png) MacOS IDE](http://download.eclipse.org/rcptt/nightly/{{< nightlyversion >}}/latest/ide/rcptt.ide-{{< nightlyversion >}}-nightly-macosx.cocoa.x86_64.zip)
+ [![](ico-mac.png) MacOS x86_64 IDE](http://download.eclipse.org/rcptt/nightly/{{< nightlyversion >}}/latest/ide/rcptt.ide-{{< nightlyversion >}}-nightly-macosx.cocoa.x86_64.zip)
+
+  [![](ico-mac.png) MacOS aarch64 IDE](http://download.eclipse.org/rcptt/nightly/{{< nightlyversion >}}/latest/ide/rcptt.ide-{{< nightlyversion >}}-nightly-macosx.cocoa.aarch64.zip)
 
  [![](ico-eclipse.png) Cross-platform Test Runner](http://download.eclipse.org/rcptt/nightly/{{< nightlyversion >}}/latest/runner/rcptt.runner-{{< nightlyversion >}}-nightly.zip)
 
