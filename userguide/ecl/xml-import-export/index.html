@@ -28,7 +28,7 @@
 <link rel="canonical" href="https://eclipse.dev/rcptt/userguide/ecl/xml-import-export/" />
 
 
-<link rel="stylesheet" href="https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/astro.min.css?v=1752010899">
+<link rel="stylesheet" href="https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/astro.min.css?v=1760029618">
   
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -1689,7 +1689,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   
   <h2 id="xml-export">XML export</h2>
-<h3 id="hahahugoshortcode-s0-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#write-xml-file"><code class="token command">write-xml-file</code></a></h3>
+<h3 id="hahahugoshortcode-s0-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.7.0/doc/ecl/index.html#write-xml-file"><code class="token command">write-xml-file</code></a></h3>
 <p>Writes tables from input pipe to into xml file</p>
 <p>Input:</p>
 <ul>
@@ -1734,7 +1734,7 @@ global [val tree [
  
 $tree | write-xml-file &#34;workspace:/xml/devices.xml&#34;</code>
 </pre><h2 id="xml-import">XML import</h2>
-<h3 id="hahahugoshortcode-s1-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#read-xml-file"><code class="token command">read-xml-file</code></a></h3>
+<h3 id="hahahugoshortcode-s1-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.7.0/doc/ecl/index.html#read-xml-file"><code class="token command">read-xml-file</code></a></h3>
 <p>Parses a given xml file into tree and write it to output pipe. Fails if file is not found or if it is invalid xml.</p>
 <p>Parameters:</p>
 <ul>
@@ -1768,7 +1768,7 @@ $supportedDevices | each [val device] {
     logDevice $device
 }</code>
 </pre><h2 id="additional-commands">Additional commands</h2>
-<h3 id="hahahugoshortcode-s2-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#tree-node"><code class="token command">tree-node</code></a></h3>
+<h3 id="hahahugoshortcode-s2-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.7.0/doc/ecl/index.html#tree-node"><code class="token command">tree-node</code></a></h3>
 <p>Creates a new tree node</p>
 <p>Input:</p>
 <ul>
@@ -1790,7 +1790,7 @@ $supportedDevices | each [val device] {
     [map [entry &#34;id&#34; &#34;1&#34;]]
     [tree-node -name &#34;DeviceName&#34; -text &#34;device&#34;]
     [tree-node -name &#34;DeviceTarget&#34; -text &#34;target&#34;]</code>
-</pre><h3 id="hahahugoshortcode-s3-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#get-attrs"><code class="token command">get-attrs</code></a></h3>
+</pre><h3 id="hahahugoshortcode-s3-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.7.0/doc/ecl/index.html#get-attrs"><code class="token command">get-attrs</code></a></h3>
 <p>Gets attributes from the object</p>
 <p>Input:</p>
 <ul>
@@ -1807,7 +1807,7 @@ $supportedDevices | each [val device] {
 <pre class="language-ecl ">
 <code>tree-node &#34;Device&#34; [map [entry &#34;id&#34; &#34;1&#34;] [entry &#34;name&#34; &#34;first&#34;]]
     | get-attrs | get &#34;name&#34; | log</code>
-</pre><h3 id="hahahugoshortcode-s4-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#get-attr"><code class="token command">get-attr</code></a></h3>
+</pre><h3 id="hahahugoshortcode-s4-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.7.0/doc/ecl/index.html#get-attr"><code class="token command">get-attr</code></a></h3>
 <p>Gets attribute from the tree node by name. Fails if attribute is not found.</p>
 <p>Input:</p>
 <ul>
@@ -1826,7 +1826,7 @@ Parameters:</li>
 <pre class="language-ecl ">
 <code>tree-node &#34;Device&#34; [map [entry &#34;id&#34; &#34;1&#34;] [entry &#34;name&#34; &#34;first&#34;]]
     | get-attr &#34;name&#34; | log</code>
-</pre><h3 id="hahahugoshortcode-s5-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#set-attr"><code class="token command">set-attr</code></a></h3>
+</pre><h3 id="hahahugoshortcode-s5-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.7.0/doc/ecl/index.html#set-attr"><code class="token command">set-attr</code></a></h3>
 <p>Sets value of the object attribute. If &lsquo;value&rsquo; parameter is not specified, the attribute will be removed.</p>
 <p>Input:</p>
 <ul>
@@ -1846,7 +1846,7 @@ Parameters:</li>
 <pre class="language-ecl ">
 <code>tree-node &#34;Device&#34; [map [entry &#34;id&#34; &#34;1&#34;] [entry &#34;name&#34; &#34;first&#34;]]
     | set-attr &#34;name&#34; &#34;second&#34; | get-attr &#34;name&#34; | log</code>
-</pre><h3 id="hahahugoshortcode-s6-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#has-attr"><code class="token command">has-attr</code></a></h3>
+</pre><h3 id="hahahugoshortcode-s6-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.7.0/doc/ecl/index.html#has-attr"><code class="token command">has-attr</code></a></h3>
 <p>Checks if the object has attribute</p>
 <p>Input:</p>
 <ul>
@@ -1865,7 +1865,7 @@ Parameters:</li>
 <pre class="language-ecl ">
 <code>tree-node &#34;Device&#34; [map [entry &#34;id&#34; &#34;1&#34;] [entry &#34;name&#34; &#34;first&#34;]]
     | has-attr &#34;name&#34; | log</code>
-</pre><h3 id="hahahugoshortcode-s7-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#get-nodes"><code class="token command">get-nodes</code></a></h3>
+</pre><h3 id="hahahugoshortcode-s7-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.7.0/doc/ecl/index.html#get-nodes"><code class="token command">get-nodes</code></a></h3>
 <p>Gets child nodes from the object and writes them into output pipe. Fails if &lsquo;pos&rsquo; of &rsquo;len&rsquo; parameter is out of range.</p>
 <p>Input:</p>
 <ul>
@@ -1900,7 +1900,7 @@ global [val supportedDevices [tree-node &#34;SupportedDevices&#34;
 $supportedDevices | get-nodes &#34;Device&#34; -pos 1 -len 1
     | get-nodes &#34;DeviceName&#34; | get text
     | equals &#34;device 2&#34; | verify-true</code>
-</pre><h3 id="hahahugoshortcode-s8-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#append"><code class="token command">append</code></a></h3>
+</pre><h3 id="hahahugoshortcode-s8-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.7.0/doc/ecl/index.html#append"><code class="token command">append</code></a></h3>
 <p>Adds child nodes to the object. Fails if &lsquo;index&rsquo; parameter is out of range.</p>
 <p>Input:</p>
 <ul>
@@ -1920,7 +1920,7 @@ Parameters:</li>
 <pre class="language-ecl ">
 <code>tree-node &#34;Device&#34; [tree-node -name &#34;DeviceName&#34; -text &#34;device&#34;]
     | append [tree-node -name &#34;DeviceTarget&#34; -text &#34;target&#34;] -index 0</code>
-</pre><h3 id="hahahugoshortcode-s9-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#remove"><code class="token command">remove</code></a></h3>
+</pre><h3 id="hahahugoshortcode-s9-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.7.0/doc/ecl/index.html#remove"><code class="token command">remove</code></a></h3>
 <p>Removes child node from the object by index. Fails if &lsquo;index&rsquo; parameter is out of range.</p>
 <p>Input:</p>
 <ul>
@@ -2474,7 +2474,7 @@ Parameters:</li>
   
   <div id="footer-js">
   
-  <script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/astro.min.js?var=0.0.250?v=1752010899"></script>
+  <script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/astro.min.js?var=0.0.250?v=1760029620"></script>
   
 
   

@@ -28,7 +28,7 @@
 <link rel="canonical" href="https://eclipse.dev/rcptt/faq/assert-native-message-box/" />
 
 
-<link rel="stylesheet" href="https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/astro.min.css?v=1752010898">
+<link rel="stylesheet" href="https://eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/astro.min.css?v=1760029615">
   
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -1684,9 +1684,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <blockquote>
 <p>I want to record the &ldquo;Information&rdquo; message box  which pops up in my tool. How to use assert in this automation?</p>
 </blockquote>
-<p>RCPTT does not show native message dialogs during replay, but instead remembers their results during recording (by adding a command <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#set-dialog-result"><code class="token command">set-dialog-result</code></a> to a script) and automatically returns the remembered value to your application&rsquo;s caller code during replay (it has to do that, because there is no way to automatically close a system-level dialog).</p>
+<p>RCPTT does not show native message dialogs during replay, but instead remembers their results during recording (by adding a command <a href="http://download.eclipse.org/rcptt/release/2.7.0/doc/ecl/index.html#set-dialog-result"><code class="token command">set-dialog-result</code></a> to a script) and automatically returns the remembered value to your application&rsquo;s caller code during replay (it has to do that, because there is no way to automatically close a system-level dialog).</p>
 <p>But sometimes it may be needed to verify some properties of native message box like &rsquo;title&rsquo; or &lsquo;message text&rsquo;.</p>
-<p>Now you can do it using  <a href="http://download.eclipse.org/rcptt/release/2.6.0/doc/ecl/index.html#get-last-message-box"><code class="token command">get-last-message-box</code></a> ECL command.</p>
+<p>Now you can do it using  <a href="http://download.eclipse.org/rcptt/release/2.7.0/doc/ecl/index.html#get-last-message-box"><code class="token command">get-last-message-box</code></a> ECL command.</p>
 <p>Please note that this command can&rsquo;t be automatically recorded (you still can&rsquo;t select message box in assertion mode), instead, you should manually insert it into your test script:</p>
 
 
@@ -2105,7 +2105,7 @@ get-last-message-box | get-property message | equals &#34;This MessageBox with w
   
   <div id="footer-js">
   
-  <script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/astro.min.js?var=0.0.250?v=1752010899"></script>
+  <script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/astro.min.js?var=0.0.250?v=1760029616"></script>
   
 
   
