@@ -83,24 +83,24 @@ This table summarizes RCPTT runtime options which are rarely need to be modified
 
 Option Name | Default value | Description
 --- | --- | ---
-passedTestDetails  | false | When true, include output of 'take-screenshot' and 'trace' ECL commands into a report
-testExecTimeout	| 300 | Timeout for a single test execution in seconds
+autStartupTimeout|300|How many seconds Runner should wait for application startup.
 contextRunnableTimeout| 180000 | Context applying timeout in milliseconds 
 contextsWaitforjobsTimeout |30000 | If there are any jobs started after context applying, wait for their completion during this time (in milliseconds).
-jobDebugjobTimeout | 300000 | Timeout in milliseconds for jobs scheduled from eclipse Debug plugin.
-jobNulifyRescheduleMaxValue | 50 | If job reschedules itself more than times specified by this parameter, RCPTT stops setting delay to 0 (see jobScheduleDelayedMaxtime parameter).
-jobSleepingStepTime | 200 | When job is in sleeping mode (see jobTreatAsSleeingTimeout option), execute commands with given delay (in milliseconds) between commands.
-jobSleepingStepTimeout | 120000 | Wait timeout in milliseconds for stepping jobs (see jobTreatAsSleepingTimeout and jobSleepingStepTime)
-jobTreatAsSleepingTimeout |10000| If job executes more than this time (in milliseconds) and sleeps (i.e. executing Thread.sleep() or Object.wait()), then RCPTT considers that this job is waiting for some user actions and continues to the next command.
-timerExecsWaitNullify | 100|If Display.timerExec is scheduled for the delay less than this value (in milliseconds), set delay to 0.
-autStartupTimeout|300|How many seconds Runner should wait for application startup.
-jobHangTimeout|30000| Job hang skip timeout in milliseconds. If job is running longer than this time, RCPTT Runtime considers that it is hung and moves to the next command.
-jobSchelduleDelayedMaxtime| 600| Max job scheduled delay to be waited for in milliseconds. If job is scheduled with delay less than this value, RCPTT sets delay to 0 and waits for job completion (also see jobNullifyRescheduleMaxValue). Otherwise RCPTT Runtime does not wait for job completion if it is scheduled with a delay greater than this value.
-launchingKillAutOnConnectError|false|Kill AUT on connect error. Whether Runner should kill application-under-test if it cannot connect to it.
-eclExecutionDelay | 0 | Wait for a given milliseconds between each ECL command. This can be useful when things go wrong at some point and it is hard to determine when by looking at execution. Setting this value to, say, 500, allows to inspect RCPTT actions in more details.
-workspaceClearForceGc|true|Forces garbage collection on workspace cleanup.
 diagramPartLocatorFeatureIdentityNames|id,title|Use following EMF features for part identity
 diagramPartLocatorIdentity|ClassName|Non EMF object identity method
 diagramPartLocatorNameFeatureSupport|true|EMF object identity by 'name feature' support
 diagramPartLocatorTextSupport|true|Use text content for part identity
+eclExecutionDelay | 0 | Wait for a given milliseconds between each ECL command. This can be useful when things go wrong at some point and it is hard to determine when by looking at execution. Setting this value to, say, 500, allows to inspect RCPTT actions in more details.
+jobDebugjobTimeout | 300000 | Timeout in milliseconds for jobs scheduled from eclipse Debug plugin.
+jobHangTimeout|30000| Job hang skip timeout in milliseconds. If job is running longer than this time, RCPTT Runtime considers that it is hung and moves to the next command.
+jobNulifyRescheduleMaxValue | 50 | If job reschedules itself more than times specified by this parameter, RCPTT stops setting delay to 0 (see jobScheduleDelayedMaxtime parameter).
+jobSchelduleDelayedMaxtime| 600| Max job scheduled delay to be waited for in milliseconds. If job is scheduled with delay less than this value, RCPTT sets delay to 0 and waits for job completion (also see jobNullifyRescheduleMaxValue). Otherwise RCPTT Runtime does not wait for job completion if it is scheduled with a delay greater than this value.
+jobSleepingStepTime | 200 | When job is in sleeping mode (see jobTreatAsSleeingTimeout option), execute commands with given delay (in milliseconds) between commands.
+jobSleepingStepTimeout | 120000 | Wait timeout in milliseconds for stepping jobs (see jobTreatAsSleepingTimeout and jobSleepingStepTime)
+jobTreatAsSleepingTimeout |10000| If job executes more than this time (in milliseconds) and sleeps (i.e. executing Thread.sleep() or Object.wait()), then RCPTT considers that this job is waiting for some user actions and continues to the next command.
+launchingKillAutOnConnectError|false|Kill AUT on connect error. Whether Runner should kill application-under-test if it cannot connect to it.
+passedTestDetails  | false | When true, include output of 'take-screenshot' and 'trace' ECL commands into a report
+testExecTimeout	| 300 | Timeout for a single test execution in seconds
+timerExecsWaitNullify | 100|If Display.timerExec is scheduled for the delay less than this value (in milliseconds), set delay to 0.
+workspaceClearForceGc|true|Forces garbage collection on workspace cleanup.
  
