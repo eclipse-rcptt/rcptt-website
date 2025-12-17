@@ -42,7 +42,7 @@ pluralizeListTitles = false
 [taxonomies]
   tag = 'tags'
 
-[Author]
+[author]
   name = "Vasili Gulevich"
   email = "vasili.gulevich@xored.com"
   linkedin = "vasiligulevich"
