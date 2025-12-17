@@ -28,7 +28,7 @@ $(".ann").each(function() {
 	annBorder.removeAttr('title');
 });
 
-if (true) {
+if (false) {
 	$(".ann-image").each(function() {
 		let annDebug = $(this).find(".ann-debug");
 		annDebug.show();
