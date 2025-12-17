@@ -5,14 +5,14 @@
     <link>https://eclipse.dev/rcptt/userguide/</link>
     <description>Recent content in User Guide on The Community for Open Innovation and Collaboration</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>vasili.gulevich@xored.com (Vasili Gulevich)</managingEditor>
-    <webMaster>vasili.gulevich@xored.com (Vasili Gulevich)</webMaster><atom:link href="https://eclipse.dev/rcptt/userguide/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>webdev@eclipse-foundation.org (Eclipse Foundation)</managingEditor>
+    <webMaster>webdev@eclipse-foundation.org (Eclipse Foundation)</webMaster><atom:link href="https://eclipse.dev/rcptt/userguide/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Debugging Test Cases</title>
       <link>https://eclipse.dev/rcptt/userguide/debugging/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+        <author>webdev@eclipse-foundation.org (Eclipse Foundation)</author>
       
       <guid>https://eclipse.dev/rcptt/userguide/debugging/</guid>
       <description>Debugging works</description>
@@ -23,7 +23,7 @@
       <link>https://eclipse.dev/rcptt/userguide/getstarted/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+        <author>webdev@eclipse-foundation.org (Eclipse Foundation)</author>
       
       <guid>https://eclipse.dev/rcptt/userguide/getstarted/</guid>
       <description>To get an impression what it looks like to work with RCPTT, you&amp;rsquo;ll need the following:
@@ -35,7 +35,7 @@ RCP Testing Tool IDE (download it here). Eclipse-based application to test. This
       <link>https://eclipse.dev/rcptt/userguide/maven/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+        <author>webdev@eclipse-foundation.org (Eclipse Foundation)</author>
       
       <guid>https://eclipse.dev/rcptt/userguide/maven/</guid>
       <description>RCPTT Maven plugin (requires Maven 3.1+) is a convenient way of automating RCPTT test execution during Maven build. It automatically downloads RCPTT Runner and launches it with command line arguments.
@@ -47,7 +47,7 @@ Quick start Download basic pom.xml, place it in a root of RCPTT project and modi
       <link>https://eclipse.dev/rcptt/userguide/rap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+        <author>webdev@eclipse-foundation.org (Eclipse Foundation)</author>
       
       <guid>https://eclipse.dev/rcptt/userguide/rap/</guid>
       <description>RAP support is deprecated See Remove RAP support #56</description>

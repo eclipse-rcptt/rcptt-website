@@ -5,15 +5,15 @@
     <link>https://eclipse.dev/rcptt/faq/</link>
     <description>Recent content in FAQ on The Community for Open Innovation and Collaboration</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>vasili.gulevich@xored.com (Vasili Gulevich)</managingEditor>
-    <webMaster>vasili.gulevich@xored.com (Vasili Gulevich)</webMaster>
+    <managingEditor>webdev@eclipse-foundation.org (Eclipse Foundation)</managingEditor>
+    <webMaster>webdev@eclipse-foundation.org (Eclipse Foundation)</webMaster>
     <lastBuildDate>Thu, 17 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://eclipse.dev/rcptt/faq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to assert native message boxes?</title>
       <link>https://eclipse.dev/rcptt/faq/assert-native-message-box/</link>
       <pubDate>Thu, 17 Oct 2019 00:00:00 +0000</pubDate>
       
-        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+        <author>webdev@eclipse-foundation.org (Eclipse Foundation)</author>
       
       <guid>https://eclipse.dev/rcptt/faq/assert-native-message-box/</guid>
       <description>I want to record the &amp;ldquo;Information&amp;rdquo; message box which pops up in my tool. How to use assert in this automation?
@@ -25,7 +25,7 @@ RCPTT does not show native message dialogs during replay, but instead remembers 
       <link>https://eclipse.dev/rcptt/faq/install-as-plugin/</link>
       <pubDate>Thu, 23 Jun 2016 00:00:00 +0000</pubDate>
       
-        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+        <author>webdev@eclipse-foundation.org (Eclipse Foundation)</author>
       
       <guid>https://eclipse.dev/rcptt/faq/install-as-plugin/</guid>
       <description>RCPTT consists of two parts - RCPTT IDE, which is used for launching AUTs, developing and running test cases, and RCPTT Runtime (hidden), which is automatically put inside AUT in order to provide recording/replaying of user actions.
@@ -37,7 +37,7 @@ RCPTT IDE can be installed as an Eclipse plug-in (update site), but only into a 
       <link>https://eclipse.dev/rcptt/faq/pass-value/</link>
       <pubDate>Tue, 14 Apr 2015 00:00:00 +0000</pubDate>
       
-        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+        <author>webdev@eclipse-foundation.org (Eclipse Foundation)</author>
       
       <guid>https://eclipse.dev/rcptt/faq/pass-value/</guid>
       <description>In case when it is required to pass some values to a test in command line, it is possible to do it like this:
@@ -49,7 +49,7 @@ In AUT VM arguments pass desired parameters as Java properties, i.e. add argumen
       <link>https://eclipse.dev/rcptt/faq/extract-widget/</link>
       <pubDate>Thu, 15 Jan 2015 00:00:00 +0000</pubDate>
       
-        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+        <author>webdev@eclipse-foundation.org (Eclipse Foundation)</author>
       
       <guid>https://eclipse.dev/rcptt/faq/extract-widget/</guid>
       <description>I am trying to make a custom ECL command to extract a data from table in order to make my custom assertions on that data. I want to use the result of: get-table | ...
@@ -61,7 +61,7 @@ But when I read an object from process.getInput().read(), I get an object of the
       <link>https://eclipse.dev/rcptt/faq/resize-window/</link>
       <pubDate>Thu, 15 Jan 2015 00:00:00 +0000</pubDate>
       
-        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+        <author>webdev@eclipse-foundation.org (Eclipse Foundation)</author>
       
       <guid>https://eclipse.dev/rcptt/faq/resize-window/</guid>
       <description>Sometimes you may want a window to be a certain size.
@@ -75,7 +75,7 @@ get-eclipse-window | get-object | invoke setMinimized true Note: sometimes you n
       <link>https://eclipse.dev/rcptt/faq/suite-order/</link>
       <pubDate>Thu, 15 Jan 2015 00:00:00 +0000</pubDate>
       
-        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+        <author>webdev@eclipse-foundation.org (Eclipse Foundation)</author>
       
       <guid>https://eclipse.dev/rcptt/faq/suite-order/</guid>
       <description>Is it possible to change the test case order inside a test suite? Currently it is organized in an alphabetical order&amp;hellip;
@@ -88,7 +88,7 @@ However, there is a possibility to change test case order (disabled by defaut).<
       <link>https://eclipse.dev/rcptt/faq/verify-control-size/</link>
       <pubDate>Thu, 15 Jan 2015 00:00:00 +0000</pubDate>
       
-        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+        <author>webdev@eclipse-foundation.org (Eclipse Foundation)</author>
       
       <guid>https://eclipse.dev/rcptt/faq/verify-control-size/</guid>
       <description>If you need to check a size of control, but it depends on the size of a window or a screen or depends on the size of another control, you might use following approach:</description>
@@ -99,7 +99,7 @@ However, there is a possibility to change test case order (disabled by defaut).<
       <link>https://eclipse.dev/rcptt/faq/runtime-features/</link>
       <pubDate>Thu, 15 Jan 2015 00:00:00 +0000</pubDate>
       
-        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+        <author>webdev@eclipse-foundation.org (Eclipse Foundation)</author>
       
       <guid>https://eclipse.dev/rcptt/faq/runtime-features/</guid>
       <description>You can find different Runtime Features in RCPTT Advanced Options. Here you can find the description of the most of them.
@@ -111,7 +111,7 @@ Logging Feature Description Enable Activity Logging expand activities logging En
       <link>https://eclipse.dev/rcptt/faq/get-property-raw/</link>
       <pubDate>Thu, 15 Jan 2015 00:00:00 +0000</pubDate>
       
-        <author>vasili.gulevich@xored.com (Vasili Gulevich)</author>
+        <author>webdev@eclipse-foundation.org (Eclipse Foundation)</author>
       
       <guid>https://eclipse.dev/rcptt/faq/get-property-raw/</guid>
       <description>Both commands can be used inside try/catch, however in this case an error message won&amp;rsquo;t be displayed in a report. It&amp;rsquo;s a long story how we came to a situation when we have two seemingly the same commands and the primary reason is that we need it because of backward compatibility and a design mistake. Originally ECL was an independent project, which we chose to use as a scripting language for our UI commands, so all ECL commands available in RCPTT can be split into two categories:</description>
