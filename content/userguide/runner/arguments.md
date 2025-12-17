@@ -100,6 +100,7 @@ jobSleepingStepTimeout | 120000 | Wait timeout in milliseconds for stepping jobs
 jobTreatAsSleepingTimeout |10000| If job executes more than this time (in milliseconds) and sleeps (i.e. executing Thread.sleep() or Object.wait()), then RCPTT considers that this job is waiting for some user actions and continues to the next command.
 launchingKillAutOnConnectError|false|Kill AUT on connect error. Whether Runner should kill application-under-test if it cannot connect to it.
 passedTestDetails  | false | When true, include output of 'take-screenshot' and 'trace' ECL commands into a report
+retryCount | 1 | If greater than 1, a failed test will be executed again, collecting additional reports providing insight into instabilities. The overall run is considered failed even if reattempts pass.
 testExecTimeout	| 300 | Timeout for a single test execution in seconds
 timerExecsWaitNullify | 100|If Display.timerExec is scheduled for the delay less than this value (in milliseconds), set delay to 0.
 workspaceClearForceGc|true|Forces garbage collection on workspace cleanup.
