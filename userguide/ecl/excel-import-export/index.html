@@ -39,7 +39,7 @@
 <link rel="canonical" href="https://eclipse.dev/rcptt/userguide/ecl/excel-import-export/" />
 
 
-<link rel="stylesheet" href="https://www.eclipse.org/public/css/astro.css?v=1774546337">
+<link rel="stylesheet" href="https://www.eclipse.org/public/css/astro.css?v=1774550167">
   
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -1709,7 +1709,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
   
-  <h2 id="export-to-excel-hahahugoshortcode-s0-hbhb">Export to Excel <a href="http://download.eclipse.org/rcptt/release/2.7.4/doc/ecl/index.html#write-excel-file"><code class="token command">write-excel-file</code></a></h2>
+  <h2 id="export-to-excel-hahahugoshortcode-s0-hbhb">Export to Excel <a href="http://download.eclipse.org/rcptt/release/2.8.0/doc/ecl/index.html#write-excel-file"><code class="token command">write-excel-file</code></a></h2>
 <p>Writes tables from input pipe to into excel (xls or xlsx) file. Fails if file is not found or format is invalid.</p>
 <p>Input:</p>
 <ul>
@@ -1753,7 +1753,7 @@ proc newTable [val table] [val name] {
  
 emit [newTable $supportedDevices &#34;Supported devices&#34;] [newTable $allDevices &#34;All devices&#34;]
     | write-excel-file &#34;workspace:/excel/devices.xlsx&#34;</code>
-</pre><h2 id="import-from-excel-hahahugoshortcode-s1-hbhb">Import from Excel <a href="http://download.eclipse.org/rcptt/release/2.7.4/doc/ecl/index.html#read-excel-file"><code class="token command">read-excel-file</code></a></h2>
+</pre><h2 id="import-from-excel-hahahugoshortcode-s1-hbhb">Import from Excel <a href="http://download.eclipse.org/rcptt/release/2.8.0/doc/ecl/index.html#read-excel-file"><code class="token command">read-excel-file</code></a></h2>
 <p>Parses given excel file (xls or xlsx) into tables and write them to output pipe. Fails if file is not found or format is invalid.</p>
 <p>Parameters:</p>
 <ul>
@@ -1789,7 +1789,7 @@ $devicesInfo | each [val table] {
 read-excel-file &#34;workspace:/excel/devices.xlsx&#34; &#34;Additional info&#34;
     | get rows | get values | log</code>
 </pre><h2 id="additional-commands">Additional commands</h2>
-<h3 id="hahahugoshortcode-s2-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.7.4/doc/ecl/index.html#set-page-name"><code class="token command">set-page-name</code></a></h3>
+<h3 id="hahahugoshortcode-s2-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.8.0/doc/ecl/index.html#set-page-name"><code class="token command">set-page-name</code></a></h3>
 <p>Set page name to table</p>
 <p>Input:</p>
 <ul>
@@ -1812,7 +1812,7 @@ get-view &#34;Error Log&#34; | get-tree | get-table-data
  
 read-excel-file &#34;workspace:/MyProject/AssertData/table.xls&#34;
  | get-page-name | equals &#34;Table&#34; | assert-true</code>
-</pre><h3 id="hahahugoshortcode-s3-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.7.4/doc/ecl/index.html#list-as-table-data"><code class="token command">list-as-table-data</code></a></h3>
+</pre><h3 id="hahahugoshortcode-s3-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.8.0/doc/ecl/index.html#list-as-table-data"><code class="token command">list-as-table-data</code></a></h3>
 <p>Converts input list to table data format</p>
 <p>Input:</p>
 <ul>
@@ -1840,7 +1840,7 @@ global [val devices [list
  
 newTable $devices &#34;Devices&#34;
     | write-excel-file &#34;workspace:/excel/devices.xls&#34;</code>
-</pre><h3 id="hahahugoshortcode-s4-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.7.4/doc/ecl/index.html#get-table-cells"><code class="token command">get-table-cells</code></a></h3>
+</pre><h3 id="hahahugoshortcode-s4-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.8.0/doc/ecl/index.html#get-table-cells"><code class="token command">get-table-cells</code></a></h3>
 <p>Gets cell values by excel names and writes them into the output pipe</p>
 <p>Input:</p>
 <ul>
@@ -1861,7 +1861,7 @@ newTable $devices &#34;Devices&#34;
 <pre class="language-ecl ">
 <code>read-excel-file &#34;workspace:/excel/devices.xlsx&#34; &#34;Supported devices&#34;
     | get-table-cells A1 | eq &#34;Device Name&#34; | verify-true</code>
-</pre><h3 id="hahahugoshortcode-s5-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.7.4/doc/ecl/index.html#get-table-range"><code class="token command">get-table-range</code></a></h3>
+</pre><h3 id="hahahugoshortcode-s5-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.8.0/doc/ecl/index.html#get-table-range"><code class="token command">get-table-range</code></a></h3>
 <p>Gets range by excel name and writes it into the output pipe</p>
 <p>Input:</p>
 <ul>
@@ -1886,7 +1886,7 @@ newTable $devices &#34;Devices&#34;
             log $value
         }
 }</code>
-</pre><h3 id="hahahugoshortcode-s6-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.7.4/doc/ecl/index.html#set-table-cells"><code class="token command">set-table-cells</code></a></h3>
+</pre><h3 id="hahahugoshortcode-s6-hbhb"><a href="http://download.eclipse.org/rcptt/release/2.8.0/doc/ecl/index.html#set-table-cells"><code class="token command">set-table-cells</code></a></h3>
 <p>Sets cell values to the table</p>
 <p>Input:</p>
 <ul>
@@ -2530,7 +2530,7 @@ newTable $devices &#34;Devices&#34;
   
   <div id="footer-js">
   
-  <script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/astro.min.js?var=0.0.250?v=1774546337"></script>
+  <script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/astro.min.js?var=0.0.250?v=1774550167"></script>
   
 
   
