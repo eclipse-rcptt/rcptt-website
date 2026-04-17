@@ -70,7 +70,7 @@ Below is a basic POM template which can be used as starting point of automating 
 
 Important things to note here:
 - Packaging type is set to rcpttTest
-- Xored Maven repository added to pluginsRepositories
+- A Maven repository is added to pluginsRepositories
 - extensions set to true
 
 #### RCPTT Runner Version
