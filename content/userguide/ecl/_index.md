@@ -37,4 +37,4 @@ Here is a simple but actual ECL sample:
   ![](screenshot-ecl-2.png)
 - The scripting language should be extendable and let different adopters develop their own commands, which will be interoperable with other commands (such as Unix commands, for example). Moreover, these commands and internal data structures should be also interoperable with Eclipse Frameworks.
 
-> To see the full list of ECL commands with their usage examples, please take a look at generated documentation [here](https://ci.eclipse.org/rcptt/job/master/lastSuccessfulBuild/artifact/releng/doc/target/doc/ecl/index.html). 
+> To see the full list of ECL commands with their usage examples, please take a look at generated documentation [here](ECL-Documentation.html). 
