@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>RCP Testing Tool on The Community for Open Innovation and Collaboration</title>
+    <title>Eclipse RCP Testing Tool on The Community for Open Innovation and Collaboration</title>
     <link>https://eclipse.dev/rcptt/</link>
-    <description>Recent content in RCP Testing Tool on The Community for Open Innovation and Collaboration</description>
+    <description>Recent content in Eclipse RCP Testing Tool on The Community for Open Innovation and Collaboration</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>webdev@eclipse-foundation.org (Eclipse Foundation)</managingEditor>
     <webMaster>webdev@eclipse-foundation.org (Eclipse Foundation)</webMaster>
