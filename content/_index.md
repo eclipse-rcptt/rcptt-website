@@ -1,5 +1,5 @@
 ---
-title: "RCP Testing Tool"
+title: "Eclipse RCP Testing Tool"
 date: 2024-12-09T14:26:34+04:00
 #headline: "The Community for Open Innovation and Collaboration"
 #tagline: "The Eclipse Foundation provides our global community of individuals and organizations with a mature, scalable, and business-friendly environment for open source software collaboration and innovation."
@@ -12,7 +12,7 @@ layout: "single"
 #container: "container-fluid"
 ---
 
-RCP Testing Tool is a project for GUI testing automation of Eclipse-based applications. RCPTT is fully aware about Eclipse Platform's internals, hiding this complexity from end users and allowing QA engineers to create highly reliable UI tests at great pace.
+Eclipse RCP Testing Tool (RCPTT) automates GUI testing of Eclipse-based applications. RCPTT is fully aware about Eclipse Platform's internals, hiding this complexity from end users and allowing QA engineers to create highly reliable UI tests at great pace.
 
 {{< starterkit/example >}}
 

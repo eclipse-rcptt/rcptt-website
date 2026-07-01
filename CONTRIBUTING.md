@@ -1,7 +1,7 @@
 
 ## Project Overview
 
-This is the source for the [RCPTT (RCP Testing Tool) website](https://eclipse.dev/rcptt), a static site built with [Hugo](https://gohugo.io/) using the [Eclipse Foundation Hugo Solstice Theme](https://gitlab.eclipse.org/eclipsefdn/it/webdev/hugo-solstice-theme).
+This is the source for the [Eclipse RCP Testing Tool (RCPTT) documentation website](https://eclipse.dev/rcptt), a static site built with [Hugo](https://gohugo.io/) using the [Eclipse Foundation Hugo Solstice Theme](https://gitlab.eclipse.org/eclipsefdn/it/webdev/hugo-solstice-theme).
 
 RCPTT is an Eclipse-based UI testing tool for Eclipse RCP applications.
 
