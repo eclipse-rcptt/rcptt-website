@@ -42,11 +42,11 @@
               <li class="main-sidebar-item main-sidebar-item-indented">
                 {{ if .HasChildren }}
                   <li class="main-sidebar-item main-sidebar-item-indented">
-                    <a class="link-unstyled" role="button" data-toggle="collapse" href="#{{ .Identifier }}" aria-expanded="false" aria-controls="{{ .Identifier }}">
+                    <a class="link-unstyled" role="button" data-toggle="collapse" href="#sidebar-{{ .Identifier }}" aria-expanded="false" aria-controls="sidebar-{{ .Identifier }}">
                       <span>{{ .Name }}</span>
                       <i class="main-sidebar-item-icon fa fa-chevron-down" aria-hidden="true"></i>
                     </a>
-                    <div class="collapse" id="{{ .Identifier }}">
+                    <div class="collapse" id="sidebar-{{ .Identifier }}">
                       <ul class="main-sidebar-item-submenu list-unstyled">
                         {{ range .Children }}
                         <li class="submenu-item">
