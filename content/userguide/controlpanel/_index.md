@@ -1,6 +1,7 @@
 ---
 title: Control Panel
 sidebar: userguide
+weight: 30
 menu:
   sidebar:
       parent: userguide

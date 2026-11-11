@@ -3,6 +3,7 @@ title: Test Runner
 slug: runner
 layout: doc
 sidebar: userguide
+weight: 90
 menu:
   sidebar:
       identifier: runner
