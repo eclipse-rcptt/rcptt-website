@@ -2,6 +2,7 @@
 title: Procedures and Variables
 slug: procedures
 sidebar: userguide
+weight: 80
 layout: doc
 menu:
   sidebar:

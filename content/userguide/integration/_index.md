@@ -2,6 +2,7 @@
 title: Integration
 slug: integration
 sidebar: userguide
+weight: 110
 menu:
   sidebar:
       identifier: integration

@@ -2,6 +2,7 @@
 title: Getting Started
 slug: getstarted
 sidebar: userguide
+weight: 10
 menu:
   sidebar:
     identifier: getstarted

@@ -4,6 +4,7 @@ slug: maven
 aliases: /userguide/integration/maven
 layout: doc
 sidebar: userguide
+weight: 100
 menu:
   sidebar:
       parent: userguide

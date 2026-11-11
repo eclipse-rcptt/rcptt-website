@@ -2,6 +2,7 @@
 title: Test Case Editor
 slug: testeditor
 sidebar: userguide
+weight: 20
 layout: doc
 menu:
   sidebar:

@@ -2,6 +2,7 @@
 title: Eclipse Command Language
 slug: ecl
 sidebar: userguide
+weight: 50
 menu:
   sidebar:
       identifier: ecl
