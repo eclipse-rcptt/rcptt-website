@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://eclipse.dev/rcptt/userguide/getstarted/</loc>
+  </url><url>
+    <loc>https://eclipse.dev/rcptt/userguide/testeditor/</loc>
+  </url><url>
+    <loc>https://eclipse.dev/rcptt/userguide/controlpanel/</loc>
+  </url><url>
+    <loc>https://eclipse.dev/rcptt/userguide/assertions/</loc>
+  </url><url>
+    <loc>https://eclipse.dev/rcptt/userguide/ecl/</loc>
+  </url><url>
+    <loc>https://eclipse.dev/rcptt/userguide/contexts/</loc>
+  </url><url>
+    <loc>https://eclipse.dev/rcptt/userguide/verifications/</loc>
+  </url><url>
+    <loc>https://eclipse.dev/rcptt/userguide/procedures/</loc>
+  </url><url>
+    <loc>https://eclipse.dev/rcptt/userguide/runner/</loc>
+  </url><url>
+    <loc>https://eclipse.dev/rcptt/userguide/maven/</loc>
+  </url><url>
+    <loc>https://eclipse.dev/rcptt/userguide/integration/</loc>
+  </url><url>
+    <loc>https://eclipse.dev/rcptt/userguide/rap/</loc>
+  </url><url>
     <loc>https://eclipse.dev/rcptt/</loc>
     <lastmod>2024-12-09T14:26:34+04:00</lastmod>
   </url><url>
@@ -35,14 +59,6 @@
     <loc>https://eclipse.dev/rcptt/faq/get-property-raw/</loc>
     <lastmod>2015-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://eclipse.dev/rcptt/userguide/assertions/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/rcptt/userguide/contexts/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/rcptt/userguide/controlpanel/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/rcptt/userguide/debugging/</loc>
-  </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/contexts/default/</loc>
   </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/ecl/define-emf-model/</loc>
@@ -55,19 +71,13 @@
   </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/contexts/ecl/</loc>
   </url><url>
-    <loc>https://eclipse.dev/rcptt/userguide/ecl/</loc>
-  </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/verifications/errorlog/</loc>
   </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/verifications/time/</loc>
   </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/contexts/folder/</loc>
   </url><url>
-    <loc>https://eclipse.dev/rcptt/userguide/getstarted/</loc>
-  </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/contexts/group/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/rcptt/userguide/integration/</loc>
   </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/integration/test-rail/</loc>
   </url><url>
@@ -75,27 +85,17 @@
   </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/contexts/launch/</loc>
   </url><url>
-    <loc>https://eclipse.dev/rcptt/userguide/maven/</loc>
-  </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/ecl/new-command/</loc>
   </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/contexts/parameters/</loc>
   </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/contexts/preferences/</loc>
   </url><url>
-    <loc>https://eclipse.dev/rcptt/userguide/procedures/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/rcptt/userguide/rap/</loc>
-  </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/contexts/super/</loc>
   </url><url>
     <loc>https://eclipse.dev/rcptt/support/</loc>
   </url><url>
     <loc>https://eclipse.dev/rcptt/tags/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/rcptt/userguide/testeditor/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/rcptt/userguide/runner/</loc>
   </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/runner/arguments/</loc>
   </url><url>
@@ -104,8 +104,6 @@
     <loc>https://eclipse.dev/rcptt/userguide/verifications/treetable/</loc>
   </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/</loc>
-  </url><url>
-    <loc>https://eclipse.dev/rcptt/userguide/verifications/</loc>
   </url><url>
     <loc>https://eclipse.dev/rcptt/userguide/contexts/workbench/</loc>
   </url><url>
