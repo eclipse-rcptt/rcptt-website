@@ -2,6 +2,7 @@
 title: Contexts
 slug: contexts
 sidebar: userguide
+weight: 60
 menu:
   sidebar:
     identifier: contexts

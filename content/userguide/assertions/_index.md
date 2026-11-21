@@ -2,6 +2,7 @@
 title: Assertions
 slug: assertions
 sidebar: userguide
+weight: 40
 menu:
   sidebar:
     identifier: assertions

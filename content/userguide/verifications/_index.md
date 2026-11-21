@@ -3,6 +3,7 @@ title: Verifications
 slug: verifications
 layout: list
 sidebar: userguide
+weight: 70
 menu:
   sidebar:
       identifier: verifications

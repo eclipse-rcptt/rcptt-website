@@ -2,6 +2,7 @@
 title: RCPTT RAP
 slug: rap
 sidebar: userguide
+weight: 120
 layout: doc
 hide_page_title: true
 menu:
