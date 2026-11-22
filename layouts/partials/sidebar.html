@@ -41,25 +41,28 @@
             {{ range .Children }}
               <li class="main-sidebar-item main-sidebar-item-indented">
                 {{ if .HasChildren }}
+				  {{ $open := or ($.IsMenuCurrent "sidebar" .) ($.HasMenuCurrent "sidebar" .) }}
                   <li class="main-sidebar-item main-sidebar-item-indented">
-                    <a class="link-unstyled" role="button" data-toggle="collapse" href="#sidebar-{{ .Identifier }}" aria-expanded="false" aria-controls="sidebar-{{ .Identifier }}">
-                      <span>{{ .Name }}</span>
-                      <i class="main-sidebar-item-icon fa fa-chevron-down" aria-hidden="true"></i>
-                    </a>
-                    <div class="collapse" id="sidebar-{{ .Identifier }}">
+					<a class="link-unstyled{{ if not $open }} collapsed{{ end }}" role="button" data-toggle="collapse" href="#sidebar-{{ .Identifier }}" aria-expanded="{{ if $open }}true{{ else }}false{{ end }}" aria-controls="sidebar-{{ .Identifier }}">
+					  <span>{{ .Name }}</span>
+					  <i class="main-sidebar-item-icon fa {{ if $open }}fa-chevron-up{{ else }}fa-chevron-down{{ end }}" aria-hidden="true"></i>
+					</a>
+					<div class="collapse{{ if $open }} in{{ end }}" id="sidebar-{{ .Identifier }}">
                       <ul class="main-sidebar-item-submenu list-unstyled">
-                        {{ range .Children }}
-                        <li class="submenu-item">
-                          {{ .Pre }}
-                          <a class="link-unstyled" href="{{ .URL | relURL }}" target="_self">{{ .Name }}</a>
-                        </li>
-                        {{ end }}
+						{{ range .Children }}
+						{{ $current := $.IsMenuCurrent "sidebar" . }}
+						<li class="submenu-item">
+						  {{ .Pre }}
+						  <a class="link-unstyled{{ if $current }} active{{ end }}" href="{{ .URL | relURL }}" target="_self"{{ if $current }} aria-current="page"{{ end }}>{{ .Name }}</a>
+						</li>
+						{{ end }}
                       </ul>
                     </div>
                   </li>
-                {{ else }}
-                  <li class="main-sidebar-item main-sidebar-item-indented">
-                    <a class="link-unstyled" href="{{ .URL | relURL }}">
+				  {{ else }}
+				  {{ $current := $.IsMenuCurrent "sidebar" . }}
+				  <li class="main-sidebar-item main-sidebar-item-indented">
+				    <a class="link-unstyled{{ if $current }} active{{ end }}" href="{{ .URL | relURL }}"{{ if $current }} aria-current="page"{{ end }}>
                       <div>
                         <span class="main-sidebar-item-pre" aria-hidden="true">
                           {{ .Pre }}
